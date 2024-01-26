@@ -2,7 +2,7 @@
 
 This package contains [`learnr`](https://rstudio.github.io/learnr/index.html) tutorials with practice exercises for [*Data Analysis for Social Science: A Friendly and Practical Introduction*](https://press.princeton.edu/books/paperback/9780691199436/data-analysis-for-social-science) (DSS for short) by [Elena Llaudet](https://scholar.harvard.edu/ellaudet) and [Kosuke Imai](https://imai.fas.harvard.edu/) from Princeton University Press. 
 
-To install this package, first run the following R code to install the necessary packages:
+To be able to access the tutorials, first run the following R code to install the necessary packages:
 
 ``` r
 remotes::install_github("rstudio/learnr")
