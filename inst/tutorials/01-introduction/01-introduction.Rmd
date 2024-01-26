@@ -77,7 +77,7 @@ Each chapter is divided into three to five topics, and each topic corresponds to
   
 Note that the practice exercises are designed to be completed *after* having done the corresponding readings of the book and *after* having followed the exercises in the book with your own computer. They are not meant to be a substitute for the book, but rather a supplement. 
 
-Any errors found in these practice exercises are my own. If you find any, I would really appreciate it if you could let me know by sending me an email at [ellaudet@gmail.com](ellaudet@gmail.com). Thank you! *I hope this exercises are helpful to you and/or your students!* - Elena
+Any errors found in these practice exercises are my own. If you find any, I would really appreciate it if you could let me know by sending me an email at [ellaudet@gmail.com](ellaudet@gmail.com). Thank you! *I hope these practice exercises are helpful to you and/or your students!* - Elena
 
 
 ## <span style=color:dodgerblue> CHAPTER 1: INTRODUCTION
