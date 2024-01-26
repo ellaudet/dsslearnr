@@ -9,16 +9,16 @@ remotes::install_github("rstudio/learnr")
 remotes::install_github("ellaudet/dsslearnr")
 ```
 
-To start the tutorial that relates to Chapter 1, rum the following piece of R code:
+To start the tutorial that relates to *Chapter 1: Introduction*, rum the following piece of R code:
 
 ``` r
-learnr::run_tutorial("01-introduction", package = "dsslearnr") # will start the tutorial for chapter 1
+learnr::run_tutorial("01-introduction", package = "dsslearnr")
 ```
 
-To start the tutorial that relates to Chapter 1, rum the following piece of R code:
+To start the tutorial that relates to *Chapter 2: Estimating Causal Effects with Randomized Experiments*, rum the following piece of R code:
 
 ``` r
-learnr::run_tutorial("02-experimental", package = "dsslearnr") # will start the tutorial for chapter 2
+learnr::run_tutorial("02-experimental", package = "dsslearnr")
 ```
 
 Eventulally, there will be one tutorial per chapter in the book.  (I am still in the process of creating them.) You can see the full list of current tutorials by running:
