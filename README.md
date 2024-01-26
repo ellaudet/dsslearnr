@@ -27,5 +27,8 @@ Eventulally, there will be one tutorial per chapter in the book.  (I am still in
 learnr::run_tutorial(package = "dsslearnr")
 ```
 
+Any errors found in these practice exercises are my own. If you find any, I would really appreciate it if you could let me know by sending me an email at [ellaudet@gmail.com](ellaudet@gmail.com). Thank you! 
+
+*I hope this exercises are helpful to you and/or your students!* - Elena
 
 
