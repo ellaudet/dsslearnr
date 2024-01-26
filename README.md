@@ -29,6 +29,6 @@ learnr::run_tutorial(package = "dsslearnr")
 
 Any errors found in these practice exercises are my own. If you find any, I would really appreciate it if you could let me know by sending me an email at [ellaudet@gmail.com](ellaudet@gmail.com). Thank you! 
 
-*I hope this exercises are helpful to you and/or your students!* - Elena
+*I hope these practice exercises are helpful to you and/or your students!* - Elena
 
 
