@@ -9,13 +9,13 @@ remotes::install_github("rstudio/learnr")
 remotes::install_github("ellaudet/dsslearnr")
 ```
 
-To start the tutorial that relates to *Chapter 1: Introduction*, rum the following piece of R code:
+To start the tutorial that relates to *Chapter 1: Introduction*, run the following piece of R code:
 
 ``` r
 learnr::run_tutorial("01-introduction", package = "dsslearnr")
 ```
 
-To start the tutorial that relates to *Chapter 2: Estimating Causal Effects with Randomized Experiments*, rum the following piece of R code:
+To start the tutorial that relates to *Chapter 2: Estimating Causal Effects with Randomized Experiments*, run the following piece of R code:
 
 ``` r
 learnr::run_tutorial("02-experimental", package = "dsslearnr")
