@@ -80,7 +80,7 @@ Note that the practice exercises are designed to be completed *after* having don
 Any errors found in these practice exercises are my own. If you find any, I would really appreciate it if you could let me know by sending me an email at [ellaudet@gmail.com](ellaudet@gmail.com). Thank you! *I hope these practice exercises are helpful to you and/or your students!* - Elena
 
 
-## <span style=color:dodgerblue> CHAPTER 2: ESTIMATING CAUSAL EFFECTS WITH RANDOMIZED EXPERIMENTS
+## <span style=color:dodgerblue> CHAPTER 2 OVERVIEW
 In chapter 2, we learn what causal effects are and how to estimate them using randomized experiments. 
 
 The practice exercises for this chapter are organized into two topics. In the Table below, you can see (1) the topics, (2) the section(s) of the book that correspond to each topic, (3) the key concepts and mathematical notation discussed, and (4) the R functions and R operators reviewed.

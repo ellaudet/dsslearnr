@@ -12,9 +12,9 @@ description: "Practice Exercises for Readers of Data Analysis for Social Science
 ```{r setup, include=FALSE}
 library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
-#library(gradethis)
-#tutorial_options(exercise.checker = gradethis::grade_learnr)
-#tut_reptitle <- "DSS: Output Report"
+library(gradethis)
+tutorial_options(exercise.checker = gradethis::grade_learnr)
+tut_reptitle <- "DSS: Output Report"
 ```
 
 ```{js target-blank, echo=FALSE}
@@ -62,10 +62,10 @@ Each chapter is divided into three to five topics, and each topic corresponds to
 <body>
 <table>
   <tr>
-    <th><span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ <span style=color:steelblue> STEP 1  <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span></th>
-    <th><span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:steelblue> STEP 2  <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span></th>
-    <th> <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:steelblue> STEP 3 <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$</span></th>
-    <th> <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:steelblue> STEP 4 <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$</span></th>
+    <th><span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ <span style=color:dodgerblue> STEP 1  <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span></th>
+    <th><span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:dodgerblue> STEP 2  <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span></th>
+    <th> <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:dodgerblue> STEP 3 <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$</span></th>
+    <th> <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:dodgerblue> STEP 4 <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$</span></th>
   </tr>
   <tr>
     <td> read the section(s) <br> of the textbook <br> that correspond to <br> a particular topic </td>
@@ -80,7 +80,7 @@ Note that the practice exercises are designed to be completed *after* having don
 Any errors found in these practice exercises are my own. If you find any, I would really appreciate it if you could let me know by sending me an email at [ellaudet@gmail.com](ellaudet@gmail.com). Thank you! *I hope these practice exercises are helpful to you and/or your students!* - Elena
 
 
-## <span style=color:dodgerblue> CHAPTER 1: INTRODUCTION
+## <span style=color:dodgerblue> CHAPTER 1 OVERVIEW
 In chapter 1, we start from the very beginning by installing and familiarizing ourselves with the two programs we use―R and RStudio―and by laying the groundwork for forthcoming analyses. 
 
 The practice exercises for this chapter are organized into three topics. In the Table below, you can see (1) the topics, (2) the section(s) of the book that correspond to each topic, (3) the key concepts and mathematical notation discussed, and (4) the R functions and R operators reviewed.
@@ -119,7 +119,13 @@ Let's start! <br>
 ## <span style=color:dodgerblue> Introduction to R and RStudio
 Complete the following practice exercises *after* reading Sections 1 through 1.6 of DSS, including both, and *after* having followed the exercises in the book with your own computer.
 
+There are two kinds of exercises below:
 
+- multiple-choice questions
+- practicing typing and running code
+
+<br>
+<font size="+2"> <span style=color:dodgerblue> (A) Multiple-Choice Questions </span></font>
 ```{r quiz}
 quiz(caption="",
   question("What program(s) are we going to use to analyze data in this book?",
@@ -151,48 +157,48 @@ question("How do we run code that has already been written on an R script?",
   allow_retry = TRUE
 ),
   question("Which of the following pieces of R code will compute 3 + 3?",
-    answer("3 + 3", correct = TRUE),
-    answer("three + three", message = "This code is not correct unless you had previously created an object named *three* containing the number 3."),
-    answer("3 plus 3", message = "The R operator for summation is +, not *plus*."),
-    answer("three plus three"),
-    post_message = "The correct answer is: <span style=color:dodgerblue> 3 + 3</span>.<br><br> 
-    Since spaces around operators are ignored by R, we could also use <span style=color:dodgerblue> 3+3 </span> or <span style=color:dodgerblue> 3 +3 </span> or <span style=color:dodgerblue> 3+ 3</span>.",
+    answer("`3 + 3`", correct = TRUE),
+    answer("`three + three`", message = "This code is not correct unless you had previously created an object named `three` containing the number `3`."),
+    answer("`3 plus 3`", message = "The R operator for summation is `+`, not `plus`."),
+    answer("`three plus three`"),
+    post_message = "The correct answer is: `3 + 3`.<br><br> 
+    Since spaces around operators are ignored by R, we could also use `3+3` or `3 +3` or `3+ 3`.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("Which of the following pieces of R code will create an object called *three* containing the number 3?",
-    answer("three <- 3", correct = TRUE),
-    answer("three << 3", message = "Hint: To create an object, we use the assignment operator: <span style=color:dodgerblue> <- </span>"),
-    answer("''three'' <- 3 ", message = "Recall: We do not use quotes around the name of objects."),
-    answer("3 <- three", message = "Recall: To create an object, we use the assignment operator: <-. To the left of the assignment operator, we specify the name of the object. And, to the right of the assignment operator, we specify the contents."),
-    answer("three <- ''3''", message = "Recall: We do not use quotes around numbers. This code will run, but the object *three* will contain the text ''3'', not the number 3, and thus we would not be able to do math with it."),
-    post_message = "The correct answer is: <span style=color:dodgerblue> three <- 3 </span><br><br> 
-    Explanation: To create an object, we use the assignment operator: <span style=color:dodgerblue> <- </span> <br> 
-    To the left of the assignment operator, we specify the name of the object; in this case: <span style=color:dodgerblue> three </span><br> 
-    To the right of the assignment operator, we specify the contents; in this case: <span style=color:dodgerblue> 3 </span><br><br> 
+    answer("`three <- 3`", correct = TRUE),
+    answer("`three << 3`", message = "Hint: To create an object, we use the assignment operator `<-`"),
+    answer("`''three'' <- 3 `", message = "Recall: We do not use quotes around the name of objects."),
+    answer("`3 <- three`", message = "Recall: To create an object, we use the assignment operator `<-`. To the left of the assignment operator, we specify the name of the object. And, to the right of the assignment operator, we specify the contents."),
+    answer("`three <- ''3''`", message = "Recall: We do not use quotes around numbers. This code will run, but the object *three* will contain the text ''3'', not the number 3, and thus we would not be able to do math with it."),
+    post_message = "The correct answer is: `three <- 3` <br><br> 
+    Explanation: To create an object, we use the assignment operator `<-` <br> 
+    To the left of the assignment operator, we specify the name of the object; in this case: `three` <br> 
+    To the right of the assignment operator, we specify the contents; in this case: `3`<br><br> 
     Remember: we do not use quotes around numbers or around the name of objects.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("Which of the following pieces of R code will create an object called *today* containing the text *Monday*?",
-    answer("today <- ''Monday''", correct = TRUE),
-    answer("today <- Monday", message = "Hint: When writing code in R, we do not use quotes around: (1) the name of objects, (2) the name of functions, (3) the name of arguments, and (4) special characters such as TRUE, FALSE, NA, and NULL; all other text should be in quotes."),
-    answer("''today'' <- Monday", message = "Hint: When writing code in R, we do not use quotes around: (1) the name of objects, (2) the name of functions, (3) the name of arguments, and (4) special characters such as TRUE, FALSE, NA, and NULL; all other text should be in quotes."),
-    answer("''today'' <- ''Monday''", message = "Hint: When writing code in R, we do not use quotes around: (1) the name of objects, (2) the name of functions, (3) the name of arguments, and (4) special characters such as TRUE, FALSE, NA, and NULL; all other text should be in quotes."),
-    post_message = "The correct answer is: <span style=color:dodgerblue> today <- ''Monday'' </span><br><br>
-    Note: We do not use quotes around <span style=color:dodgerblue> today </span> because it is the name of an object, and we do use quotes around <span style=color:dodgerblue> Monday </span> because it is text and neither of the exceptions. <br><br>
+    answer("`today <- ''Monday''`", correct = TRUE),
+    answer("`today <- Monday`", message = "Hint: When writing code in R, we do not use quotes around: (1) the name of objects, (2) the name of functions, (3) the name of arguments, and (4) special characters such as TRUE, FALSE, NA, and NULL; all other text should be in quotes."),
+    answer("`''today'' <- Monday`", message = "Hint: When writing code in R, we do not use quotes around: (1) the name of objects, (2) the name of functions, (3) the name of arguments, and (4) special characters such as TRUE, FALSE, NA, and NULL; all other text should be in quotes."),
+    answer("`''today'' <- ''Monday''`", message = "Hint: When writing code in R, we do not use quotes around: (1) the name of objects, (2) the name of functions, (3) the name of arguments, and (4) special characters such as TRUE, FALSE, NA, and NULL; all other text should be in quotes."),
+    post_message = "The correct answer is: ` today <- ''Monday'' `<br><br>
+    Note: We do not use quotes around ` today ` because it is the name of an object, and we do use quotes around ` Monday ` because it is text and neither of the exceptions. <br><br>
     Recall: When writing code in R, we do not use quotes around: (1) the name of objects, (2) the name of functions, (3) the name of arguments, and (4) special characters such as TRUE, FALSE, NA, and NULL; all other text should be in quotes.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("What would happen if after running the code from the previous question, we ran the following piece of R code: <span style=color:dodgerblue> today <- Tuesday </span>",
-    answer("The following error message will appear in the Console: <span style=color:red> Error: object 'Tuesday' not found </span>", correct = TRUE),
+  question("What would happen if after running the code from the previous question, we ran the following piece of R code: ` today <- Tuesday `",
+    answer("The following error message will appear in the Console: <span style=color:red> Error: object 'Tuesday' not found `", correct = TRUE),
     answer("The object called *today* will now contain the text ''Tuesday'' instead of ''Monday''", message = "Hint: Pay attention to the quotes used in the code."),
     answer("A new object called *today* will be created, containing the text ''Tuesday''", message = "We had already created an object called *today*. To figure out the correct answer: pay attention to the quotes used in the code."),
     answer("Nothing will happen"),
-    post_message = "Running <span style=color:dodgerblue> today <- Tuesday </span> will produce an error message letting us know that we do not have an object called 'Tuesday'. <br><br> 
-    Explanation: Because we did not insert quotes around *Tuesday*, R thinks *Tuesday* is the name of an object and so it goes searching for it. <br><br> 
-    Note: If we wanted to overwrite the contents of the object *today*, we would run <span style=color:dodgerblue> today <- ''Tuesday''</span>, with quotes around the word *Tuesday* so that R knows this is just text and not the name of an object.",
+    post_message = "Running ` today <- Tuesday ` will produce an error message letting us know that we do not have an object called 'Tuesday'. <br><br> 
+    Explanation: Because we did not insert quotes around `Tuesday`, R thinks *Tuesday* is the name of an object and so it goes searching for it. <br><br> 
+    Note: If we wanted to overwrite the contents of the object *today*, we would run ` today <- ''Tuesday''`, with quotes around the word *Tuesday* so that R knows this is just text and not the name of an object.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -202,43 +208,43 @@ question("How do we run code that has already been written on an R script?",
     answer("The names of functions are displayed in red by RStudio"),
     answer("The names of functions are underlined by RStudio", message = ""),
     post_message = "The names of functions are always followed by parentheses.<br><br>
-    Inside the parentheses, we write the argument(s) of the function, separated by commas if there is more than one argument. Example <span style=color:dodgerblue> sqrt(25)</span>.",
+    Inside the parentheses, we write the argument(s) of the function, separated by commas if there is more than one argument. Example `sqrt(25)`.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:steelblue> A MULTI-ANSWER QUESTION: </span> As we learn in Section 1.6.3 of DSS, a function: <br><br> 
+  question("<span style=color:dodgerblue> A MULTI-ANSWER QUESTION: </span> As we learn in Section 1.6.3 of DSS, a function: <br><br> 
           <center>
-           <span style=color:steelblue> (1) </span> takes input(s) <br> <span style=color:steelblue> (2) </span> performs action(s) with the input(s)<br> <span style=color:steelblue> (3) </span> produces output(s)</center><br>Which of the following statements are true? (Note: You must select ALL true statements for the answer to be correct.)",
+           <span style=color:dodgerblue> (1) </span> takes input(s) <br> <span style=color:dodgerblue> (2) </span> performs action(s) with the input(s)<br> <span style=color:dodgerblue> (3) </span> produces output(s)</center><br>Which of the following statements are true? (Note: You must select ALL true statements for the answer to be correct.)",
     answer("The input(s) are also known as argument(s)", correct = TRUE),
     answer("We specify the argument(s) inside the parentheses that follow the name of the function", correct = TRUE),
     answer("Some arguments are required; others are optional", correct = TRUE),
-    answer("The function *sqrt()* computes the square root of the argument specified inside the parentheses", correct = TRUE),
+    answer("The function `sqrt()` computes the square root of the argument specified inside the parentheses", correct = TRUE),
     answer("The output(s) are shown in the Console", correct = TRUE),
     answer("The name of the function determines the action(s) the function perform, the input(s) it requires, and the output(s) it produced.", correct = TRUE),
     post_message = "All the statements above are true!",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:steelblue> A MULTI-ANSWER QUESTION: </span> If we had run all the code above, which of the following pieces of R code could we use to compute the square root of 3? (Note: You must select ALL true statements for the answer to be correct.)",
-    answer("sqrt(3)", correct = TRUE),
-    answer("sqrt(three)", correct = TRUE),
-    answer("square_root(3)", message = "*square_root(3)* is NOT one of the correct answers. This code will produce the following error message: <span style=color:red> Error in squareroot(3) : could not find function ''squareroot''</span>.<br>"),
-    answer("sroot(3)", message = "*sroot(3)* is NOT one of the correct answers. This code will produce the following error message: <span style=color:red> Error in sroot(3) : could not find function ''sroot''</span>.<br>"),
-    post_message = "First, we could compute the square root of 3 by running <span style=color:dodgerblue> sqrt(3)</span>.<br><br> 
-    Explanation: <span style=color:dodgerblue> sqrt() </span> is an R function that computes the square root of the argument specified inside the parentheses. <br><br>
-    Second, since with the code above we created an object called *three* containing the number 3, we could aslo compute the square root of 3 by running <span style=color:dodgerblue> sqrt(three)</span>.",
+  question("<span style=color:dodgerblue> A MULTI-ANSWER QUESTION: </span> If we had run all the code above, which of the following pieces of R code could we use to compute the square root of 3? (Note: You must select ALL true statements for the answer to be correct.)",
+    answer("`sqrt(3)`", correct = TRUE),
+    answer("`sqrt(three)`", correct = TRUE),
+    answer("`square_root(3)`", message = "`square_root(3)` is NOT one of the correct answers. This code will produce the following error message: <span style=color:red> Error in squareroot(3) : could not find function ''squareroot''</span>.<br>"),
+    answer("`sroot(3)`", message = "`sroot(3)` is NOT one of the correct answers. This code will produce the following error message: <span style=color:red> Error in sroot(3) : could not find function ''sroot''</span>.<br>"),
+    post_message = "First, we could compute the square root of 3 by running `sqrt(3)`.<br><br> 
+    Explanation: ` sqrt()` is an R function that computes the square root of the argument specified inside the parentheses. <br><br>
+    Second, since with the code above we created an object called *three* containing the number 3, we could aslo compute the square root of 3 by running ` sqrt(three)`.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("What would happen if after running all the code above, we ran the following piece of R code: <span style=color:dodgerblue> # square root of three is sqrt(three)</span>",
+  question("What would happen if after running all the code above, we ran the following piece of R code: ` # square root of three is sqrt(three)`",
     answer("Nothing will happen", correct=T),
     answer("R will compute the square root of 3 and provide the result in the Console", message = ""),
-    answer("The following error message will appear in the Console: <span style=color:red> Error: object 'three' not found </span>", message = "We do have an object called *three* in the environment, which contains the number 3"),
-    answer("The following error message will appear in the Console: <span style=color:red> Error in sqrt(three) : could not find function ''sqrt''</span>.", message = "The function sqrt() does exist; it computes the square root of the argument specified inside the parentheses."),
-    post_message = "Nothing will happen because this piece of code starts with the character <span style=color:dodgerblue> # </span><br><br> 
-    Explanation: the character <span style=color:dodgerblue> # </span> is used to comment code; R ignores anything that follows this character until the end of the line.<br><br>
-    Note: Since we have an object called *three* containing the number 3, if we wanted R to compute the square root of 3, we could run <span style=color:dodgerblue> sqrt(three)</span>.<br><br> 
-    And, if we wanted to add a comment to this piece of code, we would have to add it AFTER the executable code like this: <span style=color:dodgerblue> sqrt(three) </span> <span style=color:dodgerblue># computes square root of three </span>",
+    answer("The following error message will appear in the Console: <span style=color:red> Error: object 'three' not found `", message = "We do have an object called *three* in the environment, which contains the number 3"),
+    answer("The following error message will appear in the Console: <span style=color:red> Error in sqrt(three) : could not find function ''sqrt''`.", message = "The function sqrt() does exist; it computes the square root of the argument specified inside the parentheses."),
+    post_message = "Nothing will happen because this piece of code starts with the character ` # `<br><br> 
+    Explanation: the character ` # ` is used to comment code; R ignores anything that follows this character until the end of the line.<br><br>
+    Note: Since we have an object called *three* containing the number 3, if we wanted R to compute the square root of 3, we could run `sqrt(three)`.<br><br> 
+    And, if we wanted to add a comment to this piece of code, we would have to add it AFTER the executable code like this: `sqrt(three) # computes square root of three `",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -246,12 +252,113 @@ question("How do we run code that has already been written on an R script?",
     answer("RStudio displays the name of the R script in red", correct = TRUE),
     answer("RStudio plays a sound when we try to close the program"),
     answer("There is no way of knowing"),
-    answer("By running the following code: </span> <span style=color:dodgerblue> saved(?) </span>", message = "There is no *saved()* function in R."),
+    answer("By running the following code: `saved(?)`", message = "There is no `saved()` function in R."),
     post_message = "RStudio displays the name of the R script in red whenever there are some unsaved changes. Once we save the changes, the name of the R script is displayed in black.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ))
 ```
+
+<br>
+<font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
+
+<br> **Ask R to compute 30+6**
+
+```{r r1, exercise=TRUE, exercise.lines = 1}
+
+```
+
+<div id="r1-hint">
+Hint: You may want to use the `+` operator.
+</div>
+
+```{r r1-solution}
+30+6
+```
+
+```{r r1-check}
+grade_result(
+  pass_if(~ identical(.result, 36), "<br><br> Note: R ignores spaces around operators, so `30+6` will produce the same results as `30 + 6`, `30 +6`, and `30+ 6`.")
+)
+```
+
+<br> **Ask R to store `30+6` into an object called `thirtysix`**
+
+```{r r2, exercise = TRUE, exercise.lines = 1}
+
+```
+
+<div id="r2-hint">
+Hint: You may want to use the assignment operator `<-`. <br><br>
+To the left of the assignment operator, we specify the name of the object (without quotes). <br><br>
+To the right of the assignment operator, we specify the contents of the object.
+<br><br>
+Recall: The name of objects cannot contain spaces.
+</div>
+
+```{r r2-solution}
+thirtysix <- 30+6
+```
+
+```{r r2-check}
+grade_result_strict(
+  pass_if(~ identical(thirtysix, 36), "<br><br> Explanation: To create an object, we use the assignment operator `<-`. <br><br>
+To the left of the assignment operator, we specify the name of the object (without quotes). <br><br>
+To the right of the assignment operator, we specify the contents of the object.<br><br>
+Recall: The name of objects cannot contain spaces.")
+)
+```
+
+<br> **Ask R to show you the contents of the object `thirtysix`**
+
+```{r thirtysix}
+thirtysix <- 30+6
+```
+
+```{r r2b, exercise=TRUE, exercise.setup = "thirtysix", exercise.lines = 1}
+
+```
+
+<div id="r2b-hint">
+Hint: To ask R to show us the contents of an object, we run the name of the object.
+</div>
+
+```{r r2b-solution}
+thirtysix
+```
+
+```{r r2b-check}
+grade_result(
+  pass_if(~ identical(.result, thirtysix), "<br><br>To ask R to show us the contents of an object, we run the name of the object.")
+)
+```
+
+
+<br> **Use the `sqrt()` function to ask R to compute the square root of 36**
+
+```{r r3, exercise=TRUE, exercise.setup = "thirtysix", exercise.lines=1}
+
+```
+
+<div id="r3-hint">
+Hint: The function `sqrt()` calculates the square root of the argument specified inside the parentheses.
+</div>
+
+```{r r3-solution}
+## we have two options:
+sqrt(36) # specifying as the main argument the number 36
+sqrt(thirtysix) # specifying as the main argument the object thirtysix, which contains the number 36
+```
+
+```{r r3-check}
+grade_result(
+  pass_if(~ identical(.result, sqrt(36)), "<br><br> The function `sqrt()` calculates the square root of the argument specified inside the parentheses.<br><br> Since we have an object called `thirtysix` which contains the number 36, we could run either `sqrt(36)` or `sqrt(thirtysix)` to compute the square root of 36.")
+)
+```
+
+
+
+
 
 
 ## <span style=color:dodgerblue> Observations and Variables
@@ -355,11 +462,11 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:steelblue> A MULTI-ANSWER QUESTION: </span> To set the working directory to the DSS folder on our Desktop, we could... (Note: You must select ALL true statements for the answer to be correct.)",
-    answer("run <span style=color:dodgerblue> setwd(''~/Desktop/DSS'') </span> if we have a Mac", correct = TRUE),
-    answer("run <span style=color:dodgerblue> setwd(''C:/user/Desktop/DSS'') </span> if we have a Windows computer, where *user* is our username", correct = TRUE),
+  question("<span style=color:dodgerblue> A MULTI-ANSWER QUESTION: </span> To set the working directory to the DSS folder on our Desktop, we could... (Note: You must select ALL true statements for the answer to be correct.)",
+    answer("run `setwd(''~/Desktop/DSS'')` if we have a Mac", correct = TRUE),
+    answer("run ` setwd(''C:/user/Desktop/DSS'') ` if we have a Windows computer, where *user* is our username", correct = TRUE),
     answer("save the R script to the DSS folder and then use the dropdown menu to set the working directory manually: Session > Set Working Directory > To Source File Location", correct = TRUE),
-    answer("run <span style=color:dodgerblue> setwd(~/Desktop/DSS) </span> if we have a Mac", message = "Hint: The path to the folder is text and not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL."),
+    answer("run ` setwd(~/Desktop/DSS) ` if we have a Mac", message = "Hint: The path to the folder is text and not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL."),
     post_message = "We can use the function *setwd()* to set the working directory. The only required argument is the path to the folder in quotes. The path to the folder is different depending on whether we have a Mac or a Windows machine. (See examples above.)<br><br> When in doubt, we can always set the working directory manually by using RStudio's dropdown menu. If we have saved the R script in the same folder where the data that we will use is, then we can use the dropdown menu to set the working directory manually: Session > Set Working Directory > To Source File Location",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -370,25 +477,25 @@ quiz(caption="",
     answer("grades <- read.csv(testscores.csv)", message = "You are almost there. Hint: The file name is text and not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL."),
     answer("grades <- read.csv(''testscores'')", message = "You are almost there. Hint: The file name needs to include its extension (i.e., ''.csv'')."),
     answer("testcores <- read.csv(''grades.csv'')", message = "You are almost there. Hint: The name of the file is *testcores.csv* and the name of the object is *grades*, not the other way around."),
-    post_message = "The correct answer is: <span style=color:dodgerblue> grades <- read.csv(''testscores.csv'') </span><br><br>
-    To create an object, we use the assignment operator: <span style=color:dodgerblue> <- </span> <br>
+    post_message = "The correct answer is: ` grades <- read.csv(''testscores.csv'') `<br><br>
+    To create an object, we use the assignment operator ` <- ` <br>
     To the left of the assignment operator, we specify the name of the object; *grades* in this case. <br>
     To the right of the assignment operator, we specify the contents, which, in this case, are produced by reading the CSV file *testcores.csv*. <br><br>
     Note: We do not use quotes around the name of an object such as *grades* or around the name of a function such as *read.csv()*, but we do use quotes around the name of a file, because it is text and neither of the exceptions (i.e., it is not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL).",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:steelblue> A MULTI-ANSWER QUESTION: </span> If we wanted to take a look at the data stored in the object called *grades*, we could run... (Note: You must select ALL true statements for the answer to be correct.)",
+  question("<span style=color:dodgerblue> A MULTI-ANSWER QUESTION: </span> If we wanted to take a look at the data stored in the object called *grades*, we could run... (Note: You must select ALL true statements for the answer to be correct.)",
     answer("View(grades)", correct = TRUE),
     answer("head(grades)", correct = TRUE),
     answer("look(grades)", message = "There is no *look()* function in R."),
     answer("head(''grades'')", message = "Hint: We do not use quotes around the name of objects."),
     answer("''head''(grades)", message = "Hint: We do not use quotes around the name of functions."),
-    post_message = "We could run either  <span style=color:dodgerblue> View(grades) </span> or  <span style=color:dodgerblue> head(grades) </span>.<br><br> The first piece of code will open a new tab in the upper-left window of RStudio with the contents of the dataset. The second will show the first six rows or observations in the dataset.",
+    post_message = "We could run either  ` View(grades) ` or  ` head(grades) `.<br><br> The first piece of code will open a new tab in the upper-left window of RStudio with the contents of the dataset. The second will show the first six rows or observations in the dataset.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("If we ran <span style=color:dodgerblue> dim(grades) </span> and the output was <span style=color:lightslategray> 76   4</span>, we would conclude that...",
+  question("If we ran ` dim(grades) ` and the output was <span style=color:lightslategray> 76   4</span>, we would conclude that...",
     answer("The dataframe stored in the object called *grades* has 76 observations and 4 variables", correct = TRUE),
     answer("The dataframe stored in the object called *grades* has 76 variables and 4 observations", message = ""),
     answer("The dataframe stored in the object called *grades* has 80 observations", message = ""),
