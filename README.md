@@ -6,6 +6,7 @@ To be able to access the tutorials, open RStudio and run the following R code to
 
 ``` r
 remotes::install_github("rstudio/learnr")
+remotes::install_github("rstudio-education/gradethis")
 remotes::install_github("ellaudet/dsslearnr")
 ```
 
