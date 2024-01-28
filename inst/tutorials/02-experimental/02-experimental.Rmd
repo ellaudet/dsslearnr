@@ -1,5 +1,5 @@
 ---
-title: "DSS PRACTICE EXERCISES: CHAPTER 2"
+title: "DSS: CHAPTER 2"
 output:
   learnr::tutorial:
     progressive: true

@@ -1,5 +1,5 @@
 ---
-title: "DSS PRACTICE EXERCISES: CHAPTER 1"
+title: "DSS: CHAPTER 1"
 output:
   learnr::tutorial:
     progressive: true
@@ -59,7 +59,6 @@ DSS teaches from scratch R, statistics, and the fundamentals of quantitative soc
 
 Each chapter is divided into three to five topics, and each topic corresponds to one to five sections of the textbook. In other words, each topic reviews only a handful of pages of the textbook, which often can be read in a single seating. Here is the recommended sequence: 
 
-<body>
 <table>
   <tr>
     <th><span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ <span style=color:dodgerblue> STEP 1  <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span></th>
@@ -85,8 +84,7 @@ In chapter 1, we start from the very beginning by installing and familiarizing o
 
 The practice exercises for this chapter are organized into three topics. In the Table below, you can see (1) the topics, (2) the section(s) of the book that correspond to each topic, (3) the key concepts and mathematical notation discussed, and (4) the R functions and R operators reviewed.
 
-</head>
-<body>
+
 <table>
   <tr>
     <th> Topic </th>
@@ -117,15 +115,33 @@ The practice exercises for this chapter are organized into three topics. In the 
 Let's start! <br>
 
 ## <span style=color:dodgerblue> Introduction to R and RStudio
-Complete the following practice exercises *after* reading Sections 1 through 1.6 of DSS, including both, and *after* having followed the exercises in the book with your own computer.
+
+The practice exercises in this section cover:
+
+<table>
+  <tr>
+    <th> Readings </th>
+    <th> Key Concepts and Notation </th>
+    <th> R Functions and Operators </th>
+  </tr>
+  <tr>
+    <td>1-1.6</td>
+    <td> NA </td>
+    <td>  +, -, *, /, <-, ", (), sqrt(), # </td>
+  </tr>
+</table>
+
+Make sure to complete the practice exercises *after* reading Sections 1 through 1.6 of DSS, including both, and *after* having followed the exercises in the book with your own computer. (The practice exercises are not meant to be a substitute for the book, but rather a supplement.) 
 
 There are two kinds of exercises below:
 
 - multiple-choice questions
 - practicing typing and running code
 
-<br>
+I recommend doing them in the order presented.<br><br>
+
 <font size="+2"> <span style=color:dodgerblue> (A) Multiple-Choice Questions </span></font>
+
 ```{r quiz}
 quiz(caption="",
   question("What program(s) are we going to use to analyze data in this book?",
@@ -356,14 +372,32 @@ grade_result(
 )
 ```
 
-
-
-
-
-
 ## <span style=color:dodgerblue> Observations and Variables
-Complete the following practice exercises *after* reading Section 1.7 of DSS and *after* having followed the exercises in the book with your own computer.
+The practice exercises in this section cover:
 
+<table>
+  <tr>
+    <th> Readings </th>
+    <th> Key Concepts and Notation </th>
+    <th> R Functions and Operators </th>
+  </tr>
+  <tr>
+     <td> 1.7 </td>
+    <td> dataframes, observations, variables, unit of observation, $i$, character vs. numeric variables, binary vs. non-binary variables, $n$ </td>
+    <td> setwd(), read.csv(), View(), head(), dim() </td>
+  </tr>
+</table>
+    
+Make sure to complete the practice exercises *after* reading Section 1.7 of DSS, and *after* having followed the exercises in the book with your own computer. (The practice exercises are not meant to be a substitute for the book, but rather a supplement.) 
+
+There are two kinds of exercises below:
+
+- multiple-choice questions
+- practicing typing and running code
+
+I recommend doing them in the order presented.<br><br>
+
+<font size="+2"> <span style=color:dodgerblue> (A) Multiple-Choice Questions </span></font>
 
 ```{r quiz2}
 quiz(caption="",
@@ -467,17 +501,17 @@ quiz(caption="",
     answer("run ` setwd(''C:/user/Desktop/DSS'') ` if we have a Windows computer, where *user* is our username", correct = TRUE),
     answer("save the R script to the DSS folder and then use the dropdown menu to set the working directory manually: Session > Set Working Directory > To Source File Location", correct = TRUE),
     answer("run ` setwd(~/Desktop/DSS) ` if we have a Mac", message = "Hint: The path to the folder is text and not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL."),
-    post_message = "We can use the function *setwd()* to set the working directory. The only required argument is the path to the folder in quotes. The path to the folder is different depending on whether we have a Mac or a Windows machine. (See examples above.)<br><br> When in doubt, we can always set the working directory manually by using RStudio's dropdown menu. If we have saved the R script in the same folder where the data that we will use is, then we can use the dropdown menu to set the working directory manually: Session > Set Working Directory > To Source File Location",
+    post_message = "We can use the function `setwd()` to set the working directory. The only required argument is the path to the folder in quotes. The path to the folder is different depending on whether we have a Mac or a Windows machine. (See examples above.)<br><br> When in doubt, we can always set the working directory manually by using RStudio's dropdown menu. If we have saved the R script in the same folder where the data that we will use is, then we can use the dropdown menu to set the working directory manually: Session > Set Working Directory > To Source File Location",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("What would be the code to read a CSV file called *testscores.csv* and store the data from that file in an object called *grades*?",
-    answer("grades <- read.csv(''testscores.csv'')", correct = TRUE),
-    answer("read.csv(''testscores.csv'')", message = "This code will read the data from the CSV file, but it won't store it into an object called *grades*."),
-    answer("grades <- read.csv(testscores.csv)", message = "You are almost there. Hint: The file name is text and not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL."),
-    answer("grades <- read.csv(''testscores'')", message = "You are almost there. Hint: The file name needs to include its extension (i.e., ''.csv'')."),
-    answer("testcores <- read.csv(''grades.csv'')", message = "You are almost there. Hint: The name of the file is *testcores.csv* and the name of the object is *grades*, not the other way around."),
-    post_message = "The correct answer is: ` grades <- read.csv(''testscores.csv'') `<br><br>
+    answer("`grades <- read.csv(''testscores.csv'')`", correct = TRUE),
+    answer("`read.csv(''testscores.csv'')`", message = "This code will read the data from the CSV file, but it won't store it into an object called *grades*."),
+    answer("`grades <- read.csv(testscores.csv)`", message = "You are almost there. Hint: The file name is text and not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL."),
+    answer("`grades <- read.csv(''testscores'')`", message = "You are almost there. Hint: The file name needs to include its extension (i.e., ''.csv'')."),
+    answer("`testcores <- read.csv(''grades.csv'')`", message = "You are almost there. Hint: The name of the file is *testcores.csv* and the name of the object is *grades*, not the other way around."),
+    post_message = "The correct answer is: `grades <- read.csv(''testscores.csv'') `<br><br>
     To create an object, we use the assignment operator ` <- ` <br>
     To the left of the assignment operator, we specify the name of the object; *grades* in this case. <br>
     To the right of the assignment operator, we specify the contents, which, in this case, are produced by reading the CSV file *testcores.csv*. <br><br>
@@ -486,11 +520,11 @@ quiz(caption="",
     allow_retry = TRUE
   ),
   question("<span style=color:dodgerblue> A MULTI-ANSWER QUESTION: </span> If we wanted to take a look at the data stored in the object called *grades*, we could run... (Note: You must select ALL true statements for the answer to be correct.)",
-    answer("View(grades)", correct = TRUE),
-    answer("head(grades)", correct = TRUE),
-    answer("look(grades)", message = "There is no *look()* function in R."),
-    answer("head(''grades'')", message = "Hint: We do not use quotes around the name of objects."),
-    answer("''head''(grades)", message = "Hint: We do not use quotes around the name of functions."),
+    answer("`View(grades)`", correct = TRUE),
+    answer("`head(grades)`", correct = TRUE),
+    answer("`look(grades)`", message = "There is no *look()* function in R."),
+    answer("`head(''grades'')`", message = "Hint: We do not use quotes around the name of objects."),
+    answer("`''head''(grades)`", message = "Hint: We do not use quotes around the name of functions."),
     post_message = "We could run either  ` View(grades) ` or  ` head(grades) `.<br><br> The first piece of code will open a new tab in the upper-left window of RStudio with the contents of the dataset. The second will show the first six rows or observations in the dataset.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -500,15 +534,117 @@ quiz(caption="",
     answer("The dataframe stored in the object called *grades* has 76 variables and 4 observations", message = ""),
     answer("The dataframe stored in the object called *grades* has 80 observations", message = ""),
     answer("The dataframe stored in the object called *grades* has 764 observations", message = ""),
-    post_message = "The *dim()* function provides the dimensions of a dataframe. The only required argument is the name of the object where the dataframe is stored (without quotes). The output is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables.<br> <br> 
+    post_message = "The `dim()` function provides the dimensions of a dataframe. The only required argument is the name of the object where the dataframe is stored (without quotes). The output is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables.<br> <br> 
     In this case, since the output was <span style=color:lightslategray> 76   4</span>, the dataframe stored in the object called *grades* has 76 observations and 4 variables.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ))
 ```
 
+
+<br>
+<font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
+
+For the next few questions, we are going to continue to work with the STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the description of the variables in this dataset, where the unit of observation is students.
+
+<table>
+  <tr> 
+    <th> variable </th>
+    <th> description </th>
+  </tr>
+  <tr>
+    <td> *classtype* </td>
+    <td>  class size the student attended: 'small' or 'regular'
+  </tr>
+  <tr>  
+    <td>*reading* </td>
+    <td> student's third-grade reading test scores (in points) </td>
+  </tr>
+  <tr>  
+    <td> *math* </td>
+    <td>  student's third-grade math test scores (in points) </td>
+  <tr>
+    <td>*graduated* </td>
+    <td>  identifies whether the student graduated from high school: <br>1{=}graduated or 0{=}did not graduate </td>
+  </tr>
+</table>
+ 
+<br> **Suppose the dataset has already been stored in an object called `star`.** 
+
+<br> **Use the `head()` function to ask R to show you the first six observations of the object `star`**
+
+```{r star}
+star <- read.csv("data/STAR.csv")
+```
+
+```{r r4, exercise=TRUE, exercise.setup = "star", exercise.lines = 1}
+
+```
+
+<div id="r4-hint">
+Hint: The `head()` function shows the first six observations in a dataframe and the only required argument is the name of object where the dataframe is stored.
+</div>
+
+```{r r4-solution}
+head(star)
+```
+
+```{r r4-check}
+grade_code("<br><br>The `head()` function shows the first six observations in a dataframe. The only required argument is the name of object where the dataframe is stored; here: `star`.")
+```
+
+<br> **Now, use the `head()` function again to ask R to show you just the first *two* observations of the object `star`**
+
+```{r r5, exercise=TRUE, exercise.setup = "star", exercise.lines = 1}
+
+```
+
+<div id="r5-hint">
+Hint: To change the number of observations displayed by the `head()` function, we can use the optional argument named `n`. 
+</div>
+
+```{r r5-solution}
+head(star,n=2)
+```
+
+```{r r5-check}
+grade_code("<br><br>To change the number of observations displayed by the `head()` function, we can use the optional argument named `n`.")
+```
+
+<!-- ```{r r4-check} -->
+<!-- grade_result( -->
+<!--   pass_if(~ identical(.result, head(star)), "<br><br> The function `head()` ...") -->
+<!-- ) -->
+<!-- ``` -->
+
+[STILL WORKING ON THESE]
+
 ## <span style=color:dodgerblue> Computing and Interpreting Means
-Complete the following practice exercises *after* reading Sections 1.8 through 1.10 of DSS, including both, and *after* having followed the exercises in the book with your own computer.
+The practice exercises in this section cover:
+
+<table>
+  <tr>
+    <th> Readings </th>
+    <th> Key Concepts and Notation </th>
+    <th> R Functions and Operators </th>
+  </tr>
+  <tr>
+     <td> 1.8-1.10 </td>
+    <td> mean or average, $\sum$, unit of measurement  </td>
+    <td> $, mean()  </td>
+  </tr>
+</table>
+    
+Make sure to complete the practice exercises *after* reading Sections 1.8 through 1.10 of DSS, including both, and *after* having followed the exercises in the book with your own computer. (The practice exercises are not meant to be a substitute for the book, but rather a supplement.) 
+
+There are two kinds of exercises below:
+
+- multiple-choice questions
+- practicing typing and running code
+
+I recommend doing them in the order presented.<br><br>
+
+<font size="+2"> <span style=color:dodgerblue> (A) Multiple-Choice Questions </span></font>
 
 ```{r quiz3}
 quiz(caption="",
@@ -568,3 +704,36 @@ question("If the unit of observation is students and *attended* = {0, 0, 1, 1, 1
   ))
 ```
 
+
+<br>
+<font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
+
+For the next few questions, we are going to continue to work with the STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the description of the variables in this dataset, where the unit of observation is students.
+
+<table>
+  <tr> 
+    <th> variable </th>
+    <th> description </th>
+  </tr>
+  <tr>
+    <td> *classtype* </td>
+    <td>  class size the student attended: 'small' or 'regular'
+  </tr>
+  <tr>  
+    <td>*reading* </td>
+    <td> student's third-grade reading test scores (in points) </td>
+  </tr>
+  <tr>  
+    <td> *math* </td>
+    <td>  student's third-grade math test scores (in points) </td>
+  <tr>
+    <td>*graduated* </td>
+    <td>  identifies whether the student graduated from high school: <br>1{=}graduated or 0{=}did not graduate </td>
+  </tr>
+</table>
+ 
+<br> **Suppose the dataset has already been stored in an object called `star`.** 
+
+<br> **Use the `head()` function to ask R to show you the first six observations of the object `star`**
+
+[STILL WORKING ON THESE]
