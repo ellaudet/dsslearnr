@@ -120,7 +120,14 @@ $(document).ready(function() {
 });
 </script>
 <style>
-
+.borderexample {
+ border-width:1px;
+ border-style:solid;
+ border-color:dodgerblue;
+ padding: 15px;
+}
+</style>
+<style>
 table, td, th {
   border: 1px solid lightgray;
 }
@@ -339,6 +346,16 @@ supplement.)</p>
 <p>I recommend doing them in the order presented.<br><br></p>
 <p><font size="+2"> <span style="color:dodgerblue"> (A) Multiple-Choice
 Questions </span></font></p>
+<p class="borderexample">
+<strong>Instructions</strong><br><br>Most multiple-choice questions have
+only one correct answer. Those that have multiple correct answers are
+labeled “A MULTI-ANSWER QUESTION.”<br><br> Select the correct answer(s)
+and click on the <em>Submit Answer</em> button in blue. <br><br> If you
+didn’t choose the correct answer(s) click on the <em>Try Again</em>
+button in orange and keep trying until you submit the correct answer(s).
+<br><br> To help you understand the correct answer(s), most questions
+will provide you some feedback. Please make sure to read it.
+</p>
 <div class="panel-heading tutorial-quiz-title"></div>
 <div class="panel panel-default tutorial-question-container">
 <div data-label="quiz-1" class="tutorial-question panel-body">
@@ -438,7 +455,26 @@ Questions </span></font></p>
 </div>
 <p><br> <font size="+2"> <span style="color:dodgerblue"> (B) Practicing
 Typing and Running Code </span></font></p>
-<p><br> <strong>Ask R to compute 30+6</strong></p>
+<p class="borderexample">
+<strong>Instructions</strong><br><br>When running code on our own
+computers, we write the code on the R script (the upper left window of
+RStudio), then we highlight the code we want to run and either (a)
+manually click on the <em>Run</em> icon of RStudio or (b) use the
+shortcut <em>command+enter</em> in Mac or <em>ctrl+enter</em> in
+Windows.<br><br> When running code on the tutorials, however, we have to
+do things a little differently. Every time an exercise asks you to type
+and run some code, you will see an <em>R code</em> window. This is where
+you will type the code. <br><br> Once you are done typing the code, you
+can run it by clicking on the <em>Run Code</em> button in green. The
+output produced by the executed code will appear underneath the <em>R
+code</em> window.<br><br> Once you are satisfied with your answer, you
+can submit it by clicking on the <em>Submit Answer</em> button in blue.
+<br><br> To help you figure out the right answer, some questions contain
+hints. You can access them by clicking on the <em>Hint</em> button in
+white.
+</p>
+<p><br> <span style="color:dodgerblue"> <strong>Q1:</strong> </span>
+<strong>Ask R to compute 30+6</strong></p>
 <div class="tutorial-exercise" data-label="r1" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="1"
 data-pipe="|&gt;">
@@ -452,7 +488,8 @@ data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
 <pre class="text"><code>30+6</code></pre>
 </div>
-<p><br> <strong>Ask R to store <code>30+6</code> into an object called
+<p><br> <span style="color:dodgerblue"> <strong>Q2:</strong> </span>
+<strong>Ask R to store <code>30+6</code> into an object called
 <code>thirtysix</code></strong></p>
 <div class="tutorial-exercise" data-label="r2" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="1"
@@ -471,7 +508,8 @@ data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
 <pre class="text"><code>thirtysix &lt;- 30+6</code></pre>
 </div>
-<p><br> <strong>Ask R to show you the contents of the object
+<p><br> <span style="color:dodgerblue"> <strong>Q3:</strong> </span>
+<strong>Ask R to show you the contents of the object
 <code>thirtysix</code></strong></p>
 <div class="tutorial-exercise" data-label="r2b" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="1"
@@ -487,8 +525,9 @@ data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
 <pre class="text"><code>thirtysix</code></pre>
 </div>
-<p><br> <strong>Use the <code>sqrt()</code> function to ask R to compute
-the square root of 36</strong></p>
+<p><br> <span style="color:dodgerblue"> <strong>Q4:</strong> </span>
+<strong>Use the <code>sqrt()</code> function to ask R to compute the
+square root of 36</strong></p>
 <div class="tutorial-exercise" data-label="r3" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="1"
 data-pipe="|&gt;">
@@ -547,6 +586,16 @@ to be a substitute for the book, but rather a supplement.)</p>
 <p>I recommend doing them in the order presented.<br><br></p>
 <p><font size="+2"> <span style="color:dodgerblue"> (A) Multiple-Choice
 Questions </span></font></p>
+<p class="borderexample">
+<strong>Instructions</strong><br><br>Most multiple-choice questions have
+only one correct answer. Those that have multiple correct answers are
+labeled “A MULTI-ANSWER QUESTION.”<br><br> Select the correct answer(s)
+and click on the <em>Submit Answer</em> button in blue. <br><br> If you
+didn’t choose the correct answer(s) click on the <em>Try Again</em>
+button in orange and keep trying until you submit the correct answer(s).
+<br><br> To help you understand the correct answer(s), most questions
+will provide you some feedback. Please make sure to read it.
+</p>
 <div class="panel-heading tutorial-quiz-title"></div>
 <div class="panel panel-default tutorial-question-container">
 <div data-label="quiz2-1" class="tutorial-question panel-body">
@@ -662,6 +711,24 @@ Questions </span></font></p>
 </div>
 <p><br> <font size="+2"> <span style="color:dodgerblue"> (B) Practicing
 Typing and Running Code </span></font></p>
+<p class="borderexample">
+<strong>Instructions</strong><br><br>When running code on our own
+computers, we write the code on the R script (the upper left window of
+RStudio), then we highlight the code we want to run and either (a)
+manually click on the <em>Run</em> icon of RStudio or (b) use the
+shortcut <em>command+enter</em> in Mac or <em>ctrl+enter</em> in
+Windows.<br><br> When running code on the tutorials, however, we have to
+do things a little differently. Every time an exercise asks you to type
+and run some code, you will see an <em>R code</em> window. This is where
+you will type the code. <br><br> Once you are done typing the code, you
+can run it by clicking on the <em>Run Code</em> button in green. The
+output produced by the executed code will appear underneath the <em>R
+code</em> window.<br><br> Once you are satisfied with your answer, you
+can submit it by clicking on the <em>Submit Answer</em> button in blue.
+<br><br> To help you figure out the right answer, some questions contain
+hints. You can access them by clicking on the <em>Hint</em> button in
+white.
+</p>
 <p>For the next few questions, we are going to continue to work with the
 STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the
 description of the variables in this dataset, where the unit of
@@ -709,9 +776,9 @@ identifies whether the student graduated from high school:
 </table>
 <p><br> <strong>Suppose the dataset has already been stored in an object
 called <code>star</code>.</strong></p>
-<p><br> <strong>Use the <code>head()</code> function to ask R to show
-you the first six observations of the object
-<code>star</code></strong></p>
+<p><br> <span style="color:dodgerblue"> <strong>Q1:</strong> </span>
+<strong>Use the <code>head()</code> function to ask R to show you the
+first six observations of the object <code>star</code></strong></p>
 <div class="tutorial-exercise" data-label="r4" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="1"
 data-pipe="|&gt;">
@@ -727,8 +794,9 @@ data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
 <pre class="text"><code>head(star)</code></pre>
 </div>
-<p><br> <strong>Now, use the <code>head()</code> function again to ask R
-to show you just the first <em>two</em> observations of the object
+<p><br> <span style="color:dodgerblue"> <strong>Q2:</strong> </span>
+<strong>Now, use the <code>head()</code> function again to ask R to show
+you just the first <em>two</em> observations of the object
 <code>star</code></strong></p>
 <div class="tutorial-exercise" data-label="r5" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="1"
@@ -745,12 +813,7 @@ data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
 <pre class="text"><code>head(star,n=2)</code></pre>
 </div>
-<!-- ```{r r4-check} -->
-<!-- grade_result( -->
-<!--   pass_if(~ identical(.result, head(star)), "<br><br> The function `head()` ...") -->
-<!-- ) -->
-<!-- ``` -->
-<p>[STILL WORKING ON THESE]</p>
+<p>[…STILL WORKING ON THESE…]</p>
 </div>
 <div id="section-computing-and-interpreting-means"
 class="section level2">
@@ -794,6 +857,16 @@ rather a supplement.)</p>
 <p>I recommend doing them in the order presented.<br><br></p>
 <p><font size="+2"> <span style="color:dodgerblue"> (A) Multiple-Choice
 Questions </span></font></p>
+<p class="borderexample">
+<strong>Instructions</strong><br><br>Most multiple-choice questions have
+only one correct answer. Those that have multiple correct answers are
+labeled “A MULTI-ANSWER QUESTION.”<br><br> Select the correct answer(s)
+and click on the <em>Submit Answer</em> button in blue. <br><br> If you
+didn’t choose the correct answer(s) click on the <em>Try Again</em>
+button in orange and keep trying until you submit the correct answer(s).
+<br><br> To help you understand the correct answer(s), most questions
+will provide you some feedback. Please make sure to read it.
+</p>
 <div class="panel-heading tutorial-quiz-title"></div>
 <div class="panel panel-default tutorial-question-container">
 <div data-label="quiz3-1" class="tutorial-question panel-body">
@@ -837,6 +910,24 @@ Questions </span></font></p>
 </div>
 <p><br> <font size="+2"> <span style="color:dodgerblue"> (B) Practicing
 Typing and Running Code </span></font></p>
+<p class="borderexample">
+<strong>Instructions</strong><br><br>When running code on our own
+computers, we write the code on the R script (the upper left window of
+RStudio), then we highlight the code we want to run and either (a)
+manually click on the <em>Run</em> icon of RStudio or (b) use the
+shortcut <em>command+enter</em> in Mac or <em>ctrl+enter</em> in
+Windows.<br><br> When running code on the tutorials, however, we have to
+do things a little differently. Every time an exercise asks you to type
+and run some code, you will see an <em>R code</em> window. This is where
+you will type the code. <br><br> Once you are done typing the code, you
+can run it by clicking on the <em>Run Code</em> button in green. The
+output produced by the executed code will appear underneath the <em>R
+code</em> window.<br><br> Once you are satisfied with your answer, you
+can submit it by clicking on the <em>Submit Answer</em> button in blue.
+<br><br> To help you figure out the right answer, some questions contain
+hints. You can access them by clicking on the <em>Hint</em> button in
+white.
+</p>
 <p>For the next few questions, we are going to continue to work with the
 STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the
 description of the variables in this dataset, where the unit of
@@ -884,10 +975,10 @@ identifies whether the student graduated from high school:
 </table>
 <p><br> <strong>Suppose the dataset has already been stored in an object
 called <code>star</code>.</strong></p>
-<p><br> <strong>Use the <code>head()</code> function to ask R to show
-you the first six observations of the object
-<code>star</code></strong></p>
-<p>[STILL WORKING ON THESE] 
+<p><br> <span style="color:dodgerblue"> <strong>Q1:</strong> </span>
+<strong>Use the <code>head()</code> function to ask R to show you the
+first six observations of the object <code>star</code></strong></p>
+<p>[…STILL WORKING ON THESE…] 
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
@@ -918,22 +1009,22 @@ session$onSessionEnded(function() {
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-1", question = structure("What program(s) are we going to use to analyze data in this book?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_e37b683", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-1", question = structure("<span style=color:dodgerblue> Q1: <\u002fspan> What program(s) are we going to use to analyze data in this book?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_6b0ca90", 
     option = "We will use two programs: R and RStudio", value = "We will use two programs: R and RStudio", 
     label = structure("We will use two programs: R and RStudio", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6316364", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9ee71d2", 
     option = "We will use one program: R", value = "We will use one program: R", 
     label = structure("We will use one program: R", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("This is one of the programs we will use, but it is not the only one", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_65b450", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ce635e2", 
     option = "We will use one program: RStudio", value = "We will use one program: RStudio", 
     label = structure("We will use one program: RStudio", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("This is one of the programs we will use, but it is not the only one.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_409a993", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d157feb", 
     option = "We will use one program: Python", value = "We will use one program: Python", 
     label = structure("We will use one program: Python", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Maybe in a future version of the book, but not on the one you are reading now.", html = TRUE, class = c("html", 
@@ -946,23 +1037,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("We will use two programs: R and RStudio. <br><br>\nR is the statistical program, the engine if you will, that will perform the calculations and create the graphics for us.<br><br>\nRStudio is the user-friendly interface we will use to communicate with R. While we could use R directly, going through RStudio makes writing and running code much easier. <br><br> Make sure you have both installed on your computer!", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz-1-answer", question = "quiz-1"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1948562778.09263, options = list()), class = c("learnr_radio", 
+    seed = 292546801.863772, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-2", question = structure("What do we usually do after opening RStudio?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_191d15f", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-2", question = structure("<span style=color:dodgerblue> Q2: <\u002fspan>What do we usually do after opening RStudio?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_2112ed5", 
     option = "Open an R script so that we can use it to write and run code", 
     value = "Open an R script so that we can use it to write and run code", 
     label = structure("Open an R script so that we can use it to write and run code", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a532030", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c00710f", 
     option = "Write R code directly into the Console", value = "Write R code directly into the Console", 
     label = structure("Write R code directly into the Console", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("You could do this, but it is not recommended. If you write code directly into the Console, you won’t be able to save it, re-run it, tweak it, expand it, and share it.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_36e72f5", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5e4c885", 
     option = "Open R", value = "Open R", label = structure("Open R", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("RStudio automatically opens R on its own. We do not open it ourselves.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -974,30 +1065,30 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("It is best to run code through an R script so that you can save it, re-run it, tweak it, expand it, and share it. So, after opening RStudio, we usually open the R script that we will use to write and run code.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz-2-answer", question = "quiz-2"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 2057109874.04208, options = list()), class = c("learnr_radio", 
+    seed = 731740057.159257, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-3", question = structure("How do we run code that has already been written on an R script?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_7b09862", 
-    option = "We highlight the code we want to run and either (a) manually hit the *Run* icon RStudio displays in the upper right corner of the R script window or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows", 
-    value = "We highlight the code we want to run and either (a) manually hit the *Run* icon RStudio displays in the upper right corner of the R script window or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows", 
-    label = structure("We highlight the code we want to run and either (a) manually hit the <em>Run<\u002fem> icon RStudio displays in the upper right corner of the R script window or (b) use the shortcut <em>command+enter<\u002fem> in Mac or <em>ctrl+enter<\u002fem> in Windows", html = TRUE, class = c("html", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-3", question = structure("<span style=color:dodgerblue> Q3: <\u002fspan>How do we run code that has already been written on an R script?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_98addde", 
+    option = "We highlight the code we want to run and either (a) manually click on the *Run* icon RStudio displays in the upper right corner of the R script window or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows", 
+    value = "We highlight the code we want to run and either (a) manually click on the *Run* icon RStudio displays in the upper right corner of the R script window or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows", 
+    label = structure("We highlight the code we want to run and either (a) manually click on the <em>Run<\u002fem> icon RStudio displays in the upper right corner of the R script window or (b) use the shortcut <em>command+enter<\u002fem> in Mac or <em>ctrl+enter<\u002fem> in Windows", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d657177", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_debe48a", 
     option = "We highlight the code we want to run and hit *enter*", 
     value = "We highlight the code we want to run and hit *enter*", 
     label = structure("We highlight the code we want to run and hit <em>enter<\u002fem>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Almost! You are missing the key that must be used in conjunction with <em>enter<\u002fem>.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_cd3db45", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f46927", 
     option = "We highlight the code we want to run and hit the *spacebar*", 
     value = "We highlight the code we want to run and hit the *spacebar*", 
     label = structure("We highlight the code we want to run and hit the <em>spacebar<\u002fem>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2f6c61b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6a2f8dd", 
     option = "We highlight the code we want to run and hit *F1*", 
     value = "We highlight the code we want to run and hit *F1*", 
     label = structure("We highlight the code we want to run and hit <em>F1<\u002fem>", html = TRUE, class = c("html", 
@@ -1007,27 +1098,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
 "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
-"character")), message = NULL, post_message = structure("We highlight the code we want to run and either (a) manually hit the <em>Run<\u002fem> icon RStudio displays in the upper right corner of the R script window or (b) use the shortcut <em>command+enter<\u002fem> in Mac or <em>ctrl+enter<\u002fem> in Windows.", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = structure("We highlight the code we want to run and either (a) manually click on the <em>Run<\u002fem> icon RStudio displays in the upper right corner of the R script window or (b) use the shortcut <em>command+enter<\u002fem> in Mac or <em>ctrl+enter<\u002fem> in Windows.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz-3-answer", question = "quiz-3"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 550757522.743533, options = list()), class = c("learnr_radio", 
+    seed = 1243727764.42084, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-4", question = structure("Which of the following pieces of R code will compute 3 + 3?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_c1a4428", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-4", question = structure("<span style=color:dodgerblue> Q4: <\u002fspan>Which of the following pieces of R code will compute 3 + 3?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_aeb04d", 
     option = "`3 + 3`", value = "`3 + 3`", label = structure("<code>3 + 3<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_14f98ec", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9cc7364", 
     option = "`three + three`", value = "`three + three`", label = structure("<code>three + three<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("This code is not correct unless you had previously created an object named <code>three<\u002fcode> containing the number <code>3<\u002fcode>.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ad47c68", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7e48f9e", 
     option = "`3 plus 3`", value = "`3 plus 3`", label = structure("<code>3 plus 3<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("The R operator for summation is <code>+<\u002fcode>, not <code>plus<\u002fcode>.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_726cf8d", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_927b5a1", 
     option = "`three plus three`", value = "`three plus three`", 
     label = structure("<code>three plus three<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -1039,30 +1130,30 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("The correct answer is: <code>3 + 3<\u002fcode>.<br><br>\nSince spaces around operators are ignored by R, we could also use <code>3+3<\u002fcode> or <code>3 +3<\u002fcode> or <code>3+ 3<\u002fcode>.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz-4-answer", question = "quiz-4"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 431808321.798924, options = list()), class = c("learnr_radio", 
+    seed = 276851301.371081, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-5", question = structure("Which of the following pieces of R code will create an object called <em>three<\u002fem> containing the number 3?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_bb3e652", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-5", question = structure("<span style=color:dodgerblue> Q5: <\u002fspan>Which of the following pieces of R code will create an object called <em>three<\u002fem> containing the number 3?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_cc0475c", 
     option = "`three <- 3`", value = "`three <- 3`", label = structure("<code>three &lt;- 3<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_65b4cbb", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_dcc8b6b", 
     option = "`three << 3`", value = "`three << 3`", label = structure("<code>three &lt;&lt; 3<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: To create an object, we use the assignment operator <code>&lt;-<\u002fcode>", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5d51d9a", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e44f4e", 
     option = "`''three'' <- 3 `", value = "`''three'' <- 3 `", 
     label = structure("<code>''three'' &lt;- 3 <\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Recall: We do not use quotes around the name of objects.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_16a3ec6", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f142c7c", 
     option = "`3 <- three`", value = "`3 <- three`", label = structure("<code>3 &lt;- three<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Recall: To create an object, we use the assignment operator <code>&lt;-<\u002fcode>. To the left of the assignment operator, we specify the name of the object. And, to the right of the assignment operator, we specify the contents.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6c3b176", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_37eb879", 
     option = "`three <- ''3''`", value = "`three <- ''3''`", 
     label = structure("<code>three &lt;- ''3''<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Recall: We do not use quotes around numbers. This code will run, but the object <em>three<\u002fem> will contain the text ‘‘3’’, not the number 3, and thus we would not be able to do math with it.", html = TRUE, class = c("html", 
@@ -1075,27 +1166,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("The correct answer is: <code>three &lt;- 3<\u002fcode> <br><br>\nExplanation: To create an object, we use the assignment operator <code>&lt;-<\u002fcode> <br>\nTo the left of the assignment operator, we specify the name of the object; in this case: <code>three<\u002fcode> <br>\nTo the right of the assignment operator, we specify the contents; in this case: <code>3<\u002fcode><br><br>\nRemember: we do not use quotes around numbers or around the name of objects.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz-5-answer", question = "quiz-5"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1327328675.38191, options = list()), class = c("learnr_radio", 
+    seed = 1278497269.90465, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-6", question = structure("Which of the following pieces of R code will create an object called <em>today<\u002fem> containing the text <em>Monday<\u002fem>?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_7d79786", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-6", question = structure("<span style=color:dodgerblue> Q6: <\u002fspan>Which of the following pieces of R code will create an object called <em>today<\u002fem> containing the text <em>Monday<\u002fem>?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_48ae9c6", 
     option = "`today <- ''Monday''`", value = "`today <- ''Monday''`", 
     label = structure("<code>today &lt;- ''Monday''<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5ad287b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b641dfd", 
     option = "`today <- Monday`", value = "`today <- Monday`", 
     label = structure("<code>today &lt;- Monday<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: When writing code in R, we do not use quotes around: (1) the name of objects, (2) the name of functions, (3) the name of arguments, and (4) special characters such as TRUE, FALSE, NA, and NULL; all other text should be in quotes.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b5aac07", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_180283d", 
     option = "`''today'' <- Monday`", value = "`''today'' <- Monday`", 
     label = structure("<code>''today'' &lt;- Monday<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: When writing code in R, we do not use quotes around: (1) the name of objects, (2) the name of functions, (3) the name of arguments, and (4) special characters such as TRUE, FALSE, NA, and NULL; all other text should be in quotes.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9c2f288", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_51e1b88", 
     option = "`''today'' <- ''Monday''`", value = "`''today'' <- ''Monday''`", 
     label = structure("<code>''today'' &lt;- ''Monday''<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: When writing code in R, we do not use quotes around: (1) the name of objects, (2) the name of functions, (3) the name of arguments, and (4) special characters such as TRUE, FALSE, NA, and NULL; all other text should be in quotes.", html = TRUE, class = c("html", 
@@ -1108,31 +1199,31 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("The correct answer is: <code>today &lt;- ''Monday''<\u002fcode><br><br>\nNote: We do not use quotes around <code>today<\u002fcode> because it is the name of an object, and we do use quotes around <code>Monday<\u002fcode> because it is text and neither of the exceptions. <br><br>\nRecall: When writing code in R, we do not use quotes around: (1) the name of objects, (2) the name of functions, (3) the name of arguments, and (4) special characters such as TRUE, FALSE, NA, and NULL; all other text should be in quotes.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz-6-answer", question = "quiz-6"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1117633137.97956, options = list()), class = c("learnr_radio", 
+    seed = 1017623478.02613, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-7", question = structure("What would happen if after running the code from the previous question, we ran the following piece of R code: <code>today &lt;- Tuesday<\u002fcode>", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_7df3902", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-7", question = structure("<span style=color:dodgerblue> Q7: <\u002fspan>What would happen if after running the code from the previous question, we ran the following piece of R code: <code>today &lt;- Tuesday<\u002fcode>", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_ae5246e", 
     option = "The following error message will appear in the Console: <span style=color:red> Error: object 'Tuesday' not found `", 
     value = "The following error message will appear in the Console: <span style=color:red> Error: object 'Tuesday' not found `", 
     label = structure("The following error message will appear in the Console: <span style=color:red> Error: object ‘Tuesday’ not found `", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ab3aeb3", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_dd5f622", 
     option = "The object called *today* will now contain the text ''Tuesday'' instead of ''Monday''", 
     value = "The object called *today* will now contain the text ''Tuesday'' instead of ''Monday''", 
     label = structure("The object called <em>today<\u002fem> will now contain the text ‘‘Tuesday’’ instead of ‘‘Monday’’", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: Pay attention to the quotes used in the code.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f00da12", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6804784", 
     option = "A new object called *today* will be created, containing the text ''Tuesday''", 
     value = "A new object called *today* will be created, containing the text ''Tuesday''", 
     label = structure("A new object called <em>today<\u002fem> will be created, containing the text ‘‘Tuesday’’", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("We had already created an object called <em>today<\u002fem>. To figure out the correct answer: pay attention to the quotes used in the code.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_80818c2", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1a62436", 
     option = "Nothing will happen", value = "Nothing will happen", 
     label = structure("Nothing will happen", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -1144,28 +1235,28 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("Running <code>today &lt;- Tuesday<\u002fcode> will produce an error message letting us know that we do not have an object called ‘Tuesday’. <br><br>\nExplanation: Because we did not insert quotes around <code>Tuesday<\u002fcode>, R thinks <em>Tuesday<\u002fem> is the name of an object and so it goes searching for it. <br><br>\nNote: If we wanted to overwrite the contents of the object <em>today<\u002fem>, we would run <code> today &lt;- ''Tuesday''<\u002fcode>, with quotes around the word <em>Tuesday<\u002fem> so that R knows this is just text and not the name of an object.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz-7-answer", question = "quiz-7"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1432561000.33291, options = list()), class = c("learnr_radio", 
+    seed = 2067335681.53732, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-8", question = structure("How can we recognize that some text in a piece of R code is the name of a function?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_853defd", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-8", question = structure("<span style=color:dodgerblue> Q8: <\u002fspan>How can we recognize that some text in a piece of R code is the name of a function?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_5f202e6", 
     option = "The names of functions are always followed by parentheses", 
     value = "The names of functions are always followed by parentheses", 
     label = structure("The names of functions are always followed by parentheses", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_674e41", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ce397f7", 
     option = "The names of functions are always in quotes", value = "The names of functions are always in quotes", 
     label = structure("The names of functions are always in quotes", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("We do not use quotes around the names of functions. It is one of the exceptions.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3eb2c53", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_362c956", 
     option = "The names of functions are displayed in red by RStudio", 
     value = "The names of functions are displayed in red by RStudio", 
     label = structure("The names of functions are displayed in red by RStudio", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7b2a75", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_29d527c", 
     option = "The names of functions are underlined by RStudio", 
     value = "The names of functions are underlined by RStudio", 
     label = structure("The names of functions are underlined by RStudio", html = TRUE, class = c("html", 
@@ -1179,37 +1270,37 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("The names of functions are always followed by parentheses.<br><br>\nInside the parentheses, we write the argument(s) of the function, separated by commas if there is more than one argument. Example <code>sqrt(25)<\u002fcode>.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz-8-answer", question = "quiz-8"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 632479748.205479, options = list()), class = c("learnr_radio", 
+    seed = 636847181.703445, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-9", question = structure("<span style=color:dodgerblue> A MULTI-ANSWER QUESTION: <\u002fspan> As we learn in Section 1.6.3 of DSS, a function: <br><br>\n<center>\n<span style=color:dodgerblue> (1) <\u002fspan> takes input(s) <br> <span style=color:dodgerblue> (2) <\u002fspan> performs action(s) with the input(s)<br> <span style=color:dodgerblue> (3) <\u002fspan> produces output(s)<\u002fcenter><br>Which of the following statements are true? (Note: You must select ALL true statements for the answer to be correct.)", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_9902c83", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-9", question = structure("<span style=color:dodgerblue> Q9 - A MULTI-ANSWER QUESTION: <\u002fspan> As we learn in Section 1.6.3 of DSS, a function: <br><br>\n<center>\n<span style=color:dodgerblue> (1) <\u002fspan> takes input(s) <br> <span style=color:dodgerblue> (2) <\u002fspan> performs action(s) with the input(s)<br> <span style=color:dodgerblue> (3) <\u002fspan> produces output(s)<\u002fcenter><br>Which of the following statements are true? (Note: You must select ALL true statements for the answer to be correct.)", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_e890c26", 
     option = "The input(s) are also known as argument(s)", value = "The input(s) are also known as argument(s)", 
     label = structure("The input(s) are also known as argument(s)", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_654744b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f93db4b", 
     option = "We specify the argument(s) inside the parentheses that follow the name of the function", 
     value = "We specify the argument(s) inside the parentheses that follow the name of the function", 
     label = structure("We specify the argument(s) inside the parentheses that follow the name of the function", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a174d68", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6800bad", 
     option = "Some arguments are required; others are optional", 
     value = "Some arguments are required; others are optional", 
     label = structure("Some arguments are required; others are optional", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5a07eb2", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2636b83", 
     option = "The function `sqrt()` computes the square root of the argument specified inside the parentheses", 
     value = "The function `sqrt()` computes the square root of the argument specified inside the parentheses", 
     label = structure("The function <code>sqrt()<\u002fcode> computes the square root of the argument specified inside the parentheses", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c56c3e3", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b7b62b8", 
     option = "The output(s) are shown in the Console", value = "The output(s) are shown in the Console", 
     label = structure("The output(s) are shown in the Console", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_cbd865d", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_96e38e4", 
     option = "The name of the function determines the action(s) the function perform, the input(s) it requires, and the output(s) it produced.", 
     value = "The name of the function determines the action(s) the function perform, the input(s) it requires, and the output(s) it produced.", 
     label = structure("The name of the function determines the action(s) the function perform, the input(s) it requires, and the output(s) it produced.", html = TRUE, class = c("html", 
@@ -1222,24 +1313,24 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
 "character")), message = NULL, post_message = structure("All the statements above are true!", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz-9-answer", question = "quiz-9"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1380604487.85711, options = list()), class = c("learnr_checkbox", 
+    seed = 310920515.355216, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-10", question = structure("<span style=color:dodgerblue> A MULTI-ANSWER QUESTION: <\u002fspan> If we had run all the code above, which of the following pieces of R code could we use to compute the square root of 3? (Note: You must select ALL true statements for the answer to be correct.)", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_da8a62c", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-10", question = structure("<span style=color:dodgerblue> Q10 - A MULTI-ANSWER QUESTION: <\u002fspan> If we had run all the code above, which of the following pieces of R code could we use to compute the square root of 3? (Note: You must select ALL true statements for the answer to be correct.)", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_4201aa2", 
     option = "`sqrt(3)`", value = "`sqrt(3)`", label = structure("<code>sqrt(3)<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f53157e", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_618b393", 
     option = "`sqrt(three)`", value = "`sqrt(three)`", label = structure("<code>sqrt(three)<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_46bf63b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bde6f2a", 
     option = "`square_root(3)`", value = "`square_root(3)`", 
     label = structure("<code>square_root(3)<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("<code>square_root(3)<\u002fcode> is NOT one of the correct answers. This code will produce the following error message: <span style=color:red> Error in squareroot(3) : could not find function ‘‘squareroot’’<\u002fspan>.<br>", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b1907ca", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_28fc60f", 
     option = "`sroot(3)`", value = "`sroot(3)`", label = structure("<code>sroot(3)<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("<code>sroot(3)<\u002fcode> is NOT one of the correct answers. This code will produce the following error message: <span style=color:red> Error in sroot(3) : could not find function ‘‘sroot’’<\u002fspan>.<br>", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -1251,30 +1342,30 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
 "character")), message = NULL, post_message = structure("First, we could compute the square root of 3 by running <code>sqrt(3)<\u002fcode>.<br><br>\nExplanation: <code> sqrt()<\u002fcode> is an R function that computes the square root of the argument specified inside the parentheses. <br><br>\nSecond, since with the code above we created an object called <em>three<\u002fem> containing the number 3, we could aslo compute the square root of 3 by running <code> sqrt(three)<\u002fcode>.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz-10-answer", question = "quiz-10"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1583540499.26261, options = list()), class = c("learnr_checkbox", 
+    seed = 824905326.115874, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-11", question = structure("What would happen if after running all the code above, we ran the following piece of R code: <code> # square root of three is sqrt(three)<\u002fcode>", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_fef86b5", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-11", question = structure("<span style=color:dodgerblue> Q11: <\u002fspan>What would happen if after running all the code above, we ran the following piece of R code: <code> # square root of three is sqrt(three)<\u002fcode>", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_41cb0a0", 
     option = "Nothing will happen", value = "Nothing will happen", 
     label = structure("Nothing will happen", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_447df84", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f9eb9ba", 
     option = "R will compute the square root of 3 and provide the result in the Console", 
     value = "R will compute the square root of 3 and provide the result in the Console", 
     label = structure("R will compute the square root of 3 and provide the result in the Console", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3f481d0", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_84800e3", 
     option = "The following error message will appear in the Console: <span style=color:red> Error: object 'three' not found `", 
     value = "The following error message will appear in the Console: <span style=color:red> Error: object 'three' not found `", 
     label = structure("The following error message will appear in the Console: <span style=color:red> Error: object ‘three’ not found `", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("We do have an object called <em>three<\u002fem> in the environment, which contains the number 3", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c86d73b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f01e764", 
     option = "The following error message will appear in the Console: <span style=color:red> Error in sqrt(three) : could not find function ''sqrt''`.", 
     value = "The following error message will appear in the Console: <span style=color:red> Error in sqrt(three) : could not find function ''sqrt''`.", 
     label = structure("The following error message will appear in the Console: <span style=color:red> Error in sqrt(three) : could not find function ‘‘sqrt’’`.", html = TRUE, class = c("html", 
@@ -1288,27 +1379,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("Nothing will happen because this piece of code starts with the character <code>#<\u002fcode><br><br>\nExplanation: the character <code>#<\u002fcode> is used to comment code; R ignores anything that follows this character until the end of the line.<br><br>\nNote: Since we have an object called <em>three<\u002fem> containing the number 3, if we wanted R to compute the square root of 3, we could run <code>sqrt(three)<\u002fcode>.<br><br>\nAnd, if we wanted to add a comment to this piece of code, we would have to add it AFTER the executable code like this: <code>sqrt(three) # computes square root of three <\u002fcode>", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz-11-answer", question = "quiz-11"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 662472147.191512, options = list()), class = c("learnr_radio", 
+    seed = 1644275932.23432, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-12", question = structure("How do you know that you have some unsaved changes on your R script?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_619fa53", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-12", question = structure("<span style=color:dodgerblue> Q12: <\u002fspan>How do you know that you have some unsaved changes on your R script?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_df5ecec", 
     option = "RStudio displays the name of the R script in red", 
     value = "RStudio displays the name of the R script in red", 
     label = structure("RStudio displays the name of the R script in red", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6d77532", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5f5ea02", 
     option = "RStudio plays a sound when we try to close the program", 
     value = "RStudio plays a sound when we try to close the program", 
     label = structure("RStudio plays a sound when we try to close the program", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c671c68", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2ddd4c7", 
     option = "There is no way of knowing", value = "There is no way of knowing", 
     label = structure("There is no way of knowing", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9fa69dd", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_cd99286", 
     option = "By running the following code: `saved(?)`", value = "By running the following code: `saved(?)`", 
     label = structure("By running the following code: <code>saved(?)<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("There is no <code>saved()<\u002fcode> function in R.", html = TRUE, class = c("html", 
@@ -1321,7 +1412,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("RStudio displays the name of the R script in red whenever there are some unsaved changes. Once we save the changes, the name of the R script is displayed in black.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz-12-answer", question = "quiz-12"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 593858797.223463, options = list()), class = c("learnr_radio", 
+    seed = 705906406.171287, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
@@ -1513,25 +1604,25 @@ learnr:::store_exercise_cache(structure(list(label = "r3", global_setup = struct
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-1", question = structure("In a dataframe,…", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_8dea6e6", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-1", question = structure("<span style=color:dodgerblue> Q1: <\u002fspan>In a dataframe,…", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_9a8d0cb", 
     option = "rows are observations and columns are variables", 
     value = "rows are observations and columns are variables", 
     label = structure("rows are observations and columns are variables", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8c83f6", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7954075", 
     option = "rows are variables and columns are observations", 
     value = "rows are variables and columns are observations", 
     label = structure("rows are variables and columns are observations", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Nice try, but it’s the other way around!", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6a3ebd0", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4466da8", 
     option = "there are only rows (no columns), and rows are observations", 
     value = "there are only rows (no columns), and rows are observations", 
     label = structure("there are only rows (no columns), and rows are observations", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Dataframes have both rows and columns.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_579a7a0", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fb33575", 
     option = "there are only columns (no rows), and columns are observations", 
     value = "there are only columns (no rows), and columns are observations", 
     label = structure("there are only columns (no rows), and columns are observations", html = TRUE, class = c("html", 
@@ -1545,27 +1636,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("In a dataframe, rows are observations and columns are variables.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz2-1-answer", question = "quiz2-1"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 437126926.796447, options = list()), class = c("learnr_radio", 
+    seed = 601454854.719926, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-2", question = structure("The unit of observation…", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_b57bb47", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-2", question = structure("<span style=color:dodgerblue> Q2: <\u002fspan>The unit of observation…", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_ca64bee", 
     option = "defines what each observation represents", value = "defines what each observation represents", 
     label = structure("defines what each observation represents", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7cac40d", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f9c892e", 
     option = "defines what each variable measures", value = "defines what each variable measures", 
     label = structure("defines what each variable measures", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ed66197", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_96fb271", 
     option = "tells us how many observations there are in the dataframe", 
     value = "tells us how many observations there are in the dataframe", 
     label = structure("tells us how many observations there are in the dataframe", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("You may be thinking of <em>n<\u002fem>.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ee6774b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_261821b", 
     option = "defines what each column in the dataframe represents", 
     value = "defines what each column in the dataframe represents", 
     label = structure("defines what each column in the dataframe represents", html = TRUE, class = c("html", 
@@ -1578,28 +1669,28 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("The unit of observation defines what each observation represents.<br><br>\nExamples: students, schools, states, countries,…", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz2-2-answer", question = "quiz2-2"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1763621266.17875, options = list()), class = c("learnr_radio", 
+    seed = 299854725.360369, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-3", question = structure("In mathematical notation, <em>i<\u002fem> …", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_f7a5b0d", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-3", question = structure("<span style=color:dodgerblue> Q3: <\u002fspan>In mathematical notation, <em>i<\u002fem> …", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_cac4b72", 
     option = "identifies the position of the observation", value = "identifies the position of the observation", 
     label = structure("identifies the position of the observation", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c139d95", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ba325", 
     option = "identifies the variable", value = "identifies the variable", 
     label = structure("identifies the variable", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("We identify variables by their names.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_82744fb", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c9bb377", 
     option = "stands for the total number of observations", value = "stands for the total number of observations", 
     label = structure("stands for the total number of observations", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("You may be thinking of <em>n<\u002fem>.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_470aeee", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8d34206", 
     option = "stands for 'summation'", value = "stands for 'summation'", 
     label = structure("stands for ‘summation’", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("You may be thinking of the Greek letter Sigma.", html = TRUE, class = c("html", 
@@ -1612,27 +1703,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("In mathematical notation, <em>i<\u002fem> identifies the position of the observation. <br><br>\nExample: the observation for which <em>i<\u002fem>=3 is the third observation in a dataframe or in a variable.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz2-3-answer", question = "quiz2-3"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 772683605.640191, options = list()), class = c("learnr_radio", 
+    seed = 740665178.155101, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-4", question = structure("If <em>names<\u002fem> = { Sam, Anna, Alex }, then <em>names<\u002fem> is …", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_e7e563a", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-4", question = structure("<span style=color:dodgerblue> Q4: <\u002fspan>If <em>names<\u002fem> = { Sam, Anna, Alex }, then <em>names<\u002fem> is …", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_f9aab58", 
     option = "a character variable", value = "a character variable", 
     label = structure("a character variable", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9531c84", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2da5fa0", 
     option = "a numeric binary variable", value = "a numeric binary variable", 
     label = structure("a numeric binary variable", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Recall: Binary variables can only take two values; in DSS, these values are 0s and 1s, where a 0 means ‘no’ and a 1 means ‘yes’", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c903878", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a69c74a", 
     option = "a numeric non-binary variable", value = "a numeric non-binary variable", 
     label = structure("a numeric non-binary variable", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Recall: Numeric non-binary variables are variables that contain numbers and can take more than two values.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_86974de", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_43168db", 
     option = "an observation", value = "an observation", label = structure("an observation", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Notice: <em>names<\u002fem> is a variable not an observation; it contains three observations, which are inside the curly brackets and separated by a comma.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -1644,26 +1735,26 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("Here <em>names<\u002fem> is a character variable because it contains text.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz2-4-answer", question = "quiz2-4"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 356990659.833763, options = list()), class = c("learnr_radio", 
+    seed = 1547154473.27955, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-5", question = structure("If <em>voted<\u002fem> = { 1, 0, 0, 1, 0 }, then <em>voted<\u002fem> is …", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_ec58b7c", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-5", question = structure("<span style=color:dodgerblue> Q5: <\u002fspan>If <em>voted<\u002fem> = { 1, 0, 0, 1, 0 }, then <em>voted<\u002fem> is …", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_c962b6b", 
     option = "a numeric binary variable", value = "a numeric binary variable", 
     label = structure("a numeric binary variable", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7469876", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a356660", 
     option = "a character variable", value = "a character variable", 
     label = structure("a character variable", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_736611a", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a4ce5ba", 
     option = "a numeric non-binary variable", value = "a numeric non-binary variable", 
     label = structure("a numeric non-binary variable", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9fda915", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3dad3ca", 
     option = "an observation", value = "an observation", label = structure("an observation", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1674,25 +1765,25 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("Here <em>voted<\u002fem> is a numeric binary variable because it contains numbers and it can take only two values: 0s and 1s, where 0 means ‘no’ and 1 means ‘yes’.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz2-5-answer", question = "quiz2-5"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1617900904.74661, options = list()), class = c("learnr_radio", 
+    seed = 889681900.58571, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-6", question = structure("If <em>length<\u002fem> = { 3, 5, 2, 3, 10 }, then <em>length<\u002fem> is …", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_f554ba3", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-6", question = structure("<span style=color:dodgerblue> Q6: <\u002fspan>If <em>length<\u002fem> = { 3, 5, 2, 3, 10 }, then <em>length<\u002fem> is …", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_92e815f", 
     option = "a numeric non-binary variable", value = "a numeric non-binary variable", 
     label = structure("a numeric non-binary variable", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c1e07c2", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_be5e22f", 
     option = "a character variable", value = "a character variable", 
     label = structure("a character variable", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8be2e15", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d2f0ee7", 
     option = "a numeric binary variable", value = "a numeric binary variable", 
     label = structure("a numeric binary variable", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_47fd443", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6ccde2e", 
     option = "an observation", value = "an observation", label = structure("an observation", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1703,26 +1794,26 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("Here <em>length<\u002fem> is a numeric non-binary variable because it contains numbers (not text), and it can clearly take more than two values.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz2-6-answer", question = "quiz2-6"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1003448308.53273, options = list()), class = c("learnr_radio", 
+    seed = 1176340832.95222, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-7", question = structure("If <em>id<\u002fem> = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then <em>id<\u002fem> is…", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_91ad895", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-7", question = structure("<span style=color:dodgerblue> Q7: <\u002fspan>If <em>id<\u002fem> = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then <em>id<\u002fem> is…", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_81a66a1", 
     option = "a character variable", value = "a character variable", 
     label = structure("a character variable", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d685aed", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8f85a80", 
     option = "a numeric binary variable", value = "a numeric binary variable", 
     label = structure("a numeric binary variable", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7ea1a15", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_18415a2", 
     option = "a numeric non-binary variable", value = "a numeric non-binary variable", 
     label = structure("a numeric non-binary variable", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fdac028", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b4859fc", 
     option = "an observation", value = "an observation", label = structure("an observation", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1733,25 +1824,25 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("Here <em>id<\u002fem> is a character variable because it contains text.<br><br>\nNote: As soon as a variable contains some text, even if it also contains numbers, it will be a character variable and we won’t be able to do math with it.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz2-7-answer", question = "quiz2-7"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 186323313.913236, options = list()), class = c("learnr_radio", 
+    seed = 1446193899.32656, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-8", question = structure("If <em>id<\u002fem> = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then <em>id<\u002fem> contains…", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_182977b", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-8", question = structure("<span style=color:dodgerblue> Q8: <\u002fspan>If <em>id<\u002fem> = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then <em>id<\u002fem> contains…", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_29d6d6d", 
     option = "five observations", value = "five observations", 
     label = structure("five observations", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e685163", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_73469dd", 
     option = "ten observations", value = "ten observations", 
     label = structure("ten observations", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2edf7e1", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ea5a0a1", 
     option = "three observations", value = "three observations", 
     label = structure("three observations", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c88437a", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_461605c", 
     option = "one observation", value = "one observation", label = structure("one observation", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1762,23 +1853,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("Here <em>id<\u002fem> contains five observations, which are inside the curly brackets and separated by a comma. <br><br>\nThe first observation is county1_city1, the second observation is county1_city2, …", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz2-8-answer", question = "quiz2-8"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 352515131.835847, options = list()), class = c("learnr_radio", 
+    seed = 1380359566.85722, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-9", question = structure("If <em>id<\u002fem> = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then…", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_3a98fc5", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-9", question = structure("<span style=color:dodgerblue> Q9: <\u002fspan>If <em>id<\u002fem> = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then…", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_745241b", 
     option = "*n*=5", value = "*n*=5", label = structure("<em>n<\u002fem>=5", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5cfe3b5", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_45843d4", 
     option = "*n*=10", value = "*n*=10", label = structure("<em>n<\u002fem>=10", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_40a69e5", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e1e818b", 
     option = "*n*=3", value = "*n*=3", label = structure("<em>n<\u002fem>=3", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bdf7da", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_da0029d", 
     option = "it is impossible to know what *n* equals to with the information given", 
     value = "it is impossible to know what *n* equals to with the information given", 
     label = structure("it is impossible to know what <em>n<\u002fem> equals to with the information given", html = TRUE, class = c("html", 
@@ -1791,25 +1882,25 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("In mathematical notation, <em>n<\u002fem> stands for the total number of observations.<br><br> Here <em>id<\u002fem> has five observations so <em>n<\u002fem>=5.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz2-9-answer", question = "quiz2-9"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 2084849263.52917, options = list()), class = c("learnr_radio", 
+    seed = 1942503782.59545, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-10", question = structure("If <em>id<\u002fem> = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then the observation of <em>id<\u002fem> for which <em>i<\u002fem>=3 is…", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_4b25fc5", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-10", question = structure("<span style=color:dodgerblue> Q10: <\u002fspan>If <em>id<\u002fem> = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then the observation of <em>id<\u002fem> for which <em>i<\u002fem>=3 is…", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_6a79925", 
     option = "county2_city1", value = "county2_city1", label = structure("county2_city1", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bcef7d5", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_aa467de", 
     option = "county1_city1", value = "county1_city1", label = structure("county1_city1", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f0a0c1c", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8f047e7", 
     option = "county1_city2", value = "county1_city2", label = structure("county1_city2", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7dcc47", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4591062", 
     option = "county2_city2", value = "county2_city2", label = structure("county2_city2", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_83fbb58", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_73540c9", 
     option = "county2_city3", value = "county2_city3", label = structure("county2_city3", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1820,30 +1911,30 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("Here <em>id<\u002fem> contains five observations, which are inside the curly brackets and separated by a comma.<br><br> The third observation is county2_city1.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz2-10-answer", question = "quiz2-10"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1494243050.80419, options = list()), class = c("learnr_radio", 
+    seed = 495554980.269239, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz2-11", 
-    question = structure("<span style=color:dodgerblue> A MULTI-ANSWER QUESTION: <\u002fspan> To set the working directory to the DSS folder on our Desktop, we could… (Note: You must select ALL true statements for the answer to be correct.)", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_78d4c", 
+    question = structure("<span style=color:dodgerblue> Q11 - A MULTI-ANSWER QUESTION: <\u002fspan> To set the working directory to the DSS folder on our Desktop, we could… (Note: You must select ALL true statements for the answer to be correct.)", html = TRUE, class = c("html", 
+    "character")), answers = list(structure(list(id = "lnr_ans_3233085", 
         option = "run `setwd(''~/Desktop/DSS'')` if we have a Mac", 
         value = "run `setwd(''~/Desktop/DSS'')` if we have a Mac", 
         label = structure("run <code>setwd(''~/Desktop/DSS'')<\u002fcode> if we have a Mac", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c5a0ba6", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ff42ab4", 
         option = "run ` setwd(''C:/user/Desktop/DSS'') ` if we have a Windows computer, where *user* is our username", 
         value = "run ` setwd(''C:/user/Desktop/DSS'') ` if we have a Windows computer, where *user* is our username", 
         label = structure("run <code>setwd(''C:/user/Desktop/DSS'')<\u002fcode> if we have a Windows computer, where <em>user<\u002fem> is our username", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_38c9cc8", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f590c7f", 
         option = "save the R script to the DSS folder and then use the dropdown menu to set the working directory manually: Session > Set Working Directory > To Source File Location", 
         value = "save the R script to the DSS folder and then use the dropdown menu to set the working directory manually: Session > Set Working Directory > To Source File Location", 
         label = structure("save the R script to the DSS folder and then use the dropdown menu to set the working directory manually: Session &gt; Set Working Directory &gt; To Source File Location", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_543622b", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2dd42ad", 
         option = "run ` setwd(~/Desktop/DSS) ` if we have a Mac", 
         value = "run ` setwd(~/Desktop/DSS) ` if we have a Mac", 
         label = structure("run <code>setwd(~/Desktop/DSS)<\u002fcode> if we have a Mac", html = TRUE, class = c("html", 
@@ -1857,32 +1948,32 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
     "character")), message = NULL, post_message = structure("We can use the function <code>setwd()<\u002fcode> to set the working directory. The only required argument is the path to the folder in quotes. The path to the folder is different depending on whether we have a Mac or a Windows machine. (See examples above.)<br><br> When in doubt, we can always set the working directory manually by using RStudio’s dropdown menu. If we have saved the R script in the same folder where the data that we will use is, then we can use the dropdown menu to set the working directory manually: Session &gt; Set Working Directory &gt; To Source File Location", html = TRUE, class = c("html", 
     "character"))), ids = list(answer = "quiz2-11-answer", question = "quiz2-11"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1704892520.2061, options = list()), class = c("learnr_checkbox", 
+    seed = 1638461276.73703, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-12", question = structure("What would be the code to read a CSV file called <em>testscores.csv<\u002fem> and store the data from that file in an object called <em>grades<\u002fem>?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_3990e00", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-12", question = structure("<span style=color:dodgerblue> Q12: <\u002fspan>What would be the code to read a CSV file called <em>testscores.csv<\u002fem> and store the data from that file in an object called <em>grades<\u002fem>?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_47a953b", 
     option = "`grades <- read.csv(''testscores.csv'')`", value = "`grades <- read.csv(''testscores.csv'')`", 
     label = structure("<code>grades &lt;- read.csv(''testscores.csv'')<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a494beb", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b8d9c48", 
     option = "`read.csv(''testscores.csv'')`", value = "`read.csv(''testscores.csv'')`", 
     label = structure("<code>read.csv(''testscores.csv'')<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("This code will read the data from the CSV file, but it won’t store it into an object called <em>grades<\u002fem>.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7f88f5d", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d30505b", 
     option = "`grades <- read.csv(testscores.csv)`", value = "`grades <- read.csv(testscores.csv)`", 
     label = structure("<code>grades &lt;- read.csv(testscores.csv)<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("You are almost there. Hint: The file name is text and not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9ba8846", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7ed0473", 
     option = "`grades <- read.csv(''testscores'')`", value = "`grades <- read.csv(''testscores'')`", 
     label = structure("<code>grades &lt;- read.csv(''testscores'')<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("You are almost there. Hint: The file name needs to include its extension (i.e., ‘’.csv’’).", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f56dc9e", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_995ae02", 
     option = "`testcores <- read.csv(''grades.csv'')`", value = "`testcores <- read.csv(''grades.csv'')`", 
     label = structure("<code>testcores &lt;- read.csv(''grades.csv'')<\u002fcode>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("You are almost there. Hint: The name of the file is <em>testcores.csv<\u002fem> and the name of the object is <em>grades<\u002fem>, not the other way around.", html = TRUE, class = c("html", 
@@ -1895,33 +1986,33 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("The correct answer is: <code>grades &lt;- read.csv(''testscores.csv'') <\u002fcode><br><br>\nTo create an object, we use the assignment operator <code>&lt;-<\u002fcode> <br>\nTo the left of the assignment operator, we specify the name of the object; <em>grades<\u002fem> in this case. <br>\nTo the right of the assignment operator, we specify the contents, which, in this case, are produced by reading the CSV file <em>testcores.csv<\u002fem>. <br><br>\nNote: We do not use quotes around the name of an object such as <em>grades<\u002fem> or around the name of a function such as <em>read.csv()<\u002fem>, but we do use quotes around the name of a file, because it is text and neither of the exceptions (i.e., it is not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL).", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz2-12-answer", question = "quiz2-12"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 924647247.569428, options = list()), class = c("learnr_radio", 
+    seed = 855699796.101534, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz2-13", 
-    question = structure("<span style=color:dodgerblue> A MULTI-ANSWER QUESTION: <\u002fspan> If we wanted to take a look at the data stored in the object called <em>grades<\u002fem>, we could run… (Note: You must select ALL true statements for the answer to be correct.)", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_aeae18", 
+    question = structure("<span style=color:dodgerblue> Q13 - A MULTI-ANSWER QUESTION: <\u002fspan> If we wanted to take a look at the data stored in the object called <em>grades<\u002fem>, we could run… (Note: You must select ALL true statements for the answer to be correct.)", html = TRUE, class = c("html", 
+    "character")), answers = list(structure(list(id = "lnr_ans_727d2c7", 
         option = "`View(grades)`", value = "`View(grades)`", 
         label = structure("<code>View(grades)<\u002fcode>", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_31642bf", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e85996f", 
         option = "`head(grades)`", value = "`head(grades)`", 
         label = structure("<code>head(grades)<\u002fcode>", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b6142b3", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a590fcf", 
         option = "`look(grades)`", value = "`look(grades)`", 
         label = structure("<code>look(grades)<\u002fcode>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("There is no <em>look()<\u002fem> function in R.", html = TRUE, class = c("html", 
         "character")), type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ac399ed", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_42104fb", 
         option = "`head(''grades'')`", value = "`head(''grades'')`", 
         label = structure("<code>head(''grades'')<\u002fcode>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("Hint: We do not use quotes around the name of objects.", html = TRUE, class = c("html", 
         "character")), type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2979c3c", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_472c3a6", 
         option = "`''head''(grades)`", value = "`''head''(grades)`", 
         label = structure("<code>''head''(grades)<\u002fcode>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("Hint: We do not use quotes around the name of functions.", html = TRUE, class = c("html", 
@@ -1934,30 +2025,30 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
     "character")), message = NULL, post_message = structure("We could run either  <code>View(grades)<\u002fcode> or  <code>head(grades)<\u002fcode>.<br><br> The first piece of code will open a new tab in the upper-left window of RStudio with the contents of the dataset. The second will show the first six rows or observations in the dataset.", html = TRUE, class = c("html", 
     "character"))), ids = list(answer = "quiz2-13-answer", question = "quiz2-13"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 219546031.897766, options = list()), class = c("learnr_checkbox", 
+    seed = 522713057.756593, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-14", question = structure("If we ran <code>dim(grades)<\u002fcode> and the output was <span style=color:lightslategray> 76   4<\u002fspan>, we would conclude that…", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_be20444", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-14", question = structure("<span style=color:dodgerblue> Q14: <\u002fspan>If we ran <code>dim(grades)<\u002fcode> and the output was <span style=color:lightslategray> 76   4<\u002fspan>, we would conclude that…", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_ed31dd5", 
     option = "The dataframe stored in the object called *grades* has 76 observations and 4 variables", 
     value = "The dataframe stored in the object called *grades* has 76 observations and 4 variables", 
     label = structure("The dataframe stored in the object called <em>grades<\u002fem> has 76 observations and 4 variables", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3434854", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_21ba588", 
     option = "The dataframe stored in the object called *grades* has 76 variables and 4 observations", 
     value = "The dataframe stored in the object called *grades* has 76 variables and 4 observations", 
     label = structure("The dataframe stored in the object called <em>grades<\u002fem> has 76 variables and 4 observations", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_14e0902", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b603b7b", 
     option = "The dataframe stored in the object called *grades* has 80 observations", 
     value = "The dataframe stored in the object called *grades* has 80 observations", 
     label = structure("The dataframe stored in the object called <em>grades<\u002fem> has 80 observations", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e4cec90", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_56be87d", 
     option = "The dataframe stored in the object called *grades* has 764 observations", 
     value = "The dataframe stored in the object called *grades* has 764 observations", 
     label = structure("The dataframe stored in the object called <em>grades<\u002fem> has 764 observations", html = TRUE, class = c("html", 
@@ -1971,7 +2062,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("The <code>dim()<\u002fcode> function provides the dimensions of a dataframe. The only required argument is the name of the object where the dataframe is stored (without quotes). The output is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables.<br> <br>\nIn this case, since the output was <span style=color:lightslategray> 76   4<\u002fspan>, the dataframe stored in the object called <em>grades<\u002fem> has 76 observations and 4 variables.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz2-14-answer", question = "quiz2-14"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 526449620.254853, options = list()), class = c("learnr_radio", 
+    seed = 229205834.393268, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
@@ -2069,19 +2160,19 @@ learnr:::store_exercise_cache(structure(list(label = "r5", global_setup = struct
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz3-1", question = structure("If <em>X<\u002fem>  = {10, 4, 6, 8, 22}, what is \\(\\overline{X}\\) ?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_231d287", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz3-1", question = structure("<span style=color:dodgerblue> Q1: <\u002fspan>If <em>X<\u002fem>  = {10, 4, 6, 8, 22}, what is \\(\\overline{X}\\) ?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_4bd61a4", 
     option = "10", value = "10", label = structure("10", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_afa23b3", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_45795e4", 
     option = "6", value = "6", label = structure("6", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: \\(\\overline{X}\\) stands for the mean of <em>X<\u002fem> in mathematical notation. And, to compute the mean of a variable, we sum the values across all observations and divide the result by the total number of observations.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d0de32d", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_45550f4", 
     option = "8", value = "8", label = structure("8", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: \\(\\overline{X}\\) stands for the mean of <em>X<\u002fem> in mathematical notation. And, to compute the mean of a variable, we sum the values across all observations and divide the result by the total number of observations.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_556db42", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_277df06", 
     option = "It is impossible to know with the information given", 
     value = "It is impossible to know with the information given", 
     label = structure("It is impossible to know with the information given", html = TRUE, class = c("html", 
@@ -2095,30 +2186,30 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("\\(\\overline{X}\\) stands for the mean of <em>X<\u002fem> and, here, \\(\\overline{X}\\) equals 10 because: (10+4+6+8+22)/5 = 50/5 = 10. <br><br>\nRecall: To compute the mean of a variable, we sum the values across all observations and divide the result by the total number of observations.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz3-1-answer", question = "quiz3-1"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1729315479.19472, options = list()), class = c("learnr_radio", 
+    seed = 1878490934.12526, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz3-2", question = structure("If <em>distance<\u002fem> = {0.2, 0.1, 0.3, 0.2} and <em>distance<\u002fem> is measured in miles, then…", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_cd98f57", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz3-2", question = structure("<span style=color:dodgerblue> Q2: <\u002fspan>If <em>distance<\u002fem> = {0.2, 0.1, 0.3, 0.2} and <em>distance<\u002fem> is measured in miles, then…", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_db0f2a5", 
     option = "$\\overline{distance}$ = 0.2, which we can interpret as `the average distance is 0.2 miles'", 
     value = "$\\overline{distance}$ = 0.2, which we can interpret as `the average distance is 0.2 miles'", 
     label = structure("\\(\\overline{distance}\\) = 0.2, which we can interpret as `the average distance is 0.2 miles’", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_11f377e", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3bb429e", 
     option = "$\\overline{distance}$ = 0.2, which we can interpret as `the proportion of observations with a large distance is 20 percent'", 
     value = "$\\overline{distance}$ = 0.2, which we can interpret as `the proportion of observations with a large distance is 20 percent'", 
     label = structure("\\(\\overline{distance}\\) = 0.2, which we can interpret as `the proportion of observations with a large distance is 20 percent’", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: Is <em>distance<\u002fem> a binary or a non-binary variable?", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5598083", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3c5eaf8", 
     option = "$\\overline{distance}$ = 0.2, which we can interpret as `the proportion of observations with a small distance is 20 percent'", 
     value = "$\\overline{distance}$ = 0.2, which we can interpret as `the proportion of observations with a small distance is 20 percent'", 
     label = structure("\\(\\overline{distance}\\) = 0.2, which we can interpret as `the proportion of observations with a small distance is 20 percent’", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: Is <em>distance<\u002fem> a binary or a non-binary variable?", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a4c303e", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fee6503", 
     option = "$\\overline{distance}$ = 0.8, which we can interpret as `the average distance is 0.8 miles'", 
     value = "$\\overline{distance}$ = 0.8, which we can interpret as `the average distance is 0.8 miles'", 
     label = structure("\\(\\overline{distance}\\) = 0.8, which we can interpret as `the average distance is 0.8 miles’", html = TRUE, class = c("html", 
@@ -2132,26 +2223,26 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("The correct answer is:\n\\(\\overline{distance}\\) = 0.2, which we can interpret as ‘‘the average distance is 0.2 miles’’ <br><br>\nCalculation: \\(\\overline{distance}\\) stands for the mean of <em>distance<\u002fem> and, here, it equals 0.2 because: (0.2+0.1+0.3+0.2)/4 = 0.8/4 = 0.2. <br><br>\nInterpretation: The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a non-binary variable should be interpreted as an average and in the same unit of measurement as the variable. Here, <em>distance<\u002fem> is non-binary (because it can take more than two values) and measured in miles, so the mean of <em>distance<\u002fem> should be interpreted as an average and in miles.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz3-2-answer", question = "quiz3-2"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 79447058.4630046, options = list()), class = c("learnr_radio", 
+    seed = 841366549.108208, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz3-3", question = structure("What does \\(\\sum\\) stand for in mathematical notation?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_b72afd", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz3-3", question = structure("<span style=color:dodgerblue> Q3: <\u002fspan>What does \\(\\sum\\) stand for in mathematical notation?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_45d3309", 
     option = "$\\sum$ stands for summation", value = "$\\sum$ stands for summation", 
     label = structure("\\(\\sum\\) stands for summation", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bfa41bd", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_328f1e4", 
     option = "$\\sum$ stands for multiplication", value = "$\\sum$ stands for multiplication", 
     label = structure("\\(\\sum\\) stands for multiplication", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_edb5430", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_438f6ef", 
     option = "$\\sum$ stands for mean", value = "$\\sum$ stands for mean", 
     label = structure("\\(\\sum\\) stands for mean", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_48b8988", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_da7c668", 
     option = "$\\sum$ stands for division", value = "$\\sum$ stands for division", 
     label = structure("\\(\\sum\\) stands for division", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -2163,24 +2254,24 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("The correct answer is: \\(\\sum\\) stands for summation.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz3-3-answer", question = "quiz3-3"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1054082669.00915, options = list()), class = c("learnr_radio", 
+    seed = 691175246.178146, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz3-4", question = structure("If the unit of observation is students and the variable <em>attended<\u002fem> = {0, 0, 1, 1, 1, 0}, what proportion of students attended class?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_f2451fd", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz3-4", question = structure("<span style=color:dodgerblue> Q4: <\u002fspan>If the unit of observation is students and the variable <em>attended<\u002fem> = {0, 0, 1, 1, 1, 0}, what proportion of students attended class?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_186961f", 
     option = "50 percent", value = "50 percent", label = structure("50 percent", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_75bd044", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_53b4926", 
     option = "60 percent", value = "60 percent", label = structure("60 percent", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: The proportion of observations that meet a criterion is calculated as: <em>number of observations that meet criterion<\u002fem> / <em>total number of observations<\u002fem>. And, to interpret the resulting decimal as a percentage, we multiply it by 100.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4da386d", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ac35ef6", 
     option = "3 percent", value = "3 percent", label = structure("3 percent", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: The proportion of observations that meet a criterion is calculated as: <em>number of observations that meet criterion<\u002fem> / <em>total number of observations<\u002fem>. And, to interpret the resulting decimal as a percentage, we multiply it by 100.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8f3f4eb", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f1f2acf", 
     option = "30 percent", value = "30 percent", label = structure("30 percent", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: The proportion of observations that meet a criterion is calculated as: <em>number of observations that meet criterion<\u002fem> / <em>total number of observations<\u002fem>. And, to interpret the resulting decimal as a percentage, we multiply it by 100.", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
@@ -2192,31 +2283,31 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("The variable <em>attended<\u002fem> appears to be binary, where 1 means that the student attended class, and 0 means that the student did not attend class. <br><br>\nThere are six observations in this variable: three 1s and three 0s. This means that three out of the six students attended class, which is a proportion of 50 percent (3/6 = 0.5 and 0.5*100 = 50%).<br><br>\nRecall: The proportion of observations that meet a criterion is calculated as: <em>number of observations that meet criterion<\u002fem> / <em>total number of observations<\u002fem>. And, to interpret the resulting decimal as a percentage, we multiply it by 100.", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz3-4-answer", question = "quiz3-4"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 94207708.4561311, options = list()), class = c("learnr_radio", 
+    seed = 1243176471.4211, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz3-5", question = structure("If the unit of observation is students and <em>attended<\u002fem> = {0, 0, 1, 1, 1, 0}, what is \\(\\overline{attended}\\) ?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_e6c9d6f", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz3-5", question = structure("<span style=color:dodgerblue> Q5: <\u002fspan>If the unit of observation is students and <em>attended<\u002fem> = {0, 0, 1, 1, 1, 0}, what is \\(\\overline{attended}\\) ?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_7e2d1ee", 
     option = "$\\overline{attended}$ = 0.5, which we can interpret as `50 percent of the students attended class'", 
     value = "$\\overline{attended}$ = 0.5, which we can interpret as `50 percent of the students attended class'", 
     label = structure("\\(\\overline{attended}\\) = 0.5, which we can interpret as `50 percent of the students attended class’", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_77f4319", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8aa1ea1", 
     option = "$\\overline{attended}$ = 0.5, which we can interpret `students attended 0.5 classes on average'", 
     value = "$\\overline{attended}$ = 0.5, which we can interpret `students attended 0.5 classes on average'", 
     label = structure("\\(\\overline{attended}\\) = 0.5, which we can interpret `students attended 0.5 classes on average’", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: Is <em>attended<\u002fem> a binary or a non-binary variable?", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a252e82", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2cc044a", 
     option = "$\\overline{attended}$ = 3, which we can interpret `students attended 3 classes on average'", 
     value = "$\\overline{attended}$ = 3, which we can interpret `students attended 3 classes on average'", 
     label = structure("\\(\\overline{attended}\\) = 3, which we can interpret `students attended 3 classes on average’", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Hint: Check your calculations. Plus, is <em>attended<\u002fem> a binary or a non-binary variable?", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5c4db05", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_46be6c7", 
     option = "$\\overline{attended}$ = 0.3, which we can interpret as `30 percent of the students attended class'", 
     value = "$\\overline{attended}$ = 0.3, which we can interpret as `30 percent of the students attended class'", 
     label = structure("\\(\\overline{attended}\\) = 0.3, which we can interpret as `30 percent of the students attended class’", html = TRUE, class = c("html", 
@@ -2230,7 +2321,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = structure("The correct answer is:\n\\(\\overline{attended}\\) = 0.5, which we can interpret as ‘‘50 percent of the students attended class’’ <br><br>\nCalculation: \\(\\overline{attended}\\) \\({ }\\) equals 0.5 because: (0+0+1+1+1+0)/6 = 3/6 = 0.5. <br><br>\nInterpretation: The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100. Here, <em>attendance<\u002fem> is binary (because it can take only two values: 1s and 0s), so the mean of <em>attendance<\u002fem> should be interpreted as a proportion (0.5*100=50%).", html = TRUE, class = c("html", 
 "character"))), ids = list(answer = "quiz3-5-answer", question = "quiz3-5"), 
     loading = NULL, random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1843342365.64163, options = list()), class = c("learnr_radio", 
+    seed = 1186738251.44738, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 </p>

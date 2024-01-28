@@ -29,7 +29,15 @@ $(document).ready(function() {
 ```
 
 <style>
+.borderexample {
+ border-width:1px;
+ border-style:solid;
+ border-color:dodgerblue;
+ padding: 15px;
+}
+</style>
 
+<style>
 table, td, th {
   border: 1px solid lightgray;
 }
@@ -142,9 +150,15 @@ I recommend doing them in the order presented.<br><br>
 
 <font size="+2"> <span style=color:dodgerblue> (A) Multiple-Choice Questions </span></font>
 
+<p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
+Select the correct answer(s) and click on the *Submit Answer* button in blue. 
+<br><br> If you didn't choose the correct answer(s) click on the *Try Again* button in orange and keep trying until you submit the correct answer(s).
+<br><br>
+To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.</p>
+
 ```{r quiz}
 quiz(caption="",
-  question("What program(s) are we going to use to analyze data in this book?",
+  question("<span style=color:dodgerblue> Q1: </span> What program(s) are we going to use to analyze data in this book?",
     answer("We will use two programs: R and RStudio", correct = TRUE),
     answer("We will use one program: R", message = "This is one of the programs we will use, but it is not the only one"),
     answer("We will use one program: RStudio", message = "This is one of the programs we will use, but it is not the only one."),
@@ -155,7 +169,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("What do we usually do after opening RStudio?",
+  question("<span style=color:dodgerblue> Q2: </span>What do we usually do after opening RStudio?",
     answer("Open an R script so that we can use it to write and run code", correct = TRUE),
     answer("Write R code directly into the Console", message = "You could do this, but it is not recommended. If you write code directly into the Console, you won't be able to save it, re-run it, tweak it, expand it, and share it."),
     answer("Open R", message = "RStudio automatically opens R on its own. We do not open it ourselves."),
@@ -163,16 +177,16 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-question("How do we run code that has already been written on an R script?",
-  answer("We highlight the code we want to run and either (a) manually hit the *Run* icon RStudio displays in the upper right corner of the R script window or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows", correct = TRUE),
+question("<span style=color:dodgerblue> Q3: </span>How do we run code that has already been written on an R script?",
+  answer("We highlight the code we want to run and either (a) manually click on the *Run* icon RStudio displays in the upper right corner of the R script window or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows", correct = TRUE),
   answer("We highlight the code we want to run and hit *enter*", message = "Almost! You are missing the key that must be used in conjunction with *enter*."),
   answer("We highlight the code we want to run and hit the *spacebar*"),
   answer("We highlight the code we want to run and hit *F1*"),
-  post_message = "We highlight the code we want to run and either (a) manually hit the *Run* icon RStudio displays in the upper right corner of the R script window or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.",
+  post_message = "We highlight the code we want to run and either (a) manually click on the *Run* icon RStudio displays in the upper right corner of the R script window or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.",
   random_answer_order = TRUE,
   allow_retry = TRUE
 ),
-  question("Which of the following pieces of R code will compute 3 + 3?",
+  question("<span style=color:dodgerblue> Q4: </span>Which of the following pieces of R code will compute 3 + 3?",
     answer("`3 + 3`", correct = TRUE),
     answer("`three + three`", message = "This code is not correct unless you had previously created an object named `three` containing the number `3`."),
     answer("`3 plus 3`", message = "The R operator for summation is `+`, not `plus`."),
@@ -182,7 +196,7 @@ question("How do we run code that has already been written on an R script?",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("Which of the following pieces of R code will create an object called *three* containing the number 3?",
+  question("<span style=color:dodgerblue> Q5: </span>Which of the following pieces of R code will create an object called *three* containing the number 3?",
     answer("`three <- 3`", correct = TRUE),
     answer("`three << 3`", message = "Hint: To create an object, we use the assignment operator `<-`"),
     answer("`''three'' <- 3 `", message = "Recall: We do not use quotes around the name of objects."),
@@ -196,7 +210,7 @@ question("How do we run code that has already been written on an R script?",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("Which of the following pieces of R code will create an object called *today* containing the text *Monday*?",
+  question("<span style=color:dodgerblue> Q6: </span>Which of the following pieces of R code will create an object called *today* containing the text *Monday*?",
     answer("`today <- ''Monday''`", correct = TRUE),
     answer("`today <- Monday`", message = "Hint: When writing code in R, we do not use quotes around: (1) the name of objects, (2) the name of functions, (3) the name of arguments, and (4) special characters such as TRUE, FALSE, NA, and NULL; all other text should be in quotes."),
     answer("`''today'' <- Monday`", message = "Hint: When writing code in R, we do not use quotes around: (1) the name of objects, (2) the name of functions, (3) the name of arguments, and (4) special characters such as TRUE, FALSE, NA, and NULL; all other text should be in quotes."),
@@ -207,7 +221,7 @@ question("How do we run code that has already been written on an R script?",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("What would happen if after running the code from the previous question, we ran the following piece of R code: ` today <- Tuesday `",
+  question("<span style=color:dodgerblue> Q7: </span>What would happen if after running the code from the previous question, we ran the following piece of R code: ` today <- Tuesday `",
     answer("The following error message will appear in the Console: <span style=color:red> Error: object 'Tuesday' not found `", correct = TRUE),
     answer("The object called *today* will now contain the text ''Tuesday'' instead of ''Monday''", message = "Hint: Pay attention to the quotes used in the code."),
     answer("A new object called *today* will be created, containing the text ''Tuesday''", message = "We had already created an object called *today*. To figure out the correct answer: pay attention to the quotes used in the code."),
@@ -218,7 +232,7 @@ question("How do we run code that has already been written on an R script?",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("How can we recognize that some text in a piece of R code is the name of a function?",
+  question("<span style=color:dodgerblue> Q8: </span>How can we recognize that some text in a piece of R code is the name of a function?",
     answer("The names of functions are always followed by parentheses", correct = TRUE),
     answer("The names of functions are always in quotes", message = "We do not use quotes around the names of functions. It is one of the exceptions."),
     answer("The names of functions are displayed in red by RStudio"),
@@ -228,7 +242,7 @@ question("How do we run code that has already been written on an R script?",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> A MULTI-ANSWER QUESTION: </span> As we learn in Section 1.6.3 of DSS, a function: <br><br> 
+  question("<span style=color:dodgerblue> Q9 - A MULTI-ANSWER QUESTION: </span> As we learn in Section 1.6.3 of DSS, a function: <br><br> 
           <center>
            <span style=color:dodgerblue> (1) </span> takes input(s) <br> <span style=color:dodgerblue> (2) </span> performs action(s) with the input(s)<br> <span style=color:dodgerblue> (3) </span> produces output(s)</center><br>Which of the following statements are true? (Note: You must select ALL true statements for the answer to be correct.)",
     answer("The input(s) are also known as argument(s)", correct = TRUE),
@@ -241,7 +255,7 @@ question("How do we run code that has already been written on an R script?",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> A MULTI-ANSWER QUESTION: </span> If we had run all the code above, which of the following pieces of R code could we use to compute the square root of 3? (Note: You must select ALL true statements for the answer to be correct.)",
+  question("<span style=color:dodgerblue> Q10 - A MULTI-ANSWER QUESTION: </span> If we had run all the code above, which of the following pieces of R code could we use to compute the square root of 3? (Note: You must select ALL true statements for the answer to be correct.)",
     answer("`sqrt(3)`", correct = TRUE),
     answer("`sqrt(three)`", correct = TRUE),
     answer("`square_root(3)`", message = "`square_root(3)` is NOT one of the correct answers. This code will produce the following error message: <span style=color:red> Error in squareroot(3) : could not find function ''squareroot''</span>.<br>"),
@@ -252,7 +266,7 @@ question("How do we run code that has already been written on an R script?",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("What would happen if after running all the code above, we ran the following piece of R code: ` # square root of three is sqrt(three)`",
+  question("<span style=color:dodgerblue> Q11: </span>What would happen if after running all the code above, we ran the following piece of R code: ` # square root of three is sqrt(three)`",
     answer("Nothing will happen", correct=T),
     answer("R will compute the square root of 3 and provide the result in the Console", message = ""),
     answer("The following error message will appear in the Console: <span style=color:red> Error: object 'three' not found `", message = "We do have an object called *three* in the environment, which contains the number 3"),
@@ -264,7 +278,7 @@ question("How do we run code that has already been written on an R script?",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("How do you know that you have some unsaved changes on your R script?",
+  question("<span style=color:dodgerblue> Q12: </span>How do you know that you have some unsaved changes on your R script?",
     answer("RStudio displays the name of the R script in red", correct = TRUE),
     answer("RStudio plays a sound when we try to close the program"),
     answer("There is no way of knowing"),
@@ -278,7 +292,13 @@ question("How do we run code that has already been written on an R script?",
 <br>
 <font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
 
-<br> **Ask R to compute 30+6**
+<p class="borderexample">**Instructions**<br><br>When running code on our own computers, we write the code on the R script (the upper left window of RStudio), then we highlight the code we want to run and either (a) manually click on the *Run* icon of RStudio or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.<br><br>
+When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
+Once you are done typing the code, you can run it by clicking on the *Run Code* button in green. The output produced by the executed code will appear underneath the *R code* window.<br><br>
+Once you are satisfied with your answer, you can submit it by clicking on the *Submit Answer* button in blue. <br><br>
+To help you figure out the right answer, some questions contain hints. You can access them by clicking on the *Hint* button in white. </p>
+
+<br> <span style=color:dodgerblue> **Q1:** </span> **Ask R to compute 30+6**
 
 ```{r r1, exercise=TRUE, exercise.lines = 1}
 
@@ -298,7 +318,7 @@ grade_result(
 )
 ```
 
-<br> **Ask R to store `30+6` into an object called `thirtysix`**
+<br> <span style=color:dodgerblue> **Q2:** </span> **Ask R to store `30+6` into an object called `thirtysix`**
 
 ```{r r2, exercise = TRUE, exercise.lines = 1}
 
@@ -325,7 +345,7 @@ Recall: The name of objects cannot contain spaces.")
 )
 ```
 
-<br> **Ask R to show you the contents of the object `thirtysix`**
+<br> <span style=color:dodgerblue> **Q3:** </span> **Ask R to show you the contents of the object `thirtysix`**
 
 ```{r thirtysix}
 thirtysix <- 30+6
@@ -350,7 +370,7 @@ grade_result(
 ```
 
 
-<br> **Use the `sqrt()` function to ask R to compute the square root of 36**
+<br> <span style=color:dodgerblue> **Q4:** </span> **Use the `sqrt()` function to ask R to compute the square root of 36**
 
 ```{r r3, exercise=TRUE, exercise.setup = "thirtysix", exercise.lines=1}
 
@@ -399,9 +419,15 @@ I recommend doing them in the order presented.<br><br>
 
 <font size="+2"> <span style=color:dodgerblue> (A) Multiple-Choice Questions </span></font>
 
+<p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
+Select the correct answer(s) and click on the *Submit Answer* button in blue. 
+<br><br> If you didn't choose the correct answer(s) click on the *Try Again* button in orange and keep trying until you submit the correct answer(s).
+<br><br>
+To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.</p>
+
 ```{r quiz2}
 quiz(caption="",
-  question("In a dataframe,...",
+  question("<span style=color:dodgerblue> Q1: </span>In a dataframe,...",
     answer("rows are observations and columns are variables", correct = TRUE),
     answer("rows are variables and columns are observations", message = "Nice try, but it's the other way around!"),
     answer("there are only rows (no columns), and rows are observations", message = "Dataframes have both rows and columns."),
@@ -410,7 +436,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("The unit of observation...",
+  question("<span style=color:dodgerblue> Q2: </span>The unit of observation...",
     answer("defines what each observation represents", correct = TRUE),
     answer("defines what each variable measures"),
     answer("tells us how many observations there are in the dataframe", message = "You may be thinking of *n*."),
@@ -420,7 +446,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("In mathematical notation, *i* ...",
+  question("<span style=color:dodgerblue> Q3: </span>In mathematical notation, *i* ...",
     answer("identifies the position of the observation", correct = TRUE),
     answer("identifies the variable", message="We identify variables by their names."),
     answer("stands for the total number of observations", message = "You may be thinking of *n*."),
@@ -430,7 +456,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("If *names* = { Sam, Anna, Alex }, then *names* is ...",
+    question("<span style=color:dodgerblue> Q4: </span>If *names* = { Sam, Anna, Alex }, then *names* is ...",
     answer("a character variable", correct = TRUE),
     answer("a numeric binary variable", message=" Recall: Binary variables can only take two values; in DSS, these values are 0s and 1s, where a 0 means 'no' and a 1 means 'yes'"),
     answer("a numeric non-binary variable", message="Recall: Numeric non-binary variables are variables that contain numbers and can take more than two values."),
@@ -439,7 +465,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("If *voted* = { 1, 0, 0, 1, 0 }, then *voted* is ...",
+    question("<span style=color:dodgerblue> Q5: </span>If *voted* = { 1, 0, 0, 1, 0 }, then *voted* is ...",
     answer("a numeric binary variable", correct = TRUE),
     answer("a character variable"),
     answer("a numeric non-binary variable"),
@@ -448,7 +474,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("If *length* = { 3, 5, 2, 3, 10 }, then *length* is ...",
+    question("<span style=color:dodgerblue> Q6: </span>If *length* = { 3, 5, 2, 3, 10 }, then *length* is ...",
     answer("a numeric non-binary variable", correct = TRUE),
     answer("a character variable"),
     answer("a numeric binary variable"),
@@ -457,7 +483,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("If *id* = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then *id* is...",
+    question("<span style=color:dodgerblue> Q7: </span>If *id* = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then *id* is...",
     answer("a character variable", correct = TRUE),
     answer("a numeric binary variable"),
     answer("a numeric non-binary variable"),
@@ -467,7 +493,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("If *id* = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then *id* contains...",
+    question("<span style=color:dodgerblue> Q8: </span>If *id* = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then *id* contains...",
     answer("five observations", correct = TRUE),
     answer("ten observations"),
     answer("three observations"),
@@ -477,7 +503,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("If *id* = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then...",
+    question("<span style=color:dodgerblue> Q9: </span>If *id* = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then...",
     answer("*n*=5", correct = TRUE),
     answer("*n*=10"),
     answer("*n*=3"),
@@ -486,7 +512,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("If *id* = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then the observation of *id* for which *i*=3 is...",
+    question("<span style=color:dodgerblue> Q10: </span>If *id* = { county1_city1, county1_city2, county2_city1, county2_city2, county2_city3 }, then the observation of *id* for which *i*=3 is...",
     answer("county2_city1", correct = TRUE),
     answer("county1_city1"),
     answer("county1_city2"),
@@ -496,7 +522,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> A MULTI-ANSWER QUESTION: </span> To set the working directory to the DSS folder on our Desktop, we could... (Note: You must select ALL true statements for the answer to be correct.)",
+  question("<span style=color:dodgerblue> Q11 - A MULTI-ANSWER QUESTION: </span> To set the working directory to the DSS folder on our Desktop, we could... (Note: You must select ALL true statements for the answer to be correct.)",
     answer("run `setwd(''~/Desktop/DSS'')` if we have a Mac", correct = TRUE),
     answer("run ` setwd(''C:/user/Desktop/DSS'') ` if we have a Windows computer, where *user* is our username", correct = TRUE),
     answer("save the R script to the DSS folder and then use the dropdown menu to set the working directory manually: Session > Set Working Directory > To Source File Location", correct = TRUE),
@@ -505,7 +531,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("What would be the code to read a CSV file called *testscores.csv* and store the data from that file in an object called *grades*?",
+  question("<span style=color:dodgerblue> Q12: </span>What would be the code to read a CSV file called *testscores.csv* and store the data from that file in an object called *grades*?",
     answer("`grades <- read.csv(''testscores.csv'')`", correct = TRUE),
     answer("`read.csv(''testscores.csv'')`", message = "This code will read the data from the CSV file, but it won't store it into an object called *grades*."),
     answer("`grades <- read.csv(testscores.csv)`", message = "You are almost there. Hint: The file name is text and not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL."),
@@ -519,7 +545,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> A MULTI-ANSWER QUESTION: </span> If we wanted to take a look at the data stored in the object called *grades*, we could run... (Note: You must select ALL true statements for the answer to be correct.)",
+  question("<span style=color:dodgerblue> Q13 - A MULTI-ANSWER QUESTION: </span> If we wanted to take a look at the data stored in the object called *grades*, we could run... (Note: You must select ALL true statements for the answer to be correct.)",
     answer("`View(grades)`", correct = TRUE),
     answer("`head(grades)`", correct = TRUE),
     answer("`look(grades)`", message = "There is no *look()* function in R."),
@@ -529,7 +555,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("If we ran ` dim(grades) ` and the output was <span style=color:lightslategray> 76   4</span>, we would conclude that...",
+  question("<span style=color:dodgerblue> Q14: </span>If we ran ` dim(grades) ` and the output was <span style=color:lightslategray> 76   4</span>, we would conclude that...",
     answer("The dataframe stored in the object called *grades* has 76 observations and 4 variables", correct = TRUE),
     answer("The dataframe stored in the object called *grades* has 76 variables and 4 observations", message = ""),
     answer("The dataframe stored in the object called *grades* has 80 observations", message = ""),
@@ -544,6 +570,12 @@ quiz(caption="",
 
 <br>
 <font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
+
+<p class="borderexample">**Instructions**<br><br>When running code on our own computers, we write the code on the R script (the upper left window of RStudio), then we highlight the code we want to run and either (a) manually click on the *Run* icon of RStudio or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.<br><br>
+When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
+Once you are done typing the code, you can run it by clicking on the *Run Code* button in green. The output produced by the executed code will appear underneath the *R code* window.<br><br>
+Once you are satisfied with your answer, you can submit it by clicking on the *Submit Answer* button in blue. <br><br>
+To help you figure out the right answer, some questions contain hints. You can access them by clicking on the *Hint* button in white. </p>
 
 For the next few questions, we are going to continue to work with the STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the description of the variables in this dataset, where the unit of observation is students.
 
@@ -571,7 +603,7 @@ For the next few questions, we are going to continue to work with the STAR datas
  
 <br> **Suppose the dataset has already been stored in an object called `star`.** 
 
-<br> **Use the `head()` function to ask R to show you the first six observations of the object `star`**
+<br> <span style=color:dodgerblue> **Q1:** </span> **Use the `head()` function to ask R to show you the first six observations of the object `star`**
 
 ```{r star}
 star <- read.csv("data/STAR.csv")
@@ -593,7 +625,7 @@ head(star)
 grade_code("<br><br>The `head()` function shows the first six observations in a dataframe. The only required argument is the name of object where the dataframe is stored; here: `star`.")
 ```
 
-<br> **Now, use the `head()` function again to ask R to show you just the first *two* observations of the object `star`**
+<br> <span style=color:dodgerblue> **Q2:** </span> **Now, use the `head()` function again to ask R to show you just the first *two* observations of the object `star`**
 
 ```{r r5, exercise=TRUE, exercise.setup = "star", exercise.lines = 1}
 
@@ -611,13 +643,7 @@ head(star,n=2)
 grade_code("<br><br>To change the number of observations displayed by the `head()` function, we can use the optional argument named `n`.")
 ```
 
-<!-- ```{r r4-check} -->
-<!-- grade_result( -->
-<!--   pass_if(~ identical(.result, head(star)), "<br><br> The function `head()` ...") -->
-<!-- ) -->
-<!-- ``` -->
-
-[STILL WORKING ON THESE]
+[...STILL WORKING ON THESE...]
 
 ## <span style=color:dodgerblue> Computing and Interpreting Means
 The practice exercises in this section cover:
@@ -646,9 +672,15 @@ I recommend doing them in the order presented.<br><br>
 
 <font size="+2"> <span style=color:dodgerblue> (A) Multiple-Choice Questions </span></font>
 
+<p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
+Select the correct answer(s) and click on the *Submit Answer* button in blue. 
+<br><br> If you didn't choose the correct answer(s) click on the *Try Again* button in orange and keep trying until you submit the correct answer(s).
+<br><br>
+To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.</p>
+
 ```{r quiz3}
 quiz(caption="",
-  question("If *X*  = {10, 4, 6, 8, 22}, what is $\\overline{X}$ ?",
+  question("<span style=color:dodgerblue> Q1: </span>If *X*  = {10, 4, 6, 8, 22}, what is $\\overline{X}$ ?",
     answer("10", correct = TRUE),
     answer("6", message = "Hint: $\\overline{X}$ stands for the mean of *X* in mathematical notation. And, to compute the mean of a variable, we sum the values across all observations and divide the result by the total number of observations."),
     answer("8", message = "Hint: $\\overline{X}$ stands for the mean of *X* in mathematical notation. And, to compute the mean of a variable, we sum the values across all observations and divide the result by the total number of observations."),
@@ -658,7 +690,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("If *distance* = {0.2, 0.1, 0.3, 0.2} and *distance* is measured in miles, then...",
+  question("<span style=color:dodgerblue> Q2: </span>If *distance* = {0.2, 0.1, 0.3, 0.2} and *distance* is measured in miles, then...",
     answer("$\\overline{distance}$ = 0.2, which we can interpret as `the average distance is 0.2 miles'", correct = TRUE),
     answer("$\\overline{distance}$ = 0.2, which we can interpret as `the proportion of observations with a large distance is 20 percent'", message = "Hint: Is *distance* a binary or a non-binary variable?"),
     answer("$\\overline{distance}$ = 0.2, which we can interpret as `the proportion of observations with a small distance is 20 percent'", message = "Hint: Is *distance* a binary or a non-binary variable?"),
@@ -670,7 +702,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("What does $\\sum$ stand for in mathematical notation?",
+  question("<span style=color:dodgerblue> Q3: </span>What does $\\sum$ stand for in mathematical notation?",
     answer("$\\sum$ stands for summation", correct = TRUE),
     answer("$\\sum$ stands for multiplication"),
     answer("$\\sum$ stands for mean"),
@@ -679,7 +711,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("If the unit of observation is students and the variable *attended* = {0, 0, 1, 1, 1, 0}, what proportion of students attended class?",
+  question("<span style=color:dodgerblue> Q4: </span>If the unit of observation is students and the variable *attended* = {0, 0, 1, 1, 1, 0}, what proportion of students attended class?",
     answer("50 percent", correct = TRUE),
     answer("60 percent", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
     answer("3 percent", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
@@ -690,7 +722,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-question("If the unit of observation is students and *attended* = {0, 0, 1, 1, 1, 0}, what is $\\overline{attended}$ ?",
+question("<span style=color:dodgerblue> Q5: </span>If the unit of observation is students and *attended* = {0, 0, 1, 1, 1, 0}, what is $\\overline{attended}$ ?",
     answer("$\\overline{attended}$ = 0.5, which we can interpret as `50 percent of the students attended class'", correct = TRUE),
     answer("$\\overline{attended}$ = 0.5, which we can interpret `students attended 0.5 classes on average'", message = "Hint: Is *attended* a binary or a non-binary variable?"),
     answer("$\\overline{attended}$ = 3, which we can interpret `students attended 3 classes on average'", message = "Hint: Check your calculations. Plus, is *attended* a binary or a non-binary variable?"),
@@ -704,9 +736,14 @@ question("If the unit of observation is students and *attended* = {0, 0, 1, 1, 1
   ))
 ```
 
-
 <br>
 <font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
+
+<p class="borderexample">**Instructions**<br><br>When running code on our own computers, we write the code on the R script (the upper left window of RStudio), then we highlight the code we want to run and either (a) manually click on the *Run* icon of RStudio or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.<br><br>
+When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
+Once you are done typing the code, you can run it by clicking on the *Run Code* button in green. The output produced by the executed code will appear underneath the *R code* window.<br><br>
+Once you are satisfied with your answer, you can submit it by clicking on the *Submit Answer* button in blue. <br><br>
+To help you figure out the right answer, some questions contain hints. You can access them by clicking on the *Hint* button in white. </p>
 
 For the next few questions, we are going to continue to work with the STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the description of the variables in this dataset, where the unit of observation is students.
 
@@ -734,6 +771,6 @@ For the next few questions, we are going to continue to work with the STAR datas
  
 <br> **Suppose the dataset has already been stored in an object called `star`.** 
 
-<br> **Use the `head()` function to ask R to show you the first six observations of the object `star`**
+<br> <span style=color:dodgerblue> **Q1:** </span> **Use the `head()` function to ask R to show you the first six observations of the object `star`**
 
-[STILL WORKING ON THESE]
+[...STILL WORKING ON THESE...]
