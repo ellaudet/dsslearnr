@@ -1,20 +1,23 @@
 ---
 title: "DSS: CHAPTER 1"
+tutorial:
+  id: "01-introduction"
 output:
   learnr::tutorial:
     progressive: true
     ace_theme: github
     theme: spacelab
 runtime: shiny_prerendered
-description: "Practice Exercises for Readers of Data Analysis for Social Science."
+description: "Practice Exercises for Readers of Data Analysis for Social Science - CHAPTER 1."
 ---
 
 ```{r setup, include=FALSE}
 library(learnr)
-knitr::opts_chunk$set(echo = FALSE)
 library(gradethis)
-tutorial_options(exercise.checker = gradethis::grade_learnr)
-tut_reptitle <- "DSS: Output Report"
+tutorial_options(exercise.checker = gradethis::grade_learnr, 
+                 exercise.reveal_solution="TRUE")
+knitr::opts_chunk$set(echo = FALSE)
+tut_reptitle <- "DSS - CHAPTER 1: Report"
 ```
 
 ```{js target-blank, echo=FALSE}
@@ -289,6 +292,7 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
   ))
 ```
 
+
 <br>
 <font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
 
@@ -300,7 +304,7 @@ To help you figure out the right answer, some questions contain hints. You can a
 
 <br> <span style=color:dodgerblue> **Q1:** </span> **Ask R to compute 30+6**
 
-```{r r1, exercise=TRUE, exercise.lines = 1}
+```{r r1, exercise=TRUE}
 
 ```
 
@@ -320,7 +324,7 @@ grade_result(
 
 <br> <span style=color:dodgerblue> **Q2:** </span> **Ask R to store `30+6` into an object called `thirtysix`**
 
-```{r r2, exercise = TRUE, exercise.lines = 1}
+```{r r2, exercise = TRUE}
 
 ```
 
@@ -337,12 +341,10 @@ thirtysix <- 30+6
 ```
 
 ```{r r2-check}
-grade_result_strict(
-  pass_if(~ identical(thirtysix, 36), "<br><br> Explanation: To create an object, we use the assignment operator `<-`. <br><br>
+grade_code("<br><br> Explanation: To create an object, we use the assignment operator `<-`. <br><br>
 To the left of the assignment operator, we specify the name of the object (without quotes). <br><br>
 To the right of the assignment operator, we specify the contents of the object.<br><br>
 Recall: The name of objects cannot contain spaces.")
-)
 ```
 
 <br> <span style=color:dodgerblue> **Q3:** </span> **Ask R to show you the contents of the object `thirtysix`**
@@ -351,7 +353,7 @@ Recall: The name of objects cannot contain spaces.")
 thirtysix <- 30+6
 ```
 
-```{r r2b, exercise=TRUE, exercise.setup = "thirtysix", exercise.lines = 1}
+```{r r2b, exercise=TRUE, exercise.setup = "thirtysix"}
 
 ```
 
@@ -372,7 +374,7 @@ grade_result(
 
 <br> <span style=color:dodgerblue> **Q4:** </span> **Use the `sqrt()` function to ask R to compute the square root of 36**
 
-```{r r3, exercise=TRUE, exercise.setup = "thirtysix", exercise.lines=1}
+```{r r3, exercise=TRUE, exercise.setup = "thirtysix"}
 
 ```
 
@@ -577,7 +579,7 @@ Once you are done typing the code, you can run it by clicking on the *Run Code* 
 Once you are satisfied with your answer, you can submit it by clicking on the *Submit Answer* button in blue. <br><br>
 To help you figure out the right answer, some questions contain hints. You can access them by clicking on the *Hint* button in white. </p>
 
-For the next few questions, we are going to continue to work with the STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the description of the variables in this dataset, where the unit of observation is students.
+<br> For the next few questions, we are going to continue to work with the STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the description of the variables in this dataset, where the unit of observation is students.
 
 <table>
   <tr> 
@@ -601,15 +603,19 @@ For the next few questions, we are going to continue to work with the STAR datas
   </tr>
 </table>
  
-<br> **Suppose the dataset has already been stored in an object called `star`.** 
+<br> **Suppose we have already set the working directory to the DSS folder on our Desktop and we run the code below to read and store the STAR dataset in an object called `star`.** 
+
+```{r star_FALSE, eval=FALSE, echo=TRUE}
+star <- read.csv("STAR.csv") # reads and stores data
+```
 
 <br> <span style=color:dodgerblue> **Q1:** </span> **Use the `head()` function to ask R to show you the first six observations of the object `star`**
 
-```{r star}
+```{r star, echo=FALSE}
 star <- read.csv("data/STAR.csv")
 ```
 
-```{r r4, exercise=TRUE, exercise.setup = "star", exercise.lines = 1}
+```{r r4, exercise=TRUE, exercise.setup = "star"}
 
 ```
 
@@ -627,12 +633,12 @@ grade_code("<br><br>The `head()` function shows the first six observations in a 
 
 <br> <span style=color:dodgerblue> **Q2:** </span> **Now, use the `head()` function again to ask R to show you just the first *two* observations of the object `star`**
 
-```{r r5, exercise=TRUE, exercise.setup = "star", exercise.lines = 1}
+```{r r5, exercise=TRUE, exercise.setup = "star"}
 
 ```
 
 <div id="r5-hint">
-Hint: To change the number of observations displayed by the `head()` function, we can use the optional argument named `n`. 
+Hint: To change the number of observations displayed by the `head()` function, we can use the optional argument named `n`. <br><br>Recall: We do not use quotes around the names of arguments, and when we specify more than one argument, we need to separate them with a comma. 
 </div>
 
 ```{r r5-solution}
@@ -640,7 +646,7 @@ head(star,n=2)
 ```
 
 ```{r r5-check}
-grade_code("<br><br>To change the number of observations displayed by the `head()` function, we can use the optional argument named `n`.")
+grade_code("<br><br>To change the number of observations displayed by the `head()` function, we can use the optional argument named `n`. <br><br> Recall: We do not use quotes around the names of arguments, and when we specify more than one argument, we need to separate them with a comma. ")
 ```
 
 [...STILL WORKING ON THESE...]
@@ -736,6 +742,7 @@ question("<span style=color:dodgerblue> Q5: </span>If the unit of observation is
   ))
 ```
 
+
 <br>
 <font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
 
@@ -745,7 +752,7 @@ Once you are done typing the code, you can run it by clicking on the *Run Code* 
 Once you are satisfied with your answer, you can submit it by clicking on the *Submit Answer* button in blue. <br><br>
 To help you figure out the right answer, some questions contain hints. You can access them by clicking on the *Hint* button in white. </p>
 
-For the next few questions, we are going to continue to work with the STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the description of the variables in this dataset, where the unit of observation is students.
+<br> For the next few questions, we are going to continue to work with the STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the description of the variables in this dataset, where the unit of observation is students.
 
 <table>
   <tr> 
@@ -769,8 +776,13 @@ For the next few questions, we are going to continue to work with the STAR datas
   </tr>
 </table>
  
-<br> **Suppose the dataset has already been stored in an object called `star`.** 
+<br> **Suppose we have already set the working directory to the DSS folder on our Desktop and we run the code below to read and store the STAR dataset in an object called `star`.** 
+
+```{r star_FALSE2, eval=FALSE, echo=TRUE}
+star <- read.csv("STAR.csv") # reads and stores data
+```
 
 <br> <span style=color:dodgerblue> **Q1:** </span> **Use the `head()` function to ask R to show you the first six observations of the object `star`**
 
 [...STILL WORKING ON THESE...]
+
