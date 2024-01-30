@@ -831,10 +831,16 @@ To help you figure out the right answer, some questions contain hints. You can a
   </tr>
 </table>
  
-<br> **Suppose we have already set the working directory to the DSS folder on our Desktop and we run the code below to read and store the STAR dataset in an object called `star` and ask R to show us the first six observations in the dataframe.** 
+<br> **Suppose we have already set the working directory to the DSS folder on our Desktop and we run the code below to read and store the STAR dataset in an object called `star`.** 
 
 ```{r star_FALSE2, eval=FALSE, echo=TRUE}
 star <- read.csv("STAR.csv") # reads and stores data
+
+```
+
+<br> <span style=color:dodgerblue> **SETUP: **</span> **Go ahead and run the code below to ask R to show the first six observations in the dataframe stored in the `star` object:**
+ 
+```{r r7B, exercise=TRUE, exercise.setup = "star"}
 head(star) # shows the first six observations
 ```
 
