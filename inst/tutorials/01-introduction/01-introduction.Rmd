@@ -694,19 +694,17 @@ grade_code("<br><br>The `dim()` function provides the dimensions of a dataframe.
 ```{r quiz2C}
 quiz(caption="",
        question("<span style=color:dodgerblue> Q6: </span>Looking at the output above, we can see that...",
-    answer("1,274 students were part of the STAR project", correct = TRUE),
-    answer("4 students were part of the STAR project", message="The output of the `dim()` function is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables. "),
-    answer("1,274 schools were part of the STAR project", message="Check the unit of observation of the dataframe."),
-    answer("4 schools were part of the STAR project", message="The output of the `dim()` function is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables."),
-    post_message = "The correct answer is: 1,274 students were part of the STAR project.<br><br>
+    answer("1,274 students were part of Project STAR", correct = TRUE),
+    answer("4 students were part of Project STAR", message="The output of the `dim()` function is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables. "),
+    answer("1,274 schools were part of Project STAR", message="Check the unit of observation of the dataframe."),
+    answer("4 schools were part of Project STAR", message="The output of the `dim()` function is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables."),
+    post_message = "The correct answer is: 1,274 students were part of Project STAR.<br><br>
     The output of the `dim()` function is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables. Since the first value is 1,274, we can state that there are 1,274 observations in the STAR dataframe. <br><br>
-    And, because the unit of observation of the STAR dataframe is students, each observation in the dataframe represents a student who participated in the STAR project. So, we can re-write the statement above to say that 1,274 students were part of the STAR project.",
+    And, because the unit of observation of the STAR dataframe is students, each observation in the dataframe represents a student who participated in Project STAR. So, we can re-write the statement above to say that 1,274 students were part of Project STAR.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ))
 ```
-
-[...STILL WORKING ON THESE...]
 
 ## <span style=color:dodgerblue> Computing and Interpreting Means
 The practice exercises in this section cover:
@@ -793,7 +791,7 @@ question("<span style=color:dodgerblue> Q5: </span>If the unit of observation is
     post_message = "The correct answer is:
     $\\overline{attended}$ = 0.5, which we can interpret as ''50 percent of the students attended class'' <br><br>
   Calculation: $\\overline{attended}$ ${ }$ equals 0.5 because: (0+0+1+1+1+0)/6 = 3/6 = 0.5. <br><br>
-  Interpretation: The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100. Here, *attendance* is binary (because it can take only two values: 1s and 0s), so the mean of *attendance* should be interpreted as a proportion (0.5*100=50%).",
+  Interpretation: The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100. Here, *attendance* is binary (because it can take only two values: 1s and 0s), so the mean of *attendance* should be interpreted as a proportion (0.5*100=50%). The proportion of the observations that have the characteristic identified by the variable, in this case, who attended class.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ))
@@ -833,10 +831,77 @@ To help you figure out the right answer, some questions contain hints. You can a
   </tr>
 </table>
  
-<br> **Suppose we have already set the working directory to the DSS folder on our Desktop and we run the code below to read and store the STAR dataset in an object called `star`.** 
+<br> **Suppose we have already set the working directory to the DSS folder on our Desktop and we run the code below to read and store the STAR dataset in an object called `star` and ask R to show us the first six observations in the dataframe.** 
 
 ```{r star_FALSE2, eval=FALSE, echo=TRUE}
 star <- read.csv("STAR.csv") # reads and stores data
+head(star) # shows the first six observations
 ```
 
-<br> <span style=color:dodgerblue> **Q1:** </span> **Use the `head()` function to ask R to show you the first six observations of the object `star`**
+<br> <span style=color:dodgerblue> **Q1:** </span> **Use the `mean()` function to compute the mean of the variable *reading*, which is stored inside of the object `star`. (Hint: The `$` character might be helpful here)**
+
+```{r r7, exercise=TRUE, exercise.setup = "star"}
+
+```
+
+<div id="r7-hint">
+Hint: The `mean()` function calculates the mean of a variable. The only required argument is the code identifying the variable. To identify the variable, we can use the `$` character.<br><br> 
+We use the `$` character to access a variable inside a dataframe. To its left, we specify the name of the object where the dataframe is stored (without quotes). To its right, we specify the name of the variable (without quotes). Example: `data$variable`.
+</div>
+
+```{r r7-solution}
+mean(star$reading)
+```
+
+```{r r7-check}
+grade_code("<br><br>The `mean()` function calculates the mean of a variable. The only required argument is the code identifying the variable. To identify the variable, we can use the `$` character.<br><br> 
+We use the `$` character to access a variable inside a dataframe. To its left, we specify the name of the object where the dataframe is stored (without quotes). To its right, we specify the name of the variable (without quotes). Example: `data$variable`.")
+```
+
+```{r quiz2DF}
+quiz(caption="",
+       question("<span style=color:dodgerblue> Q2: </span> How can we interpret the mean of *reading* computed above?",
+    answer("Among the students who participated in Project STAR, the average score in the third-grade reading test is about 629 points.", correct = TRUE),
+    answer("Among the students who participated in Project STAR, the average score in the third-grade reading test is about 629 %.", message="Check the unit of measurement"),
+    answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 629 points.", message="Check the test we computed the mean of."),
+    answer("Among the students who participated in Project STAR, the average score in the third-grade reading test is about 628 points.", message="Notice that we round up whenever the next decimal point is 5 or above."),
+    post_message = "The correct answer is: Among the students who participated in Project STAR, the average score in the third-grade reading test is about 629 points.<br><br>
+     The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a non-binary variable should be interpreted as an average and in the same unit of measurement as the variable. Here, *reading* is non-binary (because it can take more than two values) and measured in points, so the mean of *reading* should be interpreted as an average and in points.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ))
+```
+
+<br> <span style=color:dodgerblue> **Q3:** </span> **Now, use the `mean()` function again, but this time to compute the mean of the variable *graduated*, which is also stored inside of the object `star`. (Hint: The `$` character might be helpful here)**
+
+```{r r8, exercise=TRUE, exercise.setup = "star"}
+
+```
+
+<div id="r8-hint">
+Hint: The `mean()` function calculates the mean of a variable. The only required argument is the code identifying the variable. To identify the variable, we can use the `$` character.<br><br> 
+We use the `$` character to access a variable inside a dataframe. To its left, we specify the name of the object where the dataframe is stored (without quotes). To its right, we specify the name of the variable (without quotes). Example: `data$variable`.
+</div>
+
+```{r r8-solution}
+mean(star$graduated)
+```
+
+```{r r8-check}
+grade_code("<br><br>The `mean()` function calculates the mean of a variable. The only required argument is the code identifying the variable. To identify the variable, we can use the `$` character.<br><br> 
+We use the `$` character to access a variable inside a dataframe. To its left, we specify the name of the object where the dataframe is stored (without quotes). To its right, we specify the name of the variable (without quotes). Example: `data$variable`.")
+```
+
+```{r quiz2E}
+quiz(caption="",
+       question("<span style=color:dodgerblue> Q4: </span> How can we interpret the mean of *graduated* computed above?",
+    answer("87% of the students who participated in Project STAR graduated from high school", correct = TRUE),
+    answer("0.87% of the students who participated in Project STAR graduated from high school", message="Remember that to interpret the output as a percentage, we need to multiply it by 100.<br><br>The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100."),
+    answer("Among the students who participated in Project STAR, the average graduation is 0.87.", message="Is *graduated* binary or non-binary? <br><br>The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100."),
+    answer("The average graduation rate among the schools that participated in Project STAR is 87%.", message="Check the unit of observation."),
+    post_message = "The correct answer is: 87% of the students who participated in Project STAR graduated from high school.<br><br>
+    Recall: The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100. <br><br>Here, *graduated* is binary (because it can take only two values: 1s and 0s), so the mean of *graduated* should be interpreted as a proportion (0.87*100=87%). The proportion of the observations that have the characteristic identified by the variable, in this case, who graduated from high school.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ))
+```
