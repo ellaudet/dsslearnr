@@ -460,7 +460,7 @@ quiz(caption="",
   ),
     question("<span style=color:dodgerblue> Q4: </span>If *names* = { Sam, Anna, Alex }, then *names* is ...",
     answer("a character variable", correct = TRUE),
-    answer("a numeric binary variable", message=" Recall: Binary variables can only take two values; in DSS, these values are 0s and 1s, where a 0 means 'no' and a 1 means 'yes'"),
+    answer("a numeric binary variable", message="Recall: Binary variables can only take two values; in DSS, these values are 0s and 1s, where a 0 means 'no' and a 1 means 'yes'"),
     answer("a numeric non-binary variable", message="Recall: Numeric non-binary variables are variables that contain numbers and can take more than two values."),
     answer("an observation", message="Notice: *names* is a variable not an observation; it contains three observations, which are inside the curly brackets and separated by a comma."),
     post_message = "Here *names* is a character variable because it contains text.",
@@ -631,7 +631,7 @@ head(star)
 grade_code("<br><br>The `head()` function shows the first six observations in a dataframe. The only required argument is the name of object where the dataframe is stored; here: `star`.")
 ```
 
-<br> <span style=color:dodgerblue> **Q2:** </span> **Now, use the `head()` function again to ask R to show you just the first *two* observations of the object `star`**
+<br> <span style=color:dodgerblue> **Q2:** </span> **Now, use the `head()` function again to ask R to show you the first *eight* observations of the object `star`**
 
 ```{r r5, exercise=TRUE, exercise.setup = "star"}
 
@@ -642,11 +642,68 @@ Hint: To change the number of observations displayed by the `head()` function, w
 </div>
 
 ```{r r5-solution}
-head(star,n=2)
+head(star, n=8)
 ```
 
 ```{r r5-check}
 grade_code("<br><br>To change the number of observations displayed by the `head()` function, we can use the optional argument named `n`. <br><br> Recall: We do not use quotes around the names of arguments, and when we specify more than one argument, we need to separate them with a comma. ")
+```
+
+```{r quiz2B}
+quiz(caption="",
+       question("<span style=color:dodgerblue> Q3: </span>Looking at the output above, we can see that ....",
+    answer("*small* is a character variable, *reading* and *math* are non-binary variables, and *graduated* is a binary variable", correct = TRUE),
+    answer("*small* is a character variable, *reading* and *math* are binary variables, and *graduated* is a non-binary variable"),
+    answer("*small* is a character variable, and *reading*, *math*, and *graduated* are non-binary variables"),
+    answer("*small* is a character variable, and *reading*, *math*, and *graduated* are binary variables"),
+    post_message = "The correct answer is: *small* is a character variable, *reading* and *math* are non-binary variables, and *graduated* is a binary variable.<br><br>
+    Recall: Character variables contain text. Binary variables can only take two values; in DSS, these values are 0s and 1s. Non-binary variables are numeric variables that can take more than two values.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+  question("<span style=color:dodgerblue> Q4: </span>Looking at the output above, we can substantively interpret the first observation. The first observation represents: ....",
+    answer("a student who attended a small class, earned 578 points on the third-grade reading test and 610 points on the third-grade math test, and graduated from high school", correct = TRUE),
+    answer("a student who attended a small class, earned 57.8% on the third-grade reading test and 61.0% on the third-grade math test, and graduated from high school", message="Check the units of measurement."),
+    answer("a group of students who attended a small class, earned 578 points on the third-grade reading test and 610 points on the third-grade math test, and graduated from high school", message="Check the unit of observation."),
+    answer("a student who earned 578 points on the third-grade reading test and 610 points on the third-grade math test, and graduated from high school", message="Make sure you are interpreting all the values that are part of the first observation."),
+    post_message = "The correct answer is: a student who attended a small class, earned 578 points on the third-grade reading test and 610 points on the third-grade math test, and graduated from high school.<br><br>
+    The unit of observation of the STAR dataset is students, so each observation represents a different student. And, to interpret the values in each variable, we use the information provided in the Table above with the description of what each variable measures, which includes the unit of measurement (i.e., points, percentages, etc).",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ))
+```
+
+<br> <span style=color:dodgerblue> **Q5:** </span> **Now, use the `dim()` function to ask R what the dimensions of the object `star` are**
+
+```{r r6, exercise=TRUE, exercise.setup = "star"}
+
+```
+
+<div id="r6-hint">
+Hint: The `dim()` function provides the dimensions of a dataframe. The only required argument is the name of the object where the dataframe is stored (without quotes). The output is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables. 
+</div>
+
+```{r r6-solution}
+dim(star)
+```
+
+```{r r6-check}
+grade_code("<br><br>The `dim()` function provides the dimensions of a dataframe. The only required argument is the name of the object where the dataframe is stored (without quotes).")
+```
+
+```{r quiz2C}
+quiz(caption="",
+       question("<span style=color:dodgerblue> Q6: </span>Looking at the output above, we can see that...",
+    answer("1,274 students were part of the STAR project", correct = TRUE),
+    answer("4 students were part of the STAR project", message="The output of the `dim()` function is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables. "),
+    answer("1,274 schools were part of the STAR project", message="Check the unit of observation of the dataframe."),
+    answer("4 schools were part of the STAR project", message="The output of the `dim()` function is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables."),
+    post_message = "The correct answer is: 1,274 students were part of the STAR project.<br><br>
+    The output of the `dim()` function is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables. Since the first value is 1,274, we can state that there are 1,274 observations in the STAR dataframe. <br><br>
+    And, because the unit of observation of the STAR dataframe is students, each observation in the dataframe represents a student who participated in the STAR project. So, we can re-write the statement above to say that 1,274 students were part of the STAR project.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ))
 ```
 
 [...STILL WORKING ON THESE...]
@@ -783,6 +840,3 @@ star <- read.csv("STAR.csv") # reads and stores data
 ```
 
 <br> <span style=color:dodgerblue> **Q1:** </span> **Use the `head()` function to ask R to show you the first six observations of the object `star`**
-
-[...STILL WORKING ON THESE...]
-
