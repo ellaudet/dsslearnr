@@ -773,10 +773,10 @@ quiz(caption="",
     allow_retry = TRUE
   ),
   question("<span style=color:dodgerblue> Q4: </span>If the unit of observation is students and the variable *attended* = {0, 0, 1, 1, 1, 0}, what proportion of students attended class?",
-    answer("50 percent", correct = TRUE),
-    answer("60 percent", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
-    answer("3 percent", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
-    answer("30 percent", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
+    answer("50 percent of the students attended class", correct = TRUE),
+    answer("60 percent of the students attended class", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
+    answer("3 percent  of the students attended class", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
+    answer("30 percent of the students attended class", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
     post_message = "The variable *attended* appears to be binary, where 1 means that the student attended class, and 0 means that the student did not attend class. <br><br> 
     There are six observations in this variable: three 1s and three 0s. This means that three out of the six students attended class, which is a proportion of 50 percent (3/6 = 0.5 and 0.5*100 = 50%).<br><br>
     Recall: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100.",
@@ -791,7 +791,8 @@ question("<span style=color:dodgerblue> Q5: </span>If the unit of observation is
     post_message = "The correct answer is:
     $\\overline{attended}$ = 0.5, which we can interpret as ''50 percent of the students attended class'' <br><br>
   Calculation: $\\overline{attended}$ ${ }$ equals 0.5 because: (0+0+1+1+1+0)/6 = 3/6 = 0.5. <br><br>
-  Interpretation: The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100. Here, *attendance* is binary (because it can take only two values: 1s and 0s), so the mean of *attendance* should be interpreted as a proportion (0.5*100=50%). The proportion of the observations that have the characteristic identified by the variable, in this case, who attended class.",
+  Interpretation: The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100. Here, *attendance* is binary (because it can take only two values: 1s and 0s), so the mean of *attendance* should be interpreted as a proportion (0.5*100=50%). The proportion of the observations that have the characteristic identified by the variable, in this case, who attended class.<br><br>
+  Important: Notice that we arrived to the same conclusion in the prior question. Computing the proportion of 1s in a binary variable is equivalent to computing the mean of the binary variable. Both calculations will lead us to the same conclusion.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ))
