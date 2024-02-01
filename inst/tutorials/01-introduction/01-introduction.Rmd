@@ -600,7 +600,7 @@ To help you figure out the right answer, some questions contain hints. You can a
     <td>  student's third-grade math test scores (in points) </td>
   <tr>
     <td>*graduated* </td>
-    <td>  identifies whether the student graduated from high school: <br>1{=}graduated or 0{=}did not graduate </td>
+    <td>  identifies whether the student graduated from high school: <br>1=graduated or 0=did not graduate </td>
   </tr>
 </table>
  
@@ -652,7 +652,7 @@ grade_code("<br><br>To change the number of observations displayed by the `head(
 
 ```{r quiz2B}
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q2 - Interpretation: </span>Looking at the output above, we can see that ....",
+       question("<span style=color:dodgerblue> Q2 - Interpretation: </span>Looking at the output of `head()` above, we can see that ....",
     answer("*small* is a character variable, *reading* and *math* are non-binary variables, and *graduated* is a binary variable", correct = TRUE),
     answer("*small* is a character variable, *reading* and *math* are binary variables, and *graduated* is a non-binary variable"),
     answer("*small* is a character variable, and *reading*, *math*, and *graduated* are non-binary variables"),
@@ -662,7 +662,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q2 - Interpretation: </span>Looking at the output above, we can substantively interpret the first observation. The first observation represents ....",
+  question("<span style=color:dodgerblue> Q2 - Interpretation: </span>Looking at the output of `head()` above, we can substantively interpret the first observation. The first observation represents ....",
     answer("a student who attended a small class, earned 578 points on the third-grade reading test and 610 points on the third-grade math test, and graduated from high school", correct = TRUE),
     answer("a student who attended a small class, earned 57.8% on the third-grade reading test and 61.0% on the third-grade math test, and graduated from high school", message="Check the units of measurement."),
     answer("a group of students who attended a small class, earned 578 points on the third-grade reading test and 610 points on the third-grade math test, and graduated from high school", message="Check the unit of observation."),
@@ -830,7 +830,7 @@ To help you figure out the right answer, some questions contain hints. You can a
     <td>  student's third-grade math test scores (in points) </td>
   <tr>
     <td>*graduated* </td>
-    <td>  identifies whether the student graduated from high school: <br>1{=}graduated or 0{=}did not graduate </td>
+    <td>  identifies whether the student graduated from high school: <br>1=graduated or 0=did not graduate </td>
   </tr>
 </table>
  
