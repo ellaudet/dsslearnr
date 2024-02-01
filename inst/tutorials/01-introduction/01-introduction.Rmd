@@ -68,7 +68,7 @@ This is a tutorial for readers of DSS, which stands for [Elena Llaudet and Kosuk
 
 DSS teaches from scratch R, statistics, and the fundamentals of quantitative social science (that is, the fundamentals of causal inference, survey research, and predictive models). The practice exercises you will find here cover all of these and are organized by chapter of the book.
 
-Each chapter is divided into three to five topics, and each topic corresponds to one to five sections of the textbook. In other words, each topic reviews only a handful of pages of the textbook, which often can be read in a single seating. Here is the recommended sequence: 
+Each chapter is divided into two to five topics, and each topic corresponds to one to five sections of the textbook. In other words, each topic reviews only a handful of pages of the textbook, which often can be read in a single seating. Here is the recommended sequence: 
 
 <table>
   <tr>
@@ -106,7 +106,7 @@ The practice exercises for this chapter are organized into three topics. In the 
   <tr>
     <td>Introduction to R and RStudio </td>
     <td>1-1.6</td>
-    <td></td>
+    <td> </td>
     <td>  +, -, *, /, <-, ", (), sqrt(), # </td>
   </tr>
   <tr>
@@ -116,7 +116,7 @@ The practice exercises for this chapter are organized into three topics. In the 
     <td> setwd(), read.csv(), View(), head(), dim() </td>
   </tr>
   <tr>
-    <td>  Computing and Interpreting Means </td>
+    <td>Computing and Interpreting Means </td>
     <td> 1.8-1.10 </td>
     <td> mean or average, $\sum$, unit of measurement </td>
     <td> $, mean() </td>
@@ -136,13 +136,13 @@ The practice exercises in this topic cover:
     <th> R Functions and Operators </th>
   </tr>
   <tr>
-    <td>1-1.6</td>
-    <td> NA </td>
+    <td> 1-1.6 </td>
+    <td> <span style=color:lightgray> (none) </span> </td>
     <td>  +, -, *, /, <-, ", (), sqrt(), # </td>
   </tr>
 </table>
 
-Make sure to complete the practice exercises *after* reading Sections 1 through 1.6 of DSS, including both, and *after* having followed the exercises in the book with your own computer. (The practice exercises are not meant to be a substitute for the book, but rather a supplement.) 
+Make sure to complete the practice exercises *after* reading Sections 1 to 1.6 of DSS, including both, and *after* having followed the exercises in the book with your own computer. (The practice exercises are not meant to be a substitute for the book, but rather a supplement.) 
 
 There are two kinds of exercises below:
 
@@ -722,7 +722,7 @@ The practice exercises in this topic cover:
   </tr>
 </table>
     
-Make sure to complete the practice exercises *after* reading Sections 1.8 through 1.10 of DSS, including both, and *after* having followed the exercises in the book with your own computer. (The practice exercises are not meant to be a substitute for the book, but rather a supplement.) 
+Make sure to complete the practice exercises *after* reading Sections 1.8 to 1.10 of DSS, including both, and *after* having followed the exercises in the book with your own computer. (The practice exercises are not meant to be a substitute for the book, but rather a supplement.) 
 
 There are two kinds of exercises below:
 
@@ -798,7 +798,6 @@ question("<span style=color:dodgerblue> Q4: </span>If the unit of observation is
   )
 )
 ```
-
 
 <br>
 <font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>

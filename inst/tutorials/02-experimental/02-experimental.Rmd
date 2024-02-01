@@ -11,10 +11,11 @@ description: "Practice Exercises for Readers of Data Analysis for Social Science
 
 ```{r setup, include=FALSE}
 library(learnr)
+library(gradethis)
+tutorial_options(exercise.checker = gradethis::grade_learnr, 
+                 exercise.reveal_solution="TRUE")
 knitr::opts_chunk$set(echo = FALSE)
-#library(gradethis)
-#tutorial_options(exercise.checker = gradethis::grade_learnr)
-#tut_reptitle <- "DSS: Output Report"
+tut_reptitle <- "DSS - CHAPTER 1: Report"
 ```
 
 ```{js target-blank, echo=FALSE}
@@ -29,7 +30,15 @@ $(document).ready(function() {
 ```
 
 <style>
+.borderexample {
+ border-width:1px;
+ border-style:solid;
+ border-color:dodgerblue;
+ padding: 15px;
+}
+</style>
 
+<style>
 table, td, th {
   border: 1px solid lightgray;
 }
@@ -53,19 +62,18 @@ th, td { padding: 15px; }
      width="200" 
      height="250" />
 
-This is a tutorial for readers of DSS, which stands for [Elena Llaudet and Kosuke Imai's *Data Analysis for Social Science: A Friendly and Practical Introduction* (Princeton University Press, 2022)](https://press.princeton.edu/books/paperback/9780691199436/data-analysis-for-social-science). 
+This is a tutorial for readers of DSS, which stands for [Elena Llaudet and Kosuke Imai's *Data Analysis for Social Science: A Friendly and Practical Introduction* (Princeton University Press, 2022)](https://bit.ly/dss_book). 
 
 DSS teaches from scratch R, statistics, and the fundamentals of quantitative social science (that is, the fundamentals of causal inference, survey research, and predictive models). The practice exercises you will find here cover all of these and are organized by chapter of the book.
 
-Each chapter is divided into three to five topics, and each topic corresponds to one to five sections of the textbook. In other words, each topic reviews only a handful of pages of the textbook, which often can be read in a single seating. Here is the recommended sequence: 
+Each chapter is divided into two to five topics, and each topic corresponds to one to five sections of the textbook. In other words, each topic reviews only a handful of pages of the textbook, which often can be read in a single seating. Here is the recommended sequence: 
 
-<body>
 <table>
   <tr>
-    <th><span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ <span style=color:steelblue> STEP 1  <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span></th>
-    <th><span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:steelblue> STEP 2  <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span></th>
-    <th> <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:steelblue> STEP 3 <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$</span></th>
-    <th> <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:steelblue> STEP 4 <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$</span></th>
+    <th><span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ <span style=color:dodgerblue> STEP 1  <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span></th>
+    <th><span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:dodgerblue> STEP 2  <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span></th>
+    <th> <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:dodgerblue> STEP 3 <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$</span></th>
+    <th> <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:dodgerblue> STEP 4 <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$</span></th>
   </tr>
   <tr>
     <td> read the section(s) <br> of the textbook <br> that correspond to <br> a particular topic </td>
@@ -108,14 +116,250 @@ The practice exercises for this chapter are organized into two topics. In the Ta
   </tr>
 </table>
 
-At the end, there is an interactive graph to help you develop an intuition for why random treatment assignment makes treatment and control groups comparable when the sample size is large enough. Make sure to take some time to play with it.
+In addition, there is an interactive graph at the end to help you develop an intuition for why random treatment assignment makes treatment and control groups comparable when the sample size is large enough. Make sure to take some time to play with it.
 
 Let's start! <br>
 
 ## <span style=color:dodgerblue> Estimating Causal Effects <br> with Randomized Experiments
-Complete the following practice exercises *after* reading Sections 2 through 2.4 of DSS, including both, and *after* having followed the exercises in the book with your own computer.
+
+The practice exercises in this topic cover:
+
+<table>
+  <tr>
+    <th> Readings </th>
+    <th> Key Concepts and Notation </th>
+    <th> R Functions and Operators </th>
+  </tr>
+  <tr>
+    <td> 2-2.4</td>
+    <td> causal relationships, treatment (X) vs. outcome variables (Y), potential outcomes, factual vs. counterfactual outcomes, fundamental problem of causal inference, individual vs. average causal effects, randomized experiments, random treatment assignment, treatment and control groups, pre-treatment characteristics, the difference-in-means estimator</td>
+    <td>  <span style=color:lightgray> (none) </span> </td>
+  </tr>
+</table>
+
+Make sure to complete the practice exercises *after* reading Sections 2 to 2.4 of DSS, including both, and *after* having followed the exercises in the book with your own computer. (The practice exercises are not meant to be a substitute for the book, but rather a supplement.) 
+
+There are two kinds of exercises below:
+
+- multiple-choice questions
+- practicing typing and running code
+
+I recommend doing them in the order presented.<br><br>
+
+<font size="+2"> <span style=color:dodgerblue> (A) Multiple-Choice Questions </span></font>
+
+<p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
+Select the correct answer(s) and click on the *Submit Answer* button in blue. 
+<br><br> If you didn't choose the correct answer(s) click on the *Try Again* button in orange and keep trying until you submit the correct answer(s).
+<br><br>
+To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.</p>
+
+```{r quiz1}
+quiz(caption="",
+  question("<span style=color:dodgerblue> Q1:</span> When estimating causal effects we distinguish between the treatment variable and the outcome variable. If we were interested in estimating the effect of attending a private school on SAT scores with a dataframe where students was the unit of observation, what would be the treatment and outcome variables?",
+    answer("(1) the treatment variable would be a binary variable indicating wether student *i* attended a private school, and (2) the outcome variable would be a nonbinary variable capturing the SAT score of student *i*", correct = TRUE),
+    answer("(1) the treatment variable would be a nonbinary variable capturing the SAT score of student *i*, and (2) the outcome variable would be a binary variable indicating wether student *i* attended a private school", message = "Check which variable should be the treatment variable and which should be the outcome variable."),
+    answer("(1) the treatment variable would be a nonbinary variable indicating wether student *i* attended a private school, and (2) the outcome variable would be a binary variable capturing the SAT score of student *i*", message = "Check whether the variables are binary or non-binary."),
+    answer("(1) the treatment variable would be a nonbinary variable indicating wether student *i* attended a private school, and (2) the outcome variable would be a nonbinary variable capturing the SAT score of student *i*", message = "Check whether the variables are binary or non-binary."),
+    post_message = "The correct answer is: (1) the treatment variable would be a binary variable indicating wether student *i* attended a private school, and (2) the outcome variable would be a nonbinary variable capturing the SAT score of student *i*<br><br>
+    The treatment variable is the variable where the change originates, and whose change may produce a change in the outcome variable. The outcome variable is the variable that may change as a result of a change in the treatment variable.
+    <br><br> Recall: Binary variables can only take two values; in DSS, these values are 0s and 1s. And, non-binary variables are numeric variables that can take more than two values.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+    question("<span style=color:dodgerblue> Q2:</span> In mathematical notation, we represent ...",
+    answer("the treatment variable as *X* and the outcome variable as *Y*", correct = TRUE),
+    answer("the treatment variable as *Y* and the outcome variable as *X*"),
+    answer("the treatment variable as *X* and the outcome variable as *Z*"),
+    answer("the treatment variable as *Z* and the outcome variable as *Y*"),
+    post_message = "In mathematical notation, we represent the treatment variable as *X* and the outcome variable as *Y*.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+    question("<span style=color:dodgerblue> Q3:</span> ",
+    answer("A", correct = TRUE),
+    answer("B", message = ""),
+    answer("C", message = ""),
+    answer("D", message = ""),
+    post_message = "",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+    question("<span style=color:dodgerblue> Q4:</span> ",
+    answer("A", correct = TRUE),
+    answer("B", message = ""),
+    answer("C", message = ""),
+    answer("D", message = ""),
+    post_message = "",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+    question("<span style=color:dodgerblue> Q5:</span> ",
+    answer("A", correct = TRUE),
+    answer("B", message = ""),
+    answer("C", message = ""),
+    answer("D", message = ""),
+    post_message = "",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+    question("<span style=color:dodgerblue> Q6:</span> ",
+    answer("A", correct = TRUE),
+    answer("B", message = ""),
+    answer("C", message = ""),
+    answer("D", message = ""),
+    post_message = "",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ))
+```
+
+
+<br>
+<font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
+
+<p class="borderexample">**Instructions**<br><br>When running code on our own computers, we write the code on the R script (the upper left window of RStudio), then we highlight the code we want to run and either (a) manually click on the *Run* icon of RStudio or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.<br><br>
+When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
+Once you are done typing the code, you can run it by clicking on the *Run Code* button in green. The output produced by the executed code will appear underneath the *R code* window.<br><br>
+Once you are satisfied with your answer, you can submit it by clicking on the *Submit Answer* button in blue. <br><br>
+To help you figure out the right answer, some questions contain hints. You can access them by clicking on the *Hint* button in white. </p>
+
+<br> <span style=color:dodgerblue> **Q1:** </span> **Ask R to compute 30+6**
+
+```{r r1, exercise=TRUE}
+
+```
+
+<div id="r1-hint">
+Hint: You may want to use the `+` operator.
+</div>
+
+```{r r1-solution}
+30+6
+```
+
+```{r r1-check}
+grade_result(
+  pass_if(~ identical(.result, 36), "<br><br> Note: R ignores spaces around operators, so `30+6` will produce the same results as `30 + 6`, `30 +6`, and `30+ 6`.")
+)
+```
+
+<br> <span style=color:dodgerblue> **Q2:** </span> **Ask R to store `30+6` into an object called `thirtysix`**
+
+```{r r2, exercise = TRUE}
+
+```
+
+<div id="r2-hint">
+Hint: You may want to use the assignment operator `<-`. <br><br>
+To the left of the assignment operator, we specify the name of the object (without quotes). <br><br>
+To the right of the assignment operator, we specify the contents of the object.
+<br><br>
+Recall: The name of objects cannot contain spaces.
+</div>
+
+```{r r2-solution}
+thirtysix <- 30+6
+```
+
+```{r r2-check}
+grade_code("<br><br> Explanation: To create an object, we use the assignment operator `<-`. <br><br>
+To the left of the assignment operator, we specify the name of the object (without quotes). <br><br>
+To the right of the assignment operator, we specify the contents of the object.<br><br>
+Recall: The name of objects cannot contain spaces.")
+```
+
+<br> <span style=color:dodgerblue> **Q3:** </span> **Ask R to show the contents of the object `thirtysix`**
+
+```{r thirtysix}
+thirtysix <- 30+6
+```
+
+```{r r3, exercise=TRUE, exercise.setup = "thirtysix"}
+
+```
+
+<div id="r3-hint">
+Hint: To ask R to show us the contents of an object, we run the name of the object.
+</div>
+
+```{r r3-solution}
+thirtysix
+```
+
+```{r r3-check}
+grade_result(
+  pass_if(~ identical(.result, thirtysix), "<br><br>To ask R to show us the contents of an object, we run the name of the object.")
+)
+```
+
+
+<br> <span style=color:dodgerblue> **Q4:** </span> **Use the `sqrt()` function to ask R to compute the square root of 36**
+
+```{r r4, exercise=TRUE, exercise.setup = "thirtysix"}
+
+```
+
+<div id="r4-hint">
+Hint: The function `sqrt()` calculates the square root of the argument specified inside the parentheses.
+</div>
+
+```{r r4-solution}
+## we have two options:
+sqrt(36) # specifying as the main argument the number 36
+sqrt(thirtysix) # specifying as the main argument the object thirtysix, which contains the number 36
+```
+
+```{r r4-check}
+grade_result(
+  pass_if(~ identical(.result, sqrt(36)), "<br><br> The function `sqrt()` calculates the square root of the argument specified inside the parentheses.<br><br> Since we have an object called `thirtysix` which contains the number 36, we could run either `sqrt(36)` or `sqrt(thirtysix)` to compute the square root of 36.")
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## <span style=color:dodgerblue> Computing the Difference-in-Means Estimator
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## <span style=color:dodgerblue> Interactive Graph: <br> Random Treatment Assignment
 
