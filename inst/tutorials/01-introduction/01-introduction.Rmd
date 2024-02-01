@@ -64,7 +64,7 @@ th, td { padding: 15px; }
      width="200" 
      height="250" />
 
-This is a tutorial for readers of DSS, which stands for [Elena Llaudet and Kosuke Imai's *Data Analysis for Social Science: A Friendly and Practical Introduction* (Princeton University Press, 2022)](https://press.princeton.edu/books/paperback/9780691199436/data-analysis-for-social-science). 
+This is a tutorial for readers of DSS, which stands for [Elena Llaudet and Kosuke Imai's *Data Analysis for Social Science: A Friendly and Practical Introduction* (Princeton University Press, 2022)](https://bit.ly/dss_book). 
 
 DSS teaches from scratch R, statistics, and the fundamentals of quantitative social science (that is, the fundamentals of causal inference, survey research, and predictive models). The practice exercises you will find here cover all of these and are organized by chapter of the book.
 
@@ -127,7 +127,7 @@ Let's start! <br>
 
 ## <span style=color:dodgerblue> Introduction to R and RStudio
 
-The practice exercises in this section cover:
+The practice exercises in this topic cover:
 
 <table>
   <tr>
@@ -174,9 +174,9 @@ quiz(caption="",
   ),
   question("<span style=color:dodgerblue> Q2: </span>What do we usually do after opening RStudio?",
     answer("Open an R script so that we can use it to write and run code", correct = TRUE),
-    answer("Write R code directly into the Console", message = "You could do this, but it is not recommended. If you write code directly into the Console, you won't be able to save it, re-run it, tweak it, expand it, and share it."),
+    answer("Write R code directly into the Console", message = "We could do this, but it is not recommended. If we write code directly into the Console, we won't be able to save it, re-run it, tweak it, expand it, and share it."),
     answer("Open R", message = "RStudio automatically opens R on its own. We do not open it ourselves."),
-    post_message = "It is best to run code through an R script so that you can save it, re-run it, tweak it, expand it, and share it. So, after opening RStudio, we usually open the R script that we will use to write and run code.",
+    post_message = "It is best to run code through an R script so that we can save it, re-run it, tweak it, expand it, and share it. So, after opening RStudio, we usually open the R script that we will use to write and run code.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -191,7 +191,7 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
 ),
   question("<span style=color:dodgerblue> Q4: </span>Which of the following pieces of R code will compute 3 + 3?",
     answer("`3 + 3`", correct = TRUE),
-    answer("`three + three`", message = "This code is not correct unless you had previously created an object named `three` containing the number `3`."),
+    answer("`three + three`", message = "This code is not correct unless we had previously created an object named `three` containing the number `3`."),
     answer("`3 plus 3`", message = "The R operator for summation is `+`, not `plus`."),
     answer("`three plus three`"),
     post_message = "The correct answer is: `3 + 3`.<br><br> 
@@ -225,7 +225,7 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
     allow_retry = TRUE
   ),
   question("<span style=color:dodgerblue> Q7: </span>What would happen if after running the code from the previous question, we ran the following piece of R code: ` today <- Tuesday `",
-    answer("The following error message will appear in the Console: <span style=color:red> Error: object 'Tuesday' not found `", correct = TRUE),
+    answer("The following error message will appear in the Console: <span style=color:red> Error: object 'Tuesday' not found", correct = TRUE),
     answer("The object called *today* will now contain the text ''Tuesday'' instead of ''Monday''", message = "Hint: Pay attention to the quotes used in the code."),
     answer("A new object called *today* will be created, containing the text ''Tuesday''", message = "We had already created an object called *today*. To figure out the correct answer: pay attention to the quotes used in the code."),
     answer("Nothing will happen"),
@@ -253,7 +253,7 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
     answer("Some arguments are required; others are optional", correct = TRUE),
     answer("The function `sqrt()` computes the square root of the argument specified inside the parentheses", correct = TRUE),
     answer("The output(s) are shown in the Console", correct = TRUE),
-    answer("The name of the function determines the action(s) the function perform, the input(s) it requires, and the output(s) it produced.", correct = TRUE),
+    answer("The name of the function determines the action(s) the function performs, the input(s) it requires, and the output(s) it produces.", correct = TRUE),
     post_message = "All the statements above are true!",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -281,7 +281,7 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q12: </span>How do you know that you have some unsaved changes on your R script?",
+  question("<span style=color:dodgerblue> Q12: </span>How do we know that we have some unsaved changes on our R script?",
     answer("RStudio displays the name of the R script in red", correct = TRUE),
     answer("RStudio plays a sound when we try to close the program"),
     answer("There is no way of knowing"),
@@ -347,7 +347,7 @@ To the right of the assignment operator, we specify the contents of the object.<
 Recall: The name of objects cannot contain spaces.")
 ```
 
-<br> <span style=color:dodgerblue> **Q3:** </span> **Ask R to show you the contents of the object `thirtysix`**
+<br> <span style=color:dodgerblue> **Q3:** </span> **Ask R to show the contents of the object `thirtysix`**
 
 ```{r thirtysix}
 thirtysix <- 30+6
@@ -395,7 +395,7 @@ grade_result(
 ```
 
 ## <span style=color:dodgerblue> Observations and Variables
-The practice exercises in this section cover:
+The practice exercises in this topic cover:
 
 <table>
   <tr>
@@ -609,7 +609,7 @@ To help you figure out the right answer, some questions contain hints. You can a
 star <- read.csv("STAR.csv") # reads and stores data
 ```
 
-<br> <span style=color:dodgerblue> **Q1:** </span> **Use the `head()` function to ask R to show you the first six observations of the object `star`**
+<br> <span style=color:dodgerblue> **Q1:** </span> **Use the `head()` function to ask R to show the first six observations of the object `star`**
 
 ```{r star, echo=FALSE}
 star <- read.csv("data/STAR.csv")
@@ -631,7 +631,7 @@ head(star)
 grade_code("<br><br>The `head()` function shows the first six observations in a dataframe. The only required argument is the name of object where the dataframe is stored; here: `star`.")
 ```
 
-<br> <span style=color:dodgerblue> **Q2:** </span> **Now, use the `head()` function again to ask R to show you the first *eight* observations of the object `star`**
+<br> <span style=color:dodgerblue> **Q2:** </span> **Now, use the `head()` function again to ask R to show the first *eight* observations of the object `star`**
 
 ```{r r5, exercise=TRUE, exercise.setup = "star"}
 
@@ -707,7 +707,7 @@ quiz(caption="",
 ```
 
 ## <span style=color:dodgerblue> Computing and Interpreting Means
-The practice exercises in this section cover:
+The practice exercises in this topic cover:
 
 <table>
   <tr>
@@ -759,7 +759,7 @@ quiz(caption="",
     post_message = "The correct answer is:
     $\\overline{distance}$ = 0.2, which we can interpret as ''the average distance is 0.2 miles'' <br><br>
   Calculation: $\\overline{distance}$ stands for the mean of *distance* and, here, it equals 0.2 because: (0.2+0.1+0.3+0.2)/4 = 0.8/4 = 0.2. <br><br>
-  Interpretation: The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a non-binary variable should be interpreted as an average and in the same unit of measurement as the variable. Here, *distance* is non-binary (because it can take more than two values) and measured in miles, so the mean of *distance* should be interpreted as an average and in miles.",
+  Interpretation: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a non-binary variable should be interpreted as an average and in the same unit of measurement as the variable. Here, *distance* is non-binary (because it can take more than two values) and measured in miles, so the mean of *distance* should be interpreted as an average and in miles.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -785,13 +785,13 @@ quiz(caption="",
   ),
 question("<span style=color:dodgerblue> Q5: </span>If the unit of observation is students and *attended* = {0, 0, 1, 1, 1, 0}, what is $\\overline{attended}$ ?",
     answer("$\\overline{attended}$ = 0.5, which we can interpret as `50 percent of the students attended class'", correct = TRUE),
-    answer("$\\overline{attended}$ = 0.5, which we can interpret `students attended 0.5 classes on average'", message = "Hint: Is *attended* a binary or a non-binary variable?"),
-    answer("$\\overline{attended}$ = 3, which we can interpret `students attended 3 classes on average'", message = "Hint: Check your calculations. Plus, is *attended* a binary or a non-binary variable?"),
+    answer("$\\overline{attended}$ = 0.5, which we can interpret as `students attended 0.5 classes on average'", message = "Hint: Is *attended* a binary or a non-binary variable?"),
+    answer("$\\overline{attended}$ = 3, which we can interpret as `students attended 3 classes on average'", message = "Hint: Check your calculations. Plus, is *attended* a binary or a non-binary variable?"),
     answer("$\\overline{attended}$ = 0.3, which we can interpret as `30 percent of the students attended class'", message = "Hint: Check your calculations"),
     post_message = "The correct answer is:
     $\\overline{attended}$ = 0.5, which we can interpret as ''50 percent of the students attended class'' <br><br>
   Calculation: $\\overline{attended}$ ${ }$ equals 0.5 because: (0+0+1+1+1+0)/6 = 3/6 = 0.5. <br><br>
-  Interpretation: The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100. Here, *attendance* is binary (because it can take only two values: 1s and 0s), so the mean of *attendance* should be interpreted as a proportion (0.5*100=50%). The proportion of the observations that have the characteristic identified by the variable, in this case, who attended class.<br><br>
+  Interpretation: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100. Here, *attendance* is binary (because it can take only two values: 1s and 0s), so the mean of *attendance* should be interpreted as a proportion (0.5*100=50%). The proportion of the observations that have the characteristic identified by the variable, in this case, who attended class.<br><br>
   Important: Notice that we arrived to the same conclusion in the prior question. Computing the proportion of 1s in a binary variable is equivalent to computing the mean of the binary variable. Both calculations will lead us to the same conclusion.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -868,12 +868,12 @@ We use the `$` character to access a variable inside a dataframe. To its left, w
 ```{r quiz2DF}
 quiz(caption="",
        question("<span style=color:dodgerblue> Q1 - Interpretation: </span> How can we interpret the mean of *reading* computed above?",
-    answer("Among the students who participated in Project STAR, the average score in the third-grade reading test is about 629 points.", correct = TRUE),
-    answer("Among the students who participated in Project STAR, the average score in the third-grade reading test is about 629 %.", message="Check the unit of measurement"),
-    answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 629 points.", message="Check the test we computed the mean of."),
-    answer("Among the students who participated in Project STAR, the average score in the third-grade reading test is about 628 points.", message="Notice that we round up whenever the next decimal point is 5 or above."),
+    answer("Among the students who participated in Project STAR, the average score in the third-grade reading test is about 629 points", correct = TRUE),
+    answer("Among the students who participated in Project STAR, the average score in the third-grade reading test is about 629%", message="Check the unit of measurement"),
+    answer("Among the students who participated in Project STAR, the average score in the third-grade reading test is about 629", message="You are missing the unit of measurement."),
+    answer("Among the students who participated in Project STAR, the average score in the third-grade reading test is about 628 points", message="Notice that we round up whenever the next decimal point is 5 or above."),
     post_message = "The correct answer is: Among the students who participated in Project STAR, the average score in the third-grade reading test is about 629 points.<br><br>
-     The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a non-binary variable should be interpreted as an average and in the same unit of measurement as the variable. Here, *reading* is non-binary (because it can take more than two values) and measured in points, so the mean of *reading* should be interpreted as an average and in points.",
+     Recall: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a non-binary variable should be interpreted as an average and in the same unit of measurement as the variable. Here, *reading* is non-binary (because it can take more than two values) and measured in points, so the mean of *reading* should be interpreted as an average and in points.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ))
@@ -904,10 +904,10 @@ quiz(caption="",
        question("<span style=color:dodgerblue> Q2 - Interpretation: </span> How can we interpret the mean of *graduated* computed above?",
     answer("87% of the students who participated in Project STAR graduated from high school", correct = TRUE),
     answer("0.87% of the students who participated in Project STAR graduated from high school", message="Remember that to interpret the output as a percentage, we need to multiply it by 100.<br><br>The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100."),
-    answer("Among the students who participated in Project STAR, the average graduation is 0.87.", message="Is *graduated* binary or non-binary? <br><br>The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100."),
-    answer("The average graduation rate among the schools that participated in Project STAR is 87%.", message="Check the unit of observation."),
+    answer("Among the students who participated in Project STAR, the average graduation is 0.87", message="Is *graduated* binary or non-binary? <br><br>The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100."),
+    answer("The average graduation rate among the schools that participated in Project STAR is 87%", message="Check the unit of observation."),
     post_message = "The correct answer is: 87% of the students who participated in Project STAR graduated from high school.<br><br>
-    Recall: The interpretation of the mean of a variable depends on whether the variable you are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100. <br><br>Here, *graduated* is binary (because it can take only two values: 1s and 0s), so the mean of *graduated* should be interpreted as a proportion (0.87*100=87%). The proportion of the observations that have the characteristic identified by the variable, in this case, who graduated from high school.",
+    Recall: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100. <br><br>Here, *graduated* is binary (because it can take only two values: 1s and 0s), so the mean of *graduated* should be interpreted as a proportion (0.87*100=87%). The proportion of the observations that have the characteristic identified by the variable, in this case, who graduated from high school.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ))
