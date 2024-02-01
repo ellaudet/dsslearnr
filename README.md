@@ -5,6 +5,7 @@ This package contains [`learnr`](https://rstudio.github.io/learnr/index.html) tu
 To be able to access the tutorials, open RStudio and run the following R code to install the necessary packages:
 
 ``` r
+install.packages("remotes")
 remotes::install_github("rstudio/learnr")
 remotes::install_github("rstudio-education/gradethis")
 remotes::install_github("ellaudet/dsslearnr")
