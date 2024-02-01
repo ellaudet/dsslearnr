@@ -137,7 +137,7 @@ The practice exercises in this topic cover:
   </tr>
 </table>
 
-Make sure to complete the practice exercises *after* reading Sections 2 to 2.4 of DSS, including both, and *after* having followed the exercises in the book with your own computer. (The practice exercises are not meant to be a substitute for the book, but rather a supplement.) 
+Make sure to complete the practice exercises *after* reading Sections 2 to 2.4 of DSS, including both, and *after* having followed the exercises in the book with your own computer. <span style=color:dodgerblue> *The practice exercises are not meant to be a substitute for the book, but rather a supplement.* </span>
 
 There is only one kind of exercises below:
 

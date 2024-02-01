@@ -142,7 +142,8 @@ The practice exercises in this topic cover:
   </tr>
 </table>
 
-Make sure to complete the practice exercises *after* reading Sections 1 to 1.6 of DSS, including both, and *after* having followed the exercises in the book with your own computer. (The practice exercises are not meant to be a substitute for the book, but rather a supplement.) 
+Make sure to complete the practice exercises *after* reading Sections 1 to 1.6 of DSS, including both, and *after* having followed the exercises in the book with your own computer. IMPORTANT: <span style=color:dodgerblue> *The practice exercises are not meant to be a substitute for the book, but rather a supplement.* </span>
+ 
 
 There are two kinds of exercises below:
 
@@ -261,7 +262,7 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
   question("<span style=color:dodgerblue> Q10 - A MULTI-ANSWER QUESTION: </span> If we had run all the code above, which of the following pieces of R code could we use to compute the square root of 3? (Note: You must select ALL true statements for the answer to be correct.)",
     answer("`sqrt(3)`", correct = TRUE),
     answer("`sqrt(three)`", correct = TRUE),
-    answer("`square_root(3)`", message = "`square_root(3)` is NOT one of the correct answers. This code will produce the following error message: <span style=color:red> Error in squareroot(3) : could not find function ''squareroot''</span>.<br>"),
+    answer("`squareroot(3)`", message = "`square_root(3)` is NOT one of the correct answers. This code will produce the following error message: <span style=color:red> Error in squareroot(3) : could not find function ''squareroot''</span>.<br>"),
     answer("`sroot(3)`", message = "`sroot(3)` is NOT one of the correct answers. This code will produce the following error message: <span style=color:red> Error in sroot(3) : could not find function ''sroot''</span>.<br>"),
     post_message = "First, we could compute the square root of 3 by running `sqrt(3)`.<br><br> 
     Explanation: ` sqrt()` is an R function that computes the square root of the argument specified inside the parentheses. <br><br>
@@ -272,8 +273,8 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
   question("<span style=color:dodgerblue> Q11: </span>What would happen if after running all the code above, we ran the following piece of R code: ` # square root of three is sqrt(three)`",
     answer("Nothing will happen", correct=T),
     answer("R will compute the square root of 3 and provide the result in the Console", message = ""),
-    answer("The following error message will appear in the Console: <span style=color:red> Error: object 'three' not found `", message = "We do have an object called *three* in the environment, which contains the number 3"),
-    answer("The following error message will appear in the Console: <span style=color:red> Error in sqrt(three) : could not find function ''sqrt''`.", message = "The function sqrt() does exist; it computes the square root of the argument specified inside the parentheses."),
+    answer("The following error message will appear in the Console: <span style=color:red> Error: object 'three' not found", message = "We do have an object called *three* in the environment, which contains the number 3"),
+    answer("The following error message will appear in the Console: <span style=color:red> Error in sqrt(three) : could not find function ''sqrt''", message = "The function sqrt() does exist; it computes the square root of the argument specified inside the parentheses."),
     post_message = "Nothing will happen because this piece of code starts with the character ` # `<br><br> 
     Explanation: the character ` # ` is used to comment code; R ignores anything that follows this character until the end of the line.<br><br>
     Note: Since we have an object called *three* containing the number 3, if we wanted R to compute the square root of 3, we could run `sqrt(three)`.<br><br> 
@@ -410,7 +411,7 @@ The practice exercises in this topic cover:
   </tr>
 </table>
     
-Make sure to complete the practice exercises *after* reading Section 1.7 of DSS, and *after* having followed the exercises in the book with your own computer. (The practice exercises are not meant to be a substitute for the book, but rather a supplement.) 
+Make sure to complete the practice exercises *after* reading Section 1.7 of DSS, and *after* having followed the exercises in the book with your own computer. IMPORTANT: <span style=color:dodgerblue> *The practice exercises are not meant to be a substitute for the book, but rather a supplement.* </span>
 
 There are two kinds of exercises below:
 
@@ -722,7 +723,7 @@ The practice exercises in this topic cover:
   </tr>
 </table>
     
-Make sure to complete the practice exercises *after* reading Sections 1.8 to 1.10 of DSS, including both, and *after* having followed the exercises in the book with your own computer. (The practice exercises are not meant to be a substitute for the book, but rather a supplement.) 
+Make sure to complete the practice exercises *after* reading Sections 1.8 to 1.10 of DSS, including both, and *after* having followed the exercises in the book with your own computer. IMPORTANT: <span style=color:dodgerblue> *The practice exercises are not meant to be a substitute for the book, but rather a supplement.* </span>
 
 There are two kinds of exercises below:
 
@@ -763,7 +764,7 @@ quiz(caption="",
   question("<span style=color:dodgerblue> Q3: </span>If the unit of observation is students and the variable *attended* = {0, 0, 1, 1, 1, 0}, what proportion of students attended class?",
     answer("50 percent of the students attended class", correct = TRUE),
     answer("60 percent of the students attended class", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
-    answer("3 percent  of the students attended class", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
+    answer("3 percent of the students attended class", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
     answer("30 percent of the students attended class", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
     post_message = "The variable *attended* appears to be binary, where 1 means that the student attended class, and 0 means that the student did not attend class. <br><br> 
     There are six observations in this variable: three 1s and three 0s. This means that three out of the six students attended class, which is a proportion of 50 percent (3/6 = 0.5 and 0.5*100 = 50%).<br><br>
@@ -779,7 +780,8 @@ question("<span style=color:dodgerblue> Q4: </span>If the unit of observation is
     post_message = "The correct answer is:
     $\\overline{attended}$ = 0.5, which we can interpret as ''50 percent of the students attended class'' <br><br>
   Calculation: $\\overline{attended}$ ${ }$ equals 0.5 because: (0+0+1+1+1+0)/6 = 3/6 = 0.5. <br><br>
-  Interpretation: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100.<br><br> Here, *attendance* is binary (because it can take only two values: 1s and 0s), so the mean of *attendance* should be interpreted as a proportion (0.5*100=50%). The proportion of the observations that have the characteristic identified by the variable. In this case, the proportion of students who attended class.<br><br>
+  Interpretation: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100.<br><br> Here, *attendance* is binary (because it can take only two values: 1s and 0s), so the mean of *attendance* should be interpreted as a proportion after multiplying the output by 100 (0.5*100=50%). HEREEEEE 
+  In particular, it should be interpreted as the proportion of the observations that have the characteristic identified by the variable. In this case, the proportion of students who attended class.<br><br>
   Important: Notice that we arrived to the same conclusion in the prior question. Computing the proportion of 1s in a binary variable is equivalent to computing the mean of the binary variable. Both calculations will lead us to the same conclusion.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -873,7 +875,7 @@ quiz(caption="",
     answer("Among the students who participated in Project STAR, the average score in the third-grade reading test is about 629", message="You are missing the unit of measurement."),
     answer("Among the students who participated in Project STAR, the average score in the third-grade reading test is about 628 points", message="Notice that we round up whenever the next decimal point is 5 or above."),
     post_message = "The correct answer is: Among the students who participated in Project STAR, the average score in the third-grade reading test is about 629 points.<br><br>
-     Recall: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a non-binary variable should be interpreted as an average and in the same unit of measurement as the variable. Here, *reading* is non-binary (because it can take more than two values) and measured in points, so the mean of *reading* should be interpreted as an average and in points.",
+     Recall: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a non-binary variable should be interpreted as an average and in the same unit of measurement as the variable.  <br><br>Here, as we can see in the output of `head()` above, *reading* is non-binary because it can take more than two values. And, as we can read in the description of the variable in the table above, *reading* is measured in points. So, the mean of *reading* should be interpreted as an average and in points.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ))
@@ -907,13 +909,13 @@ quiz(caption="",
     answer("Among the students who participated in Project STAR, the average graduation is 0.87", message="Is *graduated* binary or non-binary? <br><br>The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100."),
     answer("The average graduation rate among the schools that participated in Project STAR is 87%", message="Check the unit of observation."),
     post_message = "The correct answer is: 87% of the students who participated in Project STAR graduated from high school.<br><br>
-    Recall: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100. <br><br>Here, *graduated* is binary (because it can take only two values: 1s and 0s), so the mean of *graduated* should be interpreted as a proportion (0.87*100=87%). The proportion of the observations that have the characteristic identified by the variable, in this case, who graduated from high school.",
+    Recall: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100. <br><br>Here, as we can see in the output of `head()` above, *graduated* is binary because it can take only two values: 1s and 0s. So, the mean of *graduated* should be interpreted as a proportion after multiplying the output by 100 (0.87*100=87%). In particular, it should be interpreted as the proportion of the observations that have the characteristic identified by the variable. In this case, the proportion of students who graduated from high school.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ))
 ```
 
-<br> <span style=color:dodgerblue> **Q3 - FIX THE ERRORS IN THE CODE:** </span> **Running into error messages is part of coding, so let's get some practice fixing mistakes in our code. There are many mistakes in the code below. Try to fix them all so that R computes de average of the variable *math*, which is stored inside the object called *star*. (The error messages that R provides can be really helpful when looking to debug code. So, I recommend starting by running the code as is, and then running it again after fixing each individual error, so that you can read the messages that R will provide.)**
+<br> <span style=color:dodgerblue> **Q3 - FIX THE ERRORS IN THE CODE:** </span> **Running into error messages is part of coding, so let's practice fixing mistakes in our code. There are many mistakes in the code below. Try to fix them all so that R computes de mean of the variable *math*, which is one of the variables in the dataframe stored in the object called *star*. (The error messages that R provides can be really helpful when looking to debug code. So, I recommend starting by running the code as is, and then running it again after fixing each individual error, so that you can read the messages that R provides.)**
 
 ```{r r9, exercise=TRUE, exercise.setup = "star"}
 average(math$STAR) # computes the mean of math
@@ -933,4 +935,18 @@ mean(star$math)
 grade_code("<br><br>The function that calculates the mean of a variable is `mean()`, not `average()`.<br><br>
 We use the `$` character to access a variable inside a dataframe. To its left, we specify the name of the object where the dataframe is stored (without quotes). To its right, we specify the name of the variable (without quotes). Example: `data$variable`. <br><br>
 R code is case sensitive and the name of the object where we have stored the dataset is `star`, not `STAR`.")
+```
+
+```{r quiz10}
+quiz(caption="",
+       question("<span style=color:dodgerblue> Q3 - Interpretation: </span> How can we interpret the mean of *math* computed above?",
+    answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 632 points", correct = TRUE),
+    answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 63.2%", message="Check the unit of measurement"),
+    answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 632", message="You are missing the unit of measurement."),
+    answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 631 points", message="Notice that we round up whenever the next decimal point is 5 or above."),
+    post_message = "The correct answer is: Among the students who participated in Project STAR, the average score in the third-grade math test is about 632 points.<br><br>
+     Recall: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a non-binary variable should be interpreted as an average and in the same unit of measurement as the variable. <br><br>Here, as we can see in the output of `head()` above, *math* is non-binary because it can take more than two values. And, as we can read in the description of the variable in the table above, *math* is measured in points. So, the mean of *math* should be interpreted as an average and in points.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ))
 ```
