@@ -751,19 +751,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q2: </span>If *distance* = {0.2, 0.1, 0.3, 0.2} and *distance* is measured in miles, then...",
-    answer("$\\overline{distance}$ = 0.2, which we can interpret as `the average distance is 0.2 miles'", correct = TRUE),
-    answer("$\\overline{distance}$ = 0.2, which we can interpret as `the proportion of observations with a large distance is 20 percent'", message = "Hint: Is *distance* a binary or a non-binary variable?"),
-    answer("$\\overline{distance}$ = 0.2, which we can interpret as `the proportion of observations with a small distance is 20 percent'", message = "Hint: Is *distance* a binary or a non-binary variable?"),
-    answer("$\\overline{distance}$ = 0.8, which we can interpret as `the average distance is 0.8 miles'", message = "Hint: Check your calculation"),
-    post_message = "The correct answer is:
-    $\\overline{distance}$ = 0.2, which we can interpret as ''the average distance is 0.2 miles'' <br><br>
-  Calculation: $\\overline{distance}$ stands for the mean of *distance* and, here, it equals 0.2 because: (0.2+0.1+0.3+0.2)/4 = 0.8/4 = 0.2. <br><br>
-  Interpretation: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a non-binary variable should be interpreted as an average and in the same unit of measurement as the variable. Here, *distance* is non-binary (because it can take more than two values) and measured in miles, so the mean of *distance* should be interpreted as an average and in miles.",
-    random_answer_order = TRUE,
-    allow_retry = TRUE
-  ),
-  question("<span style=color:dodgerblue> Q3: </span>What does $\\sum$ stand for in mathematical notation?",
+    question("<span style=color:dodgerblue> Q2: </span>What does $\\sum$ stand for in mathematical notation?",
     answer("$\\sum$ stands for summation", correct = TRUE),
     answer("$\\sum$ stands for multiplication"),
     answer("$\\sum$ stands for mean"),
@@ -772,7 +760,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q4: </span>If the unit of observation is students and the variable *attended* = {0, 0, 1, 1, 1, 0}, what proportion of students attended class?",
+  question("<span style=color:dodgerblue> Q3: </span>If the unit of observation is students and the variable *attended* = {0, 0, 1, 1, 1, 0}, what proportion of students attended class?",
     answer("50 percent of the students attended class", correct = TRUE),
     answer("60 percent of the students attended class", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
     answer("3 percent  of the students attended class", message = "Hint: The proportion of observations that meet a criterion is calculated as: *number of observations that meet criterion* / *total number of observations*. And, to interpret the resulting decimal as a percentage, we multiply it by 100."),
@@ -783,7 +771,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-question("<span style=color:dodgerblue> Q5: </span>If the unit of observation is students and *attended* = {0, 0, 1, 1, 1, 0}, what is $\\overline{attended}$ ?",
+question("<span style=color:dodgerblue> Q4: </span>If the unit of observation is students and *attended* = {0, 0, 1, 1, 1, 0}, what is $\\overline{attended}$ ?",
     answer("$\\overline{attended}$ = 0.5, which we can interpret as `50 percent of the students attended class'", correct = TRUE),
     answer("$\\overline{attended}$ = 0.5, which we can interpret as `students attended 0.5 classes on average'", message = "Hint: Is *attended* a binary or a non-binary variable?"),
     answer("$\\overline{attended}$ = 3, which we can interpret as `students attended 3 classes on average'", message = "Hint: Check your calculations. Plus, is *attended* a binary or a non-binary variable?"),
@@ -791,11 +779,24 @@ question("<span style=color:dodgerblue> Q5: </span>If the unit of observation is
     post_message = "The correct answer is:
     $\\overline{attended}$ = 0.5, which we can interpret as ''50 percent of the students attended class'' <br><br>
   Calculation: $\\overline{attended}$ ${ }$ equals 0.5 because: (0+0+1+1+1+0)/6 = 3/6 = 0.5. <br><br>
-  Interpretation: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100. Here, *attendance* is binary (because it can take only two values: 1s and 0s), so the mean of *attendance* should be interpreted as a proportion (0.5*100=50%). The proportion of the observations that have the characteristic identified by the variable, in this case, who attended class.<br><br>
+  Interpretation: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a binary variable should be interpreted as proportion and in percentages, after multiplying the output by 100.<br><br> Here, *attendance* is binary (because it can take only two values: 1s and 0s), so the mean of *attendance* should be interpreted as a proportion (0.5*100=50%). The proportion of the observations that have the characteristic identified by the variable. In this case, the proportion of students who attended class.<br><br>
   Important: Notice that we arrived to the same conclusion in the prior question. Computing the proportion of 1s in a binary variable is equivalent to computing the mean of the binary variable. Both calculations will lead us to the same conclusion.",
     random_answer_order = TRUE,
     allow_retry = TRUE
-  ))
+  ),
+  question("<span style=color:dodgerblue> Q5: </span>If *distance* = {0.2, 0.1, 0.3, 0.2} and *distance* is measured in miles, then...",
+    answer("$\\overline{distance}$ = 0.2, which we can interpret as `the average distance is 0.2 miles'", correct = TRUE),
+    answer("$\\overline{distance}$ = 0.2, which we can interpret as `the proportion of observations with a large distance is 20 percent'", message = "Hint: Is *distance* a binary or a non-binary variable?"),
+    answer("$\\overline{distance}$ = 0.2, which we can interpret as `the proportion of observations with a small distance is 20 percent'", message = "Hint: Is *distance* a binary or a non-binary variable?"),
+    answer("$\\overline{distance}$ = 0.8, which we can interpret as `the average distance is 0.8 miles'", message = "Hint: Check your calculation"),
+    post_message = "The correct answer is:
+    $\\overline{distance}$ = 0.2, which we can interpret as ''the average distance is 0.2 miles'' <br><br>
+  Calculation: $\\overline{distance}$ stands for the mean of *distance* and, here, it equals 0.2 because: (0.2+0.1+0.3+0.2)/4 = 0.8/4 = 0.2. <br><br>
+  Interpretation: The interpretation of the mean of a variable depends on whether the variable we are computing the mean of is binary or non-binary. The mean of a non-binary variable should be interpreted as an average and in the same unit of measurement as the variable. <br><br>Here, *distance* is non-binary (because it can take more than two values) and measured in miles, so the mean of *distance* should be interpreted as an average and in miles.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  )
+)
 ```
 
 
