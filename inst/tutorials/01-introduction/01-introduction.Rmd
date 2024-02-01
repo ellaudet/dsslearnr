@@ -912,3 +912,25 @@ quiz(caption="",
     allow_retry = TRUE
   ))
 ```
+
+<br> <span style=color:dodgerblue> **Q3 - FIX THE ERRORS IN THE CODE:** </span> **Running into error messages is part of coding, so let's get some practice fixing mistakes in our code. There are many mistakes in the code below. Try to fix them all so that R computes de average of the variable *math*, which is stored inside the object called *star*. (The error messages that R provides can be really helpful when looking to debug code. So, I recommend starting by running the code as is, and then running it again after fixing each individual error, so that you can read the messages that R will provide.)**
+
+```{r r9, exercise=TRUE, exercise.setup = "star"}
+average(math$STAR) # computes the mean of math
+```
+
+<div id="r9-hint">
+Hint: The function that calculates the mean of a variable is `mean()`, not `average()`.<br><br>
+To the left of the `$` character, we specify the name of the object where the dataframe is stored (without quotes). To the right of the `$` character, we specify the name of the variable (without quotes). Example: `data$variable`. <br><br>
+R code is case sensitive and the name of the object where we have stored the dataset is `star`, not `STAR`.
+</div>
+
+```{r r9-solution}
+mean(star$math)
+```
+
+```{r r9-check}
+grade_code("<br><br>The function that calculates the mean of a variable is `mean()`, not `average()`.<br><br>
+We use the `$` character to access a variable inside a dataframe. To its left, we specify the name of the object where the dataframe is stored (without quotes). To its right, we specify the name of the variable (without quotes). Example: `data$variable`. <br><br>
+R code is case sensitive and the name of the object where we have stored the dataset is `star`, not `STAR`.")
+```

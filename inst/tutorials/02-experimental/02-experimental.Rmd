@@ -139,10 +139,9 @@ The practice exercises in this topic cover:
 
 Make sure to complete the practice exercises *after* reading Sections 2 to 2.4 of DSS, including both, and *after* having followed the exercises in the book with your own computer. (The practice exercises are not meant to be a substitute for the book, but rather a supplement.) 
 
-There are two kinds of exercises below:
+There is only one kind of exercises below:
 
 - multiple-choice questions
-- practicing typing and running code
 
 I recommend doing them in the order presented.<br><br>
 
@@ -156,7 +155,7 @@ To help you understand the correct answer(s), most questions will provide you so
 
 ```{r quiz1}
 quiz(caption="",
-  question("<span style=color:dodgerblue> Q1:</span> When estimating causal effects we distinguish between the treatment variable and the outcome variable. If we were interested in estimating the effect of attending a private school on SAT scores with a dataframe where students was the unit of observation, what would be the treatment and outcome variables?",
+  question("<span style=color:dodgerblue> Q1:</span> When estimating causal effects we distinguish between treatment and outcome variables. If we were interested in estimating the effect of attending a private school on SAT scores with a dataframe where students was the unit of observation, what would be the treatment and outcome variables?",
     answer("(1) the treatment variable would be a binary variable indicating wether student *i* attended a private school, and (2) the outcome variable would be a nonbinary variable capturing the SAT score of student *i*", correct = TRUE),
     answer("(1) the treatment variable would be a nonbinary variable capturing the SAT score of student *i*, and (2) the outcome variable would be a binary variable indicating wether student *i* attended a private school", message = "Check which variable should be the treatment variable and which should be the outcome variable."),
     answer("(1) the treatment variable would be a nonbinary variable indicating wether student *i* attended a private school, and (2) the outcome variable would be a binary variable capturing the SAT score of student *i*", message = "Check whether the variables are binary or non-binary."),
@@ -176,7 +175,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q3:</span> ",
+    question("<span style=color:dodgerblue> Q3: </span> Suppose you woke up one day with a headache. At 9AM th and at 10AM someone offered you an aspirin and you took it with a glass of water. By 11AM, your headache was better. If we wanted to estimate the effect of taking an aspirin on the intensity of a headache ",
     answer("A", correct = TRUE),
     answer("B", message = ""),
     answer("C", message = ""),
@@ -215,106 +214,7 @@ quiz(caption="",
 ```
 
 
-<br>
-<font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
 
-<p class="borderexample">**Instructions**<br><br>When running code on our own computers, we write the code on the R script (the upper left window of RStudio), then we highlight the code we want to run and either (a) manually click on the *Run* icon of RStudio or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.<br><br>
-When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
-Once you are done typing the code, you can run it by clicking on the *Run Code* button in green. The output produced by the executed code will appear underneath the *R code* window.<br><br>
-Once you are satisfied with your answer, you can submit it by clicking on the *Submit Answer* button in blue. <br><br>
-To help you figure out the right answer, some questions contain hints. You can access them by clicking on the *Hint* button in white. </p>
-
-<br> <span style=color:dodgerblue> **Q1:** </span> **Ask R to compute 30+6**
-
-```{r r1, exercise=TRUE}
-
-```
-
-<div id="r1-hint">
-Hint: You may want to use the `+` operator.
-</div>
-
-```{r r1-solution}
-30+6
-```
-
-```{r r1-check}
-grade_result(
-  pass_if(~ identical(.result, 36), "<br><br> Note: R ignores spaces around operators, so `30+6` will produce the same results as `30 + 6`, `30 +6`, and `30+ 6`.")
-)
-```
-
-<br> <span style=color:dodgerblue> **Q2:** </span> **Ask R to store `30+6` into an object called `thirtysix`**
-
-```{r r2, exercise = TRUE}
-
-```
-
-<div id="r2-hint">
-Hint: You may want to use the assignment operator `<-`. <br><br>
-To the left of the assignment operator, we specify the name of the object (without quotes). <br><br>
-To the right of the assignment operator, we specify the contents of the object.
-<br><br>
-Recall: The name of objects cannot contain spaces.
-</div>
-
-```{r r2-solution}
-thirtysix <- 30+6
-```
-
-```{r r2-check}
-grade_code("<br><br> Explanation: To create an object, we use the assignment operator `<-`. <br><br>
-To the left of the assignment operator, we specify the name of the object (without quotes). <br><br>
-To the right of the assignment operator, we specify the contents of the object.<br><br>
-Recall: The name of objects cannot contain spaces.")
-```
-
-<br> <span style=color:dodgerblue> **Q3:** </span> **Ask R to show the contents of the object `thirtysix`**
-
-```{r thirtysix}
-thirtysix <- 30+6
-```
-
-```{r r3, exercise=TRUE, exercise.setup = "thirtysix"}
-
-```
-
-<div id="r3-hint">
-Hint: To ask R to show us the contents of an object, we run the name of the object.
-</div>
-
-```{r r3-solution}
-thirtysix
-```
-
-```{r r3-check}
-grade_result(
-  pass_if(~ identical(.result, thirtysix), "<br><br>To ask R to show us the contents of an object, we run the name of the object.")
-)
-```
-
-
-<br> <span style=color:dodgerblue> **Q4:** </span> **Use the `sqrt()` function to ask R to compute the square root of 36**
-
-```{r r4, exercise=TRUE, exercise.setup = "thirtysix"}
-
-```
-
-<div id="r4-hint">
-Hint: The function `sqrt()` calculates the square root of the argument specified inside the parentheses.
-</div>
-
-```{r r4-solution}
-## we have two options:
-sqrt(36) # specifying as the main argument the number 36
-sqrt(thirtysix) # specifying as the main argument the object thirtysix, which contains the number 36
-```
-
-```{r r4-check}
-grade_result(
-  pass_if(~ identical(.result, sqrt(36)), "<br><br> The function `sqrt()` calculates the square root of the argument specified inside the parentheses.<br><br> Since we have an object called `thirtysix` which contains the number 36, we could run either `sqrt(36)` or `sqrt(thirtysix)` to compute the square root of 36.")
-)
-```
 
 
 
