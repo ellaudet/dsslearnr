@@ -14,11 +14,10 @@ description: "Practice Exercises for Data Analysis for Social Science - CHAPTER 
 ```{r setup, include=FALSE}
 library(gradethis)
 library(learnr)
-library(dsslearnr)
 tutorial_options(exercise.checker = gradethis::grade_learnr, 
                  exercise.reveal_solution="TRUE")
 knitr::opts_chunk$set(echo = FALSE)
-tut_reptitle <- "Chapter 1"
+tutorial_id <- "Chapter 1"
 num_tutorial <- 48
 ```
 
@@ -244,7 +243,6 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
     answer("Some arguments are required; others are optional", correct = TRUE),
     answer("The function `sqrt()` computes the square root of the argument specified inside the parentheses", correct = TRUE),
     answer("The output(s) are shown in the Console", correct = TRUE),
-    answer("The name of the function determines the action(s) the function performs, the input(s) it requires, and the output(s) it produces.", correct = TRUE),
     post_message = "All the statements above are true!",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -973,7 +971,7 @@ shiny::observeEvent(
       length()
     
     output$chapter = shiny::renderText(
-      paste("Practice Exercises for:", as.character(tut_reptitle),
+      paste("Practice Exercises for", as.character(tutorial_id),
          "of Llaudet and Imai's Data Analysis for Social Science: A Friendly and Practical Introduction (Princeton University Press, 2022)"))
     
     output$num_tutorial = shiny::renderText(
@@ -986,11 +984,11 @@ shiny::observeEvent(
       paste("Number of Exercises Answered Correctly:", n_correct,""))
     
     output$score = shiny::renderText(
-      paste("Proportion of Exercises Answered Correctly (Out of Those Answered):",
+      paste("Proportion of Exercises Answered Correctly Out of Those Answered:",
             round(n_correct/total_questions*100,0),"percent"))
     
     output$score_all = shiny::renderText(
-      paste("Proportion of Exercises Answered Correctly (Out of All Exercises in Tutorial):", round(n_correct/num_tutorial*100,0),"percent"))
+      paste("Proportion of Exercises Answered Correctly Out of All Exercises in Tutorial:", round(n_correct/num_tutorial*100,0),"percent"))
     
     output$date = shiny::renderText(
       paste("Date and Time of Report:", as.character(Sys.time()),""))
@@ -1005,6 +1003,7 @@ shiny::observeEvent(
   }
 )
 ```
+
 
 ```{r score, echo=FALSE}
 shiny::textInput("name", "Please Enter Your Name")
