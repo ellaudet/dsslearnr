@@ -1,14 +1,15 @@
 ---
 params:
   student_name: "Student T."
-  reportdate: !r Sys.Date()
+  reportdate: \today
   reporttitle: "Week 0 Tutorial Report"
   skipped: 0
   checked: 0
   output: !r tibble::tibble(id = "test", checked = FALSE, correct = NA)
 title: "`r params$reporttitle`"
 subtitle: \LARGE Practice Exercises Completion Report
-author: \LARGE `r params$student_name` \LARGE (`r params$reportdate`)
+author: \LARGE `r params$student_name` 
+date: \large (Date =`r params$reportdate`)
 ---
 
 ```{r, echo = FALSE, }
@@ -16,17 +17,19 @@ library("dsslearnr")
 checked_prop <- sum(params$output$checked) / length(params$output$checked)
 ```
 
-\vspace{.8cm}
+\vspace{.3cm}
+\begin{center}
+\large Total Number of Exercises Attempted: `r length(params$output$attempted)` 
+\end{center}
+\vspace{.5cm}
 
-## Number of Exercises Attempted: `r length(params$output$attempted)` 
-
-\vspace{.2cm}
-
+\begin{center}
 ```{r, echo = FALSE, center = TRUE}
 knitr::kable(params$output[, c("id", "attempted")], "latex")
 ```
+\end{center}
 
-
+\newpage
 ## Environment
 
 ```{r, echo = TRUE}

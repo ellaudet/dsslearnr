@@ -14,7 +14,7 @@ description: "Practice Exercises for Data Analysis for Social Science - CHAPTER 
 ```{r setup, include=FALSE}
 library(gradethis)
 library(learnr)
-library(dsslearnr) # to use Professor Matt Blackwell's function to generate reports
+library(dsslearnr)
 tutorial_options(exercise.checker = gradethis::grade_learnr, 
                  exercise.reveal_solution="TRUE")
 knitr::opts_chunk$set(echo = FALSE)
@@ -940,12 +940,12 @@ quiz(caption="",
   ))
 ```
 
-## COMPLETION REPORT
+<!-- ## COMPLETION REPORT -->
 
-```{r context="setup"}
-submission_ui
-```
+<!-- ```{r context="setup"} -->
+<!-- submission_ui -->
+<!-- ``` -->
 
-```{r context="server"}
-submission_server()
-```
+<!-- ```{r context="server"} -->
+<!-- submission_server() -->
+<!-- ``` -->
