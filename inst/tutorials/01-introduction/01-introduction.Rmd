@@ -940,7 +940,7 @@ quiz(caption="",
 ```
 
 ## <span style=color:dodgerblue> GENERATE SUMMARY REPORT
-Congratulations! You have arrived at the end of this tutorial!
+Congratulations! You have reached the end of this tutorial!
 
 Now, you can generate a summary report of your work. Just enter your name in the text box below and click on the *Generate Summary Report* button. A summary of your work will appear on the screen. You may want to take a screenshot of this summary whenever an instructor requests evidence of your work.
 
