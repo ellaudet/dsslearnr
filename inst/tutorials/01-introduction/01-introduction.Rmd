@@ -977,7 +977,7 @@ shiny::observeEvent(
          "of Llaudet and Imai's Data Analysis for Social Science: A Friendly and Practical Introduction (Princeton University Press, 2022)"))
     
     output$num_tutorial = shiny::renderText(
-      paste("Number of Exercises in Tutorial", num_tutorial))
+      paste("Number of Exercises in Tutorial:", num_tutorial))
     
     output$num = shiny::renderText(
       paste("Number of Exercises Answered:", total_questions,""))
