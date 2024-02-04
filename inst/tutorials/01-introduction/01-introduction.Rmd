@@ -941,10 +941,10 @@ quiz(caption="",
   ))
 ```
 
-## <span style=color:dodgerblue> COMPLETION REPORT
-Congratulations! You have completed the practice exercises in this tutorial!
+## <span style=color:dodgerblue> GENERATE REPORT
+Congratulations! You have arrived at the end of this tutorial!
 
-Now, you can generate a completion report. Just enter your name in the text box below and click on the *Generate Completion Report* button. A summary of your work will appear on the screen. You may want to take a screenshot of this summary whenever an instructor requests evidence of your work.
+Now, you can generate a report of your work. Just enter your name in the text box below and click on the *Generate Report* button. A summary of your work will appear on the screen. You may want to take a screenshot of this summary whenever an instructor requests evidence of your work.
 
 ```{r context="server"}
 shiny::observeEvent(
@@ -1008,7 +1008,7 @@ shiny::observeEvent(
 
 ```{r score, echo=FALSE}
 shiny::textInput("name", "Please Enter Your Name")
-shiny::actionButton("get_score", "Generate Completion Report")
+shiny::actionButton("get_score", "Generate Report")
 shiny::br()
 shiny::br()
 shiny::br()
