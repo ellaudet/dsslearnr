@@ -640,17 +640,17 @@ grade_code("<br><br>To change the number of observations displayed by the `head(
 
 ```{r topic2_r2_inter}
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q2 - Interpretation: </span>Looking at the output of `head()` above, we can see that ....",
-    answer("*small* is a character variable, *reading* and *math* are non-binary variables, and *graduated* is a binary variable", correct = TRUE),
-    answer("*small* is a character variable, *reading* and *math* are binary variables, and *graduated* is a non-binary variable"),
-    answer("*small* is a character variable, and *reading*, *math*, and *graduated* are non-binary variables"),
-    answer("*small* is a character variable, and *reading*, *math*, and *graduated* are binary variables"),
-    post_message = "The correct answer is: *small* is a character variable, *reading* and *math* are non-binary variables, and *graduated* is a binary variable.<br><br>
+       question("<span style=color:dodgerblue> Q2 - Interpretation #1: </span>Looking at the output of `head()` above, we can see that ....",
+    answer("*classtype* is a character variable, *reading* and *math* are non-binary variables, and *graduated* is a binary variable", correct = TRUE),
+    answer("*classtype* is a character variable, *reading* and *math* are binary variables, and *graduated* is a non-binary variable"),
+    answer("*classtype* is a character variable, and *reading*, *math*, and *graduated* are non-binary variables"),
+    answer("*classtype* is a character variable, and *reading*, *math*, and *graduated* are binary variables"),
+    post_message = "The correct answer is: *classtype* is a character variable, *reading* and *math* are non-binary variables, and *graduated* is a binary variable.<br><br>
     Recall: Character variables contain text. Binary variables can only take two values; in DSS, these values are 0s and 1s. Non-binary variables are numeric variables that can take more than two values.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q2 - Interpretation: </span>Looking at the output of `head()` above, we can substantively interpret the first observation. The first observation represents ....",
+  question("<span style=color:dodgerblue> Q2 - Interpretation #2: </span>Looking at the output of `head()` above, we can substantively interpret the first observation. The first observation represents ....",
     answer("a student who attended a small class, earned 578 points on the third-grade reading test and 610 points on the third-grade math test, and graduated from high school", correct = TRUE),
     answer("a student who attended a small class, earned 57.8% on the third-grade reading test and 61.0% on the third-grade math test, and graduated from high school", message="Check the units of measurement."),
     answer("a group of students who attended a small class, earned 578 points on the third-grade reading test and 610 points on the third-grade math test, and graduated from high school", message="Check the unit of observation."),
