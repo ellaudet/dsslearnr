@@ -197,7 +197,7 @@ If time machines existed and we could indeed observe both potential outcomes, th
     answer("It is impossible to know with the information given"),
     post_message = "If we could observe both potential outcomes above, then we could measure the causal affect of the aspirin on your level of headache by computing this formula:
 <br><br>level of headache after taking the aspirin - level of headache after NOT taking the aspirin <br><br> 2 - 4 = -2 <br><br>
-The asprin would have <em>decreased</em> your level of headache by two levels (in a scale from 1 to 5). (Notice that it is a decrease because the treatment had a negative effect on the outcome.)<br><br> For information on individual causal effects, review section 2.3 of DSS.",
+The asprin would have <em>decreased</em> your level of headache by two levels (in a scale from 1 to 5). (Notice that it is a decrease because the treatment effect would have a negative sign.)<br><br> For information on individual causal effects, review section 2.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -307,7 +307,7 @@ And, we could conclude that the aspirin:
     answer("We can never observe the potential outcome under the control condition"),
     post_message = "The correct answer is: We can never observe the counterfactual outcome. <br><br> 
     
-  In other words, there are no time machines. In the example above, we could never observe the level of headache at 12 PM both after taking the aspirin and after NOT taking the aspirin, for the same day, under the exact same circumstances, for the same individual. All we can observe is the level of headache after whichever condition (aspirin or no aspirin) the individual chose in reality. If in the example above, individuals 1 and 2 chose to take an aspirin and individuals 3 and 4 chose not to, all we would observe is:
+  In other words, there are no time machines. In the example above, we could never observe the level of headache at 12 PM BOTH after taking the aspirin and after not taking the aspirin, for the same day, under the exact same circumstances, for the same individual. All we can observe is the level of headache after whichever condition (aspirin or no aspirin) the individual chose in reality. If in the example above, individuals 1 and 2 chose to take an aspirin and individuals 3 and 4 chose not to, all we would observe is:
   <table>
   <tr>
     <td></td>
@@ -346,13 +346,13 @@ And, we could conclude that the aspirin:
    question("<span style=color:dodgerblue> Q7:</span> Is it possible for the same treatment to have different effects for different individuals as we computed in the hypothetical example above?",
     answer("Yes, it is possible.", correct = TRUE),
     answer("No, it is not possible."),
-    post_message = "Yes, it is possible. There is no guarantee that a treatment has the same effects for all individuals. For example, an aspirin might help reduce the headache of one individual, have severe adverse effects on another, and have no effect whatsoever on yet another.
+    post_message = "Yes, it is possible. There is no guarantee that a treatment has the same effect for all individuals. For example, an aspirin might help reduce the headache of one individual, have severe adverse effects on another, and have no effect whatsoever on yet another.
     <br><br> For more information, see the example provided in section 2.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("<span style=color:dodgerblue> Q8:</span> To get around the fundamental problem of causal inference, we must find good approximations for the counterfactual outcomes. To accomplish this, we move away from individual-level effects and focus on the average causal effect across a group of individuals.<br><br>
-  When estimating average causal effects, we distinguish between the treatment group and the control group. If we were interested in estimating the effect of taking an aspirin on the level of intensity of a headache, the treatment group would consiste of...",
+  When estimating average causal effects, we distinguish between the treatment group and the control group. If we were interested in estimating the effect of taking an aspirin on the level of intensity of a headache, the treatment group would consist of...",
     answer("the individuals who took an aspirin", correct = TRUE),
     answer("the aspirins", message="These are the treatments, not the treatment group."),
     answer("the placebos"),
@@ -381,7 +381,8 @@ And, we could conclude that the aspirin:
     answer("When treatment is assigned at random (also known as random treatment assignment).", correct = TRUE),
     answer("When treatment and control groups were comparable before the administration of the treatment.", correct = TRUE),
     answer("When the participants in the study were selected from the population through a random process (also known as random sampling).", message="Random sampling has nothing to do with making treatment and control groups comparable."),
-    post_message = "There are four correct answers here: (1) When we are analyzing experimental data, (2) When we are analyzing data from a randomized experiment, and (3) When treatment is assigned at random (also known as random treatment assignment), and (4) When treatment and control groups were comparable before the administration of the treatment. (The first three answers all mean the same thing.)<br><br>
+    post_message = "There are four correct answers here: (1) When treatment and control groups were comparable before the administration of the treatment,
+    (2) When we are analyzing experimental data, (3) When we are analyzing data from a randomized experiment, and (4) When treatment is assigned at random (also known as random treatment assignment). <br><br> The answer listed first is the condition under which the difference-in-means estimator will produce valid causal estimates, and the last three answers are the best way of satisfying given condition and they all mean the same thing.<br><br>
     For an explanation, review section 2.4 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -390,10 +391,12 @@ And, we could conclude that the aspirin:
     answer("average outcome for the treatment group - average outcome for the control group", correct = TRUE),
     answer("average outcome for the control group - average outcome for the treatment group"),
     answer("average treatment - average outcome"),
+    answer("treatment group - control group"),
+    answer("outcome for the treatment group - outcome for the control group"),
     answer("average outcome - average treatment"),
     post_message = "Notice that in the example above, where we supposed that we could observe both potential outcomes for the same individuals (with the help of a time machine), we computed the individual causal effects of a treatment on an outcome as follows: <br><br> 
 potential outcome under the treatment condition - potential outcome under the control condition<br><br>
-The difference-in-means estimator has a similar formula, but it uses  <em>average</em> outcomes because it aims to estimate the <em>average</em> causal effect of a treatment on an outcome (among other differences):<br><br>
+The difference-in-means estimator follows a similar logic, but it uses  <em>average</em> outcomes because it aims to estimate the <em>average</em> causal effect of a treatment on an outcome:<br><br>
 <em>average</em> outcome for the treatment group - <em>average</em> outcome for the control group<br><br>
 Notice that it is called the difference-in-means estimator because to compute it we calculate the difference between two means (or averages).<br><br>
 For information on the difference-in-means estimator, review subsection 2.4.1 of DSS.",
