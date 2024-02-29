@@ -3,8 +3,8 @@
 
 cff-version: 1.2.0
 title: >-
-  dsslearnr: Practice Exercises for Data Analysis for Social
-  Science (DSS)
+  Practice Exercises for Llaudet and Imai, Data Analysis for Social
+  Science (dsslearnr)
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -18,8 +18,8 @@ identifiers:
   - type: url
     value: 'https://github.com/ellaudet/dsslearnr'
     description: >-
-      GitHup Repository for dsslearnr: Practice Exercises
-      for Data Analysis and Social Science (DSS)
+      GitHup Repository for Practice Exercises
+      for Data Analysis and Social Science (dsslearnr)
 repository-code: 'https://github.com/ellaudet/dsslearnr'
 abstract: >-
   This repository contains learnr tutorials with practice
