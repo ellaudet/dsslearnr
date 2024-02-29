@@ -150,7 +150,7 @@ Select the correct answer(s) and click on the *Submit Answer* button in blue.
 To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.<br><br>
 If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the right-hand side of the tutorial. </p>
 
-```{r topic1_mc}
+```{r ch1_topic1_mc}
 quiz(caption="",
   question("<span style=color:dodgerblue> Q1: </span> What program(s) are we going to use to analyze data in this book?",
     answer("We will use two programs: R and RStudio", correct = TRUE),
@@ -299,19 +299,19 @@ To help you figure out the right answer, some questions contain hints. You can a
 
 <br> <span style=color:dodgerblue> **Q1:** </span> **Ask R to compute 30+6**
 
-```{r topic1_r1, exercise=TRUE}
+```{r ch1_topic1_r1, exercise=TRUE}
 
 ```
 
-<div id="topic1_r1-hint">
+<div id="ch1_topic1_r1-hint">
 Hint: You may want to use the `+` operator.
 </div>
 
-```{r topic1_r1-solution}
+```{r ch1_topic1_r1-solution}
 30+6
 ```
 
-```{r topic1_r1-check}
+```{r ch1_topic1_r1-check}
 grade_result(
   pass_if(~ identical(.result, 36), "<br><br> Note: R ignores spaces around operators, so `30+6` will produce the same results as `30 + 6`, `30 +6`, and `30+ 6`.")
 )
@@ -319,19 +319,19 @@ grade_result(
 
 <br> <span style=color:dodgerblue> **Q2:** </span> **Ask R to store `30+6` into an object called `thirtysix`**
 
-```{r topic1_r2, exercise = TRUE}
+```{r ch1_topic1_r2, exercise = TRUE}
 
 ```
 
-<div id="topic1_r2-hint">
+<div id="ch1_topic1_r2-hint">
 Hint: You may want to review how to use the assignment operator `<-` in subsection 1.6.2 of DSS.
 </div>
 
-```{r topic1_r2-solution}
+```{r ch1_topic1_r2-solution}
 thirtysix <- 30+6
 ```
 
-```{r topic1_r2-check}
+```{r ch1_topic1_r2-check}
 grade_code("<br><br>
 For more information on how to create objects in R, review subsection 1.6.2 of DSS.")
 ```
@@ -342,19 +342,19 @@ For more information on how to create objects in R, review subsection 1.6.2 of D
 thirtysix <- 30+6
 ```
 
-```{r topic1_r3, exercise=TRUE, exercise.setup = "thirtysix"}
+```{r ch1_topic1_r3, exercise=TRUE, exercise.setup = "thirtysix"}
 
 ```
 
-<div id="topic1_r3-hint">
+<div id="ch1_topic1_r3-hint">
 Hint: You may want to review the bottom half of page 10 of DSS.
 </div>
 
-```{r topic1_r3-solution}
+```{r ch1_topic1_r3-solution}
 thirtysix
 ```
 
-```{r topic1_r3-check}
+```{r ch1_topic1_r3-check}
 grade_result(
   pass_if(~ identical(.result, thirtysix), "<br><br>To ask R to show us the contents of an object, we run the name of the object.")
 )
@@ -363,21 +363,21 @@ grade_result(
 
 <br> <span style=color:dodgerblue> **Q4:** </span> **Use the `sqrt()` function to ask R to compute the square root of 36**
 
-```{r topic1_r4, exercise=TRUE, exercise.setup = "thirtysix"}
+```{r ch1_topic1_r4, exercise=TRUE, exercise.setup = "thirtysix"}
 
 ```
 
-<div id="topic1_r4-hint">
+<div id="ch1_topic1_r4-hint">
 Hint: You may want to review the bottom half of page 13 of DSS.
 </div>
 
-```{r topic1_r4-solution}
+```{r ch1_topic1_r4-solution}
 ## we have two options:
 sqrt(36) # specifying as the main argument the number 36
 sqrt(thirtysix) # specifying as the main argument the object thirtysix, which contains the number 36
 ```
 
-```{r topic1_r4-check}
+```{r ch1_topic1_r4-check}
 grade_result(
   pass_if(~ identical(.result, sqrt(36)), "<br><br> Since we have an object called `thirtysix` which contains the number 36, we could run either `sqrt(36)` or `sqrt(thirtysix)` to compute the square root of 36.")
 )
@@ -417,7 +417,7 @@ Select the correct answer(s) and click on the *Submit Answer* button in blue.
 To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.
 <br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the right-hand side of the tutorial.</p>
 
-```{r topic2_mc}
+```{r ch1_topic2_mc}
 quiz(caption="",
   question("<span style=color:dodgerblue> Q1: </span>In a dataframe,...",
     answer("rows are observations and columns are variables", correct = TRUE),
@@ -608,41 +608,41 @@ star <- read.csv("STAR.csv") # reads and stores data
 star <- read.csv("data/STAR.csv")
 ```
 
-```{r topic2_r1, exercise=TRUE, exercise.setup = "star"}
+```{r ch1_topic2_r1, exercise=TRUE, exercise.setup = "star"}
 
 ```
 
-<div id="topic2_r1-hint">
+<div id="ch1_topic2_r1-hint">
 Hint: You may want to review step #3 of section 1.7 of DSS.
 </div>
 
-```{r topic2_r1-solution}
+```{r ch1_topic2_r1-solution}
 head(star)
 ```
 
-```{r topic2_r1-check}
+```{r ch1_topic2_r1-check}
 grade_code("<br><br>For more information, review step #3 of section 1.7 of DSS.")
 ```
 
 <br> <span style=color:dodgerblue> **Q2:** </span> **Now, use the `head()` function again to ask R to show the first *eight* observations of object `star`**
 
-```{r topic2_r2, exercise=TRUE, exercise.setup = "star"}
+```{r ch1_topic2_r2, exercise=TRUE, exercise.setup = "star"}
 
 ```
 
-<div id="topic2_r2-hint">
+<div id="ch1_topic2_r2-hint">
 Hint: You may want to review how to set the optional argument named `n` when using the `head()` function. (See the bottom half of page 17 of DSS.) 
 </div>
 
-```{r topic2_r2-solution}
+```{r ch1_topic2_r2-solution}
 head(star, n=8)
 ```
 
-```{r topic2_r2-check}
+```{r ch1_topic2_r2-check}
 grade_code("<br><br> For more information on how to specify optional arguments in R functions, review subsection 1.6.3 of DSS. For more information on how to set the optional argument named `n` when using the `head()` function, review the bottom half of page 17 of DSS.")
 ```
 
-```{r topic2_r2_inter}
+```{r ch1_topic2_r2_inter}
 quiz(caption="",
        question("<span style=color:dodgerblue> Q2 - Interpretation #1: </span>Looking at the output of `head()` above, we can see that ....",
     answer("*classtype* is a character variable, *reading* and *math* are non-binary variables, and *graduated* is a binary variable", correct = TRUE),
@@ -668,23 +668,23 @@ quiz(caption="",
 
 <br> <span style=color:dodgerblue> **Q3:** </span> **Now, use the `dim()` function to ask R what the dimensions of object `star` are**
 
-```{r topic2_r3, exercise=TRUE, exercise.setup = "star"}
+```{r ch1_topic2_r3, exercise=TRUE, exercise.setup = "star"}
 
 ```
 
-<div id="topic2_r3-hint">
+<div id="ch1_topic2_r3-hint">
 Hint: You may want to review how the `dim()` function works in step #5 of section 1.7 of DSS.
 </div>
 
-```{r topic2_r3-solution}
+```{r ch1_topic2_r3-solution}
 dim(star)
 ```
 
-```{r topic2_r3-check}
+```{r ch1_topic2_r3-check}
 grade_code("For more information, review how the `dim()` function works in step #5 of section 1.7 of DSS.")
 ```
 
-```{r topic2_r3_inter}
+```{r ch1_topic2_r3_inter}
 quiz(caption="",
        question("<span style=color:dodgerblue> Q3 - Interpretation: </span>Looking at the output above, we can see that...",
     answer("1,274 students were part of Project STAR", correct = TRUE),
@@ -734,7 +734,7 @@ Select the correct answer(s) and click on the *Submit Answer* button in blue.
 To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.
 <br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the right-hand side of the tutorial.</p>
 
-```{r topic3_mc}
+```{r ch1_topic3_mc}
 quiz(caption="",
   question("<span style=color:dodgerblue> Q1: </span>If *X*  = {10, 4, 6, 8, 22}, what is $\\overline{X}$ ?",
     answer("10", correct = TRUE),
@@ -857,29 +857,29 @@ star <- read.csv("STAR.csv") # reads and stores data
 
 **Go ahead and run the following piece of code to ask R to show the first six observations in the dataframe stored in the `star` object:**
  
-```{r topic3_r1_setup, exercise=TRUE, exercise.setup = "star"}
+```{r ch1_topic3_r1_setup, exercise=TRUE, exercise.setup = "star"}
 head(star) # shows the first six observations
 ```
 
 <br> <span style=color:dodgerblue> **Q1:** </span> **Use the `mean()` function to compute the mean of the variable *reading* **
 
-```{r topic3_r1, exercise=TRUE, exercise.setup = "star"}
+```{r ch1_topic3_r1, exercise=TRUE, exercise.setup = "star"}
 
 ```
 
-<div id="topic3_r1-hint">
+<div id="ch1_topic3_r1-hint">
 Hint: *reading* is a variable of the dataframe stored inside the object `star`, and the `$` character might be helpful when accessing variables of dataframes. If you would like further help, you may want to review section 1.8 of DSS.
 </div>
 
-```{r topic3_r1-solution}
+```{r ch1_topic3_r1-solution}
 mean(star$reading)
 ```
 
-```{r topic3_r1-check}
+```{r ch1_topic3_r1-check}
 grade_code("<br><br> For more information on how to compute means, review section 1.8 of DSS.")
 ```
 
-```{r topic3_r1_inter}
+```{r ch1_topic3_r1_inter}
 quiz(caption="",
        question("<span style=color:dodgerblue> Q1 - Interpretation: </span> How can we interpret the mean of *reading* computed above?",
     answer("Among the students who participated in Project STAR, the average score in the third-grade reading test is about 629 points", correct = TRUE),
@@ -895,23 +895,23 @@ Here, as we can see in the output of `head()` above, *reading* is non-binary bec
 
 <br> <span style=color:dodgerblue> **Q2:** </span> **Now, use the `mean()` function to compute the mean of the variable *graduated* **
 
-```{r topic3_r2, exercise=TRUE, exercise.setup = "star"}
+```{r ch1_topic3_r2, exercise=TRUE, exercise.setup = "star"}
 
 ```
 
-<div id="topic3_r2-hint">
+<div id="ch1_topic3_r2-hint">
 Hint: *graduated* is a variable of the dataframe stored inside the object `star`, and the `$` character might be helpful when accessing variables of dataframes. If you would like further help, you may want to review section 1.8 of DSS.
 </div>
 
-```{r topic3_r2-solution}
+```{r ch1_topic3_r2-solution}
 mean(star$graduated)
 ```
 
-```{r topic3_r2-check}
+```{r ch1_topic3_r2-check}
 grade_code("<br><br>For more information on how to compute means, review section 1.8 of DSS.")
 ```
 
-```{r topic3_r2_inter}
+```{r ch1_topic3_r2_inter}
 quiz(caption="",
        question("<span style=color:dodgerblue> Q2 - Interpretation: </span> How can we interpret the mean of *graduated* computed above?",
     answer("87% of the students who participated in Project STAR graduated from high school", correct = TRUE),
@@ -928,28 +928,28 @@ quiz(caption="",
 
 <br> <span style=color:dodgerblue> **Q3 - FIX THE ERRORS IN THE CODE:** </span> **Running into error messages is part of coding, so let's practice fixing mistakes in our code. There are many mistakes in the code below. Try to fix them all so that R computes de mean of the variable *math*, which is one of the variables in the dataframe stored in the object called *star*. (The error messages that R provides can be really helpful when looking to debug code. So, I recommend starting by running the code as is, and then running it again after fixing each individual error, so that you can read the messages that R provides.)**
 
-```{r topic3_r3, exercise=TRUE, exercise.setup = "star"}
+```{r ch1_topic3_r3, exercise=TRUE, exercise.setup = "star"}
 average(math$STAR) # computes the mean of math
 ```
 
-<div id="topic3_r3-hint">
+<div id="ch1_topic3_r3-hint">
 Hints: <br><br>
 The function that calculates the mean of a variable is `mean()`, not `average()`.<br><br>
 To the left of the `$` character, we specify the name of the object where the dataframe is stored (without quotes). To the right of the `$` character, we specify the name of the variable (without quotes). Example: `data$variable`. <br><br>
 R code is case sensitive and the name of the object where we have stored the dataset is `star`, not `STAR`.
 </div>
 
-```{r topic3_r3-solution}
+```{r ch1_topic3_r3-solution}
 mean(star$math)
 ```
 
-```{r topic3_r3-check}
+```{r ch1_topic3_r3-check}
 grade_code("<br><br>The function that calculates the mean of a variable is `mean()`, not `average()`.<br><br>
 We use the `$` character to access a variable inside a dataframe. To its left, we specify the name of the object where the dataframe is stored (without quotes). To its right, we specify the name of the variable (without quotes). Example: `data$variable`. <br><br>
 R code is case sensitive and the name of the object where we have stored the dataset is `star`, not `STAR`.")
 ```
 
-```{r topic3_r3_inter}
+```{r ch1_topic3_r3_inter}
 quiz(caption="",
        question("<span style=color:dodgerblue> Q3 - Interpretation: </span> How can we interpret the mean of *math* computed above?",
     answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 632 points", correct = TRUE),
@@ -1054,6 +1054,9 @@ shiny::textOutput("completion_rate")
 shiny::textOutput("prop_correct_answered")
 shiny::textOutput("prop_correct_all")
 shiny::br()
+shiny::br()
 ```
 
-
+<p class="borderexample">**Please Provide Your Feedback!**<br><br>
+Was this tutorial helpful? Did you find anything confusing? <br>
+Do you have any other comments and/or suggestions? <br><br>Please let me know by completing [this survey](https://bit.ly/dss_feedback). <br> (It is very short and it allows for you to provide anonymous feedback, if that's your preference.) </p> <br><br>
