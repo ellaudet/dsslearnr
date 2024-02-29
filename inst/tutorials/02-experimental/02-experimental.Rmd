@@ -1260,6 +1260,6 @@ shiny::br()
 shiny::br()
 ```
 
-<p class="borderexample">**Please Provide Your Feedback!**<br><br>
+<p class="borderexample">**This Tutorial is Still Very Much a Work in Progress - Please Provide Your Feedback!**<br><br>
 Was this tutorial helpful? Did you find anything confusing? <br>
-Do you have any other comments and/or suggestions? <br><br>Please let me know by completing [this survey](https://bit.ly/dss_feedback). <br> (It is very short and it allows for you to provide anonymous feedback, if that's your preference.) </p> <br><br>
+Do you have any other comments and/or suggestions? <br><br>Please let me know by completing [this survey](https://bit.ly/dss_feedback). <br> (It is very short and it allows for you to provide anonymous feedback, if that's your preference.)</p> <br><br>
