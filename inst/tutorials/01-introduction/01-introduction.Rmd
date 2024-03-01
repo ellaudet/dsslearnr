@@ -861,7 +861,7 @@ star <- read.csv("STAR.csv") # reads and stores data
 head(star) # shows the first six observations
 ```
 
-<br> <span style=color:dodgerblue> **Q1:** </span> **Use the `mean()` function to compute the mean of the variable *reading* **
+<br> <span style=color:dodgerblue> **Q1:** </span> **Use the `mean()` function to compute the mean of the variable *reading*. (Note: There are many ways in which we can compute this mean using R, however this tutorial focuses on practicing using the functions, operators, and symbols taught in DSS. This is true for the entire tutorial.)**
 
 ```{r ch1_topic3_r1, exercise=TRUE, exercise.setup = "star"}
 
