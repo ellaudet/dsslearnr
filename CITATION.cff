@@ -3,7 +3,7 @@
 
 cff-version: 1.2.0
 title: >-
-  Practice Exercises for Llaudet and Imai, Data Analysis for Social
+  Practice Exercises for Llaudet and Imai's Data Analysis for Social
   Science (dsslearnr)
 message: >-
   If you use this software, please cite it using the
@@ -19,10 +19,10 @@ identifiers:
     value: 'https://github.com/ellaudet/dsslearnr'
     description: >-
       GitHup Repository for Practice Exercises
-      for Data Analysis and Social Science (dsslearnr)
+      for Llaudet and Imai's Data Analysis and Social Science (dsslearnr)
 repository-code: 'https://github.com/ellaudet/dsslearnr'
 abstract: >-
   This repository contains learnr tutorials with practice
   exercises for Data Analysis for Social Science: A Friendly
   and Practical Introduction (DSS for short) by Elena
-  Llaudet and Kosuke Imai from Princeton University Press.
+  Llaudet and Kosuke Imai from Princeton University Press (2022).
