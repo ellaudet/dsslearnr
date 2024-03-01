@@ -754,7 +754,7 @@ quiz(caption="",
   ))
 ```
 
-<br> <span style=color:dodgerblue> **Q4 - Review How to Compute and Interpret Means: </span> Now, compute the proportion of students in Project STAR who were assigned to attend a small class?**
+<br> <span style=color:dodgerblue> **Q4 - Review How to Compute and Interpret Means: </span> Now, use the `mean()` function to compute the proportion of students in Project STAR who were assigned to attend a small class?**
 
 ```{r ch2_topic2_r4, exercise=TRUE, exercise.setup = "star2"}
 
@@ -809,7 +809,7 @@ quiz(caption="",
   ))
 ```
 
-<br> <span style=color:dodgerblue> **Q6 - Compute the First Term of the Difference-in-Means Estimator for Math:** </span> **Compute the average math scores among students who attended a small class.** 
+<br> <span style=color:dodgerblue> **Q6 - Compute the First Term of the Difference-in-Means Estimator for Math:** </span> **Compute the average math scores among students who attended a small class. (Note: There are many ways in which we can compute this average using R, however this tutorial focuses on practicing using the functions, operators, and symbols taught in DSS. This is true for the entire tutorial.)** 
 
 ```{r ch2_topic2_r6, exercise=TRUE, exercise.setup = "star2"}
 
