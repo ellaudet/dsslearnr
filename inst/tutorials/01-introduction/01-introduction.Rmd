@@ -80,6 +80,8 @@ Any errors found in these practice exercises are my own. If you find any, I woul
 
 
 ## <span style=color:dodgerblue> CHAPTER 1 OVERVIEW
+Chapter 1 of Llaudet and Imai's *Data Analysis for Social Science* (DSS) is available for free [here](https://bit.ly/dss_preview), including the CHEATSHEETs at the end of the chapter.
+
 In chapter 1, we start from the very beginning by installing and familiarizing ourselves with the two programs we use―R and RStudio―and by laying the groundwork for forthcoming analyses. 
 
 The practice exercises for this chapter are organized into three topics. In the Table below, you can see (1) the topics, (2) the section(s) of the book that correspond to each topic, (3) the key concepts and mathematical notation discussed, and (4) the R functions and R operators reviewed.
@@ -115,6 +117,8 @@ The practice exercises for this chapter are organized into three topics. In the 
 Let's start! <br>
 
 ## <span style=color:dodgerblue> Introduction to R and RStudio
+
+Chapter 1 of Llaudet and Imai's *Data Analysis for Social Science* (DSS) is available for free [here](https://bit.ly/dss_preview), including the CHEATSHEETs at the end of the chapter.
 
 The practice exercises in this topic cover:
 
@@ -187,7 +191,7 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
     answer("`three plus three`"),
     post_message = "The correct answer is: `3 + 3`.<br><br> 
     Since spaces around operators are ignored by R, we could also use `3+3` or `3 +3` or `3+ 3`. 
-    <br><br> For more information on how to do calculations in R, review subsection 1.6.1 of DSS.",
+    <br><br> For more information on how to do calculations in R, review subsection 1.6.1 of DSS  and/or the CHEATSHEET OF R SYMBOLS AND OPERATORS on page 26.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -202,7 +206,7 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
     To the left of the assignment operator, we specify the name of the object; in this case: `three` <br> 
     To the right of the assignment operator, we specify the contents; in this case: `3`<br><br> 
     Remember: we do not use quotes around numbers or around the name of objects.<br><br>
-    For more information on how to create objects in R, review subsection 1.6.2 of DSS.",
+    For more information on how to create objects in R, review subsection 1.6.2 of DSS and/or the CHEATSHEET OF R SYMBOLS AND OPERATORS on page 26.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -213,7 +217,7 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
     answer("`''today'' <- ''Monday''`", message = "Hint: Review when we use quotes when writting R code by reading callout shown in a cyan-colored frame in the margin of page 11 of DSS."),
     post_message = "The correct answer is: ` today <- ''Monday'' `<br><br>
     Note: We do not use quotes around ` today ` because it is the name of an object, and we do use quotes around ` Monday ` because it is text and neither of the exceptions. <br><br>
-    For more information on when we use quotes when writting R code, review the callout shown in a cyan-colored frame in the margin of page 11 of DSS.",
+    For more information on when we use quotes when writting R code, review the callout shown in a cyan-colored frame in the margin of page 11 of DSS and/or the CHEATSHEET OF R SYMBOLS AND OPERATORS on page 26.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -259,7 +263,7 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
     answer("`sroot(3)`", message = "`sroot(3)` is NOT one of the correct answers. This code will produce the following error message: <span style=color:red> Error in sroot(3) : could not find function ''sroot''</span>.<br>"),
     post_message = "There are two correct answers: (1) `sqrt(3)`, and (2) `sqrt(three)`.<br><br> 
     The second option is only possible because with the code above we created an object called *three* containing the number 3.
-    <br><br> For more information on now to use the `sqrt()` function, review the bottom half of page 13 of DSS.",
+    <br><br> For more information on now to use the `sqrt()` function, review the bottom half of page 13 of DSS and/or the CHEATSHEET OF R FUNCTIONS on page 26.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -271,7 +275,7 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
     post_message = "Nothing will happen because this piece of code starts with the `#` character.<br><br> 
     Note: If we wanted to add a comment to a piece of code, we would have to add it AFTER the executable code like this: `sqrt(three) # computes square root of three`
     <br><br>
-    For more information on how the `#` character works, review page 14 of DSS.",
+    For more information on how the `#` character works, review page 14 of DSS and/or the CHEATSHEET OF R SYMBOLS AND OPERATORS on page 26.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -324,7 +328,7 @@ grade_result(
 ```
 
 <div id="ch1_topic1_r2-hint">
-Hint: You may want to review how to use the assignment operator `<-` in subsection 1.6.2 of DSS.
+Hint: You may want to review how to use the assignment operator `<-` in subsection 1.6.2 of DSS or in the CHEATSHEET OF R SYMBOLS AND OPERATORS on page 26.
 </div>
 
 ```{r ch1_topic1_r2-solution}
@@ -333,7 +337,7 @@ thirtysix <- 30+6
 
 ```{r ch1_topic1_r2-check}
 grade_code("<br><br>
-For more information on how to create objects in R, review subsection 1.6.2 of DSS.")
+For more information on how to create objects in R, review subsection 1.6.2 of DSS and/or the CHEATSHEET OF R SYMBOLS AND OPERATORS on page 26.")
 ```
 
 <br> <span style=color:dodgerblue> **Q3:** </span> **Ask R to show the contents of the object `thirtysix`**
@@ -379,11 +383,14 @@ sqrt(thirtysix) # specifying as the main argument the object thirtysix, which co
 
 ```{r ch1_topic1_r4-check}
 grade_result(
-  pass_if(~ identical(.result, sqrt(36)), "<br><br> Since we have an object called `thirtysix` which contains the number 36, we could run either `sqrt(36)` or `sqrt(thirtysix)` to compute the square root of 36.")
+  pass_if(~ identical(.result, sqrt(36)), "<br><br> Since we have an object called `thirtysix` which contains the number 36, we could run either `sqrt(36)` or `sqrt(thirtysix)` to compute the square root of 36. <br><br> For more information on how the function `sqrt()` works, review the CHEATSHEET OF R FUNCTIONS on page 26.")
 )
 ```
 
 ## <span style=color:dodgerblue> Observations and Variables
+
+Chapter 1 of Llaudet and Imai's *Data Analysis for Social Science* (DSS) is available for free [here](https://bit.ly/dss_preview), including the CHEATSHEETS at the end of the chapter.
+
 The practice exercises in this topic cover:
 
 <table>
@@ -424,7 +431,7 @@ quiz(caption="",
     answer("rows are variables and columns are observations", message = "Nice try, but it's the other way around!"),
     answer("there are only rows (no columns), and rows are observations", message = "Dataframes have both rows and columns."),
     answer("there are only columns (no rows), and columns are observations", message = "Dataframes have both rows and columns."),
-    post_message = "In a dataframe, rows are observations and columns are variables. (See page 18 of DSS.)",
+    post_message = "In a dataframe, rows are observations and columns are variables. (See page 18 of DSS and/or the CHEATSHEET OF CONCEPTS AND NOTATION on page 25.)",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -434,7 +441,7 @@ quiz(caption="",
     answer("tells us how many observations there are in the dataframe", message = "You may be thinking of *n*."),
     answer("defines what each column in the dataframe represents"),
     post_message = "The unit of observation defines what each observation represents.<br><br>
-    Examples: students, schools, states, countries,... (See page 18 of DSS.)",
+    Examples: students, schools, states, countries,... (See page 18 of DSS and/or the CHEATSHEET OF CONCEPTS AND NOTATION on page 25.)",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -444,7 +451,7 @@ quiz(caption="",
     answer("stands for the total number of observations", message = "You may be thinking of *n*."),
     answer("stands for 'summation'", message = "You may be thinking of the Greek letter Sigma."),
     post_message = "In mathematical notation, *i* identifies the position of the observation. <br><br>
-    Example: the observation for which *i*=3 is the third observation in a dataframe or in a variable. (See page 18 of DSS.)",
+    Example: the observation for which *i*=3 is the third observation in a dataframe or in a variable. (See page 18 of DSS and/or the CHEATSHEET OF CONCEPTS AND NOTATION on page 25.)",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -453,7 +460,7 @@ quiz(caption="",
     answer("a numeric binary variable", message="Recall: Binary variables can only take two values; in DSS, these values are 0s and 1s, where a 0 means 'no' and a 1 means 'yes'"),
     answer("a numeric non-binary variable", message="Recall: Numeric non-binary variables are variables that contain numbers and can take more than two values."),
     answer("an observation", message="Notice: *names* is a variable not an observation; it contains three observations, which are inside the curly brackets and separated by a comma."),
-    post_message = "Here *names* is a character variable because it contains text. (See pages 18-20 of DSS.)",
+    post_message = "Here *names* is a character variable because it contains text. (See pages 18-20 of DSS and/or the CHEATSHEET OF CONCEPTS AND NOTATION on page 25.)",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -462,7 +469,7 @@ quiz(caption="",
     answer("a character variable"),
     answer("a numeric non-binary variable"),
     answer("an observation"),
-    post_message = "Here *voted* is a numeric binary variable because it contains numbers and it can take only two values: 0s and 1s, where 0 means 'no' and 1 means 'yes'. (See pages 18-20 of DSS.)",
+    post_message = "Here *voted* is a numeric binary variable because it contains numbers and it can take only two values: 0s and 1s, where 0 means 'no' and 1 means 'yes'. (See pages 18-20 of DSS and/or the CHEATSHEET OF CONCEPTS AND NOTATION on page 25.)",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -471,7 +478,7 @@ quiz(caption="",
     answer("a character variable"),
     answer("a numeric binary variable"),
     answer("an observation"),
-    post_message = "Here *length* is a numeric non-binary variable because it contains numbers (not text), and it can clearly take more than two values. (See pages 18-20 of DSS.)",
+    post_message = "Here *length* is a numeric non-binary variable because it contains numbers (not text), and it can clearly take more than two values. (See pages 18-20 of DSS and/or the CHEATSHEET OF CONCEPTS AND NOTATION on page 25.)",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -481,7 +488,7 @@ quiz(caption="",
     answer("a numeric non-binary variable"),
     answer("an observation"),
     post_message = "Here *id* is a character variable because it contains text.<br><br>
-    Note: As soon as a variable contains some text, even if it also contains numbers, it will be a character variable and we won't be able to do math with it. (See pages 18-20 of DSS.)",
+    Note: As soon as a variable contains some text, even if it also contains numbers, it will be a character variable and we won't be able to do math with it. (See pages 18-20 of DSS and/or the CHEATSHEET OF CONCEPTS AND NOTATION on page 25.)",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -500,7 +507,7 @@ quiz(caption="",
     answer("*n*=10"),
     answer("*n*=3"),
     answer("it is impossible to know what *n* equals to with the information given"),
-    post_message = "In mathematical notation, *n* stands for the total number of observations.<br><br> Here *id* has five observations so *n*=5. (See pages 18-21 of DSS.)",
+    post_message = "In mathematical notation, *n* stands for the total number of observations.<br><br> Here *id* has five observations so *n*=5. (See pages 18-21 of DSS and/or the CHEATSHEET OF CONCEPTS AND NOTATION on page 25.)",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -519,7 +526,7 @@ quiz(caption="",
     answer("run ` setwd(''C:/user/Desktop/DSS'') ` if we have a Windows computer, where *user* is our username", correct = TRUE),
     answer("save the R script to the DSS folder and then use the dropdown menu to set the working directory manually: Session > Set Working Directory > To Source File Location", correct = TRUE),
     answer("run ` setwd(~/Desktop/DSS) ` if we have a Mac", message = "Hint: The path to the folder is text and not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL."),
-    post_message = "There are three correct answers: (1) run `setwd(''~/Desktop/DSS'')` if we have a Mac, (2) run ` setwd(''C:/user/Desktop/DSS'') ` if we have a Windows computer, where *user* is our username, and (3) save the R script to the DSS folder and then use the dropdown menu to set the working directory manually: Session > Set Working Directory > To Source File Location. <br><br> For more information on how to set the working directory, review step #1 of section 1.7 of DSS.",
+    post_message = "There are three correct answers: (1) run `setwd(''~/Desktop/DSS'')` if we have a Mac, (2) run ` setwd(''C:/user/Desktop/DSS'') ` if we have a Windows computer, where *user* is our username, and (3) save the R script to the DSS folder and then use the dropdown menu to set the working directory manually: Session > Set Working Directory > To Source File Location. <br><br> For more information on how to set the working directory, review step #1 of section 1.7 of DSS and/or the CHEATSHEET OF R FUNCTIONS on page 26.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -534,7 +541,7 @@ quiz(caption="",
     To the left of the assignment operator, we specify the name of the object; *grades* in this case. <br>
     To the right of the assignment operator, we specify the contents, which, in this case, are produced by reading the CSV file *testcores.csv*. <br><br>
     Note: We do not use quotes around the name of an object such as *grades* or around the name of a function such as *read.csv()*, but we do use quotes around the name of a file, because it is text and neither of the exceptions (i.e., it is not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL).
-<br><br> For more information on how to create objects in R, review subsection 1.6.2 of DSS. And, for more information on how to use the `read.csv()` function, review step #2 of the section 1.7 of DSS. ",
+<br><br> For more information on how to create objects in R, review subsection 1.6.2 of DSS. And, for more information on how to use the `read.csv()` function, review step #2 of the section 1.7 of DSS. In addition, you may want to review the CHEATSHEETs on page 26.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -544,7 +551,7 @@ quiz(caption="",
     answer("`look(grades)`", message = "There is no *look()* function in R."),
     answer("`head(''grades'')`", message = "Hint: We do not use quotes around the name of objects."),
     answer("`''head''(grades)`", message = "Hint: We do not use quotes around the name of functions."),
-    post_message = "We could run either  `View(grades)` or `head(grades)`.<br><br> The first piece of code will open a new tab in the upper-left window of RStudio with the contents of the dataset. The second will show the first six rows or observations in the dataset. <br><br> For more information, review step #3 of section 1.7 of DSS.",
+    post_message = "We could run either  `View(grades)` or `head(grades)`.<br><br> The first piece of code will open a new tab in the upper-left window of RStudio with the contents of the dataset. The second will show the first six rows or observations in the dataset. <br><br> For more information, review step #3 of section 1.7 of DSS and/or the CHEATSHEET OF R FUNCTIONS on page 26.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -555,7 +562,7 @@ quiz(caption="",
     answer("The dataframe stored in the object called *grades* has 764 observations", message = ""),
     post_message = "The output of the `dim()` function is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables.<br> <br> 
     In this case, since the output was <span style=color:lightslategray> 76   4</span>, the dataframe stored in the object called *grades* has 76 observations and 4 variables.
- For more information on the `dim()` function, review step #5 of the section 1.7 of DSS.",
+ For more information on the `dim()` function, review step #5 of the section 1.7 of DSS and/or the CHEATSHEET OF R FUNCTIONS on page 26.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ))
@@ -621,7 +628,7 @@ head(star)
 ```
 
 ```{r ch1_topic2_r1-check}
-grade_code("<br><br>For more information, review step #3 of section 1.7 of DSS.")
+grade_code("<br><br>For more information, review step #3 of section 1.7 of DSS and/or the CHEATSHEETs on page 26.")
 ```
 
 <br> <span style=color:dodgerblue> **Q2:** </span> **Now, use the `head()` function again to ask R to show the first *eight* observations of object `star`**
@@ -631,7 +638,7 @@ grade_code("<br><br>For more information, review step #3 of section 1.7 of DSS."
 ```
 
 <div id="ch1_topic2_r2-hint">
-Hint: You may want to review how to set the optional argument named `n` when using the `head()` function. (See the bottom half of page 17 of DSS.) 
+Hint: You may want to review how to set the optional argument named `n` when using the `head()` function. (See the bottom half of page 17 of DSS and/or the CHEATSHEET OF R FUNCTIONS on page 26.) 
 </div>
 
 ```{r ch1_topic2_r2-solution}
@@ -639,7 +646,7 @@ head(star, n=8)
 ```
 
 ```{r ch1_topic2_r2-check}
-grade_code("<br><br> For more information on how to specify optional arguments in R functions, review subsection 1.6.3 of DSS. For more information on how to set the optional argument named `n` when using the `head()` function, review the bottom half of page 17 of DSS.")
+grade_code("<br><br> For more information on how to specify optional arguments in R functions, review subsection 1.6.3 of DSS. For more information on how to set the optional argument named `n` when using the `head()` function, review the bottom half of page 17 of DSS and/or the CHEATSHEET OF R FUNCTIONS on page 26.")
 ```
 
 ```{r ch1_topic2_r2_inter}
@@ -650,7 +657,7 @@ quiz(caption="",
     answer("*classtype* is a character variable, and *reading*, *math*, and *graduated* are non-binary variables"),
     answer("*classtype* is a character variable, and *reading*, *math*, and *graduated* are binary variables"),
     post_message = "The correct answer is: *classtype* is a character variable, *reading* and *math* are non-binary variables, and *graduated* is a binary variable.<br><br>
-    For the defintions of the different types of variables discussed here, review step #4 of section 1.7 of DSS.",
+    For the defintions of the different types of variables discussed here, review step #4 of section 1.7 of DSS and/or the CHEATSHEET OF CONCEPTS AND NOTATION on page 25.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -673,7 +680,7 @@ quiz(caption="",
 ```
 
 <div id="ch1_topic2_r3-hint">
-Hint: You may want to review how the `dim()` function works in step #5 of section 1.7 of DSS.
+Hint: You may want to review how the `dim()` function works in step #5 of section 1.7 of DSS and/or the CHEATSHEET OF R FUNCTIONS on page 26.
 </div>
 
 ```{r ch1_topic2_r3-solution}
@@ -681,7 +688,7 @@ dim(star)
 ```
 
 ```{r ch1_topic2_r3-check}
-grade_code("For more information, review how the `dim()` function works in step #5 of section 1.7 of DSS.")
+grade_code("For more information, review how the `dim()` function works in step #5 of section 1.7 of DSS and/or the CHEATSHEET OF R FUNCTIONS on page 26.")
 ```
 
 ```{r ch1_topic2_r3_inter}
@@ -694,13 +701,16 @@ quiz(caption="",
     post_message = "The correct answer is: 1,274 students were part of Project STAR.<br><br>
     The output of the `dim()` function is two values: the first indicates the number of observations in the dataframe; the second indicates the number of variables. Since the first value is 1,274, we can state that there are 1,274 observations in the STAR dataframe. <br><br>
     And, because the unit of observation of the STAR dataframe is students, each observation in the dataframe represents a student who participated in Project STAR. So, we can re-write the statement above to say that 1,274 students were part of Project STAR.
-    <br><br>For more information, review how the `dim()` function works in step #5 of section 1.7 of DSS.",
+    <br><br>For more information, review how the `dim()` function works in step #5 of section 1.7 of DSS and/or the CHEATSHEET OF R FUNCTIONS on page 26.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ))
 ```
 
 ## <span style=color:dodgerblue> Computing and Interpreting Means
+
+Chapter 1 of Llaudet and Imai's *Data Analysis for Social Science* (DSS) is available for free [here](https://bit.ly/dss_preview), including the CHEATSHEETs at the end of the chapter.
+
 The practice exercises in this topic cover:
 
 <table>
@@ -742,7 +752,7 @@ quiz(caption="",
     answer("8", message = "Hint: $\\overline{X}$ stands for the mean of *X* in mathematical notation. And, to compute the mean of a variable, we sum the values across all observations and divide the result by the total number of observations."),
     answer("It is impossible to know with the information given", message = "Hint: $\\overline{X}$ stands for the mean of *X* in mathematical notation. And, to compute the mean of a variable, we sum the values across all observations and divide the result by the total number of observations."),
     post_message = "$\\overline{X}$ stands for the mean of *X* and, here, $\\overline{X}$ equals 10 because: (10+4+6+8+22)/5 = 50/5 = 10. <br><br>
-  For more information on how to compute and interpret means, review subsection 1.8.2 of DSS.",
+  For more information on how to compute and interpret means, review subsection 1.8.2 of DSS and/or the CHEATSHEET OF CONCEPTS AND NOTATION on page 25.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -751,7 +761,7 @@ quiz(caption="",
     answer("$\\sum$ stands for multiplication"),
     answer("$\\sum$ stands for mean"),
     answer("$\\sum$ stands for division"),
-    post_message = "The correct answer is: $\\sum$ stands for summation.<br><br> For more info, review subsection 1.8.2 of DSS.",
+    post_message = "The correct answer is: $\\sum$ stands for summation.<br><br> For more info, review subsection 1.8.2 of DSS and/or the CHEATSHEET OF CONCEPTS AND NOTATION on page 25.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -808,7 +818,7 @@ question("<span style=color:dodgerblue> Q4: </span>If the unit of observation is
     answer("`variable`", message = "If we run this piece of code, R will produce an error message letting us know that we do not have an object called 'variable'"),
     answer("`data.variable`", message = "If we run this piece of code, R will produce an error message letting us know that we do not have an object called 'data.variable'"),
     post_message = "The correct answer is `data$variable`.<br><br> 
-   For more information on how to access variables inside of dataframes, review how to use the `$` character in subsection 1.8.1 of DSS.",
+   For more information on how to access variables inside of dataframes, review how to use the `$` character in subsection 1.8.1 of DSS and/or the CHEATSHEET OF R SYMBOLS AND OPERATORS on page 26.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -876,7 +886,7 @@ mean(star$reading)
 ```
 
 ```{r ch1_topic3_r1-check}
-grade_code("<br><br> For more information on how to compute means, review section 1.8 of DSS.")
+grade_code("<br><br> For more information on how to compute means, review section 1.8 of DSS and/or the CHEATSHEET OF R FUNCTIONS on page 26.")
 ```
 
 ```{r ch1_topic3_r1_inter}
@@ -900,7 +910,7 @@ Here, as we can see in the output of `head()` above, *reading* is non-binary bec
 ```
 
 <div id="ch1_topic3_r2-hint">
-Hint: *graduated* is a variable of the dataframe stored inside the object `star`, and the `$` character might be helpful when accessing variables of dataframes. If you would like further help, you may want to review section 1.8 of DSS.
+Hint: *graduated* is a variable of the dataframe stored inside the object `star`, and the `$` character might be helpful when accessing variables of dataframes. If you would like further help, you may want to review section 1.8 of DSS and/or the CHEATSHEET OF R FUNCTIONS on page 26.
 </div>
 
 ```{r ch1_topic3_r2-solution}
@@ -908,7 +918,7 @@ mean(star$graduated)
 ```
 
 ```{r ch1_topic3_r2-check}
-grade_code("<br><br>For more information on how to compute means, review section 1.8 of DSS.")
+grade_code("<br><br>For more information on how to compute means, review section 1.8 of DSS and/or the CHEATSHEET OF R FUNCTIONS on page 26.")
 ```
 
 ```{r ch1_topic3_r2_inter}
@@ -946,7 +956,8 @@ mean(star$math)
 ```{r ch1_topic3_r3-check}
 grade_code("<br><br>The function that calculates the mean of a variable is `mean()`, not `average()`.<br><br>
 We use the `$` character to access a variable inside a dataframe. To its left, we specify the name of the object where the dataframe is stored (without quotes). To its right, we specify the name of the variable (without quotes). Example: `data$variable`. <br><br>
-R code is case sensitive and the name of the object where we have stored the dataset is `star`, not `STAR`.")
+R code is case sensitive and the name of the object where we have stored the dataset is `star`, not `STAR`.<br><br>
+For more information, you may want to review the CHEATSHEETs on page 26.")
 ```
 
 ```{r ch1_topic3_r3_inter}
@@ -1059,4 +1070,5 @@ shiny::br()
 
 <p class="borderexample"> **This Tutorial is Still Very Much a Work in Progress - Please Provide Your Feedback!**<br><br>
 Was this tutorial helpful? Did you find anything confusing? <br>
-Do you have any other comments and/or suggestions? <br><br>Please let me know by completing [this survey](https://bit.ly/dss_feedback). <br> (It is very short and it allows for you to provide anonymous feedback, if that's your preference.) </p> <br><br>
+Do you have any other comments and/or suggestions? <br><br>Please let me know by completing [this survey](https://bit.ly/dss_feedback). <br> (It is very short and it allows for you to provide anonymous feedback, if that's your preference.) <br><br>
+*Thank you and I hope you enjoyed this tutorial!* - Elena </p> <br><br>
