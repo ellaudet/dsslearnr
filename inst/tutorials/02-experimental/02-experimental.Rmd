@@ -7,6 +7,11 @@ output:
     progressive: true
     ace_theme: github
     theme: spacelab
+    language:
+      en:
+        button:
+          previoustopic: Previous Page
+          nexttopic: Next Page
 runtime: shiny_prerendered
 description: "Practice Exercises for Data Analysis for Social Science - CHAPTER 2."
 ---
@@ -48,7 +53,7 @@ th, td { padding: 15px; }
 </style>
 
 
-## <span style=color:dodgerblue> Welcome and Instructions
+## <span style=color:dodgerblue> WELCOME AND INSTRUCTIONS
 <img src="/images/dss.png" 
      width="200" 
      height="250" />
@@ -79,7 +84,7 @@ Note that the practice exercises are designed to be completed *after* having don
 Any errors found in these practice exercises are my own. If you find any, I would really appreciate it if you could let me know by sending me an email at [ellaudet@gmail.com](ellaudet@gmail.com). Thank you! *I hope these practice exercises are helpful to you and/or your students!* - Elena
 
 
-## <span style=color:dodgerblue> CHAPTER 2 OVERVIEW
+## <span style=color:dodgerblue> OVERVIEW OF CHAPTER 2
 In chapter 2, we learn what causal effects are and how to estimate them using randomized experiments. 
 
 The practice exercises for this chapter are organized into two topics. In the Table below, you can see (1) the topics, (2) the section(s) of the book that correspond to each topic, (3) the key concepts and mathematical notation discussed, and (4) the R functions and R operators reviewed.
@@ -109,7 +114,7 @@ The practice exercises for this chapter are organized into two topics. In the Ta
 
 Let's start! <br>
 
-## <span style=color:dodgerblue> Estimating Causal Effects <br> with Randomized Experiments
+## <span style=color:dodgerblue> 1. Estimating Causal Effects with Randomized Experiments
 
 The practice exercises in this topic cover:
 
@@ -134,7 +139,7 @@ There are only one kind of exercises below:
 
 I recommend doing them in the order presented.<br><br>
 
-<font size="+2"> <span style=color:dodgerblue> (A) Multiple-Choice Questions </span></font>
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Multiple Choice Questions </span></font>
 
 <p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
 Select the correct answer(s) and click on the *Submit Answer* button in blue. 
@@ -431,7 +436,7 @@ question("<span style=color:dodgerblue> Q12:</span> Suppose we had 600 volunteer
 ```
 
 
-## <span style=color:dodgerblue> Computing the Difference-in-Means Estimator
+## <span style=color:dodgerblue> 2. Computing the Difference-in-Means Estimator
 
 The practice exercises in this topic cover:
 
@@ -454,11 +459,11 @@ Make sure to complete the practice exercises *after* reading Sections 2.5 to 2.7
 There are two kinds of exercises below:
 
 - multiple-choice questions
-- practicing typing and running code
+- typing and running code
 
 I recommend doing them in the order presented.<br><br>
 
-<font size="+2"> <span style=color:dodgerblue> (A) Multiple-Choice Questions </span></font>
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Multiple Choice Questions </span></font>
 
 <p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
 Select the correct answer(s) and click on the *Submit Answer* button in blue. 
@@ -605,8 +610,7 @@ quiz(caption="",
 )
 ```
 
-<br>
-<font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Typing and Running Code </span></font>
 
 <p class="borderexample">**Instructions**<br><br>When running code on our own computers, we write the code on the R script (the upper left window of RStudio), then we highlight the code we want to run and either (a) manually click on the *Run* icon of RStudio or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.<br><br>
 When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
@@ -1168,9 +1172,9 @@ question("<span style=color:dodgerblue> Q19: </span> What is the estimated avera
 ```
 
 ## <span style=color:dodgerblue> GENERATE SUMMARY REPORT
-Congratulations! You have reached the end of this tutorial!
+You have reached the end of this tutorial. Congratulations!
 
-Now, you can generate a summary report of your work. Just enter your name in the text box below and click on the *Generate Summary Report* button. A summary of your work will appear on the screen. You may want to take a screenshot of this summary whenever an instructor requests evidence of your work.
+To generate a summary report of your work, just enter your name in the text box below and click on the *Generate Summary Report* button. A summary of your work will appear on the screen. You may want to take a screenshot of this summary whenever an instructor requests evidence of your work.
 
 ```{r context="server"}
 shiny::observeEvent(
