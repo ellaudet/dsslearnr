@@ -164,13 +164,13 @@ quiz(caption="",
     allow_retry = TRUE
   ),
     question("<span style=color:dodgerblue> Q3: </span> Suppose you woke up with a headache today. 
-<ul> <li>At 9 AM the intensity of the headache was 5 (in a scale of 1 to 5, where 1 is not very intense and 5 is extremelly intense). </li>
+<ul> <li>At 9 AM the intensity of the headache was 5 (in a scale of 1 to 10, where 1 is not very intense and 10 is extremely intense). </li>
 <li> By 10 AM, you decided to take an aspirin (with a glass of water).</li>
-<li> By 12 PM, you were feeling better and the intensity of the headache had gone down to 2 (in the same scale of 1 to 5). </li></ul>
+<li> By 12 PM, you were feeling better and the intensity of the headache had gone down to 2 (in the same scale of 1 to 10). </li></ul>
 
 Given this setup, could we estimate the effect that the aspirin had on your level of headache?",
-    answer("No, we have no idea whether the 3-level reduccion in the intensity of your headache was due to the aspirin, the water that was consumed with the aspirin (perhaps the headache was due to dehydration), the passing of time, or a combination of the above.", correct = TRUE),
-    answer("Yes, we can estimate that the aspirin reduced the level of intensity of your headache by three levels, by decreasing it from 5 to 2 (in a scale of 1 to 5)."),
+    answer("No, we have no idea whether the 3-level reduction in the intensity of your headache was due to the aspirin, the water that was consumed with the aspirin (perhaps the headache was due to dehydration), the passing of time, or a combination of the above.", correct = TRUE),
+    answer("Yes, we can estimate that the aspirin reduced the level of intensity of your headache by three levels, by decreasing it from 5 to 2 (in a scale of 1 to 10)."),
     post_message = "In this scenario, we get to observe the intensity of your headache at 12 PM after having taken an aspirin and a glass of water at 10 AM. This is what is known as the potential outcome under the treatment condition.<br><br> We do not get to observe, however, the intensity of your headache at 12 PM after only having a glass of water at 10 AM, without the aspirin. This is what is known as the potential outcome under the control condition.<br><br>To be able to measure the causal affect of the aspirin on your level of headache, we would have to observe both potential outcomes so that we could compare them. Unfortunately, we only observe the potential outcome that occurs in reality (the factual outcome), and we never get to observe the potential outcome under the opposite condition (treatment or control) as the one received in reality (the counterfactual outcome). As a result, we cannot compute causal effects at the individual level.<br><br> For information on individual causal effects, review section 2.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -191,13 +191,13 @@ Given this setup, could we estimate the effect that the aspirin had on your leve
 </table> 
 
 If time machines existed and we could indeed observe both potential outcomes, then what would you say was the effect of taking the aspirin on your level of headache?",
-    answer("The aspirin would have decreased my level of headache by two levels (in a scale from 1 to 5)", correct = TRUE),
-    answer("The aspirin would have decreased my level of headache by three levels (in a scale from 1 to 5)"),
-    answer("The aspirin would have increased my level of headache by two levels (in a scale from 1 to 5)"),
+    answer("The aspirin would have decreased my level of headache by two levels (in a scale from 1 to 10)", correct = TRUE),
+    answer("The aspirin would have decreased my level of headache by three levels (in a scale from 1 to 10)"),
+    answer("The aspirin would have increased my level of headache by two levels (in a scale from 1 to 10)"),
     answer("It is impossible to know with the information given"),
     post_message = "If we could observe both potential outcomes above, then we could measure the causal affect of the aspirin on your level of headache by computing this formula:
 <br><br>level of headache after taking the aspirin - level of headache after NOT taking the aspirin <br><br> 2 - 4 = -2 <br><br>
-The asprin would have <em>decreased</em> your level of headache by two levels (in a scale from 1 to 5). (Notice that it is a decrease because the treatment effect would have a negative sign.)<br><br> For information on individual causal effects, review section 2.3 of DSS.",
+The asprin would have <em>decreased</em> your level of headache by two levels (in a scale from 1 to 10). (Notice that it is a decrease because the treatment effect would have a negative sign.)<br><br> For information on individual causal effects, review section 2.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -343,7 +343,7 @@ And, we could conclude that the aspirin:
 <br> For information on the fundamental problem of causal inference, review section 2.3 of DSS.",
     random_answer_order = TRUE, allow_retry = TRUE
 ),
-   question("<span style=color:dodgerblue> Q7:</span> Is it possible for the same treatment to have different effects for different individuals as we computed in the hypothetical example above?",
+   question("<span style=color:dodgerblue> Q7:</span> Is it possible for the same treatment to have different effects for different individuals?",
     answer("Yes, it is possible.", correct = TRUE),
     answer("No, it is not possible."),
     post_message = "Yes, it is possible. There is no guarantee that a treatment has the same effect for all individuals. For example, an aspirin might help reduce the headache of one individual, have severe adverse effects on another, and have no effect whatsoever on yet another.
@@ -362,7 +362,7 @@ And, we could conclude that the aspirin:
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q9 - A MULTI-ANSWER QUESTION:</span> In chapter 2, we discuss a way by which when estimating average treatment effects we can obtain good approximations for the counterfactual outcomes (which are, by definition, unobserved). What is that way? (Note: You must select ALL true statements for the answer to be correct.) </span>",
+  question("<span style=color:dodgerblue> Q9 - A MULTI-ANSWER QUESTION:</span> In chapter 2, we discuss how we can obtain good approximations for the counterfactual outcomes, which are unobserved by definition. What is that way? (Note: You must select ALL true statements for the answer to be correct.) </span>",
     answer("By deciding who takes the treatment and who doesn't through a random process such as the flip of a coin.", correct = TRUE),
     answer("By conducting a randomized experiment.", correct = TRUE),
     answer("By conducting a randomized controlled trial (RCT).", correct = TRUE),
@@ -660,14 +660,14 @@ star <- read.csv("STAR.csv") # reads and stores data
 head(star) # shows the first six observations
 ```
 
-<br> <span style=color:dodgerblue> **Q1 - Create the Treatment Variable:** </span> **Let's start by using the function `ifelse()` to create the treatment variable `small`, identifying the students who were randomly assigned to attend a small class. Make sure to store the values as a new variable in `star`.**
+<br> <span style=color:dodgerblue> **Q1 - Create the Treatment Variable:** </span> **Let's start by using the function `ifelse()` to create the treatment variable `small`, identifying the students who were randomly assigned to attend a small class. Make sure to store the values as a new variable in the dataframe `star`.**
 
 ```{r ch2_topic2_r1, exercise=TRUE, exercise.setup = "star"}
 
 ```
 
 <div id="ch2_topic2_r1-hint">
-Hint: Look at the output of `head()` above to identify the existing variable that we can use to create this new variable, review the three arguments that `ifelse()` requires, recall that in our book the treatment variables are always binary and that we can use the `==` operator to set a logical test, and don't forget to store the values produced by `ifelse()` as a new variable called `small` in `star`. And, if you would like further help, review subsection 2.5.2 of DSS.
+Hint: Look at the output of `head()` above to identify the existing variable that we can use to create this new variable, review the three arguments that `ifelse()` requires, recall that in our book the treatment variables are always binary and that we can use the `==` operator to set a logical test, and don't forget to store the values produced by `ifelse()` as a new variable called `small` in the dataframe called `star`. And, if you would like further help, review subsection 2.5.2 of DSS.
 </div>
 
 ```{r ch2_topic2_r1-solution}
@@ -1260,6 +1260,7 @@ shiny::br()
 shiny::br()
 ```
 
-<p class="borderexample">**This Tutorial is Still Very Much a Work in Progress - Please Provide Your Feedback!**<br><br>
+<p class="borderexample"> **This Tutorial is Still Very Much a Work in Progress - Please Provide Your Feedback!**<br><br>
 Was this tutorial helpful? Did you find anything confusing? <br>
-Do you have any other comments and/or suggestions? <br><br>Please let me know by completing [this survey](https://bit.ly/dss_feedback). <br> (It is very short and it allows for you to provide anonymous feedback, if that's your preference.)</p> <br><br>
+Do you have any other comments and/or suggestions? <br><br>Please let me know by completing [this survey](https://bit.ly/dss_feedback). <br> (It is very short and it allows for you to provide anonymous feedback, if that's your preference.) <br><br>
+*Thank you and I hope you enjoyed this tutorial!* - Elena </p> <br><br>
