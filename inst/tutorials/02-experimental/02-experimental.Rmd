@@ -54,6 +54,7 @@ th, td { padding: 15px; }
 
 
 ## <span style=color:dodgerblue> WELCOME AND INSTRUCTIONS
+
 <img src="/images/dss.png" 
      width="200" 
      height="250" />
@@ -547,7 +548,7 @@ quiz(caption="",
     answer("percentages, after multiplying the output by 100"),
     answer("percentage points, and there is no need to multiply the output by 100"),
     answer("in the same unit of measurement as Y"),
-    post_message = "Recall: The difference-in-means estimator is: $\\overline{Y}_{treatment group}$  $-$ $\\overline{Y}_{control group}$ <br><br> So, the unit of measurement of the difference-in-means estimator depends on Y, not on X. <br><br> Here, we do not know what kind of variable Y is so it is impossible for us to know the unit of measurement of the difference-in-means estimator. <br><br>
+    post_message = "Recall: The difference-in-means estimator is: $\\overline{Y}_{treatment group}$  $-$ $\\overline{Y}_{control group}$ <br><br> So, the unit of measurement of the difference-in-means estimator depends on Y, not on X. <br><br> Here, we do not know what kind of variable Y is, so it is impossible for us to know the unit of measurement of the difference-in-means estimator. <br><br>
     For information on the unit of measurement of the difference-in-means estimator, review the end of subsection 2.5.3 of DSS, starting on page 44.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -642,9 +643,9 @@ To help you figure out the right answer, some questions contain hints. You can a
   </tr>
 </table>
  
-<br> <b> In the following exercises, we will analyze the data from the STAR Project to answer the following two questions:
-<ol><li> What is the estimated average causal effect of attending a small class on the third-grade math test?
-</li><li> What is the estimated average causal effect of attending a small class on the probability of graduating from high school?</li></ol> </b>
+<br> <b> In the following exercises, we will analyze the data from the STAR Project to answer the following two questions:<br><br>
+<ol><li> What is the estimated average causal effect of attending a small class on the third-grade math test?<br><br>
+</li><li> What is the estimated average causal effect of attending a small class on the probability of graduating from high school?</li></ol> </b><br>
 
 <b> Since students were randomly assigned to attend either a small class or a regular-size class, we can assume that the students who attended a small class were, on average, comparable to the students who attended a regular-size class. As a result, we can use the difference-in-means estimator to estimate both average treatment effects.</b>
 
