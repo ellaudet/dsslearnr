@@ -84,7 +84,7 @@ Note that the practice exercises are designed to be completed *after* having don
 Any errors found in these practice exercises are my own. If you find any, I would really appreciate it if you could let me know by sending me an email at [ellaudet@gmail.com](ellaudet@gmail.com). Thank you! *I hope these practice exercises are helpful to you and/or your students!* - Elena
 
 
-## <span style=color:dodgerblue> OVERVIEW of CHAPTER 1
+## <span style=color:dodgerblue> OVERVIEW OF CHAPTER 1
 Chapter 1 of Llaudet and Imai's *Data Analysis for Social Science* (DSS) is available for free [here](https://bit.ly/dss_preview), including the CHEATSHEETs at the end of the chapter.
 
 In chapter 1, we start from the very beginning by installing and familiarizing ourselves with the two programs we use―R and RStudio―and by laying the groundwork for forthcoming analyses. 
@@ -980,7 +980,7 @@ quiz(caption="",
 ## <span style=color:dodgerblue> GENERATE SUMMARY REPORT
 You have reached the end of this tutorial. Congratulations!
 
-Now, you can generate a summary report of your work. Just enter your name in the text box below and click on the *Generate Summary Report* button. A summary of your work will appear on the screen. You may want to take a screenshot of this summary whenever an instructor requests evidence of your work.
+To generate a summary report of your work, just enter your name in the text box below and click on the *Generate Summary Report* button. A summary of your work will appear on the screen. You may want to take a screenshot of this summary whenever an instructor requests evidence of your work.
 
 ```{r context="server"}
 shiny::observeEvent(
