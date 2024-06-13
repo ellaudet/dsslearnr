@@ -7,6 +7,11 @@ output:
     progressive: true
     ace_theme: github
     theme: spacelab
+    language:
+      en:
+        button:
+          previoustopic: Previous Page
+          nexttopic: Next Page
 runtime: shiny_prerendered
 description: "Practice Exercises for Data Analysis for Social Science - CHAPTER 1."
 ---
@@ -48,7 +53,7 @@ th, td { padding: 15px; }
 </style>
 
 
-## <span style=color:dodgerblue> Welcome and Instructions
+## <span style=color:dodgerblue> WELCOME AND INSTRUCTIONS
 <img src="/images/dss.png" 
      width="200" 
      height="250" />
@@ -79,7 +84,7 @@ Note that the practice exercises are designed to be completed *after* having don
 Any errors found in these practice exercises are my own. If you find any, I would really appreciate it if you could let me know by sending me an email at [ellaudet@gmail.com](ellaudet@gmail.com). Thank you! *I hope these practice exercises are helpful to you and/or your students!* - Elena
 
 
-## <span style=color:dodgerblue> CHAPTER 1 OVERVIEW
+## <span style=color:dodgerblue> OVERVIEW of CHAPTER 1
 Chapter 1 of Llaudet and Imai's *Data Analysis for Social Science* (DSS) is available for free [here](https://bit.ly/dss_preview), including the CHEATSHEETs at the end of the chapter.
 
 In chapter 1, we start from the very beginning by installing and familiarizing ourselves with the two programs we use―R and RStudio―and by laying the groundwork for forthcoming analyses. 
@@ -116,7 +121,7 @@ The practice exercises for this chapter are organized into three topics. In the 
 
 Let's start! <br>
 
-## <span style=color:dodgerblue> Introduction to R and RStudio
+## <span style=color:dodgerblue> 1. Introduction to R and RStudio
 
 Chapter 1 of Llaudet and Imai's *Data Analysis for Social Science* (DSS) is available for free [here](https://bit.ly/dss_preview), including the CHEATSHEETs at the end of the chapter.
 
@@ -141,11 +146,11 @@ Make sure to complete the practice exercises *after* reading Sections 1 to 1.6 o
 There are two kinds of exercises below:
 
 - multiple-choice questions
-- practicing typing and running code
+- typing and running code
 
 I recommend doing them in the order presented.<br><br>
 
-<font size="+2"> <span style=color:dodgerblue> (A) Multiple-Choice Questions </span></font>
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Multiple Choice Questions </span></font>
 
 <p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
 Select the correct answer(s) and click on the *Submit Answer* button in blue. 
@@ -291,8 +296,7 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
 ```
 
 
-<br>
-<font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Typing and Running Code </span></font>
 
 <p class="borderexample">**Instructions**<br><br>When running code on our own computers, we write the code on the R script (the upper left window of RStudio), then we highlight the code we want to run and either (a) manually click on the *Run* icon of RStudio or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.<br><br>
 When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
@@ -387,7 +391,7 @@ grade_result(
 )
 ```
 
-## <span style=color:dodgerblue> Observations and Variables
+## <span style=color:dodgerblue> 2. Observations and Variables
 
 Chapter 1 of Llaudet and Imai's *Data Analysis for Social Science* (DSS) is available for free [here](https://bit.ly/dss_preview), including the CHEATSHEETS at the end of the chapter.
 
@@ -411,11 +415,11 @@ Make sure to complete the practice exercises *after* reading Section 1.7 of DSS,
 There are two kinds of exercises below:
 
 - multiple-choice questions
-- practicing typing and running code
+- typing and running code
 
 I recommend doing them in the order presented.<br><br>
 
-<font size="+2"> <span style=color:dodgerblue> (A) Multiple-Choice Questions </span></font>
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Multiple Choice Questions </span></font>
 
 <p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
 Select the correct answer(s) and click on the *Submit Answer* button in blue. 
@@ -569,8 +573,7 @@ quiz(caption="",
 ```
 
 
-<br>
-<font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Typing and Running Code </span></font>
 
 <p class="borderexample">**Instructions**<br><br>When running code on our own computers, we write the code on the R script (the upper left window of RStudio), then we highlight the code we want to run and either (a) manually click on the *Run* icon of RStudio or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.<br><br>
 When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
@@ -707,7 +710,7 @@ quiz(caption="",
   ))
 ```
 
-## <span style=color:dodgerblue> Computing and Interpreting Means
+## <span style=color:dodgerblue> 3. Computing \& Interpreting Means
 
 Chapter 1 of Llaudet and Imai's *Data Analysis for Social Science* (DSS) is available for free [here](https://bit.ly/dss_preview), including the CHEATSHEETs at the end of the chapter.
 
@@ -731,11 +734,11 @@ Make sure to complete the practice exercises *after* reading Sections 1.8 to 1.1
 There are two kinds of exercises below:
 
 - multiple-choice questions
-- practicing typing and running code
+- typing and running code
 
 I recommend doing them in the order presented.<br><br>
 
-<font size="+2"> <span style=color:dodgerblue> (A) Multiple-Choice Questions </span></font>
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Multiple Choice Questions </span></font>
 
 <p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
 Select the correct answer(s) and click on the *Submit Answer* button in blue. 
@@ -825,8 +828,7 @@ question("<span style=color:dodgerblue> Q4: </span>If the unit of observation is
 )
 ```
 
-<br>
-<font size="+2"> <span style=color:dodgerblue> (B) Practicing Typing and Running Code </span></font>
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Typing and Running Code </span></font>
 
 <p class="borderexample">**Instructions**<br><br>When running code on our own computers, we write the code on the R script (the upper left window of RStudio), then we highlight the code we want to run and either (a) manually click on the *Run* icon of RStudio or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.<br><br>
 When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
@@ -976,7 +978,7 @@ quiz(caption="",
 ```
 
 ## <span style=color:dodgerblue> GENERATE SUMMARY REPORT
-Congratulations! You have reached the end of this tutorial!
+You have reached the end of this tutorial. Congratulations!
 
 Now, you can generate a summary report of your work. Just enter your name in the text box below and click on the *Generate Summary Report* button. A summary of your work will appear on the screen. You may want to take a screenshot of this summary whenever an instructor requests evidence of your work.
 
