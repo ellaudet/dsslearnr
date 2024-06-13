@@ -151,11 +151,11 @@ To help you understand the correct answer(s), most questions will provide you so
 ```{r ch2_topic1_mc}
 quiz(caption="",
     question("<span style=color:dodgerblue> Q1:</span> When estimating causal effects we distinguish between treatment and outcome variables. If we were interested in estimating the effect of attending a private school on SAT scores with a dataframe where students was the unit of observation, what would be the treatment and outcome variables?",
-    answer("<ul> <li> the treatment variable would be a binary variable indicating whether student <em>i</em> attended a private school </li><li> the outcome variable would be a non-binary variable capturing the SAT score of student <em>i</em> </li></ul>", correct = TRUE),
-    answer("<ul> <li> the treatment variable would be a non-binary variable capturing the SAT score of student <em>i</em> </li><li> the outcome variable would be a binary variable indicating whether student <em>i</em> attended a private school </li></ul>", message = "Check which variable should be the treatment variable and which should be the outcome variable."),
-    answer("<ul> <li> the treatment variable would be a binary variable indicating whether student <em>i</em> attended a private school </li><li> the outcome variable would be a binary variable capturing the SAT score of student <em>i</em> </li></ul>", message = "Check whether the variables are binary or non-binary."),
-    answer("<ul> <li> the treatment variable would be a non-binary variable indicating whether student <em>i</em> attended a private school </li><li>  the outcome variable would be a non-binary variable capturing the SAT score of student <em>i</em> </li></ul>", message = "Check whether the variables are binary or non-binary."),
-    post_message = "The correct answer is: (1) the treatment variable would be a binary variable indicating whether student <em>i</em> attended a private school, and (2) the outcome variable would be a non-binary variable capturing the SAT score of student <em>i</em><br><br> For definitions of treatment and outcome variables, review section 2.2 of DSS. For definitions of binary and non-binary variables, review step #4 of section 1.7 of DSS.",
+    answer("<ul> <li> the treatment variable would be a binary variable indicating whether the students attended a private school </li><li> the outcome variable would be a non-binary variable capturing the SAT score of the students </li></ul>", correct = TRUE),
+    answer("<ul> <li> the treatment variable would be a non-binary variable capturing the SAT score of the students </li><li> the outcome variable would be a binary variable indicating whether the students attended a private school </li></ul>", message = "Check which variable should be the treatment variable and which should be the outcome variable."),
+    answer("<ul> <li> the treatment variable would be a binary variable indicating whether the students attended a private school </li><li> the outcome variable would be a binary variable capturing the SAT score of the students </li></ul>", message = "Check whether the variables are binary or non-binary."),
+    answer("<ul> <li> the treatment variable would be a non-binary variable indicating whether the students attended a private school </li><li>  the outcome variable would be a non-binary variable capturing the SAT score of the students </li></ul>", message = "Check whether the variables are binary or non-binary."),
+    post_message = "The correct answer is: (1) the treatment variable would be a binary variable indicating whether the students attended a private school, and (2) the outcome variable would be a non-binary variable capturing the SAT score of the students. <br><br> For definitions of treatment and outcome variables, review section 2.2 of DSS. For definitions of binary and non-binary variables, review step #4 of section 1.7 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -196,13 +196,13 @@ Given this setup, could we estimate the effect that the aspirin had on your leve
 </table> 
 
 If time machines existed and we could indeed observe both potential outcomes, then what would you say was the effect of taking the aspirin on your level of headache?",
-    answer("The aspirin would have decreased my level of headache by two levels (in a scale from 1 to 10)", correct = TRUE),
-    answer("The aspirin would have decreased my level of headache by three levels (in a scale from 1 to 10)"),
-    answer("The aspirin would have increased my level of headache by two levels (in a scale from 1 to 10)"),
+    answer("The aspirin would have decreased my level of headache by 2 levels (in a scale from 1 to 10)", correct = TRUE),
+    answer("The aspirin would have decreased my level of headache by 3 levels (in a scale from 1 to 10)"),
+    answer("The aspirin would have increased my level of headache by 2 levels (in a scale from 1 to 10)"),
     answer("It is impossible to know with the information given"),
     post_message = "If we could observe both potential outcomes above, then we could measure the causal affect of the aspirin on your level of headache by computing this formula:
 <br><br>level of headache after taking the aspirin - level of headache after NOT taking the aspirin <br><br> 2 - 4 = -2 <br><br>
-The asprin would have <em>decreased</em> your level of headache by two levels (in a scale from 1 to 10). (Notice that it is a decrease because the treatment effect would have a negative sign.)<br><br> For information on individual causal effects, review section 2.3 of DSS.",
+The asprin would have <em>decreased</em> your level of headache by 2 levels (in a scale from 1 to 10). (Notice that it is a decrease because the treatment effect would have a negative sign.)<br><br> For information on individual causal effects, review section 2.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -1118,7 +1118,7 @@ question("<span style=color:dodgerblue> Q18: </span> When estimating the average
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-question("<span style=color:dodgerblue> Q17: </span> When estimating the average causal effect of attending a small class on the probability of graduating from high school, what is the direction, size, and unit of measurement of the average causal effect?",
+question("<span style=color:dodgerblue> Q19: </span> When estimating the average causal effect of attending a small class on the probability of graduating from high school, what is the direction, size, and unit of measurement of the average causal effect?",
     answer("an increase of 0.08 percentage points, on average", correct = TRUE),
     answer("an decrease of 0.0008 percentage points, on average", message = "Check the direction and size of the effect. Did we estimate that the treatment increased the outcome, on average? Or did we estimate that the treatment decreased the outcome, on average? Also, when the outcome variable is binary, do we need to multiply the output of the difference-in-means estimator by 100?"),
     answer("an increase of 0.0008 percentage points, on average", message = "Check the size of the effect. When the outcome variable is binary, do we need to multiply the output of the difference-in-means estimator by 100?"),
@@ -1144,7 +1144,7 @@ The unit of measurement is 'percentage points' because '% - % = p.p.'.
 
 ```{r ch2_topic2_r18_r29}
 quiz(caption="",
-  question("<span style=color:dodgerblue> Q18: </span> What is the estimated average causal effect of attending a small class on the third-grade math test?",
+  question("<span style=color:dodgerblue> Q20: </span> What is the estimated average causal effect of attending a small class on the third-grade math test?",
     answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because we are analyzing data from a randomized experiment), we estimate that attending a small class increases the third-grade math scores by 6 points, on average.", correct = TRUE),
     answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), we estimate that the students who attended a small class scored, on average, 6 points more on the third-grade math test, as compared to the students who attended a regular-size class.", message = "This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class scored, on average, 6 points more, but it does not communicate who or what is responsible for those extra points. It does not claim that those extra points where <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'"),
     answer("We estimate that attending a small class increases the third-grade math scores by 6 points, on average.", message= "This answer is missing the assumption and why the assumption is reasonable in this case."),
@@ -1156,7 +1156,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-question("<span style=color:dodgerblue> Q19: </span> What is the estimated average causal effect of attending a small class on the probability of graduating from high school?",
+question("<span style=color:dodgerblue> Q21: </span> What is the estimated average causal effect of attending a small class on the probability of graduating from high school?",
     answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because we are analyzing data from a randomized experiment), we estimate that attending a small class increases the probability of graduating from high school by 0.08 percentage points, on average.", correct = TRUE),
     answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), we estimate that the students who attended a small class were, on average, 0.08 percentage points more likely to graduate from high school than students who attended a regular-size class.", message = "This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class were, on average, 0.08 percentage points more likely to graduate from high school, but it does not communicate who or what is responsible for those additional percentage points. It does not claim that those extra percentage points where <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'"),
     answer("We estimate that attending a small class increases the probability of graduating from high school by 0.08 percentage points, on average.", message= "This answer is missing the assumption and why the assumption is reasonable in this case."),
