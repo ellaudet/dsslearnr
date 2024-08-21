@@ -147,7 +147,7 @@ Select the correct answer(s) and click on the *Submit Answer* button in blue.
 <br><br> If you didn't choose the correct answer(s) click on the *Try Again* button in orange and keep trying until you submit the correct answer(s).
 <br><br>
 To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.
-<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the right-hand side of the tutorial.</p>
+<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the left-hand side of the tutorial.</p>
 
 ```{r ch2_topic1_mc}
 quiz(caption="",
@@ -471,7 +471,7 @@ Select the correct answer(s) and click on the *Submit Answer* button in blue.
 <br><br> If you didn't choose the correct answer(s) click on the *Try Again* button in orange and keep trying until you submit the correct answer(s).
 <br><br>
 To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.
-<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the right-hand side of the tutorial.</p>
+<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the left-hand side of the tutorial.</p>
 
 ```{r ch2_topic2_mc}
 quiz(caption="",
@@ -617,7 +617,7 @@ quiz(caption="",
 When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
 Once you are done typing the code, you can run it by clicking on the *Run Code* button in green. The output produced by the executed code will appear underneath the *R code* window.<br><br>
 Once you are satisfied with your answer, you can submit it by clicking on the *Submit Answer* button in blue. <br><br>
-To help you figure out the right answer, some questions contain hints. You can access them by clicking on the *Hint* button in white.<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the right-hand side of the tutorial.</p>
+To help you figure out the right answer, some questions contain hints. You can access them by clicking on the *Hint* button in white.<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the left-hand side of the tutorial.</p>
 
 <br><b> For the next few questions, we are going to continue to work with the STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the description of the variables in this dataset, where the unit of observation is students.</b>
 
