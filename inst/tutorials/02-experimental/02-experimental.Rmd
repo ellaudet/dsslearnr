@@ -1125,7 +1125,7 @@ question("<span style=color:dodgerblue> Q19: </span> When estimating the average
     answer("an increase of 0.007 percentage points, on average", message = "Check the size of the effect. When the outcome variable is binary, do we need to multiply the output of the difference-in-means estimator by 100?"),
     answer("an increase of 7 percentage points, on average", message="Check the size of the effect"),
     answer("an increase of 0.7, on average", message="This answer is missing the unit of measurement of the effect."),
-    answer("0.7 p.p., on average", message="This answer is missing the direction of the effect."),
+    answer("0.7 percentage points, on average", message="This answer is missing the direction of the effect."),
     post_message = "The correct answer is: an increase of 0.7 percentage points, on average. <br><br>
     Here, the difference-on-means estimator for *graduated* is: <br><br>
 0.8735 - 0.8665 $\\approx$ 0.007 <br><br>
