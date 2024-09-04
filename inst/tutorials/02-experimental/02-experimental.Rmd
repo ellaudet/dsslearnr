@@ -1006,7 +1006,7 @@ Here, *graduated* is binary, so the mean of *graduated* should be interpreted as
 ```
 
 
-<br> <span style=color:dodgerblue> **Q12 - Compute the Difference-in-Means Estimator for Graduated:** </span> **Although we could compute the difference-in-means estimator as the difference between the last two means (`0.8735 - 0.8665`), it is best to ask R to compute it all at once, using functions. What is the code to compute the difference-in-means estimator for *math*?**
+<br> <span style=color:dodgerblue> **Q12 - Compute the Difference-in-Means Estimator for Graduated:** </span> **Although we could compute the difference-in-means estimator as the difference between the last two means (`0.8735 - 0.8665`), it is best to ask R to compute it all at once, using functions. What is the code to compute the difference-in-means estimator for *graduated*?**
 
 ```{r ch2_topic2_r12, exercise=TRUE, exercise.setup = "star2"}
 
@@ -1031,13 +1031,13 @@ quiz(caption="",
     answer("percentage points, but there is no need to multiply the output by 100"),
     answer("points"),
     answer("percentages, after multiplying the output by 100"),
-    answer("percentages, but there is not ned to multiply the output by 100"),
+    answer("percentages, but there is no need to multiply the output by 100"),
     answer("students"),
     post_message = "The correct answer is: percentage points, after multiplying the output by 100.<br><br>
 Here, the difference-on-means estimator for *graduated* is: <br><br>
-0.8735 - 0.8665 $\\approx$ 0.0008 <br><br>
+0.8735 - 0.8665 $\\approx$ 0.007 <br><br>
 Now, to be able to interpret the proportions in percentages, we must multiply the output of each mean by 100, and to be able to interpret the difference betwen the two proportions in percentage points, we also must multiply the output by 100. Once we multiply each term from the formula above by 100, we can then clearly see the difference-in-means estimator is measured in percentage points since, by definition, '% - % = p.p.' <br><br>
-87.35% - 86.65% $\\approx$ 0.08 p.p. 
+87.35% - 86.65% $\\approx$ 0.7 p.p. 
 <br><br> For more information on units of measurement, review the top half of page 23 of DSS. For a description of what percentage points are and an explanation of the difference between percentages and percentage points, review the TIP on page 44 of DSS. And, for more on the unit of measurement of the difference-in-means estimator, review pages 44-45 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -1086,11 +1086,11 @@ quiz(caption="",
     allow_retry = TRUE
   ),
 question("<span style=color:dodgerblue> Q16: </span> When estimating the average causal effect of attending a small class on the third-grade math test, what is the outcome variable?",
-    answer("the third-grade math test", correct = TRUE),
+    answer("third-grade math test scores", correct = TRUE),
     answer("attending a small class"),
     answer("attending a regular-class size"),
-    answer("the probability of graduating from high school"),    
-    post_message = "The correct answer is: the third-grade math test. <br><br>
+    answer("third-grade reading test scores"),    
+    post_message = "The correct answer is: third-grade math test scores. <br><br>
 <br><br> For more information, review subsection 2.5.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -1110,29 +1110,29 @@ The unit of measurement is 'points' because 'points - points = points'.
     allow_retry = TRUE
   ),
 question("<span style=color:dodgerblue> Q18: </span> When estimating the average causal effect of attending a small class on the probability of graduating from high school, what is the outcome variable?",
-    answer("the probability of graduating from high school", correct =TRUE),
-    answer("the third-grade math test"),
+    answer("a binary variable indicating whether the student graduated from high school", correct =TRUE),
+    answer("third-grade math test scores"),
     answer("attending a small class"),
     answer("attending a regular-class size"),
-    post_message = "The correct answer is: the probability of graduating from high school. <br><br>
+    post_message = "The correct answer is: a binary variable indicating whether the student graduated from high school. <br><br>
 <br><br> For more information, review subsection 2.5.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
 question("<span style=color:dodgerblue> Q19: </span> When estimating the average causal effect of attending a small class on the probability of graduating from high school, what is the direction, size, and unit of measurement of the average causal effect?",
-    answer("an increase of 0.08 percentage points, on average", correct = TRUE),
-    answer("an decrease of 0.0008 percentage points, on average", message = "Check the direction and size of the effect. Did we estimate that the treatment increased the outcome, on average? Or did we estimate that the treatment decreased the outcome, on average? Also, when the outcome variable is binary, do we need to multiply the output of the difference-in-means estimator by 100?"),
-    answer("an increase of 0.0008 percentage points, on average", message = "Check the size of the effect. When the outcome variable is binary, do we need to multiply the output of the difference-in-means estimator by 100?"),
-    answer("an increase of 8 percentage points, on average", message="Check the size of the effect"),
-    answer("an increase of 0.08, on average", message="This answer is missing the unit of measurement of the effect."),
-    answer("0.08, on average", message="This answer is missing the direction of the effect."),
-    post_message = "The correct answer is: an increase of 0.08 percentage points, on average. <br><br>
+    answer("an increase of 0.7 percentage points, on average", correct = TRUE),
+    answer("an decrease of 0.007 percentage points, on average", message = "Check the direction and size of the effect. Did we estimate that the treatment increased the outcome, on average? Or did we estimate that the treatment decreased the outcome, on average? Also, when the outcome variable is binary, do we need to multiply the output of the difference-in-means estimator by 100?"),
+    answer("an increase of 0.007 percentage points, on average", message = "Check the size of the effect. When the outcome variable is binary, do we need to multiply the output of the difference-in-means estimator by 100?"),
+    answer("an increase of 7 percentage points, on average", message="Check the size of the effect"),
+    answer("an increase of 0.7, on average", message="This answer is missing the unit of measurement of the effect."),
+    answer("0.7 p.p., on average", message="This answer is missing the direction of the effect."),
+    post_message = "The correct answer is: an increase of 0.7 percentage points, on average. <br><br>
     Here, the difference-on-means estimator for *graduated* is: <br><br>
-0.8735 - 0.8665 $\\approx$ 0.0008 <br><br>
+0.8735 - 0.8665 $\\approx$ 0.007 <br><br>
 Now, to be able to interpret the proportions in percentages, we must multiply the output of each mean by 100, and to be able to interpret the difference betwen the two proportions in percentage points, we also must multiply the output by 100: <br><br>
-87.35% - 86.65% $\\approx$ 0.08 p.p. <br><br>
+87.35% - 86.65% $\\approx$ 0.7 p.p. <br><br>
 So, it is an increase because we are estimating change---the change in the outcome variable caused by the treatment---and the difference-in-means estimator is positive. <br><br>
-The size of the effect is 0.08 because *graduated* is binary so we need to multiply the output of the difference-in-means estimator by 100. <br><br>
+The size of the effect is 0.7 because *graduated* is binary so we need to multiply the output of the difference-in-means estimator by 100. <br><br>
 The unit of measurement is 'percentage points' because '% - % = p.p.'.
 <br><br> For more information on units of measurement, review the top half of page 23 of DSS. For a description of what percentage points are and an explanation of the difference between percentages and percentage points, review the TIP on page 44 of DSS. And, for more on the unit of measurement of the difference-in-means estimator, review pages 44-45 of DSS.",
     random_answer_order = TRUE,
@@ -1158,13 +1158,13 @@ quiz(caption="",
     allow_retry = TRUE
   ),
 question("<span style=color:dodgerblue> Q21: </span> What is the estimated average causal effect of attending a small class on the probability of graduating from high school?",
-    answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because we are analyzing data from a randomized experiment), we estimate that attending a small class increases the probability of graduating from high school by 0.08 percentage points, on average.", correct = TRUE),
-    answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), we estimate that the students who attended a small class were, on average, 0.08 percentage points more likely to graduate from high school than students who attended a regular-size class.", message = "This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class were, on average, 0.08 percentage points more likely to graduate from high school, but it does not communicate who or what is responsible for those additional percentage points. It does not claim that those extra percentage points where <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'"),
-    answer("We estimate that attending a small class increases the probability of graduating from high school by 0.08 percentage points, on average.", message= "This answer is missing the assumption and why the assumption is reasonable in this case."),
-    answer("Assuming that all students in Project STAR are comparable (a reasonable assumption because all students were from Tennessee), we estimate that attending a small class increases the probability of graduating from high school by 0.08 percentage points, on average.", message= "This answer has the wrong assumption as well as the wrong justification for the assumption."),
-    post_message = "The correct answer is: Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because we are analyzing data from a randomized experiment), we estimate that attending a small class increases the probability of graduating from high school by 0.08 percentage points, on average.<br><br>
-    Note that the following is <em> not </em> the correct answer: Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), <em> we estimate that the students who attended a small class were, on average, 0.08 percentage points more likely to graduate from high school than students who attended a regular-size class. </em> <br><br> 
-    Why? This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class were, on average, 0.08 percentage points more likely to graduate from high school, but it does not communicate who or what is responsible for those additional percentage points. It does not claim that those extra percentage points where <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'
+    answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because we are analyzing data from a randomized experiment), we estimate that attending a small class increases the probability of graduating from high school by 0.7 percentage points, on average.", correct = TRUE),
+    answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), we estimate that the students who attended a small class were, on average, 0.7 percentage points more likely to graduate from high school than students who attended a regular-size class.", message = "This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class were, on average, 0.7 percentage points more likely to graduate from high school, but it does not communicate who or what is responsible for those additional percentage points. It does not claim that those extra percentage points where <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'"),
+    answer("We estimate that attending a small class increases the probability of graduating from high school by 0.7 percentage points, on average.", message= "This answer is missing the assumption and why the assumption is reasonable in this case."),
+    answer("Assuming that all students in Project STAR are comparable (a reasonable assumption because all students were from Tennessee), we estimate that attending a small class increases the probability of graduating from high school by 0.7 percentage points, on average.", message= "This answer has the wrong assumption as well as the wrong justification for the assumption."),
+    post_message = "The correct answer is: Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because we are analyzing data from a randomized experiment), we estimate that attending a small class increases the probability of graduating from high school by 0.7 percentage points, on average.<br><br>
+    Note that the following is <em> not </em> the correct answer: Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), <em> we estimate that the students who attended a small class were, on average, 0.7 percentage points more likely to graduate from high school than students who attended a regular-size class. </em> <br><br> 
+    Why? This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class were, on average, 0.7 percentage points more likely to graduate from high school, but it does not communicate who or what is responsible for those additional percentage points. It does not claim that those extra percentage points where <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'
 <br><br> For more information on how to write conclusion statements, review the bottom TIP of page 43 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
