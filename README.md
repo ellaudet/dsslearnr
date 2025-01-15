@@ -31,7 +31,7 @@ Tutorials for subsequent chapters are currently in development.
       learnr::run_tutorial(package = "dsslearnr")
 
 
-## Feedback and Contact
+## Feedback
 
 Any errors in these tutorials are my responsibility. If you encounter any issues or have suggestions for improvements, please contact me at [ellaudet@gmail.com](mailto:ellaudet@gmail.com). Your feedback is highly appreciated!
 
