@@ -1,7 +1,7 @@
 ---
 title: "DSS: CHAPTER 2"
 tutorial:
-  id: "01-introduction"
+  id: "02-experimental"
 output:
   learnr::tutorial:
     progressive: true
@@ -13,7 +13,7 @@ output:
           previoustopic: Previous Page
           nexttopic: Next Page
 runtime: shiny_prerendered
-description: "Practice Exercises for Data Analysis for Social Science - CHAPTER 2."
+description: "Review Exercises for Data Analysis for Social Science - CHAPTER 2."
 ---
 
 ```{r setup, include=FALSE}
@@ -55,15 +55,17 @@ th, td { padding: 15px; }
 
 ## <span style=color:dodgerblue> WELCOME AND INSTRUCTIONS
 
+<div style="overflow: auto;">
 <img src="/images/dss.png" 
      width="200" 
-     height="250" />
+     height="250" 
+     style="float: left; margin-right: 20px; margin-bottom: 10px;" />
 
-This is a tutorial for readers of DSS, which stands for [Elena Llaudet and Kosuke Imai's *Data Analysis for Social Science: A Friendly and Practical Introduction* (Princeton University Press, 2022)](https://bit.ly/dss_book). 
+This is a tutorial for readers of DSS: [Llaudet and Imai's *Data Analysis for Social Science: A Friendly and Practical Introduction* (Princeton University Press, 2022)](https://bit.ly/dss_textbook). DSS teaches from scratch R, statistics, and the fundamentals of quantitative social science (causal inference, survey research, and predictive models). 
 
-DSS teaches from scratch R, statistics, and the fundamentals of quantitative social science (that is, the fundamentals of causal inference, survey research, and predictive models). The practice exercises you will find here cover all of these and are organized by chapter of the book.
+Review exercises are organized by chapter. Here are those for chapter 2. 
 
-Each chapter is divided into two to five topics, and each topic corresponds to one to five sections of the textbook. In other words, each topic reviews only a handful of pages of the textbook, which often can be read in a single seating. Here is the recommended sequence: 
+The review exercises are designed to be completed *after* reading and doing the exercises in the book. They are meant to supplement, not replace, the book. In the tutorials, each chapter is divided into two to five topics, where each topic contains exercises reviewing a handful of pages that can be read in one sitting. Here is the recommended sequence: 
 
 <table>
   <tr>
@@ -75,23 +77,19 @@ Each chapter is divided into two to five topics, and each topic corresponds to o
   <tr>
     <td> read the section(s) <br> of the textbook <br> that correspond to <br> a particular topic </td>
     <td> follow along <br> with the exercises <br>in the textbook <br>on your own computer</td>
-    <td> complete <br> the corresponding <br> practice exercises <br>provided here </td>
+    <td> complete <br> the corresponding <br> review exercises <br>provided here </td>
     <td> move on <br> to the next topic, <br> and go back <br> to step 1 </td>
   </tr>
 </table>
-  
-Note that the practice exercises are designed to be completed *after* having done the corresponding readings of the book and *after* having followed the exercises in the book with your own computer. They are not meant to be a substitute for the book, but rather a supplement. 
+</div>
 
-Any errors found in these practice exercises are my own. If you find any, I would really appreciate it if you could let me know by sending me an email at [ellaudet@gmail.com](ellaudet@gmail.com). Thank you! *I hope these practice exercises are helpful to you and/or your students!* - Elena
-
+*Found an error?* Please email me at [ellaudet@gmail.com](ellaudet@gmail.com). *I hope these exercises are helpful!* - Elena
 
 ## <span style=color:dodgerblue> OVERVIEW OF CHAPTER 2
 In chapter 2, we learn what causal effects are and how to estimate them using randomized experiments. 
 
-The practice exercises for this chapter are organized into two topics. In the Table below, you can see (1) the topics, (2) the section(s) of the book that correspond to each topic, (3) the key concepts and mathematical notation discussed, and (4) the R functions and R operators reviewed.
+The review exercises for this chapter are organized into two topics.
 
-</head>
-<body>
 <table>
   <tr>
     <th> Topic </th>
@@ -116,8 +114,7 @@ The practice exercises for this chapter are organized into two topics. In the Ta
 Let's start! <br>
 
 ## <span style=color:dodgerblue> 1. Estimating Causal Effects with Randomized Experiments
-
-The practice exercises in this topic cover:
+The review exercises in this topic cover:
 
 <table>
   <tr>
@@ -132,22 +129,22 @@ The practice exercises in this topic cover:
   </tr>
 </table>
 
-Make sure to complete the practice exercises *after* reading Sections 2 to 2.4 of DSS, including both, and *after* having followed the exercises in the book with your own computer. IMPORTANT: <span style=color:dodgerblue> *The practice exercises are not meant to be a substitute for the book, but rather a supplement.* </span>
- 
-There are only one kind of exercises below:
-
-- multiple-choice questions
-
-I recommend doing them in the order presented.<br><br>
-
 ## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Multiple Choice Questions </span></font>
 
-<p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
-Select the correct answer(s) and click on the *Submit Answer* button in blue. 
-<br><br> If you didn't choose the correct answer(s) click on the *Try Again* button in orange and keep trying until you submit the correct answer(s).
-<br><br>
-To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.
-<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the left-hand side of the tutorial.</p>
+<div class="borderexample">
+<b>Instructions</b>
+<ul>
+  <li>Select correct answer(s) and click blue <i>Submit Answer</i></li>
+  <li>Multi-answer questions are clearly labeled</li>
+  <li>If incorrect, click orange <i>Try Again</i> until correct</li>
+</ul>
+
+<b>Navigation:</b>
+<ul>
+  <li>To delete all your answers and restart the tutorial: click <i>Start Over</i> in left menu</li>
+  <li>Otherwise, progress is automatically saved</li>
+</ul>
+</div>
 
 ```{r ch2_topic1_mc}
 quiz(caption="",
@@ -177,7 +174,7 @@ quiz(caption="",
 Given this setup, could we estimate the effect that the aspirin had on your level of headache?",
     answer("No, we have no idea whether the 3-level reduction in the intensity of your headache was due to the aspirin, the water that was consumed with the aspirin (perhaps the headache was due to dehydration), the passing of time, or a combination of the above.", correct = TRUE),
     answer("Yes, we can estimate that the aspirin reduced the level of intensity of your headache by three levels, by decreasing it from 5 to 2 (in a scale of 1 to 10)."),
-    post_message = "In this scenario, we get to observe the intensity of your headache at 12 PM after having taken an aspirin and a glass of water at 10 AM. This is what is known as the potential outcome under the treatment condition.<br><br> We do not get to observe, however, the intensity of your headache at 12 PM after only having a glass of water at 10 AM, without the aspirin. This is what is known as the potential outcome under the control condition.<br><br>To be able to measure the causal affect of the aspirin on your level of headache, we would have to observe both potential outcomes so that we could compare them. Unfortunately, we only observe the potential outcome that occurs in reality (the factual outcome), and we never get to observe the potential outcome under the opposite condition (treatment or control) as the one received in reality (the counterfactual outcome). As a result, we cannot compute causal effects at the individual level.<br><br> For information on individual causal effects, review section 2.3 of DSS.",
+    post_message = "In this scenario, we get to observe the intensity of your headache at 12 PM after having taken an aspirin and a glass of water at 10 AM. This is what is known as the potential outcome under the treatment condition.<br><br> We do not get to observe, however, the intensity of your headache at 12 PM after only having a glass of water at 10 AM, without the aspirin. This is what is known as the potential outcome under the control condition.<br><br>To be able to measure the causal effect of the aspirin on your level of headache, we would have to observe both potential outcomes so that we could compare them. Unfortunately, we only observe the potential outcome that occurs in reality (the factual outcome), and we never get to observe the potential outcome under the opposite condition (treatment or control) as the one received in reality (the counterfactual outcome). As a result, we cannot compute causal effects at the individual level.<br><br> For information on individual causal effects, review section 2.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -201,9 +198,9 @@ If time machines existed and we could indeed observe both potential outcomes, th
     answer("The aspirin would have decreased my level of headache by 3 levels (in a scale from 1 to 10)"),
     answer("The aspirin would have increased my level of headache by 2 levels (in a scale from 1 to 10)"),
     answer("It is impossible to know with the information given"),
-    post_message = "If we could observe both potential outcomes above, then we could measure the causal affect of the aspirin on your level of headache by computing this formula:
+    post_message = "If we could observe both potential outcomes above, then we could measure the causal effect of the aspirin on your level of headache by using this formula:
 <br><br>level of headache after taking the aspirin - level of headache after NOT taking the aspirin <br><br> 2 - 4 = -2 <br><br>
-The asprin would have <em>decreased</em> your level of headache by 2 levels (in a scale from 1 to 10). (Notice that it is a decrease because the treatment effect would have a negative sign.)<br><br> For information on individual causal effects, review section 2.3 of DSS.",
+The aspirin would have <em>decreased</em> your level of headache by 2 levels (in a scale from 1 to 10). (Notice that it is a decrease because the treatment effect would have a negative sign.)<br><br> For information on individual causal effects, review section 2.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -213,7 +210,7 @@ The asprin would have <em>decreased</em> your level of headache by 2 levels (in 
     <th></th>
     <th>level of headache <br> at 12 PM <br> after taking the aspirin</th>
     <th>level of headache <br> at 12 PM <br> after NOT taking the aspirin</th>
-    <th>effect of aspirin <br> on level of headache<br> for each invididual</th>
+    <th>effect of aspirin <br> on level of headache<br> for each individual</th>
   </tr>
   <tr>
     <th>individual 1</th>
@@ -243,25 +240,25 @@ The asprin would have <em>decreased</em> your level of headache by 2 levels (in 
 If time machines existed and we could indeed observe both potential outcomes for all four individuals and the values were as shown in the table above, we would conclude that the aspirin...", 
     answer("<ul> <li> decreased the level of headache by 1 level for individual 1
            </li> <li> decreased the level of headache by 2 levels for individual 2
-           </li> <li> had no effect on the level of headache for invididual 3
+           </li> <li> had no effect on the level of headache for individual 3
            </li> <li> increased the level of headache by 1 level for individual 4
            </li> </ul>", correct = TRUE),
     answer("<ul> <li> decreased the level of headache by 1 level for individual 1
            </li> <li> decreased the level of headache by 2 levels for individual 2
-           </li> <li> had no effect on the level of headache for invididual 3
+           </li> <li> had no effect on the level of headache for individual 3
            </li> <li> decreased the level of headache by 1 level for individual 4
            </li> </ul>", message = ""),
     answer("<ul> <li> increased the level of headache by 1 level for individual 1
            </li> <li> increased the level of headache by 2 levels for individual 2
-           </li> <li> had no effect on the level of headache for invididual 3
+           </li> <li> had no effect on the level of headache for individual 3
            </li> <li> decreased the level of headache by 1 level for individual 4
            </li> </ul>", message = ""),
     answer("<ul> <li> increased the level of headache by 1 level for individual 1
            </li> <li> increased the level of headache by 2 levels for individual 2
-           </li> <li> had no effect on the level of headache for invididual 3
+           </li> <li> had no effect on the level of headache for individual 3
            </li> <li> increased the level of headache by 1 level for individual 4
            </li> </ul>", message = ""),
-    post_message = "If we could observe both potential outcomes, then we could measure the causal affect of the aspirin on the level of headache for each individual by computing this formula:
+    post_message = "If we could observe both potential outcomes, then we could measure the causal effect of the aspirin on the level of headache for each individual by using this formula:
 <br><br>level of headache after taking the aspirin - level of headache after NOT taking the aspirin <br><br> 
 So, the individual casual effects would be as shown in the last column of the table below:
   <table>
@@ -269,7 +266,7 @@ So, the individual casual effects would be as shown in the last column of the ta
     <td></td>
     <td>level of headache <br> at 12 PM <br> after taking the aspirin</td>
     <td>level of headache <br> at 12 PM <br> after NOT taking the aspirin</td>
-    <td>effect of aspirin <br> on level of headache<br> for each invididual</td>
+    <td>effect of aspirin <br> on level of headache<br> for each individual</td>
   </tr>
   <tr>
     <td>individual 1</td>
@@ -299,7 +296,7 @@ So, the individual casual effects would be as shown in the last column of the ta
 And, we could conclude that the aspirin:
 <ul> <li> decreased the level of headache by 1 level for individual 1
            </li> <li> decreased the level of headache by 2 levels for individual 2
-           </li> <li> had no effect on the level of headache for invididual 3
+           </li> <li> had no effect on the level of headache for individual 3
            </li> <li> increased the level of headache by 1 level for individual 4
            </li> </ul>
 <br> For information on individual causal effects, review section 2.3 of DSS.",
@@ -313,13 +310,13 @@ And, we could conclude that the aspirin:
     answer("We can never observe the potential outcome under the control condition"),
     post_message = "The correct answer is: We can never observe the counterfactual outcome. <br><br> 
     
-  In other words, there are no time machines. In the example above, we could never observe the level of headache at 12 PM BOTH after taking the aspirin and after not taking the aspirin, for the same day, under the exact same circumstances, for the same individual. All we can observe is the level of headache after whichever condition (aspirin or no aspirin) the individual chose in reality. If in the example above, individuals 1 and 2 chose to take an aspirin and individuals 3 and 4 chose not to, all we would observe is:
+  In other words, there are no time machines. In the example above, we could never observe the level of headache at 12 PM BOTH after taking the aspirin and after not taking the aspirin, for the same day, under the exact same circumstances, for the same individual. All we can observe is the level of headache after whatever condition (aspirin or no aspirin) the individual chose in reality. If in the example above, individuals 1 and 2 chose to take an aspirin and individuals 3 and 4 chose not to, all we would observe is:
   <table>
   <tr>
     <td></td>
     <td>level of headache <br> at 12 PM <br> after taking the aspirin</td>
     <td>level of headache <br> at 12 PM <br> after NOT taking the aspirin</td>
-    <td>effect of aspirin <br> on level of headache<br> for each invididual</td>
+    <td>effect of aspirin <br> on level of headache<br> for each individual</td>
   </tr>
   <tr>
     <td>individual 1</td>
@@ -426,7 +423,7 @@ question("<span style=color:dodgerblue> Q12:</span> Suppose we had 600 volunteer
   question("<span style=color:dodgerblue> Q13:</span> Suppose we conducted the randomized experiment described in the previous exercise, what would be the formula of the difference-in-means estimator in this case?",
     answer("average level of headache (after a few hours) of the individuals who were randomly assigned to take the aspirin -  average level of headache (after a few hours) of the individuals who were randomly assigned to not take the aspirin", correct = TRUE),
     answer("average level of headache (after a few hours) of the individuals who were randomly assigned to not take the aspirin - average level of headache (after a few hours) of the individuals who were randomly assigned to take the aspirin", message = "Recall that the difference-in-means estimator is: average outcome for the treatment group - average outcome for the control group, not the other way around."),
-    answer("average level of headache prior to taking the aspirin of the individuals who were randomly assigned to take the aspirin - average level of headache (after a few hours) of the individuals who were randomly assigned to not take the aspirin ", message = "This would mesure the average change in level of headache for those in the treatment group, not the estimated average treatment effect."),
+    answer("average level of headache prior to taking the aspirin of the individuals who were randomly assigned to take the aspirin - average level of headache (after a few hours) of the individuals who were randomly assigned to not take the aspirin ", message = "This would measure the average change in level of headache for those in the treatment group, not the estimated average treatment effect."),
     answer("average level of headache prior to taking the aspirin of the individuals who were randomly assigned to take the aspirin - average level of headache prior to taking the aspirin of the individuals who were randomly assigned to not take the aspirin ", message = "If the sample size is large enough and randomization worked, this difference should always be approximately zero since randomization should have made the treatment and control group comparable in all pre-treatment characteristics."),
     post_message = "The correct answer is: average level of headache (after a few hours) of the individuals who were randomly assigned to take the aspirin -  average level of headache (after a few hours) of the individuals who were randomly assigned to not take the aspirin <br><br>
     For information on the difference-in-means estimator, review subsection 2.4.1 of DSS.",
@@ -438,8 +435,7 @@ question("<span style=color:dodgerblue> Q12:</span> Suppose we had 600 volunteer
 
 
 ## <span style=color:dodgerblue> 2. Computing the Difference-in-Means Estimator
-
-The practice exercises in this topic cover:
+The review exercises in this topic cover:
 
 <table>
   <tr>
@@ -455,23 +451,23 @@ The practice exercises in this topic cover:
   </tr>
 </table>
     
-Make sure to complete the practice exercises *after* reading Sections 2.5 to 2.7 of DSS, including both, and *after* having followed the exercises in the book with your own computer. IMPORTANT: <span style=color:dodgerblue> *The practice exercises are not meant to be a substitute for the book, but rather a supplement.* </span>
-
-There are two kinds of exercises below:
-
-- multiple-choice questions
-- typing and running code
-
-I recommend doing them in the order presented.<br><br>
 
 ## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Multiple Choice Questions </span></font>
 
-<p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
-Select the correct answer(s) and click on the *Submit Answer* button in blue. 
-<br><br> If you didn't choose the correct answer(s) click on the *Try Again* button in orange and keep trying until you submit the correct answer(s).
-<br><br>
-To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.
-<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the left-hand side of the tutorial.</p>
+<div class="borderexample">
+<b>Instructions</b>
+<ul>
+  <li>Select correct answer(s) and click blue <i>Submit Answer</i></li>
+  <li>Multi-answer questions are clearly labeled</li>
+  <li>If incorrect, click orange <i>Try Again</i> until correct</li>
+</ul>
+
+<b>Navigation:</b>
+<ul>
+  <li>To delete all your answers and restart the tutorial: click <i>Start Over</i> in left menu</li>
+  <li>Otherwise, progress is automatically saved</li>
+</ul>
+</div>
 
 ```{r ch2_topic2_mc}
 quiz(caption="",
@@ -613,11 +609,20 @@ quiz(caption="",
 
 ## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Typing and Running Code </span></font>
 
-<p class="borderexample">**Instructions**<br><br>When running code on our own computers, we write the code on the R script (the upper left window of RStudio), then we highlight the code we want to run and either (a) manually click on the *Run* icon of RStudio or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.<br><br>
-When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
-Once you are done typing the code, you can run it by clicking on the *Run Code* button in green. The output produced by the executed code will appear underneath the *R code* window.<br><br>
-Once you are satisfied with your answer, you can submit it by clicking on the *Submit Answer* button in blue. <br><br>
-To help you figure out the right answer, some questions contain hints. You can access them by clicking on the *Hint* button in white.<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the left-hand side of the tutorial.</p>
+<div class="borderexample"><b>Instructions</b>
+<ul>
+  <li>Type code in the <i>R code</i> window</li>
+  <li>Click green <i>Run Code</i> to test</li>
+  <li>Click blue <i>Submit Answer</i> when satisfied</li>
+  <li>Use white <i>Hint</i> button if needed</li>
+</ul>
+
+<b>Navigation:</b>
+<ul>
+  <li>To delete all your answers and restart the tutorial: click <i>Start Over</i> in left menu</li>
+  <li>Otherwise, progress is automatically saved</li>
+</ul>
+</div>
 
 <br><b> For the next few questions, we are going to continue to work with the STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the description of the variables in this dataset, where the unit of observation is students.</b>
 
@@ -848,7 +853,6 @@ Here, as we can see in the output of `head()` above, *math* is non-binary becaus
   ))
 ```
 
-
 <br> <span style=color:dodgerblue> **Q7 - Compute the Second Term of the Difference-in-Means Estimator for Math:** </span> **Compute the average math scores among students who attended a regular-size class.**
 
 ```{r ch2_topic2_r7, exercise=TRUE, exercise.setup = "star2"}
@@ -916,7 +920,6 @@ The estimator is measured in 'points' because 'points - points = points'.
     allow_retry = TRUE
   ))
 ```
-
 
 ```{r ch2_topic2_r9}
 quiz(caption="",
@@ -998,7 +1001,7 @@ quiz(caption="",
     answer("86 students who attended a regular-size class graduated from high school", message="Is *graduated* a binary or a non-binary variable?"),
     answer("8.665% of the students who attended a regular-size class graduated from high school", message="The mean of a binary variable should be interpreted in percentages after multiplying the output by 100."),
     post_message = "The correct answer is: 86.65% of the students who attended a regular-size class graduated from high school. <br><br>
-Here, *graduated* is binary, so the mean of *graduated* should be interpreted as a proportion and in percentages after multiplying the output by 100 (0.86.65*100=86.65%). In particular, it should be interpreted as the proportion of the observations that have the characteristic identified by the variable. In this case, the proportion of students who graduated from high school among those who attended a small class.
+Here, *graduated* is binary, so the mean of *graduated* should be interpreted as a proportion and in percentages after multiplying the output by 100 (0.8665*100=86.65%). In particular, it should be interpreted as the proportion of the observations that have the characteristic identified by the variable. In this case, the proportion of students who graduated from high school among those who attended a small class.
    <br><br> For more information on the distinction between binary and non-binary variables, review step #4 of section 1.7 of DSS, and for more information on how to interpret the mean of binary variables, review section 1.8 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -1175,7 +1178,7 @@ question("<span style=color:dodgerblue> Q21: </span> What is the estimated avera
 ## <span style=color:dodgerblue> GENERATE SUMMARY REPORT
 You have reached the end of this tutorial. Congratulations!
 
-To generate a summary report of your work, just enter your name in the text box below and click on the *Generate Summary Report* button. A summary of your work will appear on the screen. You may want to take a screenshot of this summary whenever an instructor requests evidence of your work.
+To generate a summary report of your work, enter your name below and click the *Generate Summary Report* button. The summary will appear on the screen. Take a screenshot, if your instructor asks for proof of completion.
 
 ```{r context="server"}
 shiny::observeEvent(
@@ -1204,7 +1207,7 @@ shiny::observeEvent(
                                                num_answered =="exercise"] |> length()
     
     output$chapter = shiny::renderText(
-      paste("SUMMARY REPORT OF: Practice Exercises for", as.character(chapter_id),
+      paste("SUMMARY REPORT OF: Review Exercises for", as.character(chapter_id),
          "of Llaudet and Imai's Data Analysis for Social Science: A Friendly and Practical Introduction (Princeton University Press, 2022)"))
     
     output$student = shiny::renderText(
@@ -1265,7 +1268,9 @@ shiny::br()
 shiny::br()
 ```
 
-<p class="borderexample"> **This Tutorial is Still Very Much a Work in Progress - Please Provide Your Feedback!**<br><br>
-Was this tutorial helpful? Did you find anything confusing? <br>
-Do you have any other comments and/or suggestions? <br><br>Please let me know by completing [this survey](https://bit.ly/dss_feedback). <br> (It is very short and it allows for you to provide anonymous feedback, if that's your preference.) <br><br>
-*Thank you and I hope you enjoyed this tutorial!* - Elena </p> <br><br>
+<p class="borderexample">
+<b>This tutorial is still a work in progress — I would love your feedback!</b><br><br>
+Was it helpful? Did you find anything confusing? Do you have any other comments or suggestions?<br>
+Please let me know by completing <a href="https://bit.ly/dss_feedback">this short survey</a>. (It can be submitted anonymously.)<br><br>
+<i>Thank you, and I hope you enjoyed the tutorial!</i> – Elena
+</p>
