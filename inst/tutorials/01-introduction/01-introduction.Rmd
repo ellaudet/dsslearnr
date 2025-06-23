@@ -13,7 +13,7 @@ output:
           previoustopic: Previous Page
           nexttopic: Next Page
 runtime: shiny_prerendered
-description: "Practice Exercises for Data Analysis for Social Science - CHAPTER 1."
+description: "Review Exercises for Data Analysis for Social Science - CHAPTER 1."
 ---
 
 ```{r setup, include=FALSE}
@@ -54,15 +54,18 @@ th, td { padding: 15px; }
 
 
 ## <span style=color:dodgerblue> WELCOME AND INSTRUCTIONS
+
+<div style="overflow: auto;">
 <img src="/images/dss.png" 
      width="200" 
-     height="250" />
+     height="250" 
+     style="float: left; margin-right: 20px; margin-bottom: 10px;" />
 
-This is a tutorial for readers of DSS, which stands for [Elena Llaudet and Kosuke Imai's *Data Analysis for Social Science: A Friendly and Practical Introduction* (Princeton University Press, 2022)](https://bit.ly/dss_book). 
+This is a tutorial for readers of DSS: [Llaudet and Imai's *Data Analysis for Social Science: A Friendly and Practical Introduction* (Princeton University Press, 2022)](https://bit.ly/dss_textbook). DSS teaches from scratch R, statistics, and the fundamentals of quantitative social science (causal inference, survey research, and predictive models). 
 
-DSS teaches from scratch R, statistics, and the fundamentals of quantitative social science (that is, the fundamentals of causal inference, survey research, and predictive models). The practice exercises you will find here cover all of these and are organized by chapter of the book.
+Review exercises are organized by chapter. Here are those for chapter 1. 
 
-Each chapter is divided into two to five topics, and each topic corresponds to one to five sections of the textbook. In other words, each topic reviews only a handful of pages of the textbook, which often can be read in a single seating. Here is the recommended sequence: 
+The review exercises are designed to be completed *after* reading and doing the exercises in the book. They are meant to supplement, not replace, the book. In the tutorials, each chapter is divided into two to five topics, where each topic contains exercises reviewing a handful of pages that can be read in one sitting. Here is the recommended sequence: 
 
 <table>
   <tr>
@@ -74,23 +77,20 @@ Each chapter is divided into two to five topics, and each topic corresponds to o
   <tr>
     <td> read the section(s) <br> of the textbook <br> that correspond to <br> a particular topic </td>
     <td> follow along <br> with the exercises <br>in the textbook <br>on your own computer</td>
-    <td> complete <br> the corresponding <br> practice exercises <br>provided here </td>
+    <td> complete <br> the corresponding <br> review exercises <br>provided here </td>
     <td> move on <br> to the next topic, <br> and go back <br> to step 1 </td>
   </tr>
 </table>
-  
-Note that the practice exercises are designed to be completed *after* having done the corresponding readings of the book and *after* having followed the exercises in the book with your own computer. They are not meant to be a substitute for the book, but rather a supplement. 
+</div>
 
-Any errors found in these practice exercises are my own. If you find any, I would really appreciate it if you could let me know by sending me an email at [ellaudet@gmail.com](ellaudet@gmail.com). Thank you! *I hope these practice exercises are helpful to you and/or your students!* - Elena
-
+*Found an error?* Please email me at [ellaudet@gmail.com](ellaudet@gmail.com). *I hope these exercises are helpful!* - Elena
 
 ## <span style=color:dodgerblue> OVERVIEW OF CHAPTER 1
 Chapter 1 of Llaudet and Imai's *Data Analysis for Social Science* (DSS) is available for free [here](https://bit.ly/dss_preview), including the CHEATSHEETs at the end of the chapter.
 
 In chapter 1, we start from the very beginning by installing and familiarizing ourselves with the two programs we use―R and RStudio―and by laying the groundwork for forthcoming analyses. 
 
-The practice exercises for this chapter are organized into three topics. In the Table below, you can see (1) the topics, (2) the section(s) of the book that correspond to each topic, (3) the key concepts and mathematical notation discussed, and (4) the R functions and R operators reviewed.
-
+The review exercises for this chapter are organized into three topics.
 
 <table>
   <tr>
@@ -122,10 +122,7 @@ The practice exercises for this chapter are organized into three topics. In the 
 Let's start! <br>
 
 ## <span style=color:dodgerblue> 1. Introduction to R and RStudio
-
-Chapter 1 of Llaudet and Imai's *Data Analysis for Social Science* (DSS) is available for free [here](https://bit.ly/dss_preview), including the CHEATSHEETs at the end of the chapter.
-
-The practice exercises in this topic cover:
+The review exercises in this topic cover:
 
 <table>
   <tr>
@@ -140,24 +137,22 @@ The practice exercises in this topic cover:
   </tr>
 </table>
 
-Make sure to complete the practice exercises *after* reading Sections 1 to 1.6 of DSS, including both, and *after* having followed the exercises in the book with your own computer. IMPORTANT: <span style=color:dodgerblue> *The practice exercises are not meant to be a substitute for the book, but rather a supplement.* </span>
- 
-
-There are two kinds of exercises below:
-
-- multiple-choice questions
-- typing and running code
-
-I recommend doing them in the order presented.<br><br>
-
 ## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Multiple Choice Questions </span></font>
 
-<p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
-Select the correct answer(s) and click on the *Submit Answer* button in blue. 
-<br><br> If you didn't choose the correct answer(s) click on the *Try Again* button in orange and keep trying until you submit the correct answer(s).
-<br><br>
-To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.<br><br>
-If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the left-hand side of the tutorial. </p>
+<div class="borderexample">
+<b>Instructions</b>
+<ul>
+  <li>Select correct answer(s) and click blue <i>Submit Answer</i></li>
+  <li>Multi-answer questions are clearly labeled</li>
+  <li>If incorrect, click orange <i>Try Again</i> until correct</li>
+</ul>
+
+<b>Navigation:</b>
+<ul>
+  <li>To delete all your answers and restart the tutorial: click <i>Start Over</i> in left menu</li>
+  <li>Otherwise, progress is automatically saved</li>
+</ul>
+</div>
 
 ```{r ch1_topic1_mc}
 quiz(caption="",
@@ -298,12 +293,20 @@ question("<span style=color:dodgerblue> Q3: </span>How do we run code that has a
 
 ## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Typing and Running Code </span></font>
 
-<p class="borderexample">**Instructions**<br><br>When running code on our own computers, we write the code on the R script (the upper left window of RStudio), then we highlight the code we want to run and either (a) manually click on the *Run* icon of RStudio or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.<br><br>
-When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
-Once you are done typing the code, you can run it by clicking on the *Run Code* button in green. The output produced by the executed code will appear underneath the *R code* window.<br><br>
-Once you are satisfied with your answer, you can submit it by clicking on the *Submit Answer* button in blue. <br><br>
-To help you figure out the right answer, some questions contain hints. You can access them by clicking on the *Hint* button in white. 
-<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the left-hand side of the tutorial.</p>
+<div class="borderexample"><b>Instructions</b>
+<ul>
+  <li>Type code in the <i>R code</i> window</li>
+  <li>Click green <i>Run Code</i> to test</li>
+  <li>Click blue <i>Submit Answer</i> when satisfied</li>
+  <li>Use white <i>Hint</i> button if needed</li>
+</ul>
+
+<b>Navigation:</b>
+<ul>
+  <li>To delete all your answers and restart the tutorial: click <i>Start Over</i> in left menu</li>
+  <li>Otherwise, progress is automatically saved</li>
+</ul>
+</div>
 
 <br> <span style=color:dodgerblue> **Q1:** </span> **Ask R to compute 30+6**
 
@@ -368,7 +371,6 @@ grade_result(
 )
 ```
 
-
 <br> <span style=color:dodgerblue> **Q4:** </span> **Use the `sqrt()` function to ask R to compute the square root of 36**
 
 ```{r ch1_topic1_r4, exercise=TRUE, exercise.setup = "thirtysix"}
@@ -392,10 +394,7 @@ grade_result(
 ```
 
 ## <span style=color:dodgerblue> 2. Observations and Variables
-
-Chapter 1 of Llaudet and Imai's *Data Analysis for Social Science* (DSS) is available for free [here](https://bit.ly/dss_preview), including the CHEATSHEETS at the end of the chapter.
-
-The practice exercises in this topic cover:
+The review exercises in this topic cover:
 
 <table>
   <tr>
@@ -409,24 +408,23 @@ The practice exercises in this topic cover:
     <td> setwd(), read.csv(), View(), head(), dim() </td>
   </tr>
 </table>
-    
-Make sure to complete the practice exercises *after* reading Section 1.7 of DSS, and *after* having followed the exercises in the book with your own computer. IMPORTANT: <span style=color:dodgerblue> *The practice exercises are not meant to be a substitute for the book, but rather a supplement.* </span>
-
-There are two kinds of exercises below:
-
-- multiple-choice questions
-- typing and running code
-
-I recommend doing them in the order presented.<br><br>
 
 ## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Multiple Choice Questions </span></font>
 
-<p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
-Select the correct answer(s) and click on the *Submit Answer* button in blue. 
-<br><br> If you didn't choose the correct answer(s) click on the *Try Again* button in orange and keep trying until you submit the correct answer(s).
-<br><br>
-To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.
-<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the left-hand side of the tutorial.</p>
+<div class="borderexample">
+<b>Instructions</b>
+<ul>
+  <li>Select correct answer(s) and click blue <i>Submit Answer</i></li>
+  <li>Multi-answer questions are clearly labeled</li>
+  <li>If incorrect, click orange <i>Try Again</i> until correct</li>
+</ul>
+
+<b>Navigation:</b>
+<ul>
+  <li>To delete all your answers and restart the tutorial: click <i>Start Over</i> in left menu</li>
+  <li>Otherwise, progress is automatically saved</li>
+</ul>
+</div>
 
 ```{r ch1_topic2_mc}
 quiz(caption="",
@@ -539,11 +537,11 @@ quiz(caption="",
     answer("`read.csv(''testscores.csv'')`", message = "This code will read the data from the CSV file, but it won't store it into an object called *grades*."),
     answer("`grades <- read.csv(testscores.csv)`", message = "You are almost there. Hint: The file name is text and not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL."),
     answer("`grades <- read.csv(''testscores'')`", message = "You are almost there. Hint: The file name needs to include its extension (i.e., ''.csv'')."),
-    answer("`testcores <- read.csv(''grades.csv'')`", message = "You are almost there. Hint: The name of the file is *testcores.csv* and the name of the object is *grades*, not the other way around."),
+    answer("`testscores <- read.csv(''grades.csv'')`", message = "You are almost there. Hint: The name of the file is *testscores.csv* and the name of the object is *grades*, not the other way around."),
     post_message = "The correct answer is: `grades <- read.csv(''testscores.csv'') `<br><br>
     To create an object, we use the assignment operator ` <- ` <br>
     To the left of the assignment operator, we specify the name of the object; *grades* in this case. <br>
-    To the right of the assignment operator, we specify the contents, which, in this case, are produced by reading the CSV file *testcores.csv*. <br><br>
+    To the right of the assignment operator, we specify the contents, which, in this case, are produced by reading the CSV file *testscores.csv*. <br><br>
     Note: We do not use quotes around the name of an object such as *grades* or around the name of a function such as *read.csv()*, but we do use quotes around the name of a file, because it is text and neither of the exceptions (i.e., it is not (1) the name of an object, (2) the name of a function, (3) the name of an argument, or (4) a special character such as TRUE, FALSE, NA, and NULL).
 <br><br> For more information on how to create objects in R, review subsection 1.6.2 of DSS. And, for more information on how to use the `read.csv()` function, review step #2 of the section 1.7 of DSS. In addition, you may want to review the CHEATSHEETs on page 26.",
     random_answer_order = TRUE,
@@ -575,12 +573,20 @@ quiz(caption="",
 
 ## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Typing and Running Code </span></font>
 
-<p class="borderexample">**Instructions**<br><br>When running code on our own computers, we write the code on the R script (the upper left window of RStudio), then we highlight the code we want to run and either (a) manually click on the *Run* icon of RStudio or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.<br><br>
-When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
-Once you are done typing the code, you can run it by clicking on the *Run Code* button in green. The output produced by the executed code will appear underneath the *R code* window.<br><br>
-Once you are satisfied with your answer, you can submit it by clicking on the *Submit Answer* button in blue. <br><br>
-To help you figure out the right answer, some questions contain hints. You can access them by clicking on the *Hint* button in white. 
-<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the left-hand side of the tutorial.</p>
+<div class="borderexample"><b>Instructions</b>
+<ul>
+  <li>Type code in the <i>R code</i> window</li>
+  <li>Click green <i>Run Code</i> to test</li>
+  <li>Click blue <i>Submit Answer</i> when satisfied</li>
+  <li>Use white <i>Hint</i> button if needed</li>
+</ul>
+
+<b>Navigation:</b>
+<ul>
+  <li>To delete all your answers and restart the tutorial: click <i>Start Over</i> in left menu</li>
+  <li>Otherwise, progress is automatically saved</li>
+</ul>
+</div>
 
 <br> <b> For the next few questions, we are going to continue to work with the STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the description of the variables in this dataset, where the unit of observation is students.</b>
 
@@ -711,10 +717,7 @@ quiz(caption="",
 ```
 
 ## <span style=color:dodgerblue> 3. Computing \& Interpreting Means
-
-Chapter 1 of Llaudet and Imai's *Data Analysis for Social Science* (DSS) is available for free [here](https://bit.ly/dss_preview), including the CHEATSHEETs at the end of the chapter.
-
-The practice exercises in this topic cover:
+The review exercises in this topic cover:
 
 <table>
   <tr>
@@ -728,24 +731,22 @@ The practice exercises in this topic cover:
     <td> $, mean()  </td>
   </tr>
 </table>
-    
-Make sure to complete the practice exercises *after* reading Sections 1.8 to 1.10 of DSS, including both, and *after* having followed the exercises in the book with your own computer. IMPORTANT: <span style=color:dodgerblue> *The practice exercises are not meant to be a substitute for the book, but rather a supplement.* </span>
-
-There are two kinds of exercises below:
-
-- multiple-choice questions
-- typing and running code
-
-I recommend doing them in the order presented.<br><br>
 
 ## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Multiple Choice Questions </span></font>
 
-<p class="borderexample">**Instructions**<br><br>Most multiple-choice questions have only one correct answer. Those that have multiple correct answers are labeled "A MULTI-ANSWER QUESTION."<br><br>
-Select the correct answer(s) and click on the *Submit Answer* button in blue. 
-<br><br> If you didn't choose the correct answer(s) click on the *Try Again* button in orange and keep trying until you submit the correct answer(s).
-<br><br>
-To help you understand the correct answer(s), most questions will provide you some feedback. Please make sure to read it.
-<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the left-hand side of the tutorial.</p>
+<div class="borderexample">
+<b>Instructions</b>
+<ul>
+  <li>Select correct answer(s) and click blue <i>Submit Answer</i></li>
+  <li>Multi-answer questions are clearly labeled</li>
+  <li>If incorrect, click orange <i>Try Again</i> until correct</li>
+</ul>
+<b>Navigation:</b>
+<ul>
+  <li>To delete all your answers and restart the tutorial: click <i>Start Over</i> in left menu</li>
+  <li>Otherwise, progress is automatically saved</li>
+</ul>
+</div>
 
 ```{r ch1_topic3_mc}
 quiz(caption="",
@@ -764,7 +765,7 @@ quiz(caption="",
     answer("$\\sum$ stands for multiplication"),
     answer("$\\sum$ stands for mean"),
     answer("$\\sum$ stands for division"),
-    post_message = "The correct answer is: $\\sum$ stands for summation.<br><br> For more info, review subsection 1.8.2 of DSS and/or the CHEATSHEET OF CONCEPTS AND NOTATION on page 25.",
+    post_message = "The correct answer is: $\\sum$ stands for summation.<br><br> For more information, review subsection 1.8.2 of DSS and/or the CHEATSHEET OF CONCEPTS AND NOTATION on page 25.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -830,12 +831,20 @@ question("<span style=color:dodgerblue> Q4: </span>If the unit of observation is
 
 ## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Typing and Running Code </span></font>
 
-<p class="borderexample">**Instructions**<br><br>When running code on our own computers, we write the code on the R script (the upper left window of RStudio), then we highlight the code we want to run and either (a) manually click on the *Run* icon of RStudio or (b) use the shortcut *command+enter* in Mac or *ctrl+enter* in Windows.<br><br>
-When running code on the tutorials, however, we have to do things a little differently. Every time an exercise asks you to type and run some code, you will see an *R code* window. This is where you will type the code. <br><br>
-Once you are done typing the code, you can run it by clicking on the *Run Code* button in green. The output produced by the executed code will appear underneath the *R code* window.<br><br>
-Once you are satisfied with your answer, you can submit it by clicking on the *Submit Answer* button in blue. <br><br>
-To help you figure out the right answer, some questions contain hints. You can access them by clicking on the *Hint* button in white. 
-<br><br>If you would like to delete ALL your answers and start the tutorial again, click on *Start Over* under GENERATE SUMMARY REPORT on the Table of Contents shown on the left-hand side of the tutorial.</p>
+<div class="borderexample"><b>Instructions</b>
+<ul>
+  <li>Type code in the <i>R code</i> window</li>
+  <li>Click green <i>Run Code</i> to test</li>
+  <li>Click blue <i>Submit Answer</i> when satisfied</li>
+  <li>Use white <i>Hint</i> button if needed</li>
+</ul>
+
+<b>Navigation:</b>
+<ul>
+  <li>To delete all your answers and restart the tutorial: click <i>Start Over</i> in left menu</li>
+  <li>Otherwise, progress is automatically saved</li>
+</ul>
+</div>
 
 <br> <b> For the next few questions, we are going to continue to work with the STAR dataset from Chapters 1 and 2 of DSS. As a reminder, below is the description of the variables in this dataset, where the unit of observation is students.</b>
 
@@ -938,7 +947,7 @@ quiz(caption="",
   ))
 ```
 
-<br> <span style=color:dodgerblue> **Q3 - FIX THE ERRORS IN THE CODE:** </span> **Running into error messages is part of coding, so let's practice fixing mistakes in our code. There are many mistakes in the code below. Try to fix them all so that R computes de mean of the variable *math*, which is one of the variables in the dataframe stored in the object called *star*. (The error messages that R provides can be really helpful when looking to debug code. So, I recommend starting by running the code as is, and then running it again after fixing each individual error, so that you can read the messages that R provides.)**
+<br> <span style=color:dodgerblue> **Q3 - FIX THE ERRORS IN THE CODE:** </span> **Running into error messages is part of coding, so let's practice fixing mistakes in our code. There are many mistakes in the code below. Try to fix them all so that R computes the mean of the variable *math*, which is one of the variables in the dataframe stored in the object called *star*. (The error messages that R provides can be really helpful when looking to debug code. So, I recommend starting by running the code as is, and then running it again after fixing each individual error, so that you can read the messages that R provides.)**
 
 ```{r ch1_topic3_r3, exercise=TRUE, exercise.setup = "star"}
 average(math$STAR) # computes the mean of math
@@ -980,7 +989,7 @@ quiz(caption="",
 ## <span style=color:dodgerblue> GENERATE SUMMARY REPORT
 You have reached the end of this tutorial. Congratulations!
 
-To generate a summary report of your work, just enter your name in the text box below and click on the *Generate Summary Report* button. A summary of your work will appear on the screen. You may want to take a screenshot of this summary whenever an instructor requests evidence of your work.
+To generate a summary report of your work, enter your name below and click the *Generate Summary Report* button. The summary will appear on the screen. Take a screenshot, if your instructor asks for proof of completion.
 
 ```{r context="server"}
 shiny::observeEvent(
@@ -1009,7 +1018,7 @@ shiny::observeEvent(
                                                num_answered =="exercise"] |> length()
     
     output$chapter = shiny::renderText(
-      paste("SUMMARY REPORT OF: Practice Exercises for", as.character(chapter_id),
+      paste("SUMMARY REPORT OF: Review Exercises for", as.character(chapter_id),
          "of Llaudet and Imai's Data Analysis for Social Science: A Friendly and Practical Introduction (Princeton University Press, 2022)"))
     
     output$student = shiny::renderText(
@@ -1070,7 +1079,9 @@ shiny::br()
 shiny::br()
 ```
 
-<p class="borderexample"> **This Tutorial is Still Very Much a Work in Progress - Please Provide Your Feedback!**<br><br>
-Was this tutorial helpful? Did you find anything confusing? <br>
-Do you have any other comments and/or suggestions? <br><br>Please let me know by completing [this survey](https://bit.ly/dss_feedback). <br> (It is very short and it allows for you to provide anonymous feedback, if that's your preference.) <br><br>
-*Thank you and I hope you enjoyed this tutorial!* - Elena </p> <br><br>
+<p class="borderexample">
+<b>This tutorial is still a work in progress — I would love your feedback!</b><br><br>
+Was it helpful? Did you find anything confusing? Do you have any other comments or suggestions?<br>
+Please let me know by completing <a href="https://bit.ly/dss_feedback">this short survey</a>. (It can be submitted anonymously.)<br><br>
+<i>Thank you, and I hope you enjoyed the tutorial!</i> – Elena
+</p>
