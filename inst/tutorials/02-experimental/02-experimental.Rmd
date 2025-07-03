@@ -385,7 +385,7 @@ And, we could conclude that the aspirin:
     answer("When treatment and control groups were comparable before the administration of the treatment.", correct = TRUE),
     answer("When the participants in the study were selected from the population through a random process (also known as random sampling).", message="Random sampling has nothing to do with making treatment and control groups comparable."),
     post_message = "There are four correct answers here: (1) When treatment and control groups were comparable before the administration of the treatment,
-    (2) When we are analyzing experimental data, (3) When we are analyzing data from a randomized experiment, and (4) When treatment is assigned at random (also known as random treatment assignment). <br><br> The answer listed first is the condition under which the difference-in-means estimator will produce valid causal estimates, and the last three answers are the best way of satisfying given condition and they all mean the same thing.<br><br>
+    (2) When we are analyzing experimental data, (3) When we are analyzing data from a randomized experiment, and (4) When treatment is assigned at random (also known as random treatment assignment). <br><br> The first answer identifies the key condition that must be met for the difference-in-means estimator to produce valid causal estimates, and the last three answers all describe the same approach (conducting a randomized experiment), which is the best way of ensuring that the condition is satified. <br><br> Note that random sampling has nothing to do with making treatment and control groups comparable. <br><br> When treatment and control groups are NOT comparable, the factual outcome of one group would NOT be a good approximation for the counterfactual outcome of the other, and thus the approximations used in the estimation process would be incorrect, and the difference-in-means estimator would provide an incorrect estimate. <br><br>
     For an explanation, review section 2.4 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -579,7 +579,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q11 - A MULTI-ANSWER QUESTION:</span> Suppose we had a dataframe stored in an object called `course` and one of the variables in the dataframe was a character variable called `present` that identified students who came to class with a 'yes' and those who didn't with a 'no'. Now, futher suppose that we wanted to create a new variable named `attended` in the same dataframe and that we wanted it to identify students who came to class with a 1 and those who didn't with a 0. What would be the correct code to create this new binary variable? (Note: You must select ALL true statements for the answer to be correct.)",
+    question("<span style=color:dodgerblue> Q11 - A MULTI-ANSWER QUESTION:</span> Suppose we had a dataframe stored in an object called `course` and one of the variables in the dataframe was a character variable called `present` that identified students who came to class with a 'yes' and those who didn't with a 'no'. Now, further suppose that we wanted to create a new variable named `attended` in the same dataframe and that we wanted it to identify students who came to class with a 1 and those who didn't with a 0. What would be the correct code to create this new binary variable? (Note: You must select ALL true statements for the answer to be correct.)",
     answer("`course$attended <- ifelse(course$present=='yes', 1, 0)`", correct = TRUE),
     answer("`course$attended <- ifelse(course$present=='no', 0, 1)`", correct = TRUE),
     answer("`ifelse(course$present=='no', 0, 1)`", message = "This code would produce the values of the new variable but it would not store them as a new variable."),
@@ -723,7 +723,7 @@ quiz(caption="",
     answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 632 points", correct = TRUE),
     answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 632%", message="Check the unit of measurement of *math*"),
     answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 632", message="You are missing the unit of measurement."),
-    answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 631 points", message="Notice that we round up whenever the next decimal point is 5 or above."),
+    answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 631 points", message="Close! The exact value is 631.5879. When rounding to the nearest whole number, we round up when the first decimal place is 5 or higher, so 631.5879 rounds to 632."),
     post_message = "The correct answer is: Among the students who participated in Project STAR, the average score in the third-grade math test is about 632 points.<br><br>
 Here, as we can see in the output of `head()` above, *math* is non-binary because it can take more than two values. And, as we can read in the description of the variable in the table above, *math* is measured in points. So, the mean of *math* should be interpreted as an average and in points. <br><br> For more information on how to interpret the mean of non-binary variables, review section 1.8 of DSS.",
     random_answer_order = TRUE,
@@ -844,7 +844,7 @@ quiz(caption="",
     answer("Among the students who attended a small class, the average math score is about 635 points", correct = TRUE),
     answer("Among the students who attended a small class, the average math score is about 635%", message="Check the unit of measurement of math."),
     answer("Among the students who attended a small class, the average math score is about 635", message="You are missing the unit of measurement."),
-    answer("Among the students who attended a small class, the average math score is about 634 points", message="Notice that we round up whenever the next decimal point is 5 or above."),
+    answer("Among the students who attended a small class, the average math score is about 634 points", message="Close! The exact value is 634.8274. When rounding to the nearest whole number, we round up when the first decimal place is 5 or higher, so 634.8274 rounds to 635."),
     post_message = "The correct answer is: Among the students who attended a small class, the average math score is about 635 points. <br><br>
 Here, as we can see in the output of `head()` above, *math* is non-binary because it can take more than two values. And, as we can read in the description of the variable in the table above, *math* is measured in points. So, the mean of *math* should be interpreted as an average and in points.
 <br><br>For more information on how to interpret the mean of non-binary variables, review section 1.8 of DSS.",
@@ -878,7 +878,7 @@ quiz(caption="",
     answer("Among the students who attended a regular-size class, the average math score is about 629 points", correct = TRUE),
     answer("Among the students who attended a regular-size class, the average math score is about 629%", message="Check the unit of measurement of math."),
     answer("Among the students who attended a regular-size class, the average math score is about 629", message="You are missing the unit of measurement."),
-    answer("Among the students who attended a regular-size class, the average math score is about 628 points", message="Notice that we round up whenever the next decimal point is 5 or above."),
+    answer("Among the students who attended a regular-size class, the average math score is about 628 points", message="Close! The exact value is 628.8374. When rounding to the nearest whole number, we round up when the first decimal place is 5 or higher, so 628.8374 rounds to 629."),
     post_message = "The correct answer is: Among the students who attended a regular-size class, the average math score is about 629 points <br><br>
 Here, as we can see in the output of `head()` above, *math* is non-binary because it can take more than two values. And, as we can read in the description of the variable in the table above, *math* is measured in points. So, the mean of *math* should be interpreted as an average and in points.
 <br><br>For more information on how to interpret the mean of non-binary variables, review section 1.8 of DSS.",
@@ -973,7 +973,6 @@ Here, *graduated* is binary, so the mean of *graduated* should be interpreted as
   ))
 ```
 
-
 <br> <span style=color:dodgerblue> **Q11 - Compute the Second Term of the Difference-in-Means Estimator for Graduated:** </span> **Compute the proportion of students who graduated from high school among those who attended a regular-size class.** 
 
 ```{r ch2_topic2_r11, exercise=TRUE, exercise.setup = "star2"}
@@ -1060,9 +1059,8 @@ quiz(caption="",
     answer("We assume that the students were randomly assigned to attend either a small class or a regular-size class", message= "We do not assume this; this we know."),
     answer("We assume that all the students in Project STAR were comparable to each other", message= "This would imply that every single student was comparable to all others."),
     answer("We assume that the students in Project STAR were randomly selected from a population"),    
-    post_message = "The correct answer is: We assume that the students who attended a small class were comparable before schooling to the students who attended a regular-size class. <br><br>
-    Only when this assumption is satisfied will the difference-in-means estimator produce a valid estimate of the average causal effect of a treatment on an outcome.
-<br><br> For more information on when the difference-in-means estimator produces valid causal estimates, review subsection 2.4.1 of DSS.",
+    post_message = "The correct answer is: We assume that the students who attended a small class were comparable before schooling to the students who attended a regular-size class. <br><br> Only when this assumption is satisfied will the difference-in-means estimator produce a valid estimate of the average causal effect of a treatment on an outcome.
+<br><br> If this assumption were NOT satified, the factual outcome of one group would NOT be a good approximation for the counterfactual outcome of the other, and thus the approximations used in the estimation process would be incorrect, and the difference-in-means estimator would provide an incorrect estimate. <br><br> For more information on when the difference-in-means estimator produces valid causal estimates, review subsection 2.4.1 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -1070,7 +1068,7 @@ quiz(caption="",
     answer("students were randomly assigned to attend either a small class or a regular-size class", correct = TRUE),
     answer("we are analyzing data from a randomized experiment", correct = TRUE),
     answer("all the students in Project STAR were from Tennessee", message = "This does not ensure that the students who attended a small class were comparable before schooling to the students who attended a regular-size class."),
-    answer("all the students in Project STAR were elementary-school students", message = "This does not ensure that the students who attended a small class were comparable before schooling to the students who attended a regular-size class."),    
+    answer("all the students in Project STAR were elementary-school students", message = "This does not ensure that the students who attended a small class were comparable before schooling to the students who attended a regular-size class."),  
     answer("all the students in Project STAR were elementary-school students from Tennessee", message = "This does not ensure that the students who attended a small class were comparable before schooling to the students who attended a regular-size class."),    
     post_message = "There are two correct answers. It is a reasonable assumption because either (1) students were randomly assigned to attend either a small class or a regular-size class or (2) we are analyzing data from a randomized experiment. (Both answers mean the same thing.) 
 <br><br> For more information on how random treatment assignment makes treatment and control groups comparable, review subsection 2.4.1 of DSS.",
@@ -1088,13 +1086,13 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-question("<span style=color:dodgerblue> Q16: </span> When estimating the average causal effect of attending a small class on the third-grade math test, what is the outcome variable?",
+question("<span style=color:dodgerblue> Q16: </span> When estimating the average causal effect of attending a small class on the third-grade math test, what is the outcome we are estimating the effect on?",
     answer("third-grade math test scores", correct = TRUE),
     answer("attending a small class"),
     answer("attending a regular-class size"),
     answer("third-grade reading test scores"),    
     post_message = "The correct answer is: third-grade math test scores. <br><br>
-<br><br> For more information, review subsection 2.5.3 of DSS.",
+    Since *math* is a non-binary variable, we interpret effects as changes in the test scores themselves. <br><br> For more information, review subsection 2.5.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -1112,13 +1110,12 @@ The unit of measurement is 'points' because 'points - points = points'.
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-question("<span style=color:dodgerblue> Q18: </span> When estimating the average causal effect of attending a small class on the probability of graduating from high school, what is the outcome variable?",
-    answer("a binary variable indicating whether the student graduated from high school", correct =TRUE),
+question("<span style=color:dodgerblue> Q18: </span> When estimating the average causal effect of attending a small class on the probability of graduating from high school, what is the outcome we are estimating the effect on?",
+    answer("the probability of graduating from high school", correct =TRUE),
     answer("third-grade math test scores"),
     answer("attending a small class"),
     answer("attending a regular-class size"),
-    post_message = "The correct answer is: a binary variable indicating whether the student graduated from high school. <br><br>
-<br><br> For more information, review subsection 2.5.3 of DSS.",
+    post_message = "The correct answer is: the probability of graduating from high school. <br><br> When the outcome variable is binary, as is the case with *graduated*, we interpret effects as changes in probability or likelihood. <br><br> For more information, review subsection 2.5.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
