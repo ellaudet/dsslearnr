@@ -23,7 +23,8 @@ tutorial_options(exercise.checker = gradethis::grade_learnr,
                  exercise.reveal_solution="TRUE")
 knitr::opts_chunk$set(echo = FALSE)
 chapter_id <- "Chapter 2"
-num_tutorial <- 56
+num_tutorial <- 57
+qnum <- 0
 ```
 
 <style>
@@ -135,7 +136,7 @@ The review exercises in this topic cover:
 <b>Instructions</b>
 <ul>
   <li>Select correct answer(s) and click blue <i>Submit Answer</i></li>
-  <li>Multi-answer questions are clearly labeled</li>
+  <li>In multi-answer questions, you must select <i>ALL</i> correct statements</li>
   <li>If incorrect, click orange <i>Try Again</i> until correct</li>
 </ul>
 
@@ -147,8 +148,20 @@ The review exercises in this topic cover:
 </div>
 
 ```{r ch2_topic1_mc}
+qnum <- 0
+
 quiz(caption="",
-    question("<span style=color:dodgerblue> Q1:</span> When estimating causal effects we distinguish between treatment and outcome variables. If we were interested in estimating the effect of attending a private school on SAT scores with a dataframe where students was the unit of observation, what would be the treatment and outcome variables?",
+     
+     question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> We start the book identifying the three goals of social science research. Which of these goals is chapter 2 about?"),
+    answer("Measuring a quantity of interest.", message = "Chapters 3 is about measuring."),
+    answer("Explaining a quantity of interest.", correct=TRUE),
+    answer("Predicting a quantity of interest.", message = "Chapter 4 is about predicting."),
+    post_message = "The correct answer is: explaining a quantity of interest, also known as causal inference or estimating causal effects. <br><br> For more information, review section 1.1 of DSS and the introduction to chapter 2.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+),
+
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> When estimating causal effects we distinguish between treatment and outcome variables. If we were interested in estimating the effect of attending a private school on SAT scores with a dataframe where students was the unit of observation, what would be the treatment and outcome variables?"),
     answer("<ul> <li> the treatment variable would be a binary variable indicating whether the students attended a private school </li><li> the outcome variable would be a non-binary variable capturing the SAT score of the students </li></ul>", correct = TRUE),
     answer("<ul> <li> the treatment variable would be a non-binary variable capturing the SAT score of the students </li><li> the outcome variable would be a binary variable indicating whether the students attended a private school </li></ul>", message = "Check which variable should be the treatment variable and which should be the outcome variable."),
     answer("<ul> <li> the treatment variable would be a binary variable indicating whether the students attended a private school </li><li> the outcome variable would be a binary variable capturing the SAT score of the students </li></ul>", message = "Check whether the variables are binary or non-binary."),
@@ -157,7 +170,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q2:</span> In mathematical notation, we represent ...",
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> In mathematical notation, we represent ..."),
     answer("the treatment variable as *X* and the outcome variable as *Y*", correct = TRUE),
     answer("the treatment variable as *Y* and the outcome variable as *X*"),
     answer("the treatment variable as *X* and the outcome variable as *Z*"),
@@ -166,19 +179,19 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q3: </span> Suppose you woke up with a headache today. 
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Suppose you woke up with a headache today. 
 <ul> <li>At 9 AM the intensity of the headache was 5 (in a scale of 1 to 10, where 1 is not very intense and 10 is extremely intense). </li>
 <li> By 10 AM, you decided to take an aspirin (with a glass of water).</li>
 <li> By 12 PM, you were feeling better and the intensity of the headache had gone down to 2 (in the same scale of 1 to 10). </li></ul>
 
-Given this setup, could we estimate the effect that the aspirin had on your level of headache?",
+Given this setup, could we estimate the effect that the aspirin had on your level of headache?"),
     answer("No, we have no idea whether the 3-level reduction in the intensity of your headache was due to the aspirin, the water that was consumed with the aspirin (perhaps the headache was due to dehydration), the passing of time, or a combination of the above.", correct = TRUE),
     answer("Yes, we can estimate that the aspirin reduced the level of intensity of your headache by three levels, by decreasing it from 5 to 2 (in a scale of 1 to 10)."),
     post_message = "In this scenario, we get to observe the intensity of your headache at 12 PM after having taken an aspirin and a glass of water at 10 AM. This is what is known as the potential outcome under the treatment condition.<br><br> We do not get to observe, however, the intensity of your headache at 12 PM after only having a glass of water at 10 AM, without the aspirin. This is what is known as the potential outcome under the control condition.<br><br>To be able to measure the causal effect of the aspirin on your level of headache, we would have to observe both potential outcomes so that we could compare them. Unfortunately, we only observe the potential outcome that occurs in reality (the factual outcome), and we never get to observe the potential outcome under the opposite condition (treatment or control) as the one received in reality (the counterfactual outcome). As a result, we cannot compute causal effects at the individual level.<br><br> For information on individual causal effects, review section 2.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q4:</span> Let's continue to work with the same situation. Now suppose that after experiencing your headache after taking the aspirin, you could take a time machine and go back to 10 AM and make a different decision. This time you choose not to take the aspirin, although you do drink a glass of water (so that the only difference is the aspirin itself). This time, by 12 PM your level of headache is down to 4. So, the two potential outcomes are:
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Let's continue to work with the same situation. Now suppose that after experiencing your headache after taking the aspirin, you could take a time machine and go back to 10 AM and make a different decision. This time you choose not to take the aspirin, although you do drink a glass of water (so that the only difference is the aspirin itself). This time, by 12 PM your level of headache is down to 4. So, the two potential outcomes are:
 
 <table>
   <tr>
@@ -193,7 +206,7 @@ Given this setup, could we estimate the effect that the aspirin had on your leve
   </tr>
 </table> 
 
-If time machines existed and we could indeed observe both potential outcomes, then what would you say was the effect of taking the aspirin on your level of headache?",
+If time machines existed and we could indeed observe both potential outcomes, then what would you say was the effect of taking the aspirin on your level of headache?"),
     answer("The aspirin would have decreased my level of headache by 2 levels (in a scale from 1 to 10)", correct = TRUE),
     answer("The aspirin would have decreased my level of headache by 3 levels (in a scale from 1 to 10)"),
     answer("The aspirin would have increased my level of headache by 2 levels (in a scale from 1 to 10)"),
@@ -204,7 +217,7 @@ The aspirin would have <em>decreased</em> your level of headache by 2 levels (in
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q5:</span> Let's continue to work with the same situation. Now imagine there were four individuals who woke up with a headache today and, with the help of a time machine, we allow all four individuals to go through their day twice: once after taking an aspirin (with water) at 10 AM, and once after just drinking a glass of water at 10 AM, with no aspirin. If this were possible, we could capture both potential outcomes for all four individuals, and thus, measure for each individual the effect the aspirin had on their levels of headache. 
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Let's continue to work with the same situation. Now imagine there were four individuals who woke up with a headache today and, with the help of a time machine, we allow all four individuals to go through their day twice: once after taking an aspirin (with water) at 10 AM, and once after just drinking a glass of water at 10 AM, with no aspirin. If this were possible, we could capture both potential outcomes for all four individuals, and thus, measure for each individual the effect the aspirin had on their levels of headache. 
   <table>
   <tr>
     <th></th>
@@ -237,7 +250,7 @@ The aspirin would have <em>decreased</em> your level of headache by 2 levels (in
     <th>?</th>
   </tr>
 </table><br>
-If time machines existed and we could indeed observe both potential outcomes for all four individuals and the values were as shown in the table above, we would conclude that the aspirin...", 
+If time machines existed and we could indeed observe both potential outcomes for all four individuals and the values were as shown in the table above, we would conclude that the aspirin..."), 
     answer("<ul> <li> decreased the level of headache by 1 level for individual 1
            </li> <li> decreased the level of headache by 2 levels for individual 2
            </li> <li> had no effect on the level of headache for individual 3
@@ -303,7 +316,7 @@ And, we could conclude that the aspirin:
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q6:</span> What is the fundamental problem of causal inference?",
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> What is the fundamental problem of causal inference?"),
     answer("We can never observe the counterfactual outcome", correct = TRUE),
     answer("We can never observe the factual outcome"),
     answer("We can never observe the potential outcome under the treatment condition"),
@@ -346,7 +359,7 @@ And, we could conclude that the aspirin:
 <br> For information on the fundamental problem of causal inference, review section 2.3 of DSS.",
     random_answer_order = TRUE, allow_retry = TRUE
 ),
-   question("<span style=color:dodgerblue> Q7:</span> Is it possible for the same treatment to have different effects for different individuals?",
+   question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Is it possible for the same treatment to have different effects for different individuals?"),
     answer("Yes, it is possible.", correct = TRUE),
     answer("No, it is not possible."),
     post_message = "Yes, it is possible. There is no guarantee that a treatment has the same effect for all individuals. For example, an aspirin might help reduce the headache of one individual, have severe adverse effects on another, and have no effect whatsoever on yet another.
@@ -354,8 +367,8 @@ And, we could conclude that the aspirin:
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q8:</span> To get around the fundamental problem of causal inference, we must find good approximations for the counterfactual outcomes. To accomplish this, we move away from individual-level effects and focus on the average causal effect across a group of individuals.<br><br>
-  When estimating average causal effects, we distinguish between the treatment group and the control group. If we were interested in estimating the effect of taking an aspirin on the level of intensity of a headache, the treatment group would consist of...",
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> To get around the fundamental problem of causal inference, we must find good approximations for the counterfactual outcomes. To accomplish this, we move away from individual-level effects and focus on the average causal effect across a group of individuals.<br><br>
+  When estimating average causal effects, we distinguish between the treatment group and the control group. If we were interested in estimating the effect of taking an aspirin on the level of intensity of a headache, the treatment group would consist of..."),
     answer("the individuals who took an aspirin", correct = TRUE),
     answer("the aspirins", message="These are the treatments, not the treatment group."),
     answer("the placebos"),
@@ -365,7 +378,7 @@ And, we could conclude that the aspirin:
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q9 - A MULTI-ANSWER QUESTION:</span> In chapter 2, we discuss how we can obtain good approximations for the counterfactual outcomes, which are unobserved by definition. What is that way? (Note: You must select ALL true statements for the answer to be correct.) </span>",
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> In chapter 2, we discuss how we can obtain good approximations for the counterfactual outcomes, which are unobserved by definition. What is that way?  </span>"),
     answer("By deciding who takes the treatment and who doesn't through a random process such as the flip of a coin.", correct = TRUE),
     answer("By conducting a randomized experiment.", correct = TRUE),
     answer("By conducting a randomized controlled trial (RCT).", correct = TRUE),
@@ -378,7 +391,7 @@ And, we could conclude that the aspirin:
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q10 - A MULTI-ANSWER QUESTION:</span> When will the difference-in-means estimator produce a valid estimate of the average causal effect of a treatment on an outcome? (Note: You must select ALL true statements for the answer to be correct.)",
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> When will the difference-in-means estimator produce a valid estimate of the average causal effect of a treatment on an outcome? "),
     answer("When we are analyzing experimental data.", correct = TRUE),
     answer("When we are analyzing data from a randomized experiment.", correct = TRUE),
     answer("When treatment is assigned at random (also known as random treatment assignment).", correct = TRUE),
@@ -390,7 +403,7 @@ And, we could conclude that the aspirin:
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q11:</span> What is the formula for the difference-in-means estimator?",
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> What is the formula for the difference-in-means estimator?"),
     answer("average outcome for the treatment group - average outcome for the control group", correct = TRUE),
     answer("average outcome for the control group - average outcome for the treatment group"),
     answer("average treatment - average outcome"),
@@ -406,7 +419,7 @@ For information on the difference-in-means estimator, review subsection 2.4.1 of
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-question("<span style=color:dodgerblue> Q12:</span> Suppose we had 600 volunteers for a study and all of them complained of having a headache (of various intensities), what would be the best way of deciding who should take an aspirin if we wanted to estimate the average causal effect of taking an aspirin on the intensity of a headache?",
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Suppose we had 600 volunteers for a study and all of them complained of having a headache (of various intensities), what would be the best way of deciding who should take an aspirin if we wanted to estimate the average causal effect of taking an aspirin on the intensity of a headache?"),
     answer("We should decide who takes an aspirin through a random process such as a flip of a coin.", correct = TRUE),
     answer("We should give the aspirin to the volunteers who are suffering the least intense headaches.", 
            message="If we did this, we would have no way of knowing whether those who took the aspirin ended up with a less intense headache because they took an aspirin (and the aspirin helped) or because they had a less intense headache to begin with than those who did not take an aspirin."),
@@ -420,7 +433,7 @@ question("<span style=color:dodgerblue> Q12:</span> Suppose we had 600 volunteer
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q13:</span> Suppose we conducted the randomized experiment described in the previous exercise, what would be the formula of the difference-in-means estimator in this case?",
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Suppose we conducted the randomized experiment described in the previous exercise, what would be the formula of the difference-in-means estimator in this case?"),
     answer("average level of headache (after a few hours) of the individuals who were randomly assigned to take the aspirin -  average level of headache (after a few hours) of the individuals who were randomly assigned to not take the aspirin", correct = TRUE),
     answer("average level of headache (after a few hours) of the individuals who were randomly assigned to not take the aspirin - average level of headache (after a few hours) of the individuals who were randomly assigned to take the aspirin", message = "Recall that the difference-in-means estimator is: average outcome for the treatment group - average outcome for the control group, not the other way around."),
     answer("average level of headache prior to taking the aspirin of the individuals who were randomly assigned to take the aspirin - average level of headache (after a few hours) of the individuals who were randomly assigned to not take the aspirin ", message = "This would measure the average change in level of headache for those in the treatment group, not the estimated average treatment effect."),
@@ -458,7 +471,7 @@ The review exercises in this topic cover:
 <b>Instructions</b>
 <ul>
   <li>Select correct answer(s) and click blue <i>Submit Answer</i></li>
-  <li>Multi-answer questions are clearly labeled</li>
+  <li>In multi-answer questions, you must select <i>ALL</i> correct statements</li>
   <li>If incorrect, click orange <i>Try Again</i> until correct</li>
 </ul>
 
@@ -470,8 +483,9 @@ The review exercises in this topic cover:
 </div>
 
 ```{r ch2_topic2_mc}
+qnum <- 0
 quiz(caption="",
-    question("<span style=color:dodgerblue> Q1:</span> If a student goes from answering 10% of the questions correctly to answering 20% of the questions correctly, we could state that the student's proportion of correct answers increased by ...",
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> If a student goes from answering 10% of the questions correctly to answering 20% of the questions correctly, we could state that the student's proportion of correct answers increased by ..."),
     answer("10 percentage points", correct = TRUE),
     answer("10 percent", message = "An increase of 10% from 10% would result in a final value of 11%, not of 20%."),
     post_message = "For a description of what percentage points are and an explanation of the difference between percentages and percentage points, review the TIP on page 44 of DSS.<br><br>
@@ -485,7 +499,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q2 - A MULTI-ANSWER QUESTION:</span> Let's practice that again. Now, if a student goes from answering 50% of the questions correctly to answering 70% of the questions correctly, we could state that the student's proportion of correct answers increased by ...(Note: You must select ALL true statements for the answer to be correct.)",
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> Let's practice that again. Now, if a student goes from answering 50% of the questions correctly to answering 70% of the questions correctly, we could state that the student's proportion of correct answers increased by ..."),
     answer("20 percentage points", correct = TRUE),
     answer("40 percent", correct=TRUE),
     answer("20 percent", message = "An increase of 20% from 50% would result in a final value of 60%, not of 70%."),
@@ -498,7 +512,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q3:</span> In chapter 1, we learned that the mean of a non-binary variable should be interpreted as ...",
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> In chapter 1, we learned that the mean of a non-binary variable should be interpreted as ..."),
     answer("an average and in the same unit of measurement as the variable itself", correct = TRUE),
     answer("a proportion and in the same unit of measurement as the variable itself"),
     answer("an average and in percentages, after multipying the output by 100"),
@@ -507,7 +521,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q4:</span> And, the mean of a binary variable should be interpreted as ...",
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> And, the mean of a binary variable should be interpreted as ..."),
     answer("a proportion and in percentages, after multipying the output by 100", correct = TRUE),
     answer("an average and in the same unit of measurement as the variable itself"),
     answer("a proportion and in the same unit of measurement as the variable itself"),
@@ -516,7 +530,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q5:</span> If Y is non-binary, the difference-in-means estimator will be measured in?",
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> If Y is non-binary, the difference-in-means estimator will be measured in?"),
     answer("in the same unit of measurement as Y", correct = TRUE),
     answer("percentage points, after multiplying the output by 100"),
     answer("percentages, after multiplying the output by 100"),
@@ -527,7 +541,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q6:</span> If Y is binary, the difference-in-means estimator will be measured in?",
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> If Y is binary, the difference-in-means estimator will be measured in?"),
     answer("percentage points, after multiplying the output by 100", correct = TRUE),
     answer("percentages, after multiplying the output by 100"),
     answer("percentage points, and there is no need to multiply the output by 100"),
@@ -538,7 +552,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q7:</span> If X is binary, the difference-in-means estimator will be measured in?",
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> If X is binary, the difference-in-means estimator will be measured in?"),
     answer("it is impossible to know with the information given", correct = TRUE),
     answer("percentage points, after multiplying the output by 100"),
     answer("percentages, after multiplying the output by 100"),
@@ -549,7 +563,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q8:</span> In this portion of the book, we learn to use the relational operator `==` to set a logical test. What would be the output of the code `10 == 4`?",
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> In this portion of the book, we learn to use the relational operator `==` to set a logical test. What would be the output of the code `10 == 4`?"),
     answer("FALSE", correct = TRUE),
     answer("NO", message = ""),
     answer("NOT TRUE", message = ""),
@@ -559,7 +573,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q9:</span> We also learn to use the `ifelse()` function (pronounced 'if else') to create a new variable based on the values of an existing variable. How many arguments does the function `ifelse()` require?",
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> We also learn to use the `ifelse()` function (pronounced 'if else') to create a new variable based on the values of an existing variable. How many arguments does the function `ifelse()` require?"),
     answer("three", correct = TRUE),
     answer("one"),
     answer("two"),
@@ -569,7 +583,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q10:</span> What is the first required argument of the `ifelse()` function?",
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> What is the first required argument of the `ifelse()` function?"),
     answer("the logical test", correct = TRUE),
     answer("the return value if the logical test is TRUE", message = "This is the second required argument."),
     answer("the return value if the logical test is FALSE", message = "This is the third required argument"),
@@ -579,7 +593,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q11 - A MULTI-ANSWER QUESTION:</span> Suppose we had a dataframe stored in an object called `course` and one of the variables in the dataframe was a character variable called `present` that identified students who came to class with a 'yes' and those who didn't with a 'no'. Now, further suppose that we wanted to create a new variable named `attended` in the same dataframe and that we wanted it to identify students who came to class with a 1 and those who didn't with a 0. What would be the correct code to create this new binary variable? (Note: You must select ALL true statements for the answer to be correct.)",
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> Suppose we had a dataframe stored in an object called `course` and one of the variables in the dataframe was a character variable called `present` that identified students who came to class with a 'yes' and those who didn't with a 'no'. Now, further suppose that we wanted to create a new variable named `attended` in the same dataframe and that we wanted it to identify students who came to class with a 1 and those who didn't with a 0. What would be the correct code to create this new binary variable? "),
     answer("`course$attended <- ifelse(course$present=='yes', 1, 0)`", correct = TRUE),
     answer("`course$attended <- ifelse(course$present=='no', 0, 1)`", correct = TRUE),
     answer("`ifelse(course$present=='no', 0, 1)`", message = "This code would produce the values of the new variable but it would not store them as a new variable."),
@@ -592,7 +606,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q12:</span> As we learn in this portion of the book, we can use the `[]` operator to extract a selection of observations from a variable. Which of the following pieces of code would extract the testscores of students who had breakfast this morning? (Suppose the object where the dataframe was stored was called `course`, the non-binary variable capturing students' testscores was called `testscores`, and the binary variable identifying the students who had breakfast this morning was called `breakfast`).",
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> As we learn in this portion of the book, we can use the `[]` operator to extract a selection of observations from a variable. Which of the following pieces of code would extract the testscores of students who had breakfast this morning? (Suppose the object where the dataframe was stored was called `course`, the non-binary variable capturing students' testscores was called `testscores`, and the binary variable identifying the students who had breakfast this morning was called `breakfast`)."),
     answer("`course$testscores[course$breakfast==1]`", correct = TRUE),
     answer("`course$testscores[breakfast==1]`", message = "This code does not identify the object where the variabe `breakfast` is stored."),
     answer("`course$breakfast[course$testscores==1]`", message = "This code would extract the values of `breakfast` that corresponded to students who had their `testcores` equal to 1."),
@@ -670,7 +684,16 @@ star <- read.csv("STAR.csv") # reads and stores data
 head(star) # shows the first six observations
 ```
 
-<br> <span style=color:dodgerblue> **Q1 - Create the Treatment Variable:** </span> **Let's start by using the function `ifelse()` to create the treatment variable `small`, identifying the students who were randomly assigned to attend a small class. Make sure to store the values as a new variable in the dataframe `star`.**
+```{r star2, echo=FALSE}
+star <- read.csv("data/STAR.csv")
+star$small <- ifelse(star$classtype == "small", 1, 0)
+```
+
+```{r ch2_topic2_coding_qs}
+qnum <- 0
+```
+
+<br> <span style=color:dodgerblue> **Q`r qnum <- qnum+1; qnum` - Create the Treatment Variable:** </span> **Let's start by using the function `ifelse()` to create the treatment variable `small`, identifying the students who were randomly assigned to attend a small class. Make sure to store the values as a new variable in the dataframe `star`.**
 
 ```{r ch2_topic2_r1, exercise=TRUE, exercise.setup = "star"}
 
@@ -693,12 +716,7 @@ grade_result(pass_if(~ identical(.result, star$small <- ifelse(star$classtype ==
 )
 ```
 
-```{r star2, echo=FALSE}
-star <- read.csv("data/STAR.csv")
-star$small <- ifelse(star$classtype == "small", 1, 0)
-```
-
-<br> <span style=color:dodgerblue> **Q2 - Review How to Compute and Interpret Means:** </span> **Now, let's take a moment to review how to compute and interpret means. Use the `mean()` function to compute the mean of the variable *math*.**
+<br> <span style=color:dodgerblue> **Q`r qnum <- qnum+1; qnum` - Review How to Compute and Interpret Means:** </span> **Now, let's take a moment to review how to compute and interpret means. Use the `mean()` function to compute the mean of the variable *math*.**
 
 ```{r ch2_topic2_r2, exercise=TRUE, exercise.setup = "star2"}
 
@@ -718,8 +736,9 @@ grade_code("<br><br>For more information on how to compute means, review section
 ```
 
 ```{r ch2_topic2_r2_inter}
+qnum_inter <- 0
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q2 - Interpretation: </span> How can we interpret the mean of *math* computed above?",
+       question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, " - Interpretation: </span> How can we interpret the mean of *math* computed above?"),
     answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 632 points", correct = TRUE),
     answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 632%", message="Check the unit of measurement of *math*"),
     answer("Among the students who participated in Project STAR, the average score in the third-grade math test is about 632", message="You are missing the unit of measurement."),
@@ -731,7 +750,7 @@ Here, as we can see in the output of `head()` above, *math* is non-binary becaus
   ))
 ```
 
-<br> <span style=color:dodgerblue> **Q3 - Review How to Compute and Interpret Means:** </span> **Use the `mean()` function to compute the mean of the variable *graduated*.**
+<br> <span style=color:dodgerblue> **Q`r qnum <- qnum+1; qnum` - Review How to Compute and Interpret Means:** </span> **Use the `mean()` function to compute the mean of the variable *graduated*.**
 
 ```{r ch2_topic2_r3, exercise=TRUE, exercise.setup = "star2"}
 
@@ -750,8 +769,9 @@ grade_code("<br><br>For more information on how to compute means, review section
 ```
 
 ```{r ch2_topic2_r3_inter}
+qnum_inter <- 0
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q3 - Interpretation: </span> How can we interpret the mean of *graduated* computed above?",
+       question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, " - Interpretation: </span> How can we interpret the mean of *graduated* computed above?"),
     answer("87% of the students who participated in Project STAR graduated from high school", correct = TRUE),
     answer("0.87% of the students who participated in Project STAR graduated from high school", message="Remember that to interpret the output as a percentage, we need to multiply it by 100. (Review section 1.8 of DSS.)"),
     answer("87 students in Project STAR graduated from high school.", message="Is *graduated* a binary or a non-binary variable? (You may want to review the distinction between binary and non-binary variables in step #4 of section 1.7 of DSS, and review how to interpret the mean of binary and non-binary variables in section 1.8 of DSS.)"),
@@ -764,7 +784,7 @@ quiz(caption="",
   ))
 ```
 
-<br> <span style=color:dodgerblue> **Q4 - Review How to Compute and Interpret Means: </span> Now, use the `mean()` function to compute the proportion of students in Project STAR who were assigned to attend a small class?**
+<br> <span style=color:dodgerblue> **Q`r qnum <- qnum+1; qnum` - Review How to Compute and Interpret Means: </span> Now, use the `mean()` function to compute the proportion of students in Project STAR who were assigned to attend a small class?**
 
 ```{r ch2_topic2_r4, exercise=TRUE, exercise.setup = "star2"}
 
@@ -784,8 +804,9 @@ grade_code("<br><br> Since `small` is a binary variable that identifies the stud
 ```
 
 ```{r ch2_topic2_r4_inter}
+qnum_inter <- 0
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q4 - Interpretation: </span> Given the output above, what proportion of students were assigned to attend a small class?",
+       question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, " - Interpretation: </span> Given the output above, what proportion of students were assigned to attend a small class?"),
     answer("46%", correct = TRUE),
     answer("0.46%"),
     answer("4.6%"),
@@ -799,8 +820,9 @@ quiz(caption="",
 ```
 
 ```{r ch2_topic2_r5}
+qnum_inter <- 0
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q5 - The Formula of the Difference-in-Means Estimator for Math: </span> Let's start by estimating the average causal effect of attending a small class on the third-grade math test. <br><br> Since the data come from a randomized experiment, we can use the difference-in-means estimator. What is the formula of given estimator in this case?",
+       question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, " - The Formula of the Difference-in-Means Estimator for Math: </span> Let's start by estimating the average causal effect of attending a small class on the third-grade math test. <br><br> Since the data come from a randomized experiment, we can use the difference-in-means estimator. What is the formula of given estimator in this case?"),
     answer("average math scores among students who attended a small class - average math scores among students who attended a regular-size class", correct = TRUE),
     answer("average math scores among students who attended a regular-size class - average math scores among students who attended a small class", message = "Review the formula of the difference-in-means estimator in section 2.4.1 of DSS."),
     answer("average math scores among students who attended a small class - average math scores among all students who participated in Project STAR"),
@@ -819,7 +841,7 @@ quiz(caption="",
   ))
 ```
 
-<br> <span style=color:dodgerblue> **Q6 - Compute the First Term of the Difference-in-Means Estimator for Math:** </span> **Compute the average math scores among students who attended a small class. (Note: There are many ways in which we can compute this average using R, however this tutorial focuses on practicing using the functions, operators, and symbols taught in DSS. This is true for the entire tutorial.)** 
+<br> <span style=color:dodgerblue> **Q`r qnum <- qnum+1; qnum` - Compute the First Term of the Difference-in-Means Estimator for Math:** </span> **Compute the average math scores among students who attended a small class. (Note: There are many ways in which we can compute this average using R, however this tutorial focuses on practicing using the functions, operators, and symbols taught in DSS. This is true for the entire tutorial.)** 
 
 ```{r ch2_topic2_r6, exercise=TRUE, exercise.setup = "star2"}
 
@@ -839,8 +861,9 @@ grade_code("<br><br>For details, see subsection 2.5.3 of DSS.")
 ```
 
 ```{r ch2_topic2_r6_inter}
+qnum_inter <- 0
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q6 - Interpretation: </span> How can we interpret the output of the mean computed above?",
+       question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, " - Interpretation: </span> How can we interpret the output of the mean computed above?"),
     answer("Among the students who attended a small class, the average math score is about 635 points", correct = TRUE),
     answer("Among the students who attended a small class, the average math score is about 635%", message="Check the unit of measurement of math."),
     answer("Among the students who attended a small class, the average math score is about 635", message="You are missing the unit of measurement."),
@@ -853,7 +876,7 @@ Here, as we can see in the output of `head()` above, *math* is non-binary becaus
   ))
 ```
 
-<br> <span style=color:dodgerblue> **Q7 - Compute the Second Term of the Difference-in-Means Estimator for Math:** </span> **Compute the average math scores among students who attended a regular-size class.**
+<br> <span style=color:dodgerblue> **Q`r qnum <- qnum+1; qnum` - Compute the Second Term of the Difference-in-Means Estimator for Math:** </span> **Compute the average math scores among students who attended a regular-size class.**
 
 ```{r ch2_topic2_r7, exercise=TRUE, exercise.setup = "star2"}
 
@@ -873,8 +896,9 @@ grade_code("<br><br>For details, see subsection 2.5.3 of DSS.")
 ```
 
 ```{r ch2_topic2_r7_inter}
+qnum_inter <- 0
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q7 - Interpretation: </span> How can we interpret the output of the mean computed above?",
+       question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, " - Interpretation: </span> How can we interpret the output of the mean computed above?"),
     answer("Among the students who attended a regular-size class, the average math score is about 629 points", correct = TRUE),
     answer("Among the students who attended a regular-size class, the average math score is about 629%", message="Check the unit of measurement of math."),
     answer("Among the students who attended a regular-size class, the average math score is about 629", message="You are missing the unit of measurement."),
@@ -887,7 +911,7 @@ Here, as we can see in the output of `head()` above, *math* is non-binary becaus
   ))
 ```
 
-<br> <span style=color:dodgerblue> **Q8 - Compute the Difference-in-Means Estimator for Math:** </span> **Although we could compute the difference-in-means estimator as the difference between the last two means (`635 - 629`), it is best to ask R to compute it all at once, using functions. What is the code to compute the difference-in-means estimator for *math*?**
+<br> <span style=color:dodgerblue> **Q`r qnum <- qnum+1; qnum` - Compute the Difference-in-Means Estimator for Math:** </span> **Although we could compute the difference-in-means estimator as the difference between the last two means (`635 - 629`), it is best to ask R to compute it all at once, using functions. What is the code to compute the difference-in-means estimator for *math*?**
 
 ```{r ch2_topic2_r8, exercise=TRUE, exercise.setup = "star2"}
 
@@ -906,8 +930,9 @@ grade_code("<br><br>For details, see subsection 2.5.3 of DSS.")
 ```
 
 ```{r ch2_topic2_r8_inter}
+qnum_inter <- 0
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q8 - Interpretation: </span> What is the unit of measurement of the difference-in-means estimator for *math*?",
+       question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, " - Interpretation: </span> What is the unit of measurement of the difference-in-means estimator for *math*?"),
     answer("points", correct = TRUE),
     answer("percentage points"),
     answer("percentages"),
@@ -922,8 +947,9 @@ The estimator is measured in 'points' because 'points - points = points'.
 ```
 
 ```{r ch2_topic2_r9}
+qnum_inter <- 0
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q9 - The Formula of the Difference-in-Means Estimator for Graduated: </span> Now, let's estimate the average causal effect of attending a small class on the probability of graduating from high school. <br><br> Since the data come from a randomized experiment, we can use the difference-in-means estimator. What is the formula of given estimator in this case?",
+       question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, " - The Formula of the Difference-in-Means Estimator for Graduated: </span> Now, let's estimate the average causal effect of attending a small class on the probability of graduating from high school. <br><br> Since the data come from a randomized experiment, we can use the difference-in-means estimator. What is the formula of given estimator in this case?"),
     answer("proportion of students who graduated from high school among those who attended a small class - proportion of students who graduated from high school among those who attended a regular-size class", correct = TRUE),
     answer("proportion of students who graduated from high school among those who attended a regular-size class - proportion of students who graduated from high school among those who attended a small class", message = "Review the formula of the difference-in-means estimator in section 2.4.1 of DSS."),
     answer("average number of students who graduated from high school among those who attended a small class - average number of students who graduated from high school among those who attended a regular-size class", message =  "Is *graduated* a binary or a non-binary variable?"),
@@ -939,7 +965,7 @@ For more details, review the formula of the difference-in-means estimator in sec
   ))
 ```
 
-<br> <span style=color:dodgerblue> **Q10 - Compute the First Term of the Difference-in-Means Estimator for Graduated:** </span> **Compute the proportion of students who graduated from high school among those who attended a small class.** 
+<br> <span style=color:dodgerblue> **Q`r qnum <- qnum+1; qnum` - Compute the First Term of the Difference-in-Means Estimator for Graduated:** </span> **Compute the proportion of students who graduated from high school among those who attended a small class.** 
 
 ```{r ch2_topic2_r10, exercise=TRUE, exercise.setup = "star2"}
 
@@ -959,8 +985,9 @@ grade_code("<br><br>For details, see subsection 2.5.3 of DSS.")
 ```
 
 ```{r ch2_topic2_r10_inter}
+qnum_inter <- 0
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q10 - Interpretation: </span> How can we interpret the output of the mean computed above?",
+       question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, " - Interpretation: </span> How can we interpret the output of the mean computed above?"),
     answer("87.35% of the students who attended a small class graduated from high school", correct = TRUE),
     answer("0.8735% of the students who attended a small class graduated from high school", message="The mean of a binary variable should be interpreted in percentages after multiplying the output by 100."),
     answer("87 students who attended a small class graduated from high school", message="Is *graduated* a binary or a non-binary variable?"),
@@ -973,7 +1000,7 @@ Here, *graduated* is binary, so the mean of *graduated* should be interpreted as
   ))
 ```
 
-<br> <span style=color:dodgerblue> **Q11 - Compute the Second Term of the Difference-in-Means Estimator for Graduated:** </span> **Compute the proportion of students who graduated from high school among those who attended a regular-size class.** 
+<br> <span style=color:dodgerblue> **Q`r qnum <- qnum+1; qnum` - Compute the Second Term of the Difference-in-Means Estimator for Graduated:** </span> **Compute the proportion of students who graduated from high school among those who attended a regular-size class.** 
 
 ```{r ch2_topic2_r11, exercise=TRUE, exercise.setup = "star2"}
 
@@ -993,8 +1020,9 @@ grade_code("<br><br>For details, see subsection 2.5.3 of DSS.")
 ```
 
 ```{r ch2_topic2_r11_inter}
+qnum_inter <- 0
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q11 - Interpretation: </span> How can we interpret the output of the mean computed above?",
+       question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, " - Interpretation: </span> How can we interpret the output of the mean computed above?"),
     answer("86.65% of the students who attended a regular-size class graduated from high school", correct = TRUE),
     answer("0.8665% of the students who attended a regular-size class graduated from high school", message="The mean of a binary variable should be interpreted in percentages after multiplying the output by 100."),
     answer("86 students who attended a regular-size class graduated from high school", message="Is *graduated* a binary or a non-binary variable?"),
@@ -1008,7 +1036,7 @@ Here, *graduated* is binary, so the mean of *graduated* should be interpreted as
 ```
 
 
-<br> <span style=color:dodgerblue> **Q12 - Compute the Difference-in-Means Estimator for Graduated:** </span> **Although we could compute the difference-in-means estimator as the difference between the last two means (`0.8735 - 0.8665`), it is best to ask R to compute it all at once, using functions. What is the code to compute the difference-in-means estimator for *graduated*?**
+<br> <span style=color:dodgerblue> **Q`r qnum <- qnum+1; qnum` - Compute the Difference-in-Means Estimator for Graduated:** </span> **Although we could compute the difference-in-means estimator as the difference between the last two means (`0.8735 - 0.8665`), it is best to ask R to compute it all at once, using functions. What is the code to compute the difference-in-means estimator for *graduated*?**
 
 ```{r ch2_topic2_r12, exercise=TRUE, exercise.setup = "star2"}
 
@@ -1027,8 +1055,9 @@ grade_code("<br><br>For details, see subsection 2.5.3 of DSS.")
 ```
 
 ```{r ch2_topic2_r12_inter}
+qnum_inter <- 0
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q12 - Interpretation: </span> What is the unit of measurement of the difference-in-means estimator for *graduated*?",
+       question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, " - Interpretation: </span> What is the unit of measurement of the difference-in-means estimator for *graduated*?"),
     answer("percentage points, after multiplying the output by 100", correct = TRUE),
     answer("percentage points, but there is no need to multiply the output by 100"),
     answer("points"),
@@ -1053,8 +1082,9 @@ Now, to be able to interpret the proportions in percentages, we must multiply th
 As we explain in the bottom TIP of page 43 of DSS, good conclusion statements are clear, are concise, and include all the key elements of the analysis. Let's begin by figuring out each key element separately.</b>
 
 ```{r ch2_topic2_r13_r17}
+qnum_inter <- 0
 quiz(caption="",
-       question("<span style=color:dodgerblue> Q13: </span> The validity of our causal estimates depends on the assumption we made in the analysis. What is that assumption?",
+       question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, ": </span> The validity of our causal estimates depends on the assumption we made in the analysis. What is that assumption?"),
     answer("We assume that the students who attended a small class were comparable before schooling to the students who attended a regular-size class", correct = TRUE),
     answer("We assume that the students were randomly assigned to attend either a small class or a regular-size class", message= "We do not assume this; this we know."),
     answer("We assume that all the students in Project STAR were comparable to each other", message= "This would imply that every single student was comparable to all others."),
@@ -1064,7 +1094,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("<span style=color:dodgerblue> Q14 - A MULTI-ANSWER QUESTION: </span> Why is the assumption above reasonable in this case? It is a reasonable assumption because... (Note: You must select ALL true statements for the answer to be correct.)",
+  question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, " - A MULTI-ANSWER QUESTION: </span> Why is the assumption above reasonable in this case? It is a reasonable assumption because... "),
     answer("students were randomly assigned to attend either a small class or a regular-size class", correct = TRUE),
     answer("we are analyzing data from a randomized experiment", correct = TRUE),
     answer("all the students in Project STAR were from Tennessee", message = "This does not ensure that the students who attended a small class were comparable before schooling to the students who attended a regular-size class."),
@@ -1075,7 +1105,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-    question("<span style=color:dodgerblue> Q15: </span> What is the treatment?",
+    question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, ": </span> What is the treatment?"),
     answer("attending a small class", correct = TRUE),
     answer("attending a regular-size class"),
     answer("attending an elementary school in Tennessee"),
@@ -1086,7 +1116,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-question("<span style=color:dodgerblue> Q16: </span> When estimating the average causal effect of attending a small class on the third-grade math test, what is the outcome we are estimating the effect on?",
+question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, ": </span> When estimating the average causal effect of attending a small class on the third-grade math test, what is the outcome we are estimating the effect on?"),
     answer("third-grade math test scores", correct = TRUE),
     answer("attending a small class"),
     answer("attending a regular-class size"),
@@ -1096,7 +1126,7 @@ question("<span style=color:dodgerblue> Q16: </span> When estimating the average
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-question("<span style=color:dodgerblue> Q17: </span> When estimating the average causal effect of attending a small class on the third-grade math test, what is the direction, size, and unit of measurement of the average causal effect?",
+question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, ": </span> When estimating the average causal effect of attending a small class on the third-grade math test, what is the direction, size, and unit of measurement of the average causal effect?"),
     answer("an increase of 6 points, on average", correct = TRUE),
     answer("an decrease of 6 points, on average", message = "Check the direction of the effect. Did we estimate that the treatment increased the outcome, on average? Or did we estimate that the treatment decreased the outcome, on average?"),
     answer("6 points, on average", message="This answer is missing the direction of the effect."),
@@ -1110,7 +1140,7 @@ The unit of measurement is 'points' because 'points - points = points'.
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-question("<span style=color:dodgerblue> Q18: </span> When estimating the average causal effect of attending a small class on the probability of graduating from high school, what is the outcome we are estimating the effect on?",
+question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, ": </span> When estimating the average causal effect of attending a small class on the probability of graduating from high school, what is the outcome we are estimating the effect on?"),
     answer("the probability of graduating from high school", correct =TRUE),
     answer("third-grade math test scores"),
     answer("attending a small class"),
@@ -1119,7 +1149,7 @@ question("<span style=color:dodgerblue> Q18: </span> When estimating the average
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-question("<span style=color:dodgerblue> Q19: </span> When estimating the average causal effect of attending a small class on the probability of graduating from high school, what is the direction, size, and unit of measurement of the average causal effect?",
+question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, ": </span> When estimating the average causal effect of attending a small class on the probability of graduating from high school, what is the direction, size, and unit of measurement of the average causal effect?"),
     answer("an increase of 0.7 percentage points, on average", correct = TRUE),
     answer("an decrease of 0.007 percentage points, on average", message = "Check the direction and size of the effect. Did we estimate that the treatment increased the outcome, on average? Or did we estimate that the treatment decreased the outcome, on average? Also, when the outcome variable is binary, do we need to multiply the output of the difference-in-means estimator by 100?"),
     answer("an increase of 0.007 percentage points, on average", message = "Check the size of the effect. When the outcome variable is binary, do we need to multiply the output of the difference-in-means estimator by 100?"),
@@ -1144,8 +1174,9 @@ The unit of measurement is 'percentage points' because '% - % = p.p.'.
 <b> Finally, let's write the two conclusion statements and make sure to include all the key elements of the analysis that we discussed above.</b>
 
 ```{r ch2_topic2_r18_r29}
+qnum_inter <- 0
 quiz(caption="",
-  question("<span style=color:dodgerblue> Q20: </span> What is the estimated average causal effect of attending a small class on the third-grade math test?",
+  question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, ": </span> What is the estimated average causal effect of attending a small class on the third-grade math test?"),
     answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because we are analyzing data from a randomized experiment), we estimate that attending a small class increases the third-grade math scores by 6 points, on average.", correct = TRUE),
     answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), we estimate that the students who attended a small class scored, on average, 6 points more on the third-grade math test, as compared to the students who attended a regular-size class.", message = "This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class scored, on average, 6 points more, but it does not communicate who or what is responsible for those extra points. It does not claim that those extra points where <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'"),
     answer("We estimate that attending a small class increases the third-grade math scores by 6 points, on average.", message= "This answer is missing the assumption and why the assumption is reasonable in this case."),
@@ -1157,7 +1188,7 @@ quiz(caption="",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-question("<span style=color:dodgerblue> Q21: </span> What is the estimated average causal effect of attending a small class on the probability of graduating from high school?",
+question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, ": </span> What is the estimated average causal effect of attending a small class on the probability of graduating from high school?"),
     answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because we are analyzing data from a randomized experiment), we estimate that attending a small class increases the probability of graduating from high school by 0.7 percentage points, on average.", correct = TRUE),
     answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), we estimate that the students who attended a small class were, on average, 0.7 percentage points more likely to graduate from high school than students who attended a regular-size class.", message = "This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class were, on average, 0.7 percentage points more likely to graduate from high school, but it does not communicate who or what is responsible for those additional percentage points. It does not claim that those extra percentage points where <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'"),
     answer("We estimate that attending a small class increases the probability of graduating from high school by 0.7 percentage points, on average.", message= "This answer is missing the assumption and why the assumption is reasonable in this case."),
@@ -1172,10 +1203,10 @@ question("<span style=color:dodgerblue> Q21: </span> What is the estimated avera
 )
 ```
 
-## <span style=color:dodgerblue> GENERATE SUMMARY REPORT
+## <span style=color:dodgerblue> GENERATE PROGRESS REPORT
 You have reached the end of this tutorial. Congratulations!
 
-To generate a summary report of your work, enter your name below and click the *Generate Summary Report* button. The summary will appear on the screen. Take a screenshot, if your instructor asks for proof of completion.
+To generate a progress report of your work, enter your name below and click the *Generate Report* button. The report will appear on the screen. Take a screenshot, if your instructor asks for proof of completion.
 
 ```{r context="server"}
 shiny::observeEvent(
@@ -1204,7 +1235,7 @@ shiny::observeEvent(
                                                num_answered =="exercise"] |> length()
     
     output$chapter = shiny::renderText(
-      paste("SUMMARY REPORT OF: Review Exercises for", as.character(chapter_id),
+      paste("PROGRESS REPORT OF: Review Exercises for", as.character(chapter_id),
          "of Llaudet and Imai's Data Analysis for Social Science: A Friendly and Practical Introduction (Princeton University Press, 2022)"))
     
     output$student = shiny::renderText(
@@ -1244,7 +1275,7 @@ shiny::observeEvent(
 
 ```{r score, echo=FALSE}
 shiny::textInput("name", "Please Enter Your Name")
-shiny::actionButton("get_score", "Generate Summary Report")
+shiny::actionButton("get_score", "Generate Report")
 shiny::br()
 shiny::br()
 shiny::br()
