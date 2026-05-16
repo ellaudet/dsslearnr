@@ -1,0 +1,1366 @@
+---
+title: "DSS: CHAPTER 3"
+tutorial:
+  id: "03-population"
+output:
+  learnr::tutorial:
+    progressive: true
+    ace_theme: github
+    theme: spacelab
+    language:
+      en:
+        button:
+          previoustopic: Previous Page
+          nexttopic: Next Page
+runtime: shiny_prerendered
+description: "Review Exercises for Data Analysis for Social Science - CHAPTER 3."
+---
+
+```{r setup, include=FALSE}
+library(gradethis)
+library(learnr)
+tutorial_options(exercise.checker = gradethis::grade_learnr, 
+                 exercise.reveal_solution="TRUE")
+knitr::opts_chunk$set(echo = FALSE)
+chapter_id <- "Chapter 3"
+num_tutorial <- 74
+```
+
+<style>
+.borderexample {
+ border-width:1px;
+ border-style:solid;
+ border-color:dodgerblue;
+ padding: 15px;
+}
+</style>
+
+<style>
+table, td, th {
+  border: 1px solid lightgray;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+td { text-align: center;}
+th { text-align: center;}
+th, td { padding: 15px; }
+</style>
+
+
+## <span style=color:dodgerblue> WELCOME AND INSTRUCTIONS
+
+<div style="overflow: auto;">
+<img src="/images/dss.png" 
+     width="200" 
+     height="250" 
+     style="float: left; margin-right: 20px; margin-bottom: 10px;" />
+
+This is a tutorial for readers of DSS: [Llaudet and Imai's *Data Analysis for Social Science: A Friendly and Practical Introduction* (Princeton University Press, 2022)](https://bit.ly/dss_textbook). DSS teaches from scratch R, statistics, and the fundamentals of quantitative social science (causal inference, survey research, and predictive models). 
+
+Review exercises are organized by chapter. Here are those for chapter 3. 
+
+The review exercises are designed to be completed *after* reading and doing the exercises in the book. They are meant to supplement, not replace, the book. In the tutorials, each chapter is divided into two to five topics, where each topic contains exercises reviewing a handful of pages that can be read in one sitting. Here is the recommended sequence: 
+
+<table>
+  <tr>
+    <th><span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ <span style=color:dodgerblue> STEP 1  <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span></th>
+    <th><span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:dodgerblue> STEP 2  <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span></th>
+    <th> <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:dodgerblue> STEP 3 <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$</span></th>
+    <th> <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  <span style=color:dodgerblue> STEP 4 <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$</span></th>
+  </tr>
+  <tr>
+    <td> read the section(s) <br> of the textbook <br> that correspond to <br> a particular topic </td>
+    <td> follow along <br> with the exercises <br>in the textbook <br>on your own computer</td>
+    <td> complete <br> the corresponding <br> review exercises <br>provided here </td>
+    <td> move on <br> to the next topic, <br> and go back <br> to step 1 </td>
+  </tr>
+</table>
+</div>
+
+*Found an error?* Please email me at [ellaudet@gmail.com](ellaudet@gmail.com). *I hope these exercises are helpful!* - Elena
+
+## <span style=color:dodgerblue> OVERVIEW OF CHAPTER 3
+In chapter 3, we learn how to infer population characteristics from a representative sample, how to handle missing data, and how to visualize and summarize both the distribution of a single variable and the relationship between two variables.
+
+The review exercises for this chapter are organized into two topics.
+
+<table>
+  <tr>
+    <th> Topic </th>
+    <th> Readings </th>
+    <th> Key Concepts and Notation </th>
+    <th> R Functions and Operators </th>
+  </tr>
+  <tr>
+    <td> Survey Research and Data Exploration  </td>
+    <td>3–3.4</td>
+    <td> sample, representative sample, random sampling, population, sample size (n), N, table of frequencies, table of proportions, missing values (NA), listwise deletion, two-way table of frequencies, two-way table of proportions, histogram, density histogram, descriptive statistics, mean, median, standard deviation, variance </td>
+    <td> table(), prop.table(), na.omit(), hist(), mean(), median(), sd(), var() </td>
+  </tr>
+  <tr>
+    <td> Exploring the Relationship Between Two Variables </td>
+    <td> 3.5–3.5.2 </td>
+    <td> scatter plot, correlation coefficient, direction and strength of linear association </td>
+    <td> plot(), abline(), cor() </td>
+  </tr>
+</table>
+
+Let's start! <br>
+
+## <span style=color:dodgerblue> 1. Survey Research and Data Exploration
+The review exercises in this topic cover:
+
+<table>
+  <tr>
+    <th> Readings </th>
+    <th> Key Concepts and Notation </th>
+    <th> R Functions and Operators </th>
+  </tr>
+  <tr>
+    <td> 3–3.4 </td>
+    <td> sample, representative sample, random sampling, population, sample size (n), N, table of frequencies, table of proportions, missing values (NA), listwise deletion, two-way table of frequencies, two-way table of proportions, histogram, density histogram, descriptive statistics, mean, median, standard deviation, variance </td>
+    <td> table(), prop.table(), na.omit(), hist(), mean(), median(), sd(), var() </td>
+  </tr>
+</table>
+
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Multiple Choice Questions </span></font>
+
+<div class="borderexample">
+<b>Instructions</b>
+<ul>
+  <li>Select correct answer(s) and click blue <i>Submit Answer</i></li>
+  <li>In multi-answer questions, you must select <i>ALL</i> correct statements</li>
+  <li>If incorrect, click orange <i>Try Again</i> until correct</li>
+</ul>
+
+<b>Navigation:</b>
+<ul>
+  <li>To delete all your answers and restart the tutorial: click <i>Start Over</i> in left menu</li>
+  <li>Otherwise, progress is automatically saved</li>
+</ul>
+</div>
+
+```{r ch3_topic1_mc}
+qnum <- 0
+quiz(caption="",
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> We start the book identifying the three goals of social science research. Which of these goals is chapter 3 about?"),
+    answer("Measuring a quantity of interest.", correct = TRUE),
+    answer("Explaining a quantity of interest.", message = "Chapters 2 and 5 are about explaining."),
+    answer("Predicting a quantity of interest.", message = "Chapter 4 is about predicting."),
+    post_message = "The correct answer is: measuring a quantity of interest. <br><br> For more information, review section 1.1 of DSS and the introduction to chapter 3.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+),
+     
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> What is the goal of survey research?"),
+    answer("To collect data from a sample in order to infer the characteristics of the target population.", correct = TRUE),
+    answer("To collect data from every individual in the target population."),
+    answer("To estimate average causal effects using randomized experiments."),
+    answer("To create histograms and tables of frequencies."),
+    post_message = "The correct answer is: to collect data from a sample in order to infer the characteristics of a target population. Recall: the subset of observations selected for study is called a sample. <br><br> For more information, review section 3.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+  
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> In the British Election Study (BES) discussed in chapter 3, researchers surveyed just under 31,000 people to infer the attitudes of more than 46 million eligible UK voters. In that study, what are *n* and *N*?"),
+    answer("*n* = 31,000 and *N* = 46 million", correct = TRUE),
+    answer("*n* = 46 million and *N* = 31,000"),
+    answer("*n* = 31,000 and *N* = 31,000"),
+    answer("*n* = 46 million and *N* = 46 million"),
+    post_message = "The correct answer is: *n* = 31,000 and *N* = 46 million. In survey research, we use the notation *n* to represent the sample size and *N* to represent the size of the target population. Here, *n* is the 31,000 people surveyed and *N* is the more than 46 million eligible UK voters. <br><br> For more information, review section 3.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+  
+    question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> When using a sample to infer population characteristics, it is important that:"),
+    answer("The sample be representative of the population of interest.", correct = TRUE),
+    answer("The treatment and control groups be comparable."),
+    answer("The dataset contains both the treatment and the outcome variables."),
+    answer("The sample includes every individual from the population of interest."),
+    post_message = "The correct answer is: the sample must be representative of the population of interest. <br><br> For more information, review section 3.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+  
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> The best way to draw a representative sample from a population is:"),
+    answer("To randomly select individuals from the population of interest.", correct = TRUE),
+    answer("To assign treatment at random."),
+    answer("To select individuals from the population of interest who are easily reachable."),
+    answer("To allow individuals from the population of interest to choose whether they want to be part of the sample."),
+    post_message = "The correct answer is: to randomly select individuals from the population of interest. Random sampling makes the sample, on average, representative of the population from which it is drawn.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> What does it mean for a sample to be representative?"),
+    answer("The sample and the population have similar characteristics at the aggregate level.", correct = TRUE),
+    answer("The sample includes every individual in the target population."),
+    answer("The sample is large."),
+    answer("The sample contains no missing values."),
+    post_message = "The correct answer is: the sample and the population have similar characteristics at the aggregate level—that is, they are similar in terms of averages and proportions. <br><br> For more information, review section 3.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, 
+  ":</span> Are students in one university-level class in Massachusetts 
+  (USA) representative of all residents in Massachusetts (USA)?"),
+  answer("No.", correct = TRUE),
+  answer("Yes."),
+  post_message = "The correct answer is: no. Students in one 
+    university-level class are not representative of all residents 
+    in Massachusetts. They are all university students enrolled in 
+    the same course, meaning they likely share characteristics — such 
+    as age, educational background, and interests — that differ 
+    systematically from the broader population. For example, they are 
+    likely younger, more educated, and more affluent than the average 
+    Massachusetts resident. The sample would NOT be representative of 
+    children, seniors, residents not in college, as well as many other segments of the Massachusetts population. <br><br> For more information, review section 3.2 of DSS.",
+  random_answer_order = TRUE,
+  allow_retry = TRUE
+),
+  
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, 
+  ":</span> Are the same students---students in one university-level class in Massachusetts (USA)---representative of all students at that university?"),
+  answer("Most likely no.", correct = TRUE),
+  answer("Most likely yes."),
+  post_message = "The correct answer is: most likely no. Since these students are enrolled in 
+    the same course, they likely share characteristics such as year of schooling, interests, and 
+    prerequisites taken, making them systematically different from all students at the university. 
+    For example, if the class is for sophomore-or-above political science majors, the sample will 
+    not be representative of freshmen or students from other majors (biology, theatre, engineering, 
+    etc.).
+    <br><br> For more information, review section 3.2 of DSS.",
+  random_answer_order = TRUE,
+  allow_retry = TRUE
+),
+  
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, 
+  " - A MULTI-ANSWER QUESTION:</span> Which of the following statements 
+  about random sampling and random treatment assignment are true?"),
+  answer("Random sampling determines who is selected for the sample.", 
+    correct = TRUE),
+  answer("Random sampling determines who receives the treatment."),
+  answer("Random sampling makes the sample, on average, representative 
+    of the population from which it is drawn.", correct = TRUE),
+  answer("Random sampling makes the treatment and control groups 
+    comparable, on average."),
+  answer("Random sampling enables us to make valid inferences about the characteristics of the population.", correct=TRUE),
+  answer("Random sampling enables us to arrive at valid estimates of average causal effects."),
+  answer("Random treatment assignment determines who is selected 
+    for the sample."),
+  answer("Random treatment assignment determines who receives the treatment.", 
+    correct = TRUE),
+  answer("Random treatment assignment makes the sample, on average, 
+    representative of the population from which it is drawn."),
+  answer("Random treatment assignment makes the treatment and control 
+    groups comparable, on average.", correct = TRUE),
+  
+  answer("Random treatment assignment enables us to make valid inferences about the characteristics of the population."),
+  answer("Random treatment assignment enables us to arrive at valid estimates of average causal effects.", correct=TRUE),
+
+post_message = "The correct answers are: (1) random sampling determines 
+  who is selected for the sample, makes the sample, on average, 
+  representative of the population from which it is drawn, and enables 
+  us to make valid inferences about the characteristics of the population; and (2) random 
+  treatment assignment determines who receives the treatment, makes 
+  the treatment and control groups comparable, on average, and enables 
+  us to arrive at valid estimates of average causal effects. <br><br> 
+  For more information, review subsection 3.2.1 of DSS.",
+  random_answer_order = FALSE,
+  allow_retry = TRUE
+),  
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> You want to know the preferred political candidate among all students at your university, so you survey the 200 students in one of your classes. What is the main problem with this approach?"),
+  answer("The sample is unlikely to be representative of the target population.", correct = TRUE),
+  answer("The sample size is likely to be too small."),
+  answer("We did not use random treatment assignment.", message="Random treatment assignment has to do with how we assign treatment, not with how we select the sample."),
+  answer("There is no problem with this approach."),
+  post_message = "The correct answer is: The sample is unlikely to be representative of the target population. Students in one of your classes are unlikely to constitute a representative sample of the entire student body at your university. For example, students who take a political science course may have systematically different political preferences than students who do not. <br><br> For more information on the challenges of survey research, review section 3.2 of DSS.",
+  random_answer_order = TRUE,
+  allow_retry = TRUE
+),
+
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Suppose instead that you email all students at your university and collect data from those who choose to respond. What is the main problem with this approach?"),
+    answer("The students who choose to respond may differ systematically from those who choose not to respond, making the resulting sample unrepresentative.", correct = TRUE),
+    answer("The sample size will always be too small with this approach."),
+    answer("Emails cannot be used to conduct surveys."),
+    answer("There is no problem. Since all students were contacted, the sample will be representative."),
+    post_message = "The correct answer is: the students who choose to respond may differ systematically from those who choose not to respond, making the resulting sample unrepresentative. This is known as unit nonresponse. <br><br> For more information on unit nonresponse and other challenges of survey research, review subsection 3.2.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Suppose that we survey a large group of students at your university from those entering the library on a Tuesday afternoon and find that 78% of them report studying at least two hours per day. Can we infer from this information that approximately 78% of all students at your university study at least two hours per day?"),
+    answer("No, because the sample is unlikely to be representative of the population of interest.", correct = TRUE),
+    answer("Yes, because the sample size is large and therefore it is representative of the population of interest.", 
+           message= "Sample size alone does not guarantee that the sample will be representative."),
+    answer("No, because the sample does not include every member of the population of interest."),
+    answer("Yes, because the sample consists of students at my university, who are the population of interest."),
+    post_message = "The correct answer is: no, because the sample is unlikely to be representative of the population of interest. Students entering the library on a Tuesday afternoon are likely more studious than the average student at the university.<br><br> For more information, review subsections 3.2.1 and 3.2.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> In the United States, official voter turnout rates in presidential elections are around 60%, yet more than 70% of ANES respondents report that they voted. Some respondents may report voting even when they did not because voting is viewed as a civic duty.  What survey research problem does this illustrate?"),
+  answer("Misreporting.", correct = TRUE),
+  answer("Unit nonresponse.", message = "This means that some people selected for the survey refused to participate."),
+  answer("Item nonresponse.", message = "This means that some respondents refused to answer a specific question."),
+  answer("The sampling frame was incomplete."),
+  post_message = "The correct answer is: Misreporting, which occurs when respondents provide inaccurate or false information, often because one answer is more socially acceptable than another. <br><br> For more information on the challenges of survey research, review subsection 3.2.2 of DSS.",
+  random_answer_order = TRUE,
+  allow_retry = TRUE
+),   
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> What does the table of frequencies of a variable show?"),
+    answer("The values the variable takes along with the number of observations that take each value.", correct = TRUE),
+    answer("The values the variable takes along with the proportion of observations that take each value."),
+    answer("The mean and standard deviation of the variable."),
+    answer("A graphical representation of the distribution of the variable."),
+    post_message = "The correct answer is: the table of frequencies shows the values the variable takes along with the number of observations (counts) that take each value. <br><br> For more information, review subsection 3.3.1 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> If X = {0, 1, 0, 0, 1}, which of the following is the correct table of frequencies of X?"),
+  answer("0&nbsp;&nbsp;1<br>3&nbsp;&nbsp;2", correct = TRUE),
+  answer("0&nbsp;&nbsp;1<br>2&nbsp;&nbsp;3"),
+  answer("0&nbsp;&nbsp;1<br>5&nbsp;&nbsp;5"),
+  answer("0&nbsp;&nbsp;1<br>1&nbsp;&nbsp;1"),
+  post_message = "The correct answer is: the frequency of 0 is 3 and the frequency of 1 is 2.",
+  random_answer_order = TRUE,
+  allow_retry = TRUE
+),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> If X = {0, 1, 0, 0, 1}, which of the following is the correct table of proportions of X?"),
+  answer("0&nbsp;&nbsp;&nbsp;1<br>0.6&nbsp;0.4", correct = TRUE),
+  answer("0&nbsp;&nbsp;&nbsp;1<br>3&nbsp;&nbsp;&nbsp;2"),
+  answer("0&nbsp;&nbsp;&nbsp;1<br>0.4&nbsp;0.6"),
+  answer("0&nbsp;&nbsp;&nbsp;1<br>0.5&nbsp;0.5"),
+  post_message = "The correct answer is: the proportion of 0 is 0.6 and the proportion of 1 is 0.4.",
+  random_answer_order = TRUE,
+  allow_retry = TRUE
+),
+  
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> In R, how is a missing value represented?"),
+    answer("As `NA`", correct = TRUE),
+    answer("As `NULL`"),
+    answer("As `0`"),
+    answer("As `missing`"),
+    post_message = "The correct answer is: as `NA`. <br><br> For more information on missing data in R, review subsection 3.4.1 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> To explore the contents of a single variable, we can..."),
+    answer("Compute its table of frequencies", correct = TRUE),
+    answer("Compute its table of proportions", correct = TRUE),
+    answer("Create a histogram to visualize its distribution.", correct = TRUE),
+    answer("Compute its mean or median to summarize with a number the center of the distribution.", correct = TRUE),
+    answer("Compute its standard deviation or variance to summarize with a number the spread of the distribution.", correct = TRUE),
+    post_message = "All answers are correct.",
+    random_answer_order = FALSE,
+    allow_retry = TRUE
+  )
+)
+```
+
+```{r echo=FALSE}
+set.seed(123)
+x <- rnorm(300, mean = 50, sd = 12)
+hist(x,
+     main = "",
+     xlab = "X")
+```
+
+```{r ch3_topic1_mc_graphs}
+quiz(caption="",
+
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> What is the name of the type of graph displayed above?"),
+    answer("Histogram", correct = TRUE),
+    answer("Scatter plot"),
+    answer("Table of frequencies"),
+    answer("Density plot"),
+    post_message = "The correct answer is: histogram. A histogram is a graphical representation of the distribution of a single variable using rectangular bins.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  )
+)
+```
+
+```{r ch3_topic1_mc_continuation}
+quiz(caption="",
+  
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> Looking at a histogram, we can get a sense of:"),
+  answer("The distribution of the variable.", correct = TRUE),
+  answer("The center of the distribution.", correct = TRUE),
+  answer("The spread of the distribution.", correct = TRUE),
+  answer("The range of values the variable takes.", correct = TRUE),
+  answer("The relationship between two variables."),
+  answer("The direction of the linear association between two variables."),
+  answer("The strength of the linear association between two variables."),
+  post_message = "The correct answers are: the distribution of the variable, including its center, spread, and range of values.",
+  random_answer_order = FALSE,
+  allow_retry = TRUE
+),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> Which of the following statements are true about histograms and density histograms?"),
+  answer("In a histogram, the y-axis displays frequencies (counts), while in a density histogram the y-axis displays densities.", correct = TRUE),
+  answer("Density histograms are more useful than regular histograms when comparing distributions with substantially different numbers of observations.", correct = TRUE, message="This is because sample size does not affect proportions, whereas it affects frequencies."),
+  answer("When the width of the bins is constant, the relative heights of the bins in a density histogram reflect the relative proportions of observations in each bin.", correct = TRUE),
+  post_message = "All answers are correct.<br><br> For more information, review subsections 3.4.4 and 3.4.5 of DSS.",
+  random_answer_order = FALSE,
+  allow_retry = TRUE
+),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Suppose that X = {10, 5, 8, 12, 15}. What are the mean and the median of X?"),
+  answer("Mean = 10 and Median = 10", correct = TRUE),
+  answer("Mean = 8 and Median = 10"),
+  answer("Mean = 10 and Median = 8"),
+  answer("Mean = 12 and Median = 10"),
+  post_message = "The correct answer is: Mean = 10 and Median = 10. <br><br> To calculate the mean, we add all values and divide by the number of observations: (10 + 5 + 8 + 12 + 15)/5 = 50/5 = 10. <br><br> To calculate the median, we first sort the values from smallest to largest: {5, 8, 10, 12, 15}. The median is the middle value, which is 10.",
+  random_answer_order = TRUE,
+  allow_retry = TRUE
+),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Suppose that X = {1, 0, 1, 0, 0}. What are the mean and the median of X?"),
+  answer("Mean = 0.4 and Median = 0", correct = TRUE),
+  answer("Mean = 0 and Median = 0.4"),
+  answer("Mean = 0.5 and Median = 0"),
+  answer("Mean = 0.4 and Median = 1"),
+  post_message = "The correct answer is: Mean = 0.4 and Median = 0. To calculate the mean, we add all values and divide by the number of observations: (1 + 0 + 0 + 1 + 0)/5 = 2/5 = 0.4. <br><br> To calculate the median, we first sort the values from smallest to largest: {0, 0, 0, 1, 1}. The median is the middle value, which is 0.",
+  random_answer_order = TRUE,
+  allow_retry = TRUE
+),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> What is a key difference between the mean and the median?"),
+    answer("The mean is more sensitive to outliers than the median.", correct = TRUE),
+    answer("The median is more sensitive to outliers than the mean."),
+    answer("The mean can only be computed for binary variables; the median can be computed for any variable."),
+    answer("The mean and the median always produce the same value; they are two names for the same statistic."),
+    post_message = "The correct answer is: the mean is more sensitive to outliers than the median. For example, if we replaced the oldest Brexit supporter in the BES survey with someone even older, the median age would remain the same (because the middle observation in the distribution would not have changed), while the mean age would increase (because the sum of all observations in the numerator would be larger). <br><br> For more information, review subsection 3.4.6 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Suppose that X is a binary variable that identifies students who voted in the last election (takes the value 1 if a student voted, and 0 otherwise). If the mean of X is 0.72, how should we interpret this value?"),
+  answer("72% of students voted in the last election.", correct = TRUE),
+  answer("72 students voted in the last election."),
+  answer("The average student voted 0.72 times in the last election."),
+  post_message = "The correct answer is: 72% of students voted in the last election. Recall that when a variable is binary, the mean should be interpreted as the proportion of observations that have the characteristic identified by the variable (voted in the last election, in this case).<br><br>For more information on how to interpret the mean of binary variables, review subsection 1.8.2 of DSS.",
+  random_answer_order = TRUE,
+  allow_retry = TRUE
+),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Let's continue to work with the same variable. If X is binary and the mean of X is 0.72, what is the median of X?"),
+  answer("1", correct = TRUE),
+  answer("0"),
+  answer("0.72"),
+  answer("It is impossible to know with the information given."),
+  post_message = "The correct answer is: 1. Recall that the median is the middle value once the observations are sorted from smallest to largest. Since the mean of this binary variable is 0.72, 72% of the observations are equal to 1. Therefore, more than half of the observations are 1, implying that the middle observation in the distribution must also be 1.<br><br>For more information on the interpretation of the mean and median, review subsection 1.8.2 of DSS.",
+  random_answer_order = TRUE,
+  allow_retry = TRUE
+),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> If X is a binary variable, which of the following statements are true?"),
+    answer("The mean of X should be expressed as a percentage (after multiplying the output by 100).", correct = TRUE),
+    answer("The mean of X represents the proportion of observations equal to 1.", correct = TRUE),
+    answer("The median of X must always equal 0.5.", correct = FALSE),
+    answer("The median of X can only take the value 0 or 1.", correct = TRUE),
+    post_message = "The correct answers are: the mean of X should be expressed as a percentage (after multiplying the output by 100); the mean of X represents the proportion of observations equal to 1; the median of X can only take the value 0 or 1.",
+    random_answer_order = FALSE,
+    allow_retry = TRUE
+  ),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> If X is a non-binary variable measured in miles, which of the following statements are true?"),
+    answer("The mean of X should be expressed as a percentage (after multiplying the output by 100).", correct = FALSE),
+    answer("The mean of X is measured in miles.", correct = TRUE),
+    answer("The mean of X is measured in miles (after multiplying the output by 100).", correct = FALSE),
+    answer("The median of X is measured in miles.", correct = TRUE),
+    answer("The median of X should be expressed as a percentage (after multiplying the output by 100).", correct = FALSE),
+    answer("The standard deviation of X is measured in miles.", correct = TRUE),
+    answer("The standard deviation of X is measured in miles².", correct = FALSE),
+    answer("The variance of X is measured in miles.", correct = FALSE),
+    answer("The variance of X is measured in miles².", correct = TRUE),
+    post_message = "The correct answers are: the mean of X is measured in miles; the median of X is measured in miles; the standard deviation of X is measured in miles; and the variance of X is measured in miles². <br><br>For more information, review subsection 3.4.6 of DSS.",
+    random_answer_order = FALSE,
+    allow_retry = TRUE
+  ),
+
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> What does the standard deviation of a variable roughly measure?"),
+    answer("The average distance between the observations and the mean.", correct = TRUE),
+    answer("The distance between the maximum and minimum values of the variable."),
+    answer("The proportion of observations that fall within one unit of the mean."),
+    post_message = "The correct answer is: the average distance between the observations and the mean.<br><br> Note that this is only a rough interpretation — technically, the standard deviation is the square root of the average *squared* distances, not the average absolute distances. <br><br> For more information, review subsection 3.4.6 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> Which of the following statements are true?"),
+    answer("The larger the standard deviation, the flatter the distribution.", correct = TRUE),
+    answer("The larger the standard deviation, the farther the observations are, on average, from the mean.", correct = TRUE),
+    answer("The larger the standard deviation, the taller the distribution.", correct = FALSE),
+    answer("The larger the standard deviation, the closer the observations are, on average, to the mean.", correct = FALSE),
+    post_message = "The correct answers are: the larger the standard deviation, the flatter the distribution; and the larger the standard deviation, the farther the observations are, on average, from the mean. Recall that the standard deviation measures how spread out the observations are around the mean.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+    ),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> If the standard deviation of X is 25 miles, then the variance of X is:"),
+    answer("625 miles²", correct = TRUE),
+    answer("5 miles"),
+    answer("625 miles"),
+    answer("5 miles²"),
+    answer("It is impossible to know with the information given."),
+    post_message = "The correct answer is: 625 miles². This is because the variance of X equals the standard deviation of X squared. <br><br> For more information, review subsection 3.4.6 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> What does the function `na.omit()` do?"),
+    answer("It removes from the dataframe all observations that contain at least one missing value (NA), a process known as listwise deletion.", correct = TRUE),
+    answer("It replaces all missing values (NAs) in the dataframe with zeros."),
+    answer("It removes from the dataframe all variables that contain at least one missing value."),
+    answer("It counts the number of missing values in each variable."),
+    post_message = "The correct answer is: it removes from the dataframe all observations that contain at least one missing value (NA), a process known as listwise deletion. <br><br> For more information, review subsection 3.4.1 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Which of the following R functions creates the table of proportions of a variable?"),
+    answer("`table(data$variable)`"),
+    answer("`prop.table(table(data$variable))`", correct = TRUE),
+    answer("`prop(data$variable)`"),
+    answer("`prop.table(data$variable)`"),
+    post_message = "The correct answer is: `prop.table(table(data$variable))`. To convert a table of frequencies into a table of proportions, we wrap it with `prop.table()`: `prop.table(table(data$variable))`. <br><br> For more information, review subsections 3.3.1 and 3.3.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Which of the following correctly computes the median of a variable called *age* in a dataframe stored in an object called `bes1`, for only the observations where *leave* equals 0?"),
+    answer("`median(bes1$age[bes1$leave==0])`", correct = TRUE),
+    answer("`median(bes1$age[bes1$leave=0])`", message = "The operator we use to set the logical test is `==`, not `=`."),
+    answer("`median(age[leave==0])`", message = "This code does not identify the object where the variables are stored."),
+    answer("`median(bes1$leave[bes1$age==0])`", message = "This would compute the median of *leave* for observations where *age* equals 0, not the other way around."),
+    post_message = "The correct answer is: `median(bes1$age[bes1$leave==0])`. The `[]` operator subsets the variable `bes1$age` to include only the observations for which `bes1$leave` equals 0 (Brexit non-supporters), and then `median()` computes the median of those observations. Remember: `==` is the relational operator for logical tests, not `=`. <br><br> For more information, review subsections 2.5.3 and 3.4.6 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> Which of the following pieces of R code would compute the standard deviation of *age* for all respondents in the `bes1` dataframe?"),
+    answer("`sd(bes1$age)`", correct = TRUE),
+    answer("`sqrt(var(bes1$age))`", correct = TRUE),
+    answer("`var(bes1$age)`", message = "This computes the *variance*, not the standard deviation, of age."),
+    answer("`mean(bes1$age)`", message = "This computes the *mean*, not the standard deviation, of age."),
+    answer("`sd(bes1, age)`", message = "This is not valid R syntax. The `sd()` function takes the code identifying the variable as its argument, not the dataframe and variable as separate arguments."),
+    post_message = "The correct answers are: `sd(bes1$age)` and `sqrt(var(bes1$age))`. The first computes the standard deviation of the variable *age* for all observations in the `bes1` dataframe, the second computes the square root of the variance of the variable *age* for all observations in the `bes1` dataframe, which is equivalent to the standard deviation. <br><br> For more information, review subsection 3.4.6 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  )
+)
+```
+
+
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Typing and Running Code </span></font>
+
+<div class="borderexample"><b>Instructions</b>
+<ul>
+  <li>Type code in the <i>R code</i> window</li>
+  <li>Click green <i>Run Code</i> to test</li>
+  <li>Click blue <i>Submit Answer</i> when satisfied</li>
+  <li>Use white <i>Hint</i> button if needed</li>
+</ul>
+
+<b>Navigation:</b>
+<ul>
+  <li>To delete all your answers and restart the tutorial: click <i>Start Over</i> in left menu</li>
+  <li>Otherwise, progress is automatically saved</li>
+</ul>
+</div>
+
+<br><b>For the next few questions, we are going to work with the BES dataset from Chapter 3 of DSS. Below is a description of the variables in this dataset, where the unit of observation is survey respondents.</b>
+
+<table>
+  <tr> 
+    <th> variable </th>
+    <th> description </th>
+  </tr>
+  <tr>
+    <td> *vote* </td>
+    <td> respondent's vote intention in the EU referendum: "leave", "stay", "don't know", or "won't vote" </td>
+  </tr>
+  <tr>  
+    <td>*leave* </td>
+    <td> identifies leave voters: 1 = intends to vote "leave" or 0 = intends to vote "stay"; NA = either "don't know" or "won't vote" </td>
+  </tr>
+  <tr>  
+    <td> *education* </td>
+    <td> respondent's highest educational qualification: 1 = no qualifications, 2 = GCSE, 3 = GCE A level, 4 = undergraduate degree, 5 = postgraduate degree; NA = no answer </td>
+  </tr>
+  <tr>
+    <td>*age* </td>
+    <td> respondent's age in years </td>
+  </tr>
+</table>
+
+<br><b>In the following exercises, we analyze the BES survey data to answer: Who supported Brexit?</b>
+
+```{r bes, echo=FALSE}
+bes <- read.csv("data/BES.csv")
+bes1 <- na.omit(bes)
+```
+
+<br> <span style=color:dodgerblue> **SETUP:** </span> **Suppose we have already set the working directory to the DSS folder and run the code below to read and store the BES dataset.**
+
+```{r bes_FALSE, eval=FALSE, echo=TRUE}
+bes <- read.csv("BES.csv") # reads and stores data
+```
+
+**Go ahead and run the following code to look at the first six observations:**
+
+```{r ch3_topic2_r_setup, exercise=TRUE, exercise.setup = "bes"}
+head(bes)
+```
+
+<br> <span style=color:dodgerblue> **Q1 - Table of Frequencies:** </span> **Use the `table()` function to create the table of frequencies of the variable *vote*.**
+
+```{r ch3_topic2_r1, exercise=TRUE, exercise.setup = "bes"}
+
+```
+
+<div id="ch3_topic2_r1-hint">
+Hint: `vote` is a variable in the dataframe stored in the object `bes`. Use the `$` character to access it. For more information, review subsection 3.3.1 of DSS.
+</div>
+
+```{r ch3_topic2_r1-solution}
+table(bes$vote)
+```
+
+```{r ch3_topic2_r1-check}
+grade_code("<br><br> For more information on the `table()` function, review subsection 3.3.1 of DSS.")
+```
+
+```{r ch3_topic2_r1_inter}
+quiz(caption="",
+  question("<span style=color:dodgerblue> Q1 - Interpretation:</span> Based on the table of frequencies of *vote*, how many respondents in the BES survey intended to vote 'leave'?",
+    answer("13,692", correct = TRUE),
+    answer("14,352"),
+    answer("2,314"),
+    answer("537"),
+    post_message = "The correct answer is: 13,692 respondents intended to vote 'leave'. The table of frequencies shows that: 2,314 were undecided ('don't know'), 13,692 intended to vote 'leave', 14,352 intended to vote 'stay', and 537 did not intend to vote. The sum of all frequencies equals n = 30,895. <br><br> For more information, review subsection 3.3.1 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  )
+)
+```
+
+<br> <span style=color:dodgerblue> **Q2 - Table of Proportions:** </span> **Use `prop.table()` to create the table of proportions of the variable *vote*.**
+
+```{r ch3_topic2_r2, exercise=TRUE, exercise.setup = "bes"}
+
+```
+
+<div id="ch3_topic2_r2-hint">
+Hint: `prop.table()` converts a table of frequencies into a table of proportions. The only required argument is the output of `table()`. For more information, review subsection 3.3.2 of DSS.
+</div>
+
+```{r ch3_topic2_r2-solution}
+prop.table(table(bes$vote))
+```
+
+```{r ch3_topic2_r2-check}
+grade_code("<br><br> For more information on `prop.table()`, review subsection 3.3.2 of DSS.")
+```
+
+```{r ch3_topic2_r2_inter}
+quiz(caption="",
+  question("<span style=color:dodgerblue> Q2 - Interpretation:</span> Assuming the BES sample was representative of all eligible UK voters, what proportion of eligible voters intended to vote 'leave' at the time of the survey?",
+    answer("About 44%", correct = TRUE),
+    answer("About 46%"),
+    answer("About 7%"),
+    answer("About 52%"),
+    post_message = "The correct answer is: about 44% of eligible voters intended to vote 'leave' (0.44318 × 100 ≈ 44%). Note that about 46% intended to vote 'stay', more than 7% were undecided, and close to 2% did not intend to vote. At the time of the survey, a slightly higher proportion intended to vote 'stay', but the gap was smaller than the proportion of undecided voters. <br><br> For more information, review subsection 3.3.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  )
+)
+```
+
+<br> <span style=color:dodgerblue> **Q3 - Removing Missing Values:** </span> **Use the `na.omit()` function to remove all observations with missing values from the `bes` dataframe, and store the resulting dataframe in a new object called `bes1`.**
+
+```{r ch3_topic2_r3, exercise=TRUE, exercise.setup = "bes"}
+
+```
+
+<div id="ch3_topic2_r3-hint">
+Hint: `na.omit()` takes the name of the object where the dataframe is stored as its only required argument and returns a new dataframe with all observations containing at least one NA removed. Store the result using `<-`. For more information, review subsection 3.4.1 of DSS.
+</div>
+
+```{r ch3_topic2_r3-solution}
+bes1 <- na.omit(bes)
+```
+
+```{r ch3_topic2_r3-check}
+grade_code("<br><br> For more information on `na.omit()`, review subsection 3.4.1 of DSS.")
+```
+
+```{r bes2, echo=FALSE}
+bes <- read.csv("data/BES.csv")
+bes1 <- na.omit(bes)
+```
+
+<br> <span style=color:dodgerblue> **Q4 - Checking the Number of Observations Removed:** </span> **Use the `dim()` function to check the dimensions of both the original dataframe `bes` and the new dataframe `bes1`. How many observations were removed?**
+
+```{r ch3_topic2_r4, exercise=TRUE, exercise.setup = "bes2"}
+
+```
+
+<div id="ch3_topic2_r4-hint">
+Hint: Run `dim()` on both `bes` and `bes1`. The number of observations removed equals the difference in the number of rows (the first number returned by `dim()`). For more information, review subsection 3.4.1 of DSS.
+</div>
+
+```{r ch3_topic2_r4-solution}
+dim(bes)
+dim(bes1)
+```
+
+```{r ch3_topic2_r4-check}
+grade_code("<br><br> The original dataframe `bes` has 30,895 observations, and the new dataframe `bes1` has 25,097 observations. So, 5,798 observations were removed (30,895 - 25,097 = 5,798), which is close to 19% of the original observations. This is a large proportion! For more information, review subsection 3.4.1 of DSS.")
+```
+
+```{r ch3_topic2_r4_inter}
+quiz(caption="",
+  question("<span style=color:dodgerblue> Q4 - Interpretation:</span> About what percentage of the original BES observations were removed by `na.omit()`?",
+    answer("About 19%", correct = TRUE),
+    answer("About 2%"),
+    answer("About 50%"),
+    answer("About 5%"),
+    post_message = "The correct answer is: about 19%. Applying listwise deletion reduced the dataframe from 30,895 to 25,097 observations. In other words, 5,798 observations were removed (30,895 − 25,097 = 5,798), and 5,798/30,895 ≈ 0.19, or about 19%. This is quite a large proportion, which underscores one of the major limitations of listwise deletion. <br><br> For more information, review subsection 3.4.1 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  )
+)
+```
+
+<br> <span style=color:dodgerblue> **Q5 - Two-Way Table of Proportions:** </span> **Using the dataframe `bes1` (with NAs removed), create a two-way table of proportions of *leave* and *education* with `margin=2` to examine the proportion of Brexit supporters within each level of education.**
+
+```{r ch3_topic2_r5, exercise=TRUE, exercise.setup = "bes2"}
+
+```
+
+<div id="ch3_topic2_r5-hint">
+Hint: Use `prop.table(table(bes1$leave, bes1$education), margin=2)`. Setting `margin=2` tells R to use the second variable (education) to define the reference groups, so proportions within each column add up to 1. For more information, review subsection 3.4.3 of DSS.
+</div>
+
+```{r ch3_topic2_r5-solution}
+prop.table(table(bes1$leave, bes1$education), margin=2)
+```
+
+```{r ch3_topic2_r5-check}
+grade_code("<br><br> For more information on two-way tables of proportions, review subsection 3.4.3 of DSS.")
+```
+
+```{r ch3_topic2_r5_inter}
+quiz(caption="",
+  question("<span style=color:dodgerblue> Q5 - Interpretation:</span> Based on the two-way table of proportions with `margin=2`, we can state that in the BES sample:",
+    answer("Among respondents with no educational qualification (education=1), about 73% were Brexit supporters; among those with the highest qualification (education=5), only about 25% were.", correct = TRUE),
+    answer("Among respondents with no educational qualification (education=1), about 27% were Brexit supporters; among those with the highest qualification (education=5), about 75% were."),
+    answer("The proportion of Brexit supporters was the same across all education levels."),
+    post_message = "The correct answer is: among respondents with no educational qualification (education=1), about 73% were Brexit supporters; among those with the highest educational qualification (education=5), only about 25% were.<br><br> For more information, review subsection 3.4.3 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+  
+question("<span style=color:dodgerblue> Q5 - Conclusion: </span> What can we conclude from this analysis about the education levels of Brexit supporters and non-supporters among all eligible UK voters?",
+    answer("Assuming the BES sample was representative of all eligible UK voters at the time, we can infer that voters with lower levels of education were more likely to support Brexit, whereas those with higher levels of education were more likely to oppose it.", correct = TRUE),
+    answer("Assuming the BES sample was representative of all eligible UK voters at the time, we can infer that voters with lower levels of education were more likely to oppose Brexit, whereas those with higher levels of education were more likely to support it."),
+    post_message = "The correct answer is: assuming the BES sample was representative of all eligible UK voters at the time, we can infer that voters with lower levels of education were more likely to support Brexit, whereas those with higher levels of education were more likely to oppose it.Note that we always need to include the assumption that the sample is representative in our conclusion statement, because the validity of our inferences depends on it. <br><br> For more information, review section 3.3 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  )
+)
+```
+
+<br> <span style=color:dodgerblue> **Q6 - Computing the Mean with Missing Values:** </span> **Using the original `bes` dataframe (which contains NAs), compute the mean of the variable *leave* while correctly handling missing values.**
+
+```{r ch3_topic2_r6, exercise=TRUE, exercise.setup = "bes2"}
+
+```
+
+<div id="ch3_topic2_r6-hint">
+Hint: Since `leave` contains NAs, you need to use the optional argument `na.rm=TRUE` inside `mean()`. For more information, review subsection 3.4.1 of DSS.
+</div>
+
+```{r ch3_topic2_r6-solution}
+mean(bes$leave, na.rm=TRUE)
+```
+
+```{r ch3_topic2_r6-check}
+grade_code("<br><br> For more information on how to handle missing values when computing the mean, review subsection 3.4.1 of DSS.")
+```
+
+```{r ch3_topic2_r6_inter}
+quiz(caption="",
+  question("<span style=color:dodgerblue> Q6 - Interpretation:</span> How should we interpret the mean of *leave* (computed above, with NAs removed)?",
+    answer("Among the BES respondents who had already made up their minds at the time of the survey (i.e., excluding those who were undecided or did not intend to vote), about 49% were Brexit supporters.", correct = TRUE),
+    answer("Among all BES respondents, about 49% were Brexit supporters."),
+    answer("About 49% of all eligible UK voters supported Brexit."),
+    answer("The mean of *leave* cannot be interpreted because it contains missing values."),
+    post_message = "The correct answer is: among the BES respondents who had already made up their minds (excluding those who were undecided or did not intend to vote), about 49% were Brexit supporters. Why only among those who had made up their minds? Because the NAs in *leave* correspond to respondents who were undecided or did not intend to vote — and when we set `na.rm=TRUE`, we exclude those observations from the calculation. <br><br> For more information, review subsection 3.4.1 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  )
+)
+```
+
+<br> <span style=color:dodgerblue> **Q7 - Creating Histograms:** </span> **Using the `bes1` dataframe, create the histogram of the variable *age* for Brexit non-supporters (leave=0).**
+
+```{r ch3_topic2_r8, exercise=TRUE, exercise.setup = "bes2"}
+
+```
+
+<div id="ch3_topic2_r8-hint">
+Hint: Use the `hist()` function. Subset *age* to include only observations where *leave* equals 0 using `bes1$age[bes1$leave==0]`. For more information, review subsection 3.4.4 of DSS.
+</div>
+
+```{r ch3_topic2_r8-solution}
+hist(bes1$age[bes1$leave==0])
+```
+
+```{r ch3_topic2_r8-check}
+grade_code("<br><br> For more information on the `hist()` function, review subsection 3.4.4 of DSS.")
+```
+
+<br> <span style=color:dodgerblue> **Q8 - Creating Histograms:** </span> **Now using the `bes1` dataframe, create the histogram of the variable *age* for Brexit supporters (leave=1).**
+
+```{r ch3_topic2_r9, exercise=TRUE, exercise.setup = "bes2"}
+
+```
+
+```{r ch3_topic2_r9-solution}
+hist(bes1$age[bes1$leave==1])
+```
+
+```{r ch3_topic2_r9-check}
+grade_code("<br><br> For more information on the `hist()` function, review subsection 3.4.4 of DSS.")
+```
+
+```{r ch3_topic2_r8_inter}
+quiz(caption="",
+  question("<span style=color:dodgerblue> Q8 - Interpretation:</span> Comparing the two histograms above, we can state that in the BES sample:",
+  answer("Brexit supporters tended to be older than non-supporters.", correct = TRUE),
+  answer("Brexit supporters tended to be younger than non-supporters."),
+  answer("The age distributions of supporters and non-supporters 
+    were very similar."),
+  post_message = "The correct answer is: Brexit supporters tended 
+    to be older than non-supporters. The histogram of supporters 
+    is skewed to the left with the largest group between 65 and 70, 
+    while non-supporters are more uniformly distributed with the 
+    largest group between 20 and 25. <br><br> For more information, 
+    review subsection 3.4.4 of DSS.",
+  random_answer_order = TRUE,
+  allow_retry = TRUE
+  )
+)
+```
+
+
+<br> <span style=color:dodgerblue> **Q9 - Practicing Computing Descriptive Statistics:** </span> **Using the `bes1` dataframe, compute the mean, median, and standard deviation (in this order) of the variable *age* for Brexit supporters (leave=1).**
+
+```{r ch3_topic2_r7, exercise=TRUE, exercise.setup = "bes2"}
+
+```
+
+<div id="ch3_topic2_r7-hint">
+Hint: You need to subset *age* to include only the observations for which *leave* equals 1. Use `bes1$age[bes1$leave==1]` as the argument for `mean()`, `median()`, and `sd()`. For more information, review subsection 3.4.6 of DSS.
+</div>
+
+```{r ch3_topic2_r7-solution}
+mean(bes1$age[bes1$leave==1])
+median(bes1$age[bes1$leave==1])
+sd(bes1$age[bes1$leave==1])
+```
+
+```{r ch3_topic2_r7-check}
+grade_code("<br><br> For more information on how to compute descriptive statistics for subsets of observations, review subsection 3.4.6 of DSS.")
+```
+
+```{r ch3_topic2_r7_inter}
+quiz(caption="",
+  question("<span style=color:dodgerblue> Q9 - Interpretation:</span> Based on the outputs above, we can state that in the BES sample:",
+    answer("The average Brexit supporter was about 55 years old; about half of supporters were 58 or younger; and the average distance between individual ages and the mean age was roughly 15 years.", correct = TRUE),
+    answer("The average Brexit supporter was about 47 years old; about half of supporters were 48 or younger; and the average distance between individual ages and the mean age was roughly 17 years."),
+    answer("The average Brexit supporter was about 55 years old; about half of supporters were 55 or younger; and the average distance between individual ages and the mean age was roughly 55 years."),
+    post_message = "The correct answer is: the average (mean) Brexit supporter was about 55 years old; about half of supporters were 58 or younger (median = 58); and the average distance between individual ages and the mean age was roughly 15 years (standard deviation ≈ 15).<br><br> For more information, review subsection 3.4.6 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  )
+)
+```
+
+<br> <span style=color:dodgerblue> **Q10 - Computing and Comparing Means:** </span> **Using the `bes1` dataframe, compute the mean of the variable *age* for both Brexit supporters (leave=1) and non-supporters (leave=0).**
+
+```{r ch3_topic2_r10, exercise=TRUE, exercise.setup = "bes2"}
+
+```
+
+```{r ch3_topic2_r10-solution}
+mean(bes1$age[bes1$leave==1])
+mean(bes1$age[bes1$leave==0])
+```
+
+```{r ch3_topic2_r10-check}
+grade_code("<br><br> For more information on how to compute descriptive statistics for subsets of observations, review subsection 3.4.6 of DSS.")
+```
+
+```{r ch3_topic2_r10_inter}
+quiz(caption="",
+question("<span style=color:dodgerblue> Q10 - Interpretation: </span> What can we conclude from this analysis about the age of Brexit supporters and non-supporters among all eligible UK voters?",
+    answer("Assuming the BES sample was representative of all eligible UK voters, we can infer that Brexit supporters tended to be older than non-supporters.", correct = TRUE),
+    answer("Assuming the BES sample was representative of all eligible UK voters, we can infer that Brexit supporters tended to be younger than non-supporters."),
+    post_message = "The correct answer is: assuming the BES sample was representative of all eligible UK voters, we can infer that Brexit supporters tended to be older than non-supporters. Note that we always need to include the assumption that the sample is representative in our conclusion statement, because the validity of our inferences depends on it. <br><br> For more information, review section 3.3 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+)
+  )
+```
+
+
+## <span style=color:dodgerblue> 2. Exploring the Relationship Between Two Variables
+The review exercises in this topic cover:
+
+<table>
+  <tr>
+    <th> Readings </th>
+    <th> Key Concepts and Notation </th>
+    <th> R Functions and Operators </th>
+  </tr>
+  <tr>
+    <td> 3.5–3.5.2 </td>
+    <td> scatter plot, correlation coefficient, direction and strength of linear association </td>
+    <td> plot(), abline(), cor() </td>
+  </tr>
+</table>
+
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Multiple Choice Questions </span></font>
+
+<div class="borderexample">
+<b>Instructions</b>
+<ul>
+  <li>Select correct answer(s) and click blue <i>Submit Answer</i></li>
+  <li>In multi-answer questions, you must select <i>ALL</i> correct statements</li>
+  <li>If incorrect, click orange <i>Try Again</i> until correct</li>
+</ul>
+
+<b>Navigation:</b>
+<ul>
+  <li>To delete all your answers and restart the tutorial: click <i>Start Over</i> in left menu</li>
+  <li>Otherwise, progress is automatically saved</li>
+</ul>
+</div>
+
+```{r echo=FALSE}
+set.seed(123)
+x <- rnorm(300, mean = 50, sd = 12)
+y <- 2 + 3*x + rnorm(300, mean=0, sd=10)
+plot(x, y, 
+     main = "",
+     xlab = "X",
+     ylab = "Y")
+```
+
+```{r ch3_topic3_mc}
+qnum <- 0
+quiz(caption="",
+     
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> What is the name of the type of graph displayed above?"),
+    answer("Histogram"),
+    answer("Scatter plot", correct = TRUE),
+    answer("Table of frequencies"),
+    answer("Density plot"),
+    post_message = "The correct answer is: scatter plot. A scatter plot is a graphical representation of the relationship between two variables, X and Y, where X is plotted along the x-axis and Y along the y-axis, and each dot represents one observation positioned according to its values of X and Y.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+       ),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> Looking at a scatter plot, we can get a sense of:"),
+  answer("The distribution of a single variable."),
+  answer("The center of the distribution of a single variable."),
+  answer("The spread of the distribution of a single variable."),
+  answer("The relationship between two variables.", correct = TRUE),
+  answer("The direction of the linear association between two variables.", correct = TRUE),
+  answer("The strength of the linear association between two variables.", correct = TRUE),
+  answer("The sign of the slope of the line of best fit", correct=TRUE),
+  answer("The range of values the two variables take, including their minimum and maximum values.", correct = TRUE),
+  post_message = "The correct answers are: the relationship between two variables, the direction and strength of their linear association, the sign of the slope of the line of best fit, and the range of values the two variables take.",
+  random_answer_order = FALSE,
+  allow_retry = TRUE
+),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> In the scatter plot above:"),
+  answer("The direction of the linear association between the two variables is positive.", correct = TRUE),
+  answer("The direction of the linear association between the two variables is negative."),
+  answer("The linear association between  the two variables is relatively strong.", correct = TRUE),
+  answer("The linear association between  the two variables is relatively weak."),
+  post_message = "The correct answers are: the direction of the linear association between the two variables is positive and the linear association between  the two variables is relatively strong.",
+  random_answer_order = FALSE,
+  allow_retry = TRUE
+),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> The correlation coefficient between X and Y can range in value from:"),
+    answer("–1 to 1.", correct = TRUE),
+    answer("0 to 1."),
+    answer("–100 to 100."),
+    answer("It depends on the units of measurement of X and Y."),
+    post_message = "The correct answer is: –1 to 1. <br><br> For more information, review subsection 3.5.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> Which of the following statements are true?"),
+  answer("The sign of the correlation coefficient reflects the direction of the linear association.", correct=TRUE),
+  answer("If the slope of the line of best fit is positive, then cor(X,Y) > 0.", correct=TRUE),
+  answer("If the slope of the line of best fit is negative, then cor(X,Y) < 0.", correct=TRUE),
+  answer("The absolute value of the correlation coefficient reflects the strength of the linear association.", correct=TRUE),
+  answer("If the linear association between X and Y is perfect, then either cor(X,Y) = 1 or cor(X,Y) = -1.", correct=TRUE),
+  answer("If there is no linear association between X and Y, then cor(X,Y) = 0.", correct=TRUE),
+  answer("The closer |cor(X,Y)| is to 1, the stronger the linear association between X and Y.", correct=TRUE),
+post_message = "All answers are correct. <br><br> For more information, review subsection 3.5.2 of DSS.",
+    random_answer_order = FALSE,
+    allow_retry = TRUE
+  ),
+  
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Given what we observe in the scatter plot above, we would expect:"),
+  answer("cor(X,Y) > 0 and |cor(X,Y)| to be closer to 1 than to O", correct = TRUE),
+  answer("cor(X,Y) < 0 and |cor(X,Y)| to be closer to 1 than to O", message="The slope of the line of best fit is positive so the correlation is positive, not negative."),
+  answer("cor(X,Y) > 0 and |cor(X,Y)| to be closer to 0 than to 1", message="The dots are closely clustered around the line of best fit, so the 
+         the linear association between two variables is relatively strong, not weak"),
+  post_message = "The correct answer is: cor(X,Y) > 0 and |cor(X,Y)| to be closer to 1 than to O.",
+  random_answer_order = FALSE,
+  allow_retry = TRUE
+),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Given what we observe in the scatter plot above, we could infer that:"),
+  answer("Higher values of X are typically associated with higher values of Y, on average.", correct=TRUE),
+  answer("Higher values of X are typically associated with lower values of Y, on average.", message="The relationship is positive, not negative."),
+  answer("On average, either increases in X cause increases in Y or increases in Y cause increases in X.", message="Correlation does not necessarily imply causation"),
+    answer("On average, either increases in X cause decreases in Y or increases in Y cause decreases in X.", message="Correlation does not necessarily imply causation"),
+  post_message = "Higher values of X are typically associated with higher values of Y, on average.",
+  random_answer_order = FALSE,
+  allow_retry = TRUE
+),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> Which of the following statements are true?"),
+    answer("To visualize the distribution of one variable, we can create a histogram.", correct=TRUE),
+    answer("To visualize the relationship between two variables, we can create a scatter plot.", correct = TRUE),
+    answer("To visualize the distribution of one variable, we can create a scatter plot"),
+    answer("To visualize the relationship between two variables, we can create a histogram."),
+    post_message = "The correct answers are: to visualize the distribution of one variable, we can create a histogram; to visualize the relationship between two variables, we can create a scatter plot. <br><br> For more information, review subsections 3.4.4 and 3.5.1 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+  
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Would you expect the correlation between outside temperature and heating bills to be positive or negative? Why?"),
+    answer("Negative, because higher outside temperatures are typically associated with lower heating bills.", correct = TRUE),
+    answer("Positive, because higher outside temperatures are typically associated with higher heating bills."),
+    answer("Zero, because temperature and heating bills are not related."),
+    answer("It depends on the season."),
+    post_message = "The correct answer is: negative. Higher outside temperatures are typically associated with lower heating bills, and lower outside temperatures are typically associated with higher heating bills. This means the two variables move in opposite directions relative to their means, which corresponds to a negative correlation. <br><br> For more information on the direction of correlations, review subsection 3.5.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Which correlation indicates a stronger linear association: –0.65 or 0.3?"),
+    answer("–0.65, because the absolute value of the correlation is larger.", correct = TRUE),
+    answer("0.3, because the correlation is positive."),
+    answer("They indicate an equally strong linear association because both correlations are between –1 and 1."),
+    answer("We cannot compare the strength of the linear associations without knowing the units of measurement of the variables."),
+    post_message = "The correct answer is: –0.65, because the absolute value of the correlation is larger (|–0.65| = 0.65 > |0.3| = 0.3). The strength of the linear association is determined by the absolute value of the correlation coefficient, not its sign. The range of the correlation coefficient does not depend on the units of measurement of the variables. <br><br> For more information, review subsection 3.5.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Suppose we find that the correlation between the number of churches in a city and the number of crimes is 0.7. Does this mean that more churches cause more crimes, on average, or vice versa?"),
+    answer("No, correlation does not necessarily imply causation.", correct = TRUE),
+    answer("Yes, a correlation of 0.7 is strong enough to conclude that either more churches cause more crimes or more crimes cause more churches."),
+    answer("We cannot say anything because the correlation is not equal to 1."),
+    post_message = "The correct answer is: no, correlation does not necessarily imply causation. Just because two variables have a strong linear association does not mean that changes in one cause changes in the other.
+    A third variable, such as population size, could be driving both the number of churches and the number of crimes: larger cities tend to have both more churches and more crimes. This is a classic example of a spurious correlation driven by a confounding variable. <br><br> For more information, review subsection 3.5.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Suppose we find that the correlation between shoe size and reading ability among elementary school children is 0.8. Could we infer that having bigger feet causes better reading skills, on average?"),
+    answer("No, correlation does not imply causation.", correct = TRUE),
+    answer("Yes, a correlation of 0.8 is strong enough to conclude that bigger feet cause better reading."),
+    answer("Yes, but only if we have a large enough sample size."),
+    answer("No, a correlation of 0.8 is too weak to draw any conclusions."),
+    post_message = "The correct answer is: no, correlation does not imply causation.
+    A third variable, such as age, could be driving both shoe size and reading ability: older kids tend to have both larger shoe sizes and higher reading abilities. <br><br> For more information, review subsection 3.5.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+
+  question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Which of the following is true about the correlation coefficient?"),
+    answer("cor(Y,X) = cor(X,Y).", correct = TRUE),
+    answer("A steeper line of best fit always means a higher correlation in absolute terms.", message = "What determines the strength of the linear association (the absolute value of the correlation coefficient) is how tightly the dots cluster around the line, not the slope of the line."),
+    answer("If cor(Y,X) = 0, X and Y have absolutely no relationship with each other.", message = "A correlation of zero means there is no *linear* relationship between the variables, but a nonlinear relationship (such as a parabolic one) could still exist."),
+    post_message = "The correct answer is: cor(Y,X) = cor(X,Y). Switching the order of the variables simply flips the axes of the scatter plot, but the direction and strength of the linear association remain the same. <br><br> For more information, review subsection 3.5.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> To explore the relationship between two variables, we can..."),
+    answer("Compute the two-way table of frequencies", correct = TRUE),
+    answer("Compute the two-way table of proportions", correct = TRUE),
+    answer("Create a scatter plot to visualize the relationship.", correct = TRUE),
+    answer("Compute the correlation coefficient to summarize with a number the direction and strength of the linear association between the variables.", correct = TRUE),
+    post_message = "All answers are correct.",
+    random_answer_order = FALSE,
+    allow_retry = TRUE
+  )
+)
+```
+
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Typing and Running Code </span></font>
+
+<div class="borderexample"><b>Instructions</b>
+<ul>
+  <li>Type code in the <i>R code</i> window</li>
+  <li>Click green <i>Run Code</i> to test</li>
+  <li>Click blue <i>Submit Answer</i> when satisfied</li>
+  <li>Use white <i>Hint</i> button if needed</li>
+</ul>
+
+<b>Navigation:</b>
+<ul>
+  <li>To delete all your answers and restart the tutorial: click <i>Start Over</i> in left menu</li>
+  <li>Otherwise, progress is automatically saved</li>
+</ul>
+</div>
+
+<br><b>For the next few questions, we work with the UK district-level data from Chapter 3 of DSS. Below is a description of the variables, where the unit of observation is UK districts.</b>
+
+<table>
+  <tr> 
+    <th> variable </th>
+    <th> description </th>
+  </tr>
+  <tr>
+    <td> *name* </td>
+    <td> name of the district </td>
+  </tr>
+  <tr>  
+    <td>*leave* </td>
+    <td> vote share received by the leave camp in the district (in percentages) </td>
+  </tr>
+  <tr>  
+    <td> *high_education* </td>
+    <td> proportion of district's residents with an undergraduate degree, professional qualification, or equivalent (in percentages) </td>
+  </tr>
+</table>
+
+```{r dis, echo=FALSE}
+dis <- read.csv("data/UK_districts.csv")
+dis1 <- na.omit(dis)
+```
+
+<br> <span style=color:dodgerblue> **SETUP:** </span> **Suppose we have already set the working directory and loaded the data. We have also already removed observations with missing values and stored the clean dataframe as `dis1`.**
+
+```{r dis_FALSE, eval=FALSE, echo=TRUE}
+dis <- read.csv("UK_districts.csv")
+dis1 <- na.omit(dis)
+```
+
+**Go ahead and run the following code to look at the first six observations:**
+
+```{r ch3_topic3_r_setup, exercise=TRUE, exercise.setup = "dis"}
+head(dis1)
+```
+
+<br> <span style=color:dodgerblue> **Q1 - Creating a Scatter Plot:** </span> **Use the `plot()` function to create a scatter plot of *high_education* (on the x-axis) and *leave* (on the y-axis) using the `dis1` dataframe.**
+
+```{r ch3_topic3_r1, exercise=TRUE, exercise.setup = "dis"}
+
+```
+
+<div id="ch3_topic3_r1-hint">
+Hint: `plot()` requires two arguments: the code identifying the X variable and the code identifying the Y variable (in that order), or use the named arguments `x=` and `y=`. For more information, review subsection 3.5.1 of DSS.
+</div>
+
+```{r ch3_topic3_r1-solution}
+plot(x=dis1$high_education, y=dis1$leave)
+```
+
+```{r ch3_topic3_r1-check}
+grade_code("<br><br> For more information on the `plot()` function, review subsection 3.5.1 of DSS.")
+```
+
+```{r ch3_topic3_r1_inter}
+quiz(caption="",
+  question("<span style=color:dodgerblue> Q1 - Interpretation - A MULTI-ANSWER QUESTION:</span> Based on the scatter plot of *high_education* and *leave*, which of the following statements are correct?",
+    answer("The linear association is negative.", correct = TRUE),
+    answer("The linear association is positive."),
+    answer("The linear association is relatively strong.", correct = TRUE),
+    answer("The linear association is relatively weak."),
+    post_message = "The correct answers are: the linear association is negative (the slope of the line of best fit is negative, meaning districts with higher proportions of highly educated residents tended to have lower Brexit vote shares) and relatively strong (the dots cluster fairly tightly around the line of best fit). <br><br> For more information, review subsection 3.5.1 of DSS.",
+    random_answer_order = FALSE,
+    allow_retry = TRUE
+  )
+)
+```
+
+```{r dis2, echo=FALSE}
+dis <- read.csv("data/UK_districts.csv")
+dis1 <- na.omit(dis)
+```
+
+<br> <span style=color:dodgerblue> **Q2 - Computing the Correlation:** </span> **Compute the correlation coefficient between *high_education* and *leave* using the `dis1` dataframe.**
+
+```{r ch3_topic3_r3, exercise=TRUE, exercise.setup = "dis2"}
+
+```
+
+<div id="ch3_topic3_r3-hint">
+Hint: Use `cor()` with the two variables as arguments (in either order). For more information, review subsection 3.5.2 of DSS.
+</div>
+
+```{r ch3_topic3_r3-solution}
+cor(dis1$high_education, dis1$leave)
+```
+
+```{r ch3_topic3_r3-check}
+grade_code("<br><br> For more information on `cor()`, review subsection 3.5.2 of DSS.")
+```
+
+```{r ch3_topic3_r3_inter}
+quiz(caption="",
+  question("<span style=color:dodgerblue> Q2 - Interpretation - A MULTI-ANSWER QUESTION:</span> Does the sign and absolute value of the correlation between *high_education* and *leave* make sense given what we observed in their scatter plot?",
+    answer("Yes, it makes sense that cor(high_education, leave) < 0 because in the scatter plot the slope of the line of best fit is negative, indicating a negative linear association.", correct = TRUE),
+    answer("Yes, it makes sense that cor(high_education, leave) < 0 because in the scatter plot the dots cluster fairly tightly around the line of best fit, indicating a strong linear association.", message="The sign of the correlation coefficient reflects the direction of the linear association, not the strength."),
+    answer("Yes, it makes sense that |cor(high_education, leave)| is closer to 1 than to 0 because in the scatter plot the slope of the line of best fit is negative, indicating a negative linear association.", message = "The absolute value of the correlation coefficient reflects the strength of the linear association, not the direction."),
+    answer("Yes, it makes sense that |cor(high_education, leave)| is closer to 1 than to 0 because in the scatter plot the dots cluster fairly tightly around the line of best fit, indicating a strong linear association.", correct = TRUE),
+    post_message = "The correct answers are: (1) yes, it makes sense that cor(high_education, leave) < 0 because in the scatter plot the slope of the line of best fit is negative, indicating a negative linear association and (2) yes, it makes sense that |cor(high_education, leave)| is closer to 1 than to 0 because in the scatter plot the dots cluster fairly tightly around the line of best fit, indicating a strong linear association. <br><br> For more information, review subsection 3.5.2 of DSS.",
+    random_answer_order = FALSE,
+    allow_retry = TRUE
+  ),
+  
+  question("<span style=color:dodgerblue> Q3 - Conclusion:</span> Which of the following correctly states the conclusion from this analysis?",
+    answer("We can conclude that, at the district level, a higher proportion of highly educated residents was typically associated with a lower vote share for Brexit.", correct = TRUE),
+    answer("We can conclude that, at the district level, a higher proportion of highly educated residents was typically associated with a higher vote share for Brexit."),
+    answer("We can conclude that higher education caused lower Brexit support.", message = "Correlation does not necessarily imply causation."),
+    answer("We can conclude that higher education caused higher Brexit support.", message = "Correlation does not necessarily imply causation."),
+    post_message = "The correct answer is: We can conclude that, at the district level, a higher proportion of highly educated residents was typically associated with a lower vote share for Brexit. We cannot conclude from this analysis that higher education caused lower Brexit support. A third variable, such as the local economy, could be driving both.<br><br> For more information, review subsection 3.5.2 of DSS.",
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  )
+)
+```
+
+## <span style=color:dodgerblue> GENERATE PROGRESS REPORT
+You have reached the end of this tutorial. Congratulations!
+
+To generate a progress report of your work, enter your name below and click the *Generate Report* button. The report will appear on the screen. Take a screenshot, if your instructor asks for proof of completion.
+
+```{r context="server"}
+shiny::observeEvent(
+  input$get_score, 
+  {
+    objs2 = learnr:::get_tutorial_state()
+    
+    # Number of correct questions/exercises
+    num_correct <- 
+      # Access the $correct sublist item in each list item
+        lapply(objs2, purrr::pluck, "correct") |>
+           # make it a vector containing: TRUE and FALSE and NAs
+           # NA is appearing for list items which don't have
+           # a $correct subitem
+                unlist() |> 
+           # Taking the sum of a logical Vector returns the number of TRUEs
+                sum(na.rm=TRUE)
+    
+    # Number of questions/exercises answered
+    num_answered <- 
+      # 1. Access $type in each list item and make it a vector of types
+      lapply(objs2, purrr::pluck, "type") |> unlist()
+    
+      # 2. Count the number of "question" and "exercise" in that vector
+    num_answered <- num_answered[num_answered == "question" |
+                                               num_answered =="exercise"] |> length()
+    
+    output$chapter = shiny::renderText(
+      paste("PROGRESS REPORT OF: Review Exercises for", as.character(chapter_id),
+         "of Llaudet and Imai's Data Analysis for Social Science: A Friendly and Practical Introduction (Princeton University Press, 2022)"))
+    
+    output$student = shiny::renderText(
+      paste("Student Name:", input$name,""))
+    
+    output$date = shiny::renderText(
+      paste("Date and Time of Report:", as.character(Sys.time()),""))
+  
+    output$user = shiny::renderText(
+      paste("User Name:", Sys.info()[c("user")]))
+    
+    output$num_tutorial = shiny::renderText(
+      paste("Number of Exercises in Tutorial:", num_tutorial))
+    
+    output$num_answered = shiny::renderText(
+      paste("Number of Exercises Answered by Student:", num_answered,"" ))
+    
+    output$num_correct = shiny::renderText(
+      paste("Number of Exercises Answered Correctly by Student:", num_correct,""))
+    
+    output$completion_rate = shiny::renderText(
+      paste("Proportion of Exercises in Tutorial Answered by Student:",
+            round(num_answered/num_tutorial*100,0), "percent"))
+    
+    output$prop_correct_answered = shiny::renderText(
+      paste("Proportion of Exercises Answered Correctly Out of Those Answered:",
+            round(num_correct/num_answered*100,0),"percent"))
+    
+    output$prop_correct_all = shiny::renderText(
+      paste("Proportion of Exercises Answered Correctly Out of All Exercises in Tutorial:",
+            round(num_correct/num_tutorial*100,0),"percent"))
+    
+    invisible()
+  }
+)
+```
+
+```{r score, echo=FALSE}
+shiny::textInput("name", "Please Enter Your Name")
+shiny::actionButton("get_score", "Generate Report")
+shiny::br()
+shiny::br()
+shiny::br()
+shiny::textOutput("chapter")
+shiny::br()
+shiny::textOutput("student")
+shiny::textOutput("date")
+shiny::textOutput("user")
+shiny::br()
+shiny::textOutput("num_tutorial")
+shiny::textOutput("num_answered")
+shiny::textOutput("num_correct")
+shiny::br()
+shiny::textOutput("completion_rate")
+shiny::textOutput("prop_correct_answered")
+shiny::textOutput("prop_correct_all")
+shiny::br()
+shiny::br()
+```
+
+<p class="borderexample">
+<b>This tutorial is still a work in progress — I would love your feedback!</b><br><br>
+Was it helpful? Did you find anything confusing? Do you have any other comments or suggestions?<br>
+Please let me know by completing <a href="https://bit.ly/dss_feedback">this short survey</a>. (It can be submitted anonymously.)<br><br>
+<i>Thank you, and I hope you enjoyed the tutorial!</i> – Elena
+</p>
