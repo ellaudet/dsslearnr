@@ -20,10 +20,11 @@ description: "Review Exercises for Data Analysis for Social Science - CHAPTER 3.
 library(gradethis)
 library(learnr)
 tutorial_options(exercise.checker = gradethis::grade_learnr, 
-                 exercise.reveal_solution="TRUE")
+                 exercise.reveal_solution = TRUE,
+                 exercise.error.check.code = "grade_code()")
 knitr::opts_chunk$set(echo = FALSE)
 chapter_id <- "Chapter 3"
-num_tutorial <- 77
+num_tutorial <- 76
 ```
 
 <style>
@@ -65,7 +66,7 @@ This is a tutorial for readers of DSS: [Llaudet and Imai's *Data Analysis for So
 
 Review exercises are organized by chapter. Here are those for chapter 3. 
 
-The review exercises are designed to be completed *after* reading and doing the exercises in the book. They are meant to supplement, not replace, the book. In the tutorials, each chapter is divided into two to five topics, where each topic contains exercises reviewing a handful of pages that can be read in one sitting. Here is the recommended sequence: 
+The review exercises are designed to be completed *after* reading and doing the exercises in the book. They are meant to supplement, not replace, the book. In the tutorials, each chapter is divided into two or three topics, where each topic contains exercises reviewing a handful of pages that can be read in one sitting. Here is the recommended sequence: 
 
 <table>
   <tr>
@@ -171,6 +172,17 @@ question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Wha
     allow_retry = TRUE
   ),
   
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> In the context of survey research, what is the difference between *n* and *N*?"),
+  answer("*n* is the sample size and *N* is the population size.", correct = TRUE),
+  answer("*n* is the population size and *N* is the sample size."),
+  answer("*n* and *N* both refer to the sample size; *N* is used when the sample is large."),
+  answer("*n* is the number of variables and *N* is the number of observations."),
+  post_message = "The correct answer is: *n* is the sample size — the number of observations in our dataset — and *N* is the population size — the total number of units in the population we are trying to learn about. The goal of survey research is to use *n* observations to draw conclusions about the population of *N* units.
+  <br><br> For more information, review section 3.1 of DSS.",
+  random_answer_order = TRUE,
+  allow_retry = TRUE
+),
+
   question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> In the British Election Study (BES) discussed in chapter 3, researchers surveyed just under 31,000 people to infer the attitudes of more than 46 million eligible UK voters. In that study, what are *n* and *N*?"),
     answer("*n* = 31,000 and *N* = 46 million", correct = TRUE),
     answer("*n* = 46 million and *N* = 31,000"),
@@ -480,8 +492,8 @@ question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-A
     answer("The mean of X should be expressed as a percentage (after multiplying the output by 100).", correct = TRUE),
     answer("The mean of X represents the proportion of observations equal to 1.", correct = TRUE),
     answer("The median of X must always equal 0.5.", correct = FALSE),
-    answer("The median of X can only take the value 0 or 1.", correct = TRUE),
-    post_message = "The correct answers are: the mean of X should be expressed as a percentage (after multiplying the output by 100); the mean of X represents the proportion of observations equal to 1; the median of X can only take the value 0 or 1. 
+    answer("The median of X is 0 if more than half the observations equal 0, and 1 if more than half of the observations equal 1.", correct = TRUE),
+    post_message = "The correct answers are: the mean of X should be expressed as a percentage (after multiplying the output by 100); the mean of X represents the proportion of observations equal to 1; the median of X is 0 if more than half the observations equal 0, and 1 if more than half of the observations equal 1. 
     <br><br> For more information on the mean and median of a binary variable, review section 1.8 of DSS.",
     random_answer_order = FALSE,
     allow_retry = TRUE
@@ -584,7 +596,7 @@ question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Whi
 ```
 
 
-## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Typing and Running Code </span></font>
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Coding Exercises </span></font>
 
 <div class="borderexample"><b>Instructions</b>
 <ul>
@@ -633,16 +645,18 @@ bes <- read.csv("data/BES.csv")
 bes1 <- na.omit(bes)
 ```
 
-<br> <span style=color:dodgerblue> **SETUP:** </span> **Suppose we have already set the working directory to the DSS folder and run the code below to read and store the BES dataset.**
+<br> <span style=color:dodgerblue> **SETUP:** </span> **Suppose we have already set the working directory to the DSS folder and run the code below to (1) read and store the BES dataset and (2) show the first six observations.**
 
-```{r bes_FALSE, eval=FALSE, echo=TRUE}
+```{r bes_FALSE2, eval=FALSE, echo=TRUE}
 bes <- read.csv("BES.csv") # reads and stores data
 ```
 
-**Go ahead and run the following code to look at the first six observations:**
+```{r bes_render, include=FALSE}
+bes <- read.csv("data/BES.csv")
+```
 
-```{r ch3_topic2_r_setup, exercise=TRUE, exercise.setup = "bes"}
-head(bes)
+```{r bes_head, echo=TRUE}
+head(bes) # shows the first six observations
 ```
 
 <br> <span style=color:dodgerblue> **Q1 - Table of Frequencies:** </span> **Use the `table()` function to create the table of frequencies of the variable *vote*.**
@@ -1013,15 +1027,12 @@ question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Wha
        ),
 
 question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-ANSWER QUESTION:</span> Looking at a scatter plot, we can get a sense of:"),
-  answer("The distribution of a single variable."),
-  answer("The center of the distribution of a single variable."),
-  answer("The spread of the distribution of a single variable."),
   answer("The relationship between two variables.", correct = TRUE),
   answer("The direction of the linear association between two variables.", correct = TRUE),
   answer("The strength of the linear association between two variables.", correct = TRUE),
   answer("The sign of the slope of the line of best fit", correct=TRUE),
   answer("The range of values the two variables take, including their minimum and maximum values.", correct = TRUE),
-  post_message = "The correct answers are: the relationship between two variables, the direction and strength of their linear association, the sign of the slope of the line of best fit, and the range of values the two variables take. <br><br> For more information on scatter plots, review section 3.5 of DSS.",
+  post_message = "All answers are correct. <br><br> For more information on scatter plots, review section 3.5 of DSS.",
   random_answer_order = FALSE,
   allow_retry = TRUE
 ),
@@ -1031,7 +1042,7 @@ question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-A
   answer("The direction of the linear association between the two variables is negative."),
   answer("The linear association between  the two variables is relatively strong.", correct = TRUE),
   answer("The linear association between  the two variables is relatively weak."),
-  post_message = "The correct answers are: the direction of the linear association between the two variables is positive and the linear association between  the two variables is relatively strong. <br><br> For more information on scatter plots, review section 3.5 of DSS.",
+  post_message = "The correct answers are: the direction of the linear association between the two variables is positive and the linear association between the two variables is relatively strong. <br><br> For more information on scatter plots, review section 3.5 of DSS.",
   random_answer_order = FALSE,
   allow_retry = TRUE
 ),
@@ -1060,11 +1071,10 @@ post_message = "All answers are correct. <br><br> For more information on the co
   ),
   
 question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Given what we observe in the scatter plot above, we would expect:"),
-  answer("cor(X,Y) > 0 and |cor(X,Y)| to be closer to 1 than to O", correct = TRUE),
-  answer("cor(X,Y) < 0 and |cor(X,Y)| to be closer to 1 than to O", message="The slope of the line of best fit is positive so the correlation is positive, not negative."),
-  answer("cor(X,Y) > 0 and |cor(X,Y)| to be closer to 0 than to 1", message="The dots are closely clustered around the line of best fit, so the 
-         the linear association between two variables is relatively strong, not weak"),
-  post_message = "The correct answer is: cor(X,Y) > 0 and |cor(X,Y)| to be closer to 1 than to O. <br><br> For more information on the correlation coefficient, review section 3.5 of DSS.",
+  answer("cor(X,Y) > 0 and |cor(X,Y)| to be closer to 1 than to 0", correct = TRUE),
+  answer("cor(X,Y) < 0 and |cor(X,Y)| to be closer to 1 than to 0", message="The slope of the line of best fit is positive so the correlation is positive, not negative."),
+  answer("cor(X,Y) > 0 and |cor(X,Y)| to be closer to 0 than to 1", message="The dots are closely clustered around the line of best fit, so the linear association between two variables is relatively strong, not weak"),
+  post_message = "The correct answer is: cor(X,Y) > 0 and |cor(X,Y)| to be closer to 1 than to 0. <br><br> For more information on the correlation coefficient, review section 3.5 of DSS.",
   random_answer_order = FALSE,
   allow_retry = TRUE
 ),
@@ -1156,7 +1166,7 @@ question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-A
     answer("`plot(y=Y, x=X)`", correct = TRUE),
     answer("`plot(Y,X)`"),
     answer("`plot(x=X, y=Y)`", correct = TRUE),
-    answer("`plot(x=Y, y=X)`", correct = TRUE),
+    answer("`plot(x=Y, y=X)`"),
     post_message = "The correct answers are: `plot(X,Y)`, `plot(x=X,y=Y)`, and `plot(y=Y, x=X)`.
     <br><br> For more information on `plot()`, review section 3.5 of DSS.",
     random_answer_order = TRUE,
@@ -1168,14 +1178,14 @@ question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, " - A MULTI-A
     answer("`cor(Y,X)`", correct = TRUE),
     answer("`correlation(X,Y)`"),
     post_message = "The correct answers are: `cor(X,Y)` and `cor(Y,X)`.
-    <br><br> For more information on cor()`, review section 3.5 of DSS.",
+    <br><br> For more information on `cor()`, review section 3.5 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
 )
 ```
 
-## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Typing and Running Code </span></font>
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Coding Exercises </span></font>
 
 <div class="borderexample"><b>Instructions</b>
 <ul>
@@ -1218,17 +1228,20 @@ dis <- read.csv("data/UK_districts.csv")
 dis1 <- na.omit(dis)
 ```
 
-<br> <span style=color:dodgerblue> **SETUP:** </span> **Suppose we have already set the working directory and loaded the data. We have also already removed observations with missing values and stored the clean dataframe as `dis1`.**
+<br> <span style=color:dodgerblue> **SETUP:** </span> **Suppose we have already set the working directory and loaded the data. We have also already removed observations with missing values, stored the new dataframe as `dis1`, and asked R to show us the first six observations.**
 
-```{r dis_FALSE, eval=FALSE, echo=TRUE}
-dis <- read.csv("UK_districts.csv")
+```{r dis_FALSE2, eval=FALSE, echo=TRUE}
+dis <- read.csv("UK_districts.csv") # reads and stores data
+dis1 <- na.omit(dis) # removes observations with NAs and stores new dataframe
+```
+
+```{r dis_render, include=FALSE}
+dis <- read.csv("data/UK_districts.csv")
 dis1 <- na.omit(dis)
 ```
 
-**Go ahead and run the following code to look at the first six observations:**
-
-```{r ch3_topic3_r_setup, exercise=TRUE, exercise.setup = "dis"}
-head(dis1)
+```{r dis_head, echo=TRUE}
+head(dis1) # shows the first six observations
 ```
 
 <br> <span style=color:dodgerblue> **Q1 - Creating a Scatter Plot:** </span> **Use the `plot()` function to create a scatter plot of *high_education* (on the x-axis) and *leave* (on the y-axis) using the `dis1` dataframe.**
@@ -1319,27 +1332,28 @@ To generate a progress report of your work, enter your name below and click the 
 shiny::observeEvent(
   input$get_score, 
   {
-    objs2 = learnr:::get_tutorial_state()
+    objs2 <- learnr:::get_tutorial_state()
     
-    # Number of correct questions/exercises
-    num_correct <- 
-      # Access the $correct sublist item in each list item
-        lapply(objs2, purrr::pluck, "correct") |>
-           # make it a vector containing: TRUE and FALSE and NAs
-           # NA is appearing for list items which don't have
-           # a $correct subitem
-                unlist() |> 
-           # Taking the sum of a logical Vector returns the number of TRUEs
-                sum(na.rm=TRUE)
+    # Keep only the graded questions and exercises
+    scored <- Filter(
+      function(x) isTRUE(x$type %in% c("question", "exercise")),
+      objs2
+    )
     
     # Number of questions/exercises answered
-    num_answered <- 
-      # 1. Access $type in each list item and make it a vector of types
-      lapply(objs2, purrr::pluck, "type") |> unlist()
+    num_answered <- length(scored)
     
-      # 2. Count the number of "question" and "exercise" in that vector
-    num_answered <- num_answered[num_answered == "question" |
-                                               num_answered =="exercise"] |> length()
+    # Number of questions/exercises answered correctly
+    num_correct <- sum(vapply(scored, function(x) isTRUE(x$correct), logical(1)))
+    
+    # Formats a proportion as a percentage, guarding against dividing by zero
+    pct <- function(numerator, denominator) {
+      if (isTRUE(denominator > 0)) {
+        paste(round(numerator / denominator * 100, 0), "percent")
+      } else {
+        "not available yet"
+      }
+    }
     
     output$chapter = shiny::renderText(
       paste("PROGRESS REPORT OF: Review Exercises for", as.character(chapter_id),
@@ -1365,15 +1379,15 @@ shiny::observeEvent(
     
     output$completion_rate = shiny::renderText(
       paste("Proportion of Exercises in Tutorial Answered by Student:",
-            round(num_answered/num_tutorial*100,0), "percent"))
+            pct(num_answered, num_tutorial)))
     
     output$prop_correct_answered = shiny::renderText(
       paste("Proportion of Exercises Answered Correctly Out of Those Answered:",
-            round(num_correct/num_answered*100,0),"percent"))
+            pct(num_correct, num_answered)))
     
     output$prop_correct_all = shiny::renderText(
       paste("Proportion of Exercises Answered Correctly Out of All Exercises in Tutorial:",
-            round(num_correct/num_tutorial*100,0),"percent"))
+            pct(num_correct, num_tutorial)))
     
     invisible()
   }
