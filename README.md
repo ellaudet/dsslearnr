@@ -23,6 +23,9 @@ You can launch each tutorial by running its corresponding R code in RStudio. Bel
     
       learnr::run_tutorial("02-experimental", package = "dsslearnr")
 
+- **Chapter 3: Inferring Population Characteristics via Survey Research**
+
+      learnr::run_tutorial("03-population", package = "dsslearnr")
     
 Tutorials for subsequent chapters are currently in development.
 
