@@ -27,9 +27,7 @@ You can launch each tutorial by running its corresponding R code in RStudio. Bel
 
       learnr::run_tutorial("03-population", package = "dsslearnr")
     
-Tutorials for subsequent chapters are currently in development.
-
-- View the full list of available tutorials:
+Tutorials for subsequent chapters are currently in development. To view the full list of available tutorials, run:
     
       learnr::run_tutorial(package = "dsslearnr")
 
