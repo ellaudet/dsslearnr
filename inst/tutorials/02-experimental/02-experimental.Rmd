@@ -20,11 +20,11 @@ description: "Review Exercises for Data Analysis for Social Science - CHAPTER 2.
 library(gradethis)
 library(learnr)
 tutorial_options(exercise.checker = gradethis::grade_learnr, 
-                 exercise.reveal_solution="TRUE")
+                 exercise.reveal_solution = TRUE,
+                 exercise.error.check.code = "grade_code()")
 knitr::opts_chunk$set(echo = FALSE)
 chapter_id <- "Chapter 2"
 num_tutorial <- 57
-qnum <- 0
 ```
 
 <style>
@@ -62,11 +62,11 @@ th, td { padding: 15px; }
      height="250" 
      style="float: left; margin-right: 20px; margin-bottom: 10px;" />
 
-This is a tutorial for readers of DSS: [Llaudet and Imai's *Data Analysis for Social Science: A Friendly and Practical Introduction* (Princeton University Press, 2022)](https://bit.ly/dss_textbook). DSS teaches from scratch R, statistics, and the fundamentals of quantitative social science (causal inference, survey research, and predictive models). 
+This is a tutorial for readers of DSS: [Llaudet and Imai's *Data Analysis for Social Science: A Friendly and Practical Introduction* (Princeton University Press, 2022)](https://ellaudet.github.io/dss_book/). DSS teaches from scratch R, statistics, and the fundamentals of quantitative social science (causal inference, survey research, and predictive models). 
 
 Review exercises are organized by chapter. Here are those for chapter 2. 
 
-The review exercises are designed to be completed *after* reading and doing the exercises in the book. They are meant to supplement, not replace, the book. In the tutorials, each chapter is divided into two to five topics, where each topic contains exercises reviewing a handful of pages that can be read in one sitting. Here is the recommended sequence: 
+The review exercises are designed to be completed *after* reading and doing the exercises in the book. They are meant to supplement, not replace, the book. In the tutorials, each chapter is divided into two or three topics, where each topic contains exercises reviewing a handful of pages that can be read in one sitting. Here is the recommended sequence: 
 
 <table>
   <tr>
@@ -153,7 +153,7 @@ qnum <- 0
 quiz(caption="",
      
      question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> We start the book identifying the three goals of social science research. Which of these goals is chapter 2 about?"),
-    answer("Measuring a quantity of interest.", message = "Chapters 3 is about measuring."),
+    answer("Measuring a quantity of interest.", message = "Chapter 3 is about measuring."),
     answer("Explaining a quantity of interest.", correct=TRUE),
     answer("Predicting a quantity of interest.", message = "Chapter 4 is about predicting."),
     post_message = "The correct answer is: explaining a quantity of interest, also known as causal inference or estimating causal effects. <br><br> For more information, review section 1.1 of DSS and the introduction to chapter 2.",
@@ -180,13 +180,13 @@ quiz(caption="",
     allow_retry = TRUE
   ),
     question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Suppose you woke up with a headache today. 
-<ul> <li>At 9 AM the intensity of the headache was 5 (in a scale of 1 to 10, where 1 is not very intense and 10 is extremely intense). </li>
+<ul> <li>At 9 AM the intensity of the headache was 5 (on a scale of 1 to 10, where 1 is not very intense and 10 is extremely intense). </li>
 <li> By 10 AM, you decided to take an aspirin (with a glass of water).</li>
-<li> By 12 PM, you were feeling better and the intensity of the headache had gone down to 2 (in the same scale of 1 to 10). </li></ul>
+<li> By 12 PM, you were feeling better and the intensity of the headache had gone down to 2 (on the same scale of 1 to 10). </li></ul>
 
 Given this setup, could we estimate the effect that the aspirin had on your level of headache?"),
     answer("No, we have no idea whether the 3-level reduction in the intensity of your headache was due to the aspirin, the water that was consumed with the aspirin (perhaps the headache was due to dehydration), the passing of time, or a combination of the above.", correct = TRUE),
-    answer("Yes, we can estimate that the aspirin reduced the level of intensity of your headache by three levels, by decreasing it from 5 to 2 (in a scale of 1 to 10)."),
+    answer("Yes, we can estimate that the aspirin reduced the level of intensity of your headache by three levels, by decreasing it from 5 to 2 (on a scale of 1 to 10)."),
     post_message = "In this scenario, we get to observe the intensity of your headache at 12 PM after having taken an aspirin and a glass of water at 10 AM. This is what is known as the potential outcome under the treatment condition.<br><br> We do not get to observe, however, the intensity of your headache at 12 PM after only having a glass of water at 10 AM, without the aspirin. This is what is known as the potential outcome under the control condition.<br><br>To be able to measure the causal effect of the aspirin on your level of headache, we would have to observe both potential outcomes so that we could compare them. Unfortunately, we only observe the potential outcome that occurs in reality (the factual outcome), and we never get to observe the potential outcome under the opposite condition (treatment or control) as the one received in reality (the counterfactual outcome). As a result, we cannot compute causal effects at the individual level.<br><br> For information on individual causal effects, review section 2.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -207,13 +207,13 @@ Given this setup, could we estimate the effect that the aspirin had on your leve
 </table> 
 
 If time machines existed and we could indeed observe both potential outcomes, then what would you say was the effect of taking the aspirin on your level of headache?"),
-    answer("The aspirin would have decreased my level of headache by 2 levels (in a scale from 1 to 10)", correct = TRUE),
-    answer("The aspirin would have decreased my level of headache by 3 levels (in a scale from 1 to 10)"),
-    answer("The aspirin would have increased my level of headache by 2 levels (in a scale from 1 to 10)"),
+    answer("The aspirin would have decreased my level of headache by 2 levels (on a scale from 1 to 10)", correct = TRUE),
+    answer("The aspirin would have decreased my level of headache by 3 levels (on a scale from 1 to 10)"),
+    answer("The aspirin would have increased my level of headache by 2 levels (on a scale from 1 to 10)"),
     answer("It is impossible to know with the information given"),
     post_message = "If we could observe both potential outcomes above, then we could measure the causal effect of the aspirin on your level of headache by using this formula:
 <br><br>level of headache after taking the aspirin - level of headache after NOT taking the aspirin <br><br> 2 - 4 = -2 <br><br>
-The aspirin would have <em>decreased</em> your level of headache by 2 levels (in a scale from 1 to 10). (Notice that it is a decrease because the treatment effect would have a negative sign.)<br><br> For information on individual causal effects, review section 2.3 of DSS.",
+The aspirin would have <em>decreased</em> your level of headache by 2 levels (on a scale from 1 to 10). (Notice that it is a decrease because the treatment effect would have a negative sign.)<br><br> For information on individual causal effects, review section 2.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -260,20 +260,20 @@ If time machines existed and we could indeed observe both potential outcomes for
            </li> <li> decreased the level of headache by 2 levels for individual 2
            </li> <li> had no effect on the level of headache for individual 3
            </li> <li> decreased the level of headache by 1 level for individual 4
-           </li> </ul>", message = ""),
+           </li> </ul>"),
     answer("<ul> <li> increased the level of headache by 1 level for individual 1
            </li> <li> increased the level of headache by 2 levels for individual 2
            </li> <li> had no effect on the level of headache for individual 3
            </li> <li> decreased the level of headache by 1 level for individual 4
-           </li> </ul>", message = ""),
+           </li> </ul>"),
     answer("<ul> <li> increased the level of headache by 1 level for individual 1
            </li> <li> increased the level of headache by 2 levels for individual 2
            </li> <li> had no effect on the level of headache for individual 3
            </li> <li> increased the level of headache by 1 level for individual 4
-           </li> </ul>", message = ""),
+           </li> </ul>"),
     post_message = "If we could observe both potential outcomes, then we could measure the causal effect of the aspirin on the level of headache for each individual by using this formula:
 <br><br>level of headache after taking the aspirin - level of headache after NOT taking the aspirin <br><br> 
-So, the individual casual effects would be as shown in the last column of the table below:
+So, the individual causal effects would be as shown in the last column of the table below:
   <table>
   <tr>
     <td></td>
@@ -383,9 +383,9 @@ And, we could conclude that the aspirin:
     answer("By conducting a randomized experiment.", correct = TRUE),
     answer("By conducting a randomized controlled trial (RCT).", correct = TRUE),
     answer("By collecting observational data.", 
-           message = "Observational data are data collected about naturally occurring events; where individuals often get to choose whether to take the treatment. Under this circumstances, the treatment and control groups are not likely to be comparable."),
+           message = "Observational data are data collected about naturally occurring events; where individuals often get to choose whether to take the treatment. Under these circumstances, the treatment and control groups are not likely to be comparable."),
     answer("By allowing individuals to choose whether to take the treatment.", 
-           message = "Under this circumstances, the treatment and control groups are not likely to be comparable."),
+           message = "Under these circumstances, the treatment and control groups are not likely to be comparable."),
     post_message = "There are three correct answers: (1) by deciding who takes the treatment and who doesn't through a random process such as the flip of a coin, and (2) by conducting a randomized experiment, and (3) by conducting a randomized controlled trial (RCT). (They all mean the same thing.)<br><br>
     For an explanation, review section 2.4 of DSS.",
     random_answer_order = TRUE,
@@ -398,7 +398,7 @@ And, we could conclude that the aspirin:
     answer("When treatment and control groups were comparable before the administration of the treatment.", correct = TRUE),
     answer("When the participants in the study were selected from the population through a random process (also known as random sampling).", message="Random sampling has nothing to do with making treatment and control groups comparable."),
     post_message = "There are four correct answers here: (1) When treatment and control groups were comparable before the administration of the treatment,
-    (2) When we are analyzing experimental data, (3) When we are analyzing data from a randomized experiment, and (4) When treatment is assigned at random (also known as random treatment assignment). <br><br> The first answer identifies the key condition that must be met for the difference-in-means estimator to produce valid causal estimates, and the last three answers all describe the same approach (conducting a randomized experiment), which is the best way of ensuring that the condition is satified. <br><br> Note that random sampling has nothing to do with making treatment and control groups comparable. <br><br> When treatment and control groups are NOT comparable, the factual outcome of one group would NOT be a good approximation for the counterfactual outcome of the other, and thus the approximations used in the estimation process would be incorrect, and the difference-in-means estimator would provide an incorrect estimate. <br><br>
+    (2) When we are analyzing experimental data, (3) When we are analyzing data from a randomized experiment, and (4) When treatment is assigned at random (also known as random treatment assignment). <br><br> The first answer identifies the key condition that must be met for the difference-in-means estimator to produce valid causal estimates, and the last three answers all describe the same approach (conducting a randomized experiment), which is the best way of ensuring that the condition is satisfied. <br><br> Note that random sampling has nothing to do with making treatment and control groups comparable. <br><br> When treatment and control groups are NOT comparable, the factual outcome of one group would NOT be a good approximation for the counterfactual outcome of the other, and thus the approximations used in the estimation process would be incorrect, and the difference-in-means estimator would provide an incorrect estimate. <br><br>
     For an explanation, review section 2.4 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -419,6 +419,18 @@ For information on the difference-in-means estimator, review subsection 2.4.1 of
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
+
+question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Suppose we compute the difference-in-means estimator and we obtain a negative value. What does this tell us?"),
+  answer("We estimate that, on average, the treatment decreases the outcome variable.", correct = TRUE),
+  answer("We estimate that, on average, the treatment increases the outcome variable."),
+  answer("The estimate is invalid and we should switch the order of subtraction."),
+  answer("The treatment and control groups are not comparable."),
+  post_message = "The correct answer is: we estimate that, on average, the treatment decreases the outcome variable. The sign of the difference-in-means estimator tells us the direction of the estimated effect. A negative value means the average outcome in the treatment group is lower than in the control group.
+  <br><br> For more information, review subsection 2.4.1 of DSS.",
+  random_answer_order = TRUE,
+  allow_retry = TRUE
+),
+
 question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Suppose we had 600 volunteers for a study and all of them complained of having a headache (of various intensities), what would be the best way of deciding who should take an aspirin if we wanted to estimate the average causal effect of taking an aspirin on the intensity of a headache?"),
     answer("We should decide who takes an aspirin through a random process such as a flip of a coin.", correct = TRUE),
     answer("We should give the aspirin to the volunteers who are suffering the least intense headaches.", 
@@ -437,7 +449,7 @@ question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Sup
     answer("average level of headache (after a few hours) of the individuals who were randomly assigned to take the aspirin -  average level of headache (after a few hours) of the individuals who were randomly assigned to not take the aspirin", correct = TRUE),
     answer("average level of headache (after a few hours) of the individuals who were randomly assigned to not take the aspirin - average level of headache (after a few hours) of the individuals who were randomly assigned to take the aspirin", message = "Recall that the difference-in-means estimator is: average outcome for the treatment group - average outcome for the control group, not the other way around."),
     answer("average level of headache prior to taking the aspirin of the individuals who were randomly assigned to take the aspirin - average level of headache (after a few hours) of the individuals who were randomly assigned to not take the aspirin ", message = "This would measure the average change in level of headache for those in the treatment group, not the estimated average treatment effect."),
-    answer("average level of headache prior to taking the aspirin of the individuals who were randomly assigned to take the aspirin - average level of headache prior to taking the aspirin of the individuals who were randomly assigned to not take the aspirin ", message = "If the sample size is large enough and randomization worked, this difference should always be approximately zero since randomization should have made the treatment and control group comparable in all pre-treatment characteristics."),
+    answer("average level of headache prior to taking the aspirin of the individuals who were randomly assigned to take the aspirin - average level of headache prior to taking the aspirin of the individuals who were randomly assigned to not take the aspirin ", message = "If the sample size is large enough, this difference should be approximately zero since randomization should have made the treatment and control groups comparable in all pre-treatment characteristics."),
     post_message = "The correct answer is: average level of headache (after a few hours) of the individuals who were randomly assigned to take the aspirin -  average level of headache (after a few hours) of the individuals who were randomly assigned to not take the aspirin <br><br>
     For information on the difference-in-means estimator, review subsection 2.4.1 of DSS.",
     random_answer_order = TRUE,
@@ -460,7 +472,6 @@ The review exercises in this topic cover:
     <td> 2.5-2.7 </td>
     <td> percentages vs. percentage points </td>
     <td> ==, ifelse(), [] </td>
-  </tr>
   </tr>
 </table>
     
@@ -515,18 +526,18 @@ quiz(caption="",
   question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> In chapter 1, we learned that the mean of a non-binary variable should be interpreted as ..."),
     answer("an average and in the same unit of measurement as the variable itself", correct = TRUE),
     answer("a proportion and in the same unit of measurement as the variable itself"),
-    answer("an average and in percentages, after multipying the output by 100"),
-    answer("a proportion and in percentages, after multipying the output by 100"),
+    answer("an average and in percentages, after multiplying the output by 100"),
+    answer("a proportion and in percentages, after multiplying the output by 100"),
     post_message = "The correct answer is: as an average and in the same unit of measurement as the variable itself. <br><br> For an explanation, review subsection 1.8.2 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> And, the mean of a binary variable should be interpreted as ..."),
-    answer("a proportion and in percentages, after multipying the output by 100", correct = TRUE),
+    answer("a proportion and in percentages, after multiplying the output by 100", correct = TRUE),
     answer("an average and in the same unit of measurement as the variable itself"),
     answer("a proportion and in the same unit of measurement as the variable itself"),
-    answer("an average and in percentages, after multipying the output by 100"),
-    post_message = "The correct answer is: as a proportion and in percentages, after multipying the output by 100.<br><br> For an explanation, review subsection 1.8.2 of DSS.",
+    answer("an average and in percentages, after multiplying the output by 100"),
+    post_message = "The correct answer is: as a proportion and in percentages, after multiplying the output by 100.<br><br> For an explanation, review subsection 1.8.2 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -565,9 +576,9 @@ quiz(caption="",
   ),
     question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> In this portion of the book, we learn to use the relational operator `==` to set a logical test. What would be the output of the code `10 == 4`?"),
     answer("FALSE", correct = TRUE),
-    answer("NO", message = ""),
-    answer("NOT TRUE", message = ""),
-    answer("6", message = ""),
+    answer("NO"),
+    answer("NOT TRUE"),
+    answer("6"),
     post_message = "The correct answer is FALSE. <br><br> 
     For information on how the relational operator `==` works, review subsection 2.5.3 of DSS.",
     random_answer_order = TRUE,
@@ -608,11 +619,11 @@ quiz(caption="",
   ),
     question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> As we learn in this portion of the book, we can use the `[]` operator to extract a selection of observations from a variable. Which of the following pieces of code would extract the testscores of students who had breakfast this morning? (Suppose the object where the dataframe was stored was called `course`, the non-binary variable capturing students' testscores was called `testscores`, and the binary variable identifying the students who had breakfast this morning was called `breakfast`)."),
     answer("`course$testscores[course$breakfast==1]`", correct = TRUE),
-    answer("`course$testscores[breakfast==1]`", message = "This code does not identify the object where the variabe `breakfast` is stored."),
-    answer("`course$breakfast[course$testscores==1]`", message = "This code would extract the values of `breakfast` that corresponded to students who had their `testcores` equal to 1."),
+    answer("`course$testscores[breakfast==1]`", message = "This code does not identify the object where the variable `breakfast` is stored."),
+    answer("`course$breakfast[course$testscores==1]`", message = "This code would extract the values of `breakfast` that corresponded to students who had their `testscores` equal to 1."),
     answer("`testscores[breakfast==1]`", message = "This code does not identify the object where the variables are stored."),
     answer("`course$testscores[course$breakfast=1]`", message = "The operator we use to set the logical test is `==`, not `=`."),
-    answer("`testscores[course$breakfast==1]`", message = "This code does not identify the object where the variabe `testscores` is stored."),
+    answer("`testscores[course$breakfast==1]`", message = "This code does not identify the object where the variable `testscores` is stored."),
     post_message = "The correct answer is: `course$testscores[course$breakfast==1]` <br><br>
     For an explanation on how to use the `[]` operator to extract a selection of observations from a variable, review subsection 2.5.3 of DSS.",
     random_answer_order = TRUE,
@@ -621,7 +632,7 @@ quiz(caption="",
 )
 ```
 
-## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Typing and Running Code </span></font>
+## <font size="+2"> <span style=color:dodgerblue> $\textrm{             }$$\textrm{             }$$\textrm{             }$ Coding Exercises </span></font>
 
 <div class="borderexample"><b>Instructions</b>
 <ul>
@@ -647,7 +658,7 @@ quiz(caption="",
   </tr>
   <tr>
     <td> *classtype* </td>
-    <td>  class size the student attended: 'small' or 'regular'
+    <td>  class size the student attended: 'small' or 'regular' </td>
   </tr>
   <tr>  
     <td>*reading* </td>
@@ -656,6 +667,7 @@ quiz(caption="",
   <tr>  
     <td> *math* </td>
     <td>  student's third-grade math test scores (in points) </td>
+  </tr>
   <tr>
     <td>*graduated* </td>
     <td>  identifies whether the student graduated from high school: <br>1=graduated or 0=did not graduate </td>
@@ -672,15 +684,17 @@ quiz(caption="",
 star <- read.csv("data/STAR.csv")
 ```
 
-<br> <span style=color:dodgerblue> **SETUP: **</span> **Suppose we have already set the working directory to the DSS folder and we have already run the code below to read and store the STAR dataset in an object called `star`.** 
+<br> <span style=color:dodgerblue> **SETUP: **</span> **Suppose we have already set the working directory to the DSS folder and we have already run the code below to (1) read and store the STAR dataset in an object called `star` and (2) show the first six observations.** 
 
 ```{r star_FALSE2, eval=FALSE, echo=TRUE}
 star <- read.csv("STAR.csv") # reads and stores data
 ```
 
-**Go ahead and run the following piece of code to ask R to show the first six observations in the dataframe stored in the `star` object:**
- 
-```{r ch2_topic2_r_setup, exercise=TRUE, exercise.setup = "star"}
+```{r star_render, include=FALSE}
+star <- read.csv("data/STAR.csv")
+```
+
+```{r star_head, echo=TRUE}
 head(star) # shows the first six observations
 ```
 
@@ -708,7 +722,7 @@ star$small <- ifelse(star$classtype == "small", 1, 0)
 ```
 
 ```{r ch2_topic2_r1-check}
-grade_result(pass_if(~ identical(.result, star$small <- ifelse(star$classtype == "small", 1, 0)), 
+grade_result(pass_if(~ identical(.result, ifelse(star$classtype == "small", 1, 0)), 
                      "<br><br> You could create this new variable with either one of the following two pieces of code: <br> 
                      (1) `star$small <- ifelse(star$classtype=='small',1,0)` <br> 
                      (2) `star$small <- ifelse(star$classtype=='regular',0,1)`
@@ -938,7 +952,7 @@ quiz(caption="",
     answer("percentages"),
     answer("miles"),
     post_message = "The correct answer is: points.<br><br>
-Here, the difference-on-means estimator for *math* is: 635 points - 629 points = 6 points <br><br>
+Here, the difference-in-means estimator for *math* is: 635 points - 629 points = 6 points <br><br>
 The estimator is measured in 'points' because 'points - points = points'.
 <br><br> For more information on units of measurement, review the top half of page 23 of DSS. And, for more on the unit of measurement of the difference-in-means estimator, review pages 44-45 of DSS.",
     random_answer_order = TRUE,
@@ -1028,7 +1042,7 @@ quiz(caption="",
     answer("86 students who attended a regular-size class graduated from high school", message="Is *graduated* a binary or a non-binary variable?"),
     answer("8.665% of the students who attended a regular-size class graduated from high school", message="The mean of a binary variable should be interpreted in percentages after multiplying the output by 100."),
     post_message = "The correct answer is: 86.65% of the students who attended a regular-size class graduated from high school. <br><br>
-Here, *graduated* is binary, so the mean of *graduated* should be interpreted as a proportion and in percentages after multiplying the output by 100 (0.8665*100=86.65%). In particular, it should be interpreted as the proportion of the observations that have the characteristic identified by the variable. In this case, the proportion of students who graduated from high school among those who attended a small class.
+Here, *graduated* is binary, so the mean of *graduated* should be interpreted as a proportion and in percentages after multiplying the output by 100 (0.8665*100=86.65%). In particular, it should be interpreted as the proportion of the observations that have the characteristic identified by the variable. In this case, the proportion of students who graduated from high school among those who attended a regular-size class.
    <br><br> For more information on the distinction between binary and non-binary variables, review step #4 of section 1.7 of DSS, and for more information on how to interpret the mean of binary variables, review section 1.8 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -1065,9 +1079,9 @@ quiz(caption="",
     answer("percentages, but there is no need to multiply the output by 100"),
     answer("students"),
     post_message = "The correct answer is: percentage points, after multiplying the output by 100.<br><br>
-Here, the difference-on-means estimator for *graduated* is: <br><br>
+Here, the difference-in-means estimator for *graduated* is: <br><br>
 0.8735 - 0.8665 $\\approx$ 0.007 <br><br>
-Now, to be able to interpret the proportions in percentages, we must multiply the output of each mean by 100, and to be able to interpret the difference betwen the two proportions in percentage points, we also must multiply the output by 100. Once we multiply each term from the formula above by 100, we can then clearly see the difference-in-means estimator is measured in percentage points since, by definition, '% - % = p.p.' <br><br>
+Now, to be able to interpret the proportions in percentages, we must multiply the output of each mean by 100, and to be able to interpret the difference between the two proportions in percentage points, we also must multiply the output by 100. Once we multiply each term from the formula above by 100, we can then clearly see the difference-in-means estimator is measured in percentage points since, by definition, '% - % = p.p.' <br><br>
 87.35% - 86.65% $\\approx$ 0.7 p.p. 
 <br><br> For more information on units of measurement, review the top half of page 23 of DSS. For a description of what percentage points are and an explanation of the difference between percentages and percentage points, review the TIP on page 44 of DSS. And, for more on the unit of measurement of the difference-in-means estimator, review pages 44-45 of DSS.",
     random_answer_order = TRUE,
@@ -1090,7 +1104,7 @@ quiz(caption="",
     answer("We assume that all the students in Project STAR were comparable to each other", message= "This would imply that every single student was comparable to all others."),
     answer("We assume that the students in Project STAR were randomly selected from a population"),    
     post_message = "The correct answer is: We assume that the students who attended a small class were comparable before schooling to the students who attended a regular-size class. <br><br> Only when this assumption is satisfied will the difference-in-means estimator produce a valid estimate of the average causal effect of a treatment on an outcome.
-<br><br> If this assumption were NOT satified, the factual outcome of one group would NOT be a good approximation for the counterfactual outcome of the other, and thus the approximations used in the estimation process would be incorrect, and the difference-in-means estimator would provide an incorrect estimate. <br><br> For more information on when the difference-in-means estimator produces valid causal estimates, review subsection 2.4.1 of DSS.",
+<br><br> If this assumption were NOT satisfied, the factual outcome of one group would NOT be a good approximation for the counterfactual outcome of the other, and thus the approximations used in the estimation process would be incorrect, and the difference-in-means estimator would provide an incorrect estimate. <br><br> For more information on when the difference-in-means estimator produces valid causal estimates, review subsection 2.4.1 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -1119,7 +1133,7 @@ quiz(caption="",
 question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, ": </span> When estimating the average causal effect of attending a small class on the third-grade math test, what is the outcome we are estimating the effect on?"),
     answer("third-grade math test scores", correct = TRUE),
     answer("attending a small class"),
-    answer("attending a regular-class size"),
+    answer("attending a regular-size class"),
     answer("third-grade reading test scores"),    
     post_message = "The correct answer is: third-grade math test scores. <br><br>
     Since *math* is a non-binary variable, we interpret effects as changes in the test scores themselves. <br><br> For more information, review subsection 2.5.3 of DSS.",
@@ -1128,11 +1142,11 @@ question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, "
   ),
 question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, ": </span> When estimating the average causal effect of attending a small class on the third-grade math test, what is the direction, size, and unit of measurement of the average causal effect?"),
     answer("an increase of 6 points, on average", correct = TRUE),
-    answer("an decrease of 6 points, on average", message = "Check the direction of the effect. Did we estimate that the treatment increased the outcome, on average? Or did we estimate that the treatment decreased the outcome, on average?"),
+    answer("a decrease of 6 points, on average", message = "Check the direction of the effect. Did we estimate that the treatment increased the outcome, on average? Or did we estimate that the treatment decreased the outcome, on average?"),
     answer("6 points, on average", message="This answer is missing the direction of the effect."),
     answer("an increase of 6, on average", message="This answer is missing the unit of measurement of the effect."),
     post_message = "The correct answer is: an increase of 6 points, on average <br><br>
-    The difference-on-means estimator for *math* is: 635 points - 629 points = 6 points <br><br>
+    The difference-in-means estimator for *math* is: 635 points - 629 points = 6 points <br><br>
 It is an increase because we are estimating change---the change in the outcome variable caused by the treatment---and the difference-in-means estimator is positive. <br><br>
 The size of the effect is 6 because *math* is non-binary so we do not need to multiply the output of the difference-in-means estimator by 100. <br><br>
 The unit of measurement is 'points' because 'points - points = points'.
@@ -1144,22 +1158,22 @@ question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, "
     answer("the probability of graduating from high school", correct =TRUE),
     answer("third-grade math test scores"),
     answer("attending a small class"),
-    answer("attending a regular-class size"),
+    answer("attending a regular-size class"),
     post_message = "The correct answer is: the probability of graduating from high school. <br><br> When the outcome variable is binary, as is the case with *graduated*, we interpret effects as changes in probability or likelihood. <br><br> For more information, review subsection 2.5.3 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
 question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, ": </span> When estimating the average causal effect of attending a small class on the probability of graduating from high school, what is the direction, size, and unit of measurement of the average causal effect?"),
     answer("an increase of 0.7 percentage points, on average", correct = TRUE),
-    answer("an decrease of 0.007 percentage points, on average", message = "Check the direction and size of the effect. Did we estimate that the treatment increased the outcome, on average? Or did we estimate that the treatment decreased the outcome, on average? Also, when the outcome variable is binary, do we need to multiply the output of the difference-in-means estimator by 100?"),
+    answer("a decrease of 0.007 percentage points, on average", message = "Check the direction and size of the effect. Did we estimate that the treatment increased the outcome, on average? Or did we estimate that the treatment decreased the outcome, on average? Also, when the outcome variable is binary, do we need to multiply the output of the difference-in-means estimator by 100?"),
     answer("an increase of 0.007 percentage points, on average", message = "Check the size of the effect. When the outcome variable is binary, do we need to multiply the output of the difference-in-means estimator by 100?"),
     answer("an increase of 7 percentage points, on average", message="Check the size of the effect"),
     answer("an increase of 0.7, on average", message="This answer is missing the unit of measurement of the effect."),
     answer("0.7 percentage points, on average", message="This answer is missing the direction of the effect."),
     post_message = "The correct answer is: an increase of 0.7 percentage points, on average. <br><br>
-    Here, the difference-on-means estimator for *graduated* is: <br><br>
+    Here, the difference-in-means estimator for *graduated* is: <br><br>
 0.8735 - 0.8665 $\\approx$ 0.007 <br><br>
-Now, to be able to interpret the proportions in percentages, we must multiply the output of each mean by 100, and to be able to interpret the difference betwen the two proportions in percentage points, we also must multiply the output by 100: <br><br>
+Now, to be able to interpret the proportions in percentages, we must multiply the output of each mean by 100, and to be able to interpret the difference between the two proportions in percentage points, we also must multiply the output by 100: <br><br>
 87.35% - 86.65% $\\approx$ 0.7 p.p. <br><br>
 So, it is an increase because we are estimating change---the change in the outcome variable caused by the treatment---and the difference-in-means estimator is positive. <br><br>
 The size of the effect is 0.7 because *graduated* is binary so we need to multiply the output of the difference-in-means estimator by 100. <br><br>
@@ -1178,24 +1192,24 @@ qnum_inter <- 0
 quiz(caption="",
   question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, ": </span> What is the estimated average causal effect of attending a small class on the third-grade math test?"),
     answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because we are analyzing data from a randomized experiment), we estimate that attending a small class increases the third-grade math scores by 6 points, on average.", correct = TRUE),
-    answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), we estimate that the students who attended a small class scored, on average, 6 points more on the third-grade math test, as compared to the students who attended a regular-size class.", message = "This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class scored, on average, 6 points more, but it does not communicate who or what is responsible for those extra points. It does not claim that those extra points where <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'"),
+    answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), we estimate that the students who attended a small class scored, on average, 6 points more on the third-grade math test, as compared to the students who attended a regular-size class.", message = "This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class scored, on average, 6 points more, but it does not communicate who or what is responsible for those extra points. It does not claim that those extra points were <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'"),
     answer("We estimate that attending a small class increases the third-grade math scores by 6 points, on average.", message= "This answer is missing the assumption and why the assumption is reasonable in this case."),
     answer("Assuming that all students in Project STAR are comparable (a reasonable assumption because all students were from Tennessee), we estimate that attending a small class increases the third-grade math scores by 6 points, on average.", message= "This answer has the wrong assumption as well as the wrong justification for the assumption."),
     post_message = "The correct answer is: Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because we are analyzing data from a randomized experiment), we estimate that attending a small class increases the third-grade math scores by 6 points, on average.<br><br>
     Note that the following is <em> not </em> the correct answer: Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), <em> we estimate that the students who attended a small class scored, on average, 6 points more on the third-grade math test, as compared to the students who attended a regular-size class. </em> <br><br> 
-    Why? This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class scored, on average, 6 points more, but it does not communicate who or what is responsible for those extra points. It does not claim that those extra points where <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'
+    Why? This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class scored, on average, 6 points more, but it does not communicate who or what is responsible for those extra points. It does not claim that those extra points were <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'
 <br><br> For more information on how to write conclusion statements, review the bottom TIP of page 43 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
 question(paste0("<span style=color:dodgerblue> Q", qnum_inter <- qnum_inter+1, ": </span> What is the estimated average causal effect of attending a small class on the probability of graduating from high school?"),
     answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because we are analyzing data from a randomized experiment), we estimate that attending a small class increases the probability of graduating from high school by 0.7 percentage points, on average.", correct = TRUE),
-    answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), we estimate that the students who attended a small class were, on average, 0.7 percentage points more likely to graduate from high school than students who attended a regular-size class.", message = "This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class were, on average, 0.7 percentage points more likely to graduate from high school, but it does not communicate who or what is responsible for those additional percentage points. It does not claim that those extra percentage points where <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'"),
+    answer("Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), we estimate that the students who attended a small class were, on average, 0.7 percentage points more likely to graduate from high school than students who attended a regular-size class.", message = "This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class were, on average, 0.7 percentage points more likely to graduate from high school, but it does not communicate who or what is responsible for those additional percentage points. It does not claim that those extra percentage points were <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'"),
     answer("We estimate that attending a small class increases the probability of graduating from high school by 0.7 percentage points, on average.", message= "This answer is missing the assumption and why the assumption is reasonable in this case."),
     answer("Assuming that all students in Project STAR are comparable (a reasonable assumption because all students were from Tennessee), we estimate that attending a small class increases the probability of graduating from high school by 0.7 percentage points, on average.", message= "This answer has the wrong assumption as well as the wrong justification for the assumption."),
     post_message = "The correct answer is: Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because we are analyzing data from a randomized experiment), we estimate that attending a small class increases the probability of graduating from high school by 0.7 percentage points, on average.<br><br>
     Note that the following is <em> not </em> the correct answer: Assuming that the students who attended a small class were comparable before schooling to the students who attended a regular-size class (a reasonable assumption because the dataset analyzed comes from a randomized experiment), <em> we estimate that the students who attended a small class were, on average, 0.7 percentage points more likely to graduate from high school than students who attended a regular-size class. </em> <br><br> 
-    Why? This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class were, on average, 0.7 percentage points more likely to graduate from high school, but it does not communicate who or what is responsible for those additional percentage points. It does not claim that those extra percentage points where <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'
+    Why? This answer does not make a causal claim; it only makes an observation. It states that students who attended a small class were, on average, 0.7 percentage points more likely to graduate from high school, but it does not communicate who or what is responsible for those additional percentage points. It does not claim that those extra percentage points were <em> caused by </em> attending the small class. And, since it does not make a causal claim, it does not answer the question above. To make a causal claim, we use causal language such as 'the treatment <em> increases/decreases </em> the outcome variable.'
 <br><br> For more information on how to write conclusion statements, review the bottom TIP of page 43 of DSS.",
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -1212,27 +1226,28 @@ To generate a progress report of your work, enter your name below and click the 
 shiny::observeEvent(
   input$get_score, 
   {
-    objs2 = learnr:::get_tutorial_state()
+    objs2 <- learnr:::get_tutorial_state()
     
-    # Number of correct questions/exercises
-    num_correct <- 
-      # Access the $correct sublist item in each list item
-        lapply(objs2, purrr::pluck, "correct") |>
-           # make it a vector containing: TRUE and FALSE and NAs
-           # NA is appearing for list items which don't have
-           # a $correct subitem
-                unlist() |> 
-           # Taking the sum of a logical Vector returns the number of TRUEs
-                sum(na.rm=TRUE)
+    # Keep only the graded questions and exercises
+    scored <- Filter(
+      function(x) isTRUE(x$type %in% c("question", "exercise")),
+      objs2
+    )
     
     # Number of questions/exercises answered
-    num_answered <- 
-      # 1. Access $type in each list item and make it a vector of types
-      lapply(objs2, purrr::pluck, "type") |> unlist()
+    num_answered <- length(scored)
     
-      # 2. Count the number of "question" and "exercise" in that vector
-    num_answered <- num_answered[num_answered == "question" |
-                                               num_answered =="exercise"] |> length()
+    # Number of questions/exercises answered correctly
+    num_correct <- sum(vapply(scored, function(x) isTRUE(x$correct), logical(1)))
+    
+    # Formats a proportion as a percentage, guarding against dividing by zero
+    pct <- function(numerator, denominator) {
+      if (isTRUE(denominator > 0)) {
+        paste(round(numerator / denominator * 100, 0), "percent")
+      } else {
+        "not available yet"
+      }
+    }
     
     output$chapter = shiny::renderText(
       paste("PROGRESS REPORT OF: Review Exercises for", as.character(chapter_id),
@@ -1258,15 +1273,15 @@ shiny::observeEvent(
     
     output$completion_rate = shiny::renderText(
       paste("Proportion of Exercises in Tutorial Answered by Student:",
-            round(num_answered/num_tutorial*100,0), "percent"))
+            pct(num_answered, num_tutorial)))
     
     output$prop_correct_answered = shiny::renderText(
       paste("Proportion of Exercises Answered Correctly Out of Those Answered:",
-            round(num_correct/num_answered*100,0),"percent"))
+            pct(num_correct, num_answered)))
     
     output$prop_correct_all = shiny::renderText(
       paste("Proportion of Exercises Answered Correctly Out of All Exercises in Tutorial:",
-            round(num_correct/num_tutorial*100,0),"percent"))
+            pct(num_correct, num_tutorial)))
     
     invisible()
   }
@@ -1299,6 +1314,6 @@ shiny::br()
 <p class="borderexample">
 <b>This tutorial is still a work in progress — I would love your feedback!</b><br><br>
 Was it helpful? Did you find anything confusing? Do you have any other comments or suggestions?<br>
-Please let me know by completing <a href="https://bit.ly/dss_feedback">this short survey</a>. (It can be submitted anonymously.)<br><br>
+Please let me know by completing <a href="https://suffolk.co1.qualtrics.com/jfe/form/SV_b4m4HmOumNWHY6W">this short survey</a>. (It can be submitted anonymously.)<br><br>
 <i>Thank you, and I hope you enjoyed the tutorial!</i> – Elena
 </p>
