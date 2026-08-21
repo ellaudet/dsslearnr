@@ -12,7 +12,7 @@ To access the tutorials, open RStudio and install the necessary packages by runn
 
 ## Starting the Tutorials
 
-You can launch each tutorial by running its corresponding R code in RStudio. Below are the commands to start each tutorial:
+You can launch each tutorial by running the code below in RStudio.
 
 - **Chapter 1: Introduction**
     
