@@ -1,6 +1,6 @@
 Package: dsslearnr
 Type: Package
-Title: Practice Exercises for Data Analysis for Social Science
+Title: Self-Graded Review Exercises for Data Analysis for Social Science
 Version: 0.2.0
 Authors@R: person("Elena", "Llaudet", email = "ellaudet@gmail.com",
                   role = c("aut", "cre"))
