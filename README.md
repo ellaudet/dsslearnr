@@ -7,9 +7,8 @@ This repository contains [`learnr`](https://rstudio.github.io/learnr/index.html)
 To access the tutorials, open RStudio and install the necessary packages by running the following code:
 
     install.packages("remotes")
-    remotes::install_github("rstudio/learnr")
-    remotes::install_github("rstudio-education/gradethis")
     remotes::install_github("ellaudet/dsslearnr")
+    
 
 ## Starting the Tutorials
 
