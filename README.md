@@ -45,6 +45,6 @@ learnr::run_tutorial(package = "dsslearnr")
 
 ## Feedback
 
-Any errors in these tutorials are my responsibility. If you encounter any issues or have suggestions for improvements, please [open an issue](https://github.com/ellaudet/dsslearnr/issues) or contact me at [ellaudet@gmail.com](mailto:ellaudet@gmail.com). Your feedback is highly appreciated!
+Any errors in these tutorials are my responsibility. If you encounter any issues or have suggestions, please [open an issue](https://github.com/ellaudet/dsslearnr/issues) or contact me at [ellaudet@gmail.com](mailto:ellaudet@gmail.com). Your feedback is highly appreciated!
 
 *I hope these tutorials are helpful to you and your students!* — Elena
