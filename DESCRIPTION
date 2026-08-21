@@ -20,4 +20,4 @@ Imports:
     shiny,
     htmltools
 Remotes:
-    rstudio/gradethis
+    rstudio/gradethis@48aaf8957cdac09f45f540f841a6bcd55ac5e2f1
