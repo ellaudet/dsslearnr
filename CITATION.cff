@@ -1,9 +1,6 @@
-# This CITATION.cff file was generated with cffinit.
-# Visit https://bit.ly/cffinit to generate yours today!
-
 cff-version: 1.2.0
 title: >-
-  dsslearnr: Self-Graded Review Exercises for Data Analysis for Social
+  dsslearnr: Review Exercises for Data Analysis for Social
   Science (DSS)
 message: >-
   If you use this software, please cite it using the
@@ -13,16 +10,20 @@ authors:
   - given-names: Elena
     family-names: Llaudet
     email: ellaudet@gmail.com
-    affiliation: Associate Professor at Suffolk University
-identifiers:
-  - type: url
-    value: 'https://github.com/ellaudet/dsslearnr'
-    description: >-
-      GitHup Repository for dsslearnr: Self-Graded Review Exercises
-      for Data Analysis and Social Science (DSS)
+    affiliation: Suffolk University
 repository-code: 'https://github.com/ellaudet/dsslearnr'
+url: 'https://github.com/ellaudet/dsslearnr'
 abstract: >-
-  This repository contains learnr tutorials with self-graded review
+  This repository contains learnr tutorials with review
   exercises for Data Analysis for Social Science: A Friendly
-  and Practical Introduction (DSS for short) by Elena
-  Llaudet and Kosuke Imai from Princeton University Press.
+  and Practical Introduction (DSS for short) by Elena Llaudet
+  and Kosuke Imai from Princeton University Press.
+version: 0.2.0
+date-released: '2026-08-21'
+license: MIT
+keywords:
+  - learnr
+  - R
+  - teaching
+  - statistics
+  - social science
