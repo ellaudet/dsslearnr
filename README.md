@@ -1,6 +1,6 @@
-# dsslearnr: Practice Exercises for Llaudet and Imai's Data Analysis for Social Science (DSS)
+# dsslearnr: Self-Graded Review Exercises for Llaudet and Imai's Data Analysis for Social Science (DSS)
 
-This repository contains [`learnr`](https://rstudio.github.io/learnr/index.html) tutorials with practice exercises for [*Data Analysis for Social Science: A Friendly and Practical Introduction*](https://press.princeton.edu/books/paperback/9780691199436/data-analysis-for-social-science) by Elena Llaudet and Kosuke Imai, published by Princeton University Press.
+This repository contains [`learnr`](https://rstudio.github.io/learnr/index.html) tutorials with self-graded review exercises for [*Data Analysis for Social Science: A Friendly and Practical Introduction*](https://press.princeton.edu/books/paperback/9780691199436/data-analysis-for-social-science) by Elena Llaudet and Kosuke Imai, published by Princeton University Press.
 
 ## Installation
 
