@@ -1,10 +1,10 @@
 Package: dsslearnr
 Type: Package
-Title: Self-Graded Review Exercises for Data Analysis for Social Science
+Title: Review Exercises for Data Analysis for Social Science
 Version: 0.2.0
 Authors@R: person("Elena", "Llaudet", email = "ellaudet@gmail.com",
                   role = c("aut", "cre"))
-Description: Interactive 'learnr' tutorials with practice exercises
+Description: Interactive 'learnr' tutorials with review exercises
     accompanying Llaudet and Imai's textbook Data Analysis for Social
     Science: A Friendly and Practical Introduction.
 License: MIT + file LICENSE
