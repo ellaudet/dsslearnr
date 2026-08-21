@@ -13,7 +13,7 @@ To access the tutorials, open RStudio and run the following code:
 ```r
 install.packages("remotes")
 remotes::install_github("rstudio/learnr")
-remotes::install_github("rstudio-education/gradethis")
+remotes::install_github("rstudio/gradethis@48aaf8957cdac09f45f540f841a6bcd55ac5e2f1")
 remotes::install_github("ellaudet/dsslearnr")
 ```
 
