@@ -26,15 +26,11 @@ You can launch each tutorial by running the code below in RStudio.
 
       learnr::run_tutorial("03-population", package = "dsslearnr")
     
-Tutorials for subsequent chapters are currently in development. To view the full list of available tutorials, run:
+To view the full list of available tutorials, run:
     
       learnr::run_tutorial(package = "dsslearnr")
 
 
 ## Feedback
 
-Any errors in these tutorials are my responsibility. If you encounter any issues or have suggestions for improvements, please contact me at [ellaudet@gmail.com](mailto:ellaudet@gmail.com). Your feedback is highly appreciated!
-
----
-
-*I hope these tutorials are helpful to you and your students!* - Elena
+If you encounter any issues or have suggestions for improvements, please contact me at [ellaudet@gmail.com](mailto:ellaudet@gmail.com). Your feedback is highly appreciated! *I hope these tutorials are helpful to you and your students!* - Elena
