@@ -70,7 +70,7 @@ th, td { padding: 15px; }
      height="250" 
      style="float: left; margin-right: 20px; margin-bottom: 10px;" />
      
-***What are these tutorials and how to use them?*** These tutorials are meant for students using DSS: <a href="https://ellaudet.github.io/dss_book/" style="color: inherit;">Llaudet and Imai's <i>Data Analysis for Social Science: A Friendly and Practical Introduction</i> (Princeton University Press, 2022)</a>.
+***What are these tutorials and how to use them?*** These tutorials are meant for students using DSS: <a href="https://ellaudet.github.io/dss_book/" style="color: inherit;">Llaudet and Imai's <i>Data Analysis for Social Science: A Friendly and Practical Introduction</i></a>.
 
 They are designed to be completed *after* reading and performing the analyses explained in the book — they are meant to supplement, not replace, the book.
 Each includes multiple-choice questions and hands-on coding exercises, with instant feedback so students can check their understanding on their own. At the end, students can generate a progress report of their work. The questions are organized into topics, 
@@ -78,19 +78,20 @@ each covering a handful of pages from the book that can be read in one sitting. 
 
 <table>
   <tr>
-    <th><span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span><span style=color:gray>  STEP 1  <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span></th>
-    <th><span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  </span><span style=color:gray>  STEP 2  <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$ </span></th>
-    <th> <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  </span><span style=color:gray>  STEP 3 <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$</span></th>
-    <th> <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$  </span><span style=color:gray>  STEP 4 <span style=color:lightgray> $\blacktriangleright$$\blacktriangleright$$\blacktriangleright$</span></th>
+    <th><span style=color:lightgray>$\blacktriangleright$ </span><span style=color:gray>  STEP 1  <span style=color:lightgray> $\blacktriangleright$ </span></th>
+    <th><span style=color:lightgray> $\blacktriangleright$  </span><span style=color:gray>  STEP 2  <span style=color:lightgray> $\blacktriangleright$ </span></th>
+    <th> <span style=color:lightgray> $\blacktriangleright$  </span><span style=color:gray>  STEP 3 <span style=color:lightgray> $\blacktriangleright$</span></th>
+    <th> <span style=color:lightgray> $\blacktriangleright$  </span><span style=color:gray>  STEP 4 <span style=color:lightgray> $\blacktriangleright$</span></th>
   </tr>
   <tr>
-<td> read the section(s) <br> for a topic </td>
-<td> perform the analyses <br> on your computer </td>
-<td> complete the <br> review exercises </td>
-<td> move on to <br>the next topic </td>
+<td> read the section(s) for a topic </td>
+<td> perform the analyses on your computer </td>
+<td> complete the review exercises </td>
+<td> move on to the next topic </td>
   </tr>
 </table>
 </div>
+
 ***What does this particular tutorial cover?*** This is the tutorial for chapter 2, where we learn what causal effects are and how to estimate them using randomized experiments. The review exercises for this chapter are organized into two topics:
 
 <table>
