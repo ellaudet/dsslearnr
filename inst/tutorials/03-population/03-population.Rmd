@@ -701,7 +701,7 @@ question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Fro
 
 question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> From the scatter plot above, we infer that:"),
   answer("Higher values of X are typically associated with higher values of Y, on average", correct=TRUE),
-  answer("Higher values of X are typically associated with lower values of Y, on average", message="The ilnear association is positive, not negative."),
+  answer("Higher values of X are typically associated with lower values of Y, on average", message="The linear association is positive, not negative."),
   answer("On average, either increases in X cause increases in Y or increases in Y cause increases in X", message="Correlation does not necessarily imply causation"),
     answer("On average, either increases in X cause decreases in Y or increases in Y cause decreases in X", message="Correlation does not necessarily imply causation"),
   post_message = "The association is positive, so higher values of X are typically associated with higher values of Y. We cannot infer anything about the causal relationship between the variables.<br><br> See DSS §3.5.1.",
