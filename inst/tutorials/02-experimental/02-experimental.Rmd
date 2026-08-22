@@ -411,7 +411,7 @@ question(paste0("<span style=color:dodgerblue> Q", qnum <- qnum+1, ":</span> Sup
     answer("We should give the aspirin to the volunteers with the least intense headaches", 
            message = "If we did this, we would not know whether they ended up with less intense headaches because of the aspirin or because their headaches were less intense to begin with."),
     answer("We should give the aspirin to whomever chooses to take one",
-           message = "If individuals choose whether to take an aspirin, the treatment and control groups would likely not be comparable. For example, people with prior health conditions may be less likely to take aspirin and may also have worse headaches. Under this circumstances, we would not know whether differences after treatment were due to the aspirin or to pre-existing differences."),
+           message = "If individuals choose whether to take an aspirin, the treatment and control groups would likely not be comparable. For example, people with prior health conditions may be less likely to take aspirin and may also have worse headaches. Under these circumstances, we would not know whether differences after treatment were due to the aspirin or to pre-existing differences."),
     answer("We should give the aspirin to all 600 volunteers", 
            message = "If we did this, we would have no control group and thus nothing to compare the treatment group's outcome to."),
     answer("We should measure the volunteers' initial headache intensity, manually create two groups with the same average intensity, and give the aspirin to one group", 
