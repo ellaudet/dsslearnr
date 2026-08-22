@@ -1,8 +1,6 @@
-# dsslearnr: Review Exercises for Data Analysis for Social Science
+# dsslearnr: Review Exercises for Data Analysis for Social Science [*Data Analysis for Social Science: A Friendly and Practical Introduction*](https://press.princeton.edu/books/paperback/9780691199436/data-analysis-for-social-science) by Elena Llaudet and Kosuke Imai.
 
-This repository contains review exercises for [*Data Analysis for Social Science: A Friendly and Practical Introduction*](https://press.princeton.edu/books/paperback/9780691199436/data-analysis-for-social-science) by Elena Llaudet and Kosuke Imai.
-
-Interactive R tutorials for students to check their understanding of the material on their own *after* completing the readings and performing the analyses explained in the book — they are meant to supplement, not replace, the book. Each includes multiple-choice questions and hands-on coding exercises, with instant feedback. At the end, students can generate a progress report of their work. Eventually, there will be a tutorial for each chapter in the book. Check again soon! 
+This repository contains interactive R tutorials for students to check their understanding of the material on their own *after* completing the readings and performing the analyses explained in the book — they are meant to supplement, not replace, the book. Each includes multiple-choice questions and hands-on coding exercises, with instant feedback. At the end, students can generate a progress report of their work. Eventually, there will be a tutorial for each chapter in the book. Check again soon! 
 
 Eventually, there will be a tutorial for each chapter in the book. Check again soon!
 
