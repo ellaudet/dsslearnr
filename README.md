@@ -2,7 +2,7 @@
 
 This repository contains [`learnr`](https://rstudio.github.io/learnr/index.html) tutorials with review exercises for [*Data Analysis for Social Science: A Friendly and Practical Introduction*](https://press.princeton.edu/books/paperback/9780691199436/data-analysis-for-social-science) by Elena Llaudet and Kosuke Imai.
 
-They are interactive R tutorials to use after completing the readings and performing the analyses explained in the book — they are meant to supplement, not replace, the book. Each includes multiple-choice questions and hands-on coding exercises, with instant feedback so students can check their understanding on their own. At the end, students can generate a progress report of their work.
+Interactive R tutorials for students to check their understanding of the material on their own *after* completing the readings and performing the analyses explained in the book — they are meant to supplement, not replace, the book. Each includes multiple-choice questions and hands-on coding exercises, with instant feedback. At the end, students can generate a progress report of their work. Eventually, there will be a tutorial for each chapter in the book. Check again soon! 
 
 Eventually, there will be a tutorial for each chapter in the book. Check again soon!
 
