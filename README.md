@@ -37,6 +37,13 @@ learnr::run_tutorial("02-experimental", package = "dsslearnr")
 learnr::run_tutorial("03-population", package = "dsslearnr")
 ```
 
+- **Chapter 4: Predicting Outcomes Using Linear Regression**
+
+```r
+learnr::run_tutorial("04-prediction", package = "dsslearnr")
+```
+
+
 To view the full list of available tutorials, run:
 
 ```r
